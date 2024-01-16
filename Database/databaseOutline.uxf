@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>9</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>9</y>
+      <w>1197</w>
+      <h>765</h>
+    </coordinates>
+    <panel_attributes>/Databases/
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>603</x>
+      <y>45</y>
+      <w>288</w>
+      <h>351</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Products&gt;&gt;
+--
+-Product Number: primary key
+-Department Number: foreign key
+-Product Name
+-Product Description
+-Stock Count
+-Price: $
+-?
+
+--
+
+
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>9</x>
+      <y>45</y>
+      <w>288</w>
+      <h>351</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Customers&gt;&gt;
+--
+-Customer ID: primary key
+ {C#####}
+-Customer Password
+-First Name
+-Last Name
+-Street
+-City
+-State
+-Zip Code
+-Phone
+-Email
+
+--
+
+
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>306</x>
+      <y>405</y>
+      <w>288</w>
+      <h>351</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Pending Orders&gt;&gt;
+--
+-Order Number: 
+-Customer ID: 
+-Order Date: DD/MM/YYYY 00:00
+-Product Number:
+-Product Description:
+-Quantity:
+-Order Total: $
+
+
+--
+
+
+--
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>603</x>
+      <y>405</y>
+      <w>288</w>
+      <h>351</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Completed Orders&gt;&gt;
+--
+-Order Number: 
+-Order Date: DD/MM/YYYY 00:00
+-Complete Date: DD/MM/YYYY 00:00
+-Order Total: $
+
+--
+
+
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>306</x>
+      <y>45</y>
+      <w>288</w>
+      <h>351</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Employees&gt;&gt;
+--
+-Employee ID: primary key
+ {E#####}
+-Department Number: foreign key
+-First Name
+-Last Name
+-Street
+-City
+-State
+-Zip Code
+-Phone
+-Email 
+
+--
+
+
+--
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>900</x>
+      <y>45</y>
+      <w>288</w>
+      <h>351</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Departments&gt;&gt;
+--
+-Department Number: primary key
+-Department Name:
+
+--
+
+
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>9</x>
+      <y>405</y>
+      <w>288</w>
+      <h>351</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;All Orders&gt;&gt;
+--
+-Order Number: 
+-Order Date: DD/MM/YYYY 00:00
+-Order Status: pending/complete/canceled
+-Complete Date: DD/MM/YYYY 00:00
+-Order Total: $
+
+--
+
+
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>900</x>
+      <y>405</y>
+      <w>288</w>
+      <h>351</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Canceled Orders&gt;&gt;
+--
+-Order Number: 
+-Order Date: DD/MM/YYYY 00:00
+-Cancel Date: DD/MM/YYYY 00:00
+-Order Total: $
+
+--
+
+
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
