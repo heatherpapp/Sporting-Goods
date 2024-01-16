@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>220</x>
+      <y>110</y>
+      <w>170</w>
+      <h>410</h>
+    </coordinates>
+    <panel_attributes>Department
+Listings
+--
+Sports
+- Baseball
+- Basketball
+- Football
+- Golf
+- Hockey
+- Soccer
+- Tennis
+- Volleyball
+
+--
+Outdoors
+-Cycling
+-Fishing
+-Kayaking
+-Camping
+
+--
+Apparel
+-Men's
+-Women's
+-Kids</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>410</x>
+      <y>110</y>
+      <w>170</w>
+      <h>410</h>
+    </coordinates>
+    <panel_attributes>Customer
+Portal
+--
+Create Account
+ or
+Login
+--
+Username
+Password
+--
+Order History
+-Review All Orders
+-Modify/Cancel
+   Pending Order
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>600</x>
+      <y>110</y>
+      <w>170</w>
+      <h>410</h>
+    </coordinates>
+    <panel_attributes>Order Processing Person
+Portal
+--
+Login
+--
+Orders
+-View All Orders
+-Change Order Status
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>790</x>
+      <y>110</y>
+      <w>170</w>
+      <h>410</h>
+    </coordinates>
+    <panel_attributes>Orders
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
