@@ -1,27 +1,28 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="15.1">
-  <zoom_level>5</zoom_level>
+  <zoom_level>6</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>125</x>
-      <y>125</y>
-      <w>1170</w>
-      <h>620</h>
+      <x>42</x>
+      <y>84</y>
+      <w>1404</w>
+      <h>744</h>
     </coordinates>
     <panel_attributes>/Databases/
 
 bg=GRAY
-layer=-1</panel_attributes>
+layer=-1
+group=group-3</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>150</x>
-      <y>160</y>
-      <w>375</w>
-      <h>315</h>
+      <x>72</x>
+      <y>126</y>
+      <w>450</w>
+      <h>378</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Products&gt;&gt;
 --
@@ -37,17 +38,17 @@ layer=-1</panel_attributes>
 
 
 bg=YELLOW
-group=group-0
-layer=1</panel_attributes>
+layer=1
+group=group-3</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>255</x>
-      <y>505</y>
-      <w>160</w>
-      <h>195</h>
+      <x>198</x>
+      <y>540</y>
+      <w>192</w>
+      <h>234</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Customers&gt;&gt;
 --
@@ -65,17 +66,17 @@ layer=1</panel_attributes>
 
 
 bg=MAGENTA
-group=group-2
-layer=1</panel_attributes>
+layer=1
+group=group-3</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>605</x>
-      <y>475</y>
-      <w>160</w>
-      <h>195</h>
+      <x>618</x>
+      <y>504</y>
+      <w>192</w>
+      <h>234</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Pending Orders&gt;&gt;
 --
@@ -90,17 +91,17 @@ layer=1</panel_attributes>
 
 
 
-group=group-1
-layer=2</panel_attributes>
+layer=2
+group=group-3</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>825</x>
-      <y>475</y>
-      <w>160</w>
-      <h>195</h>
+      <x>882</x>
+      <y>504</y>
+      <w>192</w>
+      <h>234</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Completed Orders&gt;&gt;
 --
@@ -110,17 +111,17 @@ layer=2</panel_attributes>
 -Order Total: $
 
 
-group=group-1
-layer=2</panel_attributes>
+layer=2
+group=group-3</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>550</x>
-      <y>160</y>
-      <w>720</w>
-      <h>565</h>
+      <x>540</x>
+      <y>102</y>
+      <w>876</w>
+      <h>702</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Employees&gt;&gt;
 --
@@ -141,17 +142,17 @@ layer=2</panel_attributes>
 
 
 bg=ORANGE
-group=group-1
-layer=1</panel_attributes>
+layer=1
+group=group-3</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>165</x>
-      <y>225</y>
-      <w>345</w>
-      <h>245</h>
+      <x>90</x>
+      <y>204</y>
+      <w>414</w>
+      <h>294</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Departments&gt;&gt;
 --
@@ -163,17 +164,17 @@ layer=1</panel_attributes>
 -Department Category:
 
 
-group=group-0
-layer=2</panel_attributes>
+layer=2
+group=group-3</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>580</x>
-      <y>385</y>
-      <w>655</w>
-      <h>300</h>
+      <x>588</x>
+      <y>396</y>
+      <w>786</w>
+      <h>360</h>
     </coordinates>
     <panel_attributes>&lt;&lt;All Orders&gt;&gt;
 --
@@ -188,17 +189,17 @@ layer=2</panel_attributes>
 
 --
 
-group=group-1
-layer=2</panel_attributes>
+layer=2
+group=group-3</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1050</x>
-      <y>475</y>
-      <w>160</w>
-      <h>195</h>
+      <x>1152</x>
+      <y>504</y>
+      <w>192</w>
+      <h>234</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Canceled Orders&gt;&gt;
 --
@@ -208,17 +209,17 @@ layer=2</panel_attributes>
 -Order Total: $
 
 
-group=group-1
-layer=2</panel_attributes>
+layer=2
+group=group-3</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>405</x>
-      <y>250</y>
-      <w>85</w>
-      <h>205</h>
+      <x>378</x>
+      <y>234</y>
+      <w>102</w>
+      <h>246</h>
     </coordinates>
     <panel_attributes>Departmet Category
 --
@@ -246,17 +247,17 @@ Apparel
 -Kids
 --girls
 --boys
-group=group-0
-layer=2</panel_attributes>
+layer=2
+group=group-3</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>315</x>
-      <y>575</y>
-      <w>85</w>
-      <h>110</h>
+      <x>270</x>
+      <y>624</y>
+      <w>102</w>
+      <h>132</h>
     </coordinates>
     <panel_attributes>Customer
 Portal
@@ -274,17 +275,17 @@ Order History
    Pending Order
 
 
-group=group-2
-layer=2</panel_attributes>
+layer=2
+group=group-3</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>565</x>
-      <y>265</y>
-      <w>685</w>
-      <h>450</h>
+      <x>564</x>
+      <y>228</y>
+      <w>828</w>
+      <h>564</h>
     </coordinates>
     <panel_attributes>Order Processing Person
 Portal
@@ -302,11 +303,12 @@ View All Orders
    Pending Order
 -Fulfill Order
 -Search Products
+-View/Edit Employee Information
 
 
 
-group=group-1
-layer=2</panel_attributes>
+layer=2
+group=group-3</panel_attributes>
     <additional_attributes/>
   </element>
 </diagram>
