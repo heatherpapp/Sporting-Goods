@@ -4,8 +4,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>42</x>
-      <y>84</y>
+      <x>0</x>
+      <y>54</y>
       <w>1404</w>
       <h>744</h>
     </coordinates>
@@ -19,8 +19,8 @@ group=group-3</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>72</x>
-      <y>126</y>
+      <x>30</x>
+      <y>96</y>
       <w>450</w>
       <h>378</h>
     </coordinates>
@@ -45,8 +45,8 @@ group=group-3</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>198</x>
-      <y>540</y>
+      <x>156</x>
+      <y>510</y>
       <w>192</w>
       <h>234</h>
     </coordinates>
@@ -73,8 +73,8 @@ group=group-3</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>618</x>
-      <y>504</y>
+      <x>576</x>
+      <y>474</y>
       <w>192</w>
       <h>234</h>
     </coordinates>
@@ -98,8 +98,8 @@ group=group-3</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>882</x>
-      <y>504</y>
+      <x>840</x>
+      <y>474</y>
       <w>192</w>
       <h>234</h>
     </coordinates>
@@ -118,8 +118,8 @@ group=group-3</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>540</x>
-      <y>102</y>
+      <x>498</x>
+      <y>72</y>
       <w>876</w>
       <h>702</h>
     </coordinates>
@@ -149,8 +149,8 @@ group=group-3</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>90</x>
-      <y>204</y>
+      <x>48</x>
+      <y>174</y>
       <w>414</w>
       <h>294</h>
     </coordinates>
@@ -171,10 +171,10 @@ group=group-3</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>588</x>
-      <y>396</y>
+      <x>546</x>
+      <y>354</y>
       <w>786</w>
-      <h>360</h>
+      <h>384</h>
     </coordinates>
     <panel_attributes>&lt;&lt;All Orders&gt;&gt;
 --
@@ -196,8 +196,8 @@ group=group-3</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1152</x>
-      <y>504</y>
+      <x>1110</x>
+      <y>474</y>
       <w>192</w>
       <h>234</h>
     </coordinates>
@@ -216,8 +216,8 @@ group=group-3</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>378</x>
-      <y>234</y>
+      <x>336</x>
+      <y>204</y>
       <w>102</w>
       <h>246</h>
     </coordinates>
@@ -254,8 +254,8 @@ group=group-3</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>270</x>
-      <y>624</y>
+      <x>228</x>
+      <y>594</y>
       <w>102</w>
       <h>132</h>
     </coordinates>
@@ -282,8 +282,8 @@ group=group-3</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>564</x>
-      <y>228</y>
+      <x>522</x>
+      <y>198</y>
       <w>828</w>
       <h>564</h>
     </coordinates>
