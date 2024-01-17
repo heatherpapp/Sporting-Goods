@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="15.1">
-  <zoom_level>9</zoom_level>
+  <zoom_level>3</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>0</x>
-      <y>9</y>
-      <w>1197</w>
-      <h>765</h>
+      <x>396</x>
+      <y>180</y>
+      <w>417</w>
+      <h>324</h>
     </coordinates>
     <panel_attributes>/Databases/
 </panel_attributes>
@@ -16,10 +16,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>603</x>
-      <y>45</y>
-      <w>288</w>
-      <h>351</h>
+      <x>606</x>
+      <y>192</y>
+      <w>96</w>
+      <h>117</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Products&gt;&gt;
 --
@@ -41,10 +41,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>9</x>
-      <y>45</y>
-      <w>288</w>
-      <h>351</h>
+      <x>408</x>
+      <y>192</y>
+      <w>96</w>
+      <h>117</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Customers&gt;&gt;
 --
@@ -70,10 +70,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>306</x>
-      <y>405</y>
-      <w>288</w>
-      <h>351</h>
+      <x>423</x>
+      <y>372</y>
+      <w>96</w>
+      <h>117</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Pending Orders&gt;&gt;
 --
@@ -97,10 +97,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>603</x>
-      <y>405</y>
-      <w>288</w>
-      <h>351</h>
+      <x>555</x>
+      <y>372</y>
+      <w>96</w>
+      <h>117</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Completed Orders&gt;&gt;
 --
@@ -119,10 +119,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>306</x>
-      <y>45</y>
-      <w>288</w>
-      <h>351</h>
+      <x>507</x>
+      <y>192</y>
+      <w>96</w>
+      <h>117</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Employees&gt;&gt;
 --
@@ -150,10 +150,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>900</x>
-      <y>45</y>
-      <w>288</w>
-      <h>351</h>
+      <x>705</x>
+      <y>192</y>
+      <w>96</w>
+      <h>117</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Departments&gt;&gt;
 --
@@ -170,10 +170,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>9</x>
-      <y>405</y>
-      <w>288</w>
-      <h>351</h>
+      <x>408</x>
+      <y>318</y>
+      <w>393</w>
+      <h>180</h>
     </coordinates>
     <panel_attributes>&lt;&lt;All Orders&gt;&gt;
 --
@@ -193,10 +193,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>900</x>
-      <y>405</y>
-      <w>288</w>
-      <h>351</h>
+      <x>690</x>
+      <y>372</y>
+      <w>96</w>
+      <h>117</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Canceled Orders&gt;&gt;
 --
@@ -211,5 +211,118 @@
 --
 </panel_attributes>
     <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>837</x>
+      <y>159</y>
+      <w>51</w>
+      <h>123</h>
+    </coordinates>
+    <panel_attributes>Department
+Listings
+--
+Sports
+-Football
+-Soccer
+-Hockey
+-Tennis
+-Basketball
+-Volleyball
+-Golf
+-?
+
+--
+Outdoors
+-Fishing
+-Kayaking
+-Cycling
+-?
+
+--
+Apparel
+-Men
+-Women
+-Kids</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>798</x>
+      <y>168</y>
+      <w>45</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>130.0;10.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>324</x>
+      <y>153</y>
+      <w>51</w>
+      <h>123</h>
+    </coordinates>
+    <panel_attributes>Customer
+Portal
+--
+Create Account
+ or
+Login
+--
+Username
+Password
+--
+Order History
+-Review All Orders
+-Modify/Cancel
+   Pending Order
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>372</x>
+      <y>162</y>
+      <w>42</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;120.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>330</x>
+      <y>309</y>
+      <w>51</w>
+      <h>123</h>
+    </coordinates>
+    <panel_attributes>Order Processing Person
+Portal
+--
+Login
+--
+Orders
+-View All Orders
+-Change Order Status
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>378</x>
+      <y>318</y>
+      <w>36</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;100.0;20.0</additional_attributes>
   </element>
 </diagram>
