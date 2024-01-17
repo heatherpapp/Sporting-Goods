@@ -1,25 +1,27 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="15.1">
-  <zoom_level>3</zoom_level>
+  <zoom_level>5</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>396</x>
-      <y>180</y>
-      <w>417</w>
-      <h>324</h>
+      <x>125</x>
+      <y>125</y>
+      <w>1170</w>
+      <h>620</h>
     </coordinates>
     <panel_attributes>/Databases/
-</panel_attributes>
+
+bg=GRAY
+layer=-1</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>606</x>
-      <y>192</y>
-      <w>96</w>
-      <h>117</h>
+      <x>150</x>
+      <y>160</y>
+      <w>375</w>
+      <h>315</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Products&gt;&gt;
 --
@@ -29,22 +31,23 @@
 -Product Description
 -Stock Count
 -Price: $
--?
-
---
 
 
---
-</panel_attributes>
+
+
+
+bg=YELLOW
+group=group-0
+layer=1</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>408</x>
-      <y>192</y>
-      <w>96</w>
-      <h>117</h>
+      <x>255</x>
+      <y>505</y>
+      <w>160</w>
+      <h>195</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Customers&gt;&gt;
 --
@@ -60,20 +63,19 @@
 -Phone
 -Email
 
---
 
-
---
-</panel_attributes>
+bg=MAGENTA
+group=group-2
+layer=1</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>423</x>
-      <y>372</y>
-      <w>96</w>
-      <h>117</h>
+      <x>605</x>
+      <y>475</y>
+      <w>160</w>
+      <h>195</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Pending Orders&gt;&gt;
 --
@@ -86,21 +88,19 @@
 -Order Total: $
 
 
---
 
 
---
-
-</panel_attributes>
+group=group-1
+layer=2</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>555</x>
-      <y>372</y>
-      <w>96</w>
-      <h>117</h>
+      <x>825</x>
+      <y>475</y>
+      <w>160</w>
+      <h>195</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Completed Orders&gt;&gt;
 --
@@ -109,20 +109,18 @@
 -Complete Date: DD/MM/YYYY 00:00
 -Order Total: $
 
---
 
-
---
-</panel_attributes>
+group=group-1
+layer=2</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>507</x>
-      <y>192</y>
-      <w>96</w>
-      <h>117</h>
+      <x>550</x>
+      <y>160</y>
+      <w>720</w>
+      <h>565</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Employees&gt;&gt;
 --
@@ -138,42 +136,44 @@
 -Phone
 -Email 
 
---
 
 
---
 
 
-</panel_attributes>
+bg=ORANGE
+group=group-1
+layer=1</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>705</x>
-      <y>192</y>
-      <w>96</w>
-      <h>117</h>
+      <x>165</x>
+      <y>225</y>
+      <w>345</w>
+      <h>245</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Departments&gt;&gt;
 --
 -Department Number: primary key
--Department Name:
+-Department Name: 
+---sports
+---outdoors
+---apparel
+-Department Category:
 
---
 
-
---
-</panel_attributes>
+group=group-0
+layer=2</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>408</x>
-      <y>318</y>
-      <w>393</w>
-      <h>180</h>
+      <x>580</x>
+      <y>385</y>
+      <w>655</w>
+      <h>300</h>
     </coordinates>
     <panel_attributes>&lt;&lt;All Orders&gt;&gt;
 --
@@ -187,16 +187,18 @@
 
 
 --
-</panel_attributes>
+
+group=group-1
+layer=2</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>690</x>
-      <y>372</y>
-      <w>96</w>
-      <h>117</h>
+      <x>1050</x>
+      <y>475</y>
+      <w>160</w>
+      <h>195</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Canceled Orders&gt;&gt;
 --
@@ -205,66 +207,56 @@
 -Cancel Date: DD/MM/YYYY 00:00
 -Order Total: $
 
---
 
-
---
-</panel_attributes>
+group=group-1
+layer=2</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>837</x>
-      <y>159</y>
-      <w>51</w>
-      <h>123</h>
+      <x>405</x>
+      <y>250</y>
+      <w>85</w>
+      <h>205</h>
     </coordinates>
-    <panel_attributes>Department
-Listings
+    <panel_attributes>Departmet Category
 --
 Sports
--Football
--Soccer
--Hockey
--Tennis
--Basketball
--Volleyball
--Golf
--?
+- Baseball
+- Basketball
+- Football
+- Golf
+- Hockey
+- Soccer
+- Tennis
+- Volleyball
 
 --
 Outdoors
 -Fishing
 -Kayaking
 -Cycling
--?
+-Camping
 
 --
 Apparel
 -Men
 -Women
--Kids</panel_attributes>
+-Kids
+--girls
+--boys
+group=group-0
+layer=2</panel_attributes>
     <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>798</x>
-      <y>168</y>
-      <w>45</w>
-      <h>36</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>130.0;10.0;10.0;100.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>324</x>
-      <y>153</y>
-      <w>51</w>
-      <h>123</h>
+      <x>315</x>
+      <y>575</y>
+      <w>85</w>
+      <h>110</h>
     </coordinates>
     <panel_attributes>Customer
 Portal
@@ -281,48 +273,40 @@ Order History
 -Modify/Cancel
    Pending Order
 
-</panel_attributes>
+
+group=group-2
+layer=2</panel_attributes>
     <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>372</x>
-      <y>162</y>
-      <w>42</w>
-      <h>42</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;120.0;120.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>330</x>
-      <y>309</y>
-      <w>51</w>
-      <h>123</h>
+      <x>565</x>
+      <y>265</y>
+      <w>685</w>
+      <h>450</h>
     </coordinates>
     <panel_attributes>Order Processing Person
 Portal
 --
+Create Account
+ or
 Login
 --
-Orders
--View All Orders
--Change Order Status
-</panel_attributes>
+Username
+Password
+--
+Order History
+View All Orders
+-Modify/Cancel
+   Pending Order
+-Fulfill Order
+-Search Products
+
+
+
+group=group-1
+layer=2</panel_attributes>
     <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>378</x>
-      <y>318</y>
-      <w>36</w>
-      <h>12</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;100.0;20.0</additional_attributes>
   </element>
 </diagram>
