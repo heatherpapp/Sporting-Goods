@@ -11,14 +11,14 @@
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background:  url('/Website/Pictures/sports.jpg');
-  background-size: cover;
+    background:  url('/Website/Pictures/Distributors.jpg');
+    background-size: cover;
   }
-  
-  .wrapper {
+
+.wrapper{
     width: 420px;
-    background: #294c2a;
     color: white;
+    background-color: #060b65;
     border-radius: 10px;
     padding: 30px 40px;
   }
@@ -44,11 +44,9 @@
     color: white;
     padding: 20px 45px 20px 20px;
   }
-
-  .input-box input::placeholder{
+  .input-box::placeholder{
     color: white;
   }
-
   .input-box i{
     position: absolute;
     right: 20px;
@@ -87,18 +85,4 @@
     font-size: 16px;
     color: #333;
     font-weight: 600;
-  }
-
-  .wrapper .register-link{
-    font-size: 14.5px;
-    text-align: center;
-   margin: 20px 0 15px;
-  }
-  .register-link p a {
-    color: white;
-    text-decoration: none;
-    font-weight: 600;
-  }
-  .register-link p a:hover{
-    text-decoration: underline;
   }

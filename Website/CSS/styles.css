@@ -91,7 +91,6 @@ z-index: 999;
     padding: 0 1rem;
     width: 100%;
 }
-
 .button {
     display: flex;
     justify-content: center;
@@ -120,6 +119,28 @@ width: 10px;
     color: rgb(255, 0, 0);
     transition: all 0.3s ease;
 }
+.btn__cart {
+    display: inline-block;
+    padding: 10px 15px;
+    text-decoration: none;
+    background-color: #3498db;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.4s ease;
+  }
+  
+  .btn__cart:hover {
+    background-color: gold;
+  }
+  
+  /* Adjust the icon size if needed */
+  .btn__cart i {
+    margin-right: 5px;
+    font-size: 18px;
+  }
+
 @media screen and (max-width: 960px) {
     .navbar__container{
     display: flex;
