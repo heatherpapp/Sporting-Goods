@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="15.1">
-  <zoom_level>4</zoom_level>
+  <zoom_level>7</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1020</x>
-      <y>368</y>
-      <w>936</w>
-      <h>496</h>
+      <x>1246</x>
+      <y>644</y>
+      <w>1638</w>
+      <h>868</h>
     </coordinates>
     <panel_attributes>/Databases/
 
@@ -18,10 +18,10 @@ bg=GRAY</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1040</x>
-      <y>396</y>
-      <w>300</w>
-      <h>252</h>
+      <x>1281</x>
+      <y>693</y>
+      <w>525</w>
+      <h>441</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Products&gt;&gt;
 --
@@ -43,10 +43,10 @@ bg=YELLOW</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1124</x>
-      <y>672</y>
-      <w>128</w>
-      <h>156</h>
+      <x>1428</x>
+      <y>1176</y>
+      <w>224</w>
+      <h>273</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Customers&gt;&gt;
 --
@@ -70,10 +70,10 @@ bg=GREEN</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1404</x>
-      <y>648</y>
-      <w>128</w>
-      <h>156</h>
+      <x>1918</x>
+      <y>1134</y>
+      <w>224</w>
+      <h>273</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Pending Orders&gt;&gt;
 --
@@ -94,10 +94,10 @@ layer=2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1580</x>
-      <y>648</y>
-      <w>128</w>
-      <h>156</h>
+      <x>2226</x>
+      <y>1134</y>
+      <w>224</w>
+      <h>273</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Completed Orders&gt;&gt;
 --
@@ -113,10 +113,10 @@ layer=2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1352</x>
-      <y>380</y>
-      <w>584</w>
-      <h>468</h>
+      <x>1827</x>
+      <y>665</y>
+      <w>1022</w>
+      <h>819</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Employees&gt;&gt;
 --
@@ -143,10 +143,10 @@ bg=ORANGE</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1052</x>
-      <y>448</y>
-      <w>276</w>
-      <h>196</h>
+      <x>1302</x>
+      <y>784</y>
+      <w>483</w>
+      <h>343</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Departments&gt;&gt;
 --
@@ -164,10 +164,10 @@ layer=2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1384</x>
-      <y>568</y>
-      <w>524</w>
-      <h>256</h>
+      <x>1883</x>
+      <y>994</y>
+      <w>917</w>
+      <h>448</h>
     </coordinates>
     <panel_attributes>&lt;&lt;All Orders&gt;&gt;
 --
@@ -188,10 +188,10 @@ layer=2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1760</x>
-      <y>648</y>
-      <w>128</w>
-      <h>156</h>
+      <x>2541</x>
+      <y>1134</y>
+      <w>224</w>
+      <h>273</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Canceled Orders&gt;&gt;
 --
@@ -207,10 +207,10 @@ layer=2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1244</x>
-      <y>468</y>
-      <w>68</w>
-      <h>164</h>
+      <x>1638</x>
+      <y>819</y>
+      <w>119</w>
+      <h>287</h>
     </coordinates>
     <panel_attributes>Departmet Category
 --
@@ -244,10 +244,10 @@ layer=2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1172</x>
-      <y>728</y>
-      <w>68</w>
-      <h>88</h>
+      <x>1512</x>
+      <y>1274</y>
+      <w>119</w>
+      <h>154</h>
     </coordinates>
     <panel_attributes>Customer
 Portal
@@ -271,10 +271,10 @@ layer=2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1368</x>
-      <y>464</y>
-      <w>552</w>
-      <h>376</h>
+      <x>1855</x>
+      <y>812</y>
+      <w>966</w>
+      <h>658</h>
     </coordinates>
     <panel_attributes>Order Processing Person
 Portal
@@ -302,10 +302,10 @@ layer=2</panel_attributes>
   <element>
     <id>UMLHierarchy</id>
     <coordinates>
-      <x>1216</x>
-      <y>16</y>
-      <w>132</w>
-      <h>308</h>
+      <x>1589</x>
+      <y>28</y>
+      <w>231</w>
+      <h>539</h>
     </coordinates>
     <panel_attributes>type=Package
 Employees
@@ -336,10 +336,10 @@ group=group-4</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>1204</x>
+      <x>1568</x>
       <y>0</y>
-      <w>536</w>
-      <h>336</h>
+      <w>938</w>
+      <h>588</h>
     </coordinates>
     <panel_attributes>We Do Sports : Database
 layer=-2
@@ -350,10 +350,10 @@ group=group-4</panel_attributes>
   <element>
     <id>UMLHierarchy</id>
     <coordinates>
-      <x>1360</x>
-      <y>16</y>
-      <w>132</w>
-      <h>308</h>
+      <x>1841</x>
+      <y>28</y>
+      <w>231</w>
+      <h>539</h>
     </coordinates>
     <panel_attributes>type=Package
 Products
@@ -384,10 +384,10 @@ group=group-4</panel_attributes>
   <element>
     <id>UMLHierarchy</id>
     <coordinates>
-      <x>1504</x>
-      <y>16</y>
-      <w>224</w>
-      <h>308</h>
+      <x>2093</x>
+      <y>28</y>
+      <w>392</w>
+      <h>539</h>
     </coordinates>
     <panel_attributes>type=Package
 Customers
@@ -415,10 +415,10 @@ group=group-4</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1420</x>
-      <y>332</y>
-      <w>76</w>
-      <h>44</h>
+      <x>1946</x>
+      <y>581</y>
+      <w>133</w>
+      <h>77</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>170.0;90.0;10.0;10.0</additional_attributes>
@@ -426,10 +426,10 @@ group=group-4</panel_attributes>
   <element>
     <id>UMLInterface</id>
     <coordinates>
-      <x>1652</x>
-      <y>272</y>
-      <w>72</w>
-      <h>48</h>
+      <x>2352</x>
+      <y>476</y>
+      <w>126</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>Customer Interface
 --
@@ -441,10 +441,10 @@ Checkout without Account</panel_attributes>
   <element>
     <id>UMLInterface</id>
     <coordinates>
-      <x>1272</x>
-      <y>236</y>
-      <w>72</w>
-      <h>84</h>
+      <x>1687</x>
+      <y>413</y>
+      <w>126</w>
+      <h>147</h>
     </coordinates>
     <panel_attributes>Employee Interface
 --
@@ -462,10 +462,10 @@ Register New Employee
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1068</x>
-      <y>1008</y>
-      <w>316</w>
-      <h>196</h>
+      <x>1330</x>
+      <y>1764</y>
+      <w>245</w>
+      <h>343</h>
     </coordinates>
     <panel_attributes>Products
 {innerclass
@@ -499,10 +499,10 @@ innerclass}
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>888</x>
-      <y>1020</y>
-      <w>140</w>
-      <h>52</h>
+      <x>1022</x>
+      <y>1883</y>
+      <w>245</w>
+      <h>91</h>
     </coordinates>
     <panel_attributes>Departments
 -
@@ -514,14 +514,15 @@ innerclass}
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>768</x>
-      <y>1016</y>
-      <w>68</w>
-      <h>164</h>
+      <x>847</x>
+      <y>1876</y>
+      <w>119</w>
+      <h>322</h>
     </coordinates>
     <panel_attributes>Departmet Category
 - Department Subcategory
 --
+
 Sports {sports}
 - Baseball [baseball}
 - Basketball {basketball}
@@ -533,6 +534,7 @@ Sports {sports}
 - Volleyball {volleyball}
 
 --
+
 Outdoors {outdoors}
 -Camping {camping}
 -Cycling {cycling}
@@ -540,6 +542,7 @@ Outdoors {outdoors}
 -Kayaking {kayaking}
 
 --
+
 Apparel {apparel} 
 -Men {men} 
 -Women {women}
@@ -552,58 +555,49 @@ layer=2</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1024</x>
-      <y>1024</y>
-      <w>64</w>
-      <h>68</h>
+      <x>1260</x>
+      <y>1890</y>
+      <w>105</w>
+      <h>21</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;140.0;150.0</additional_attributes>
+    <additional_attributes>10.0;10.0;130.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>832</x>
-      <y>1024</y>
-      <w>64</w>
-      <h>12</h>
+      <x>959</x>
+      <y>1890</y>
+      <w>77</w>
+      <h>21</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;140.0;10.0</additional_attributes>
+    <additional_attributes>10.0;10.0;90.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>900</x>
-      <y>1136</y>
-      <w>112</w>
-      <h>40</h>
+      <x>28</x>
+      <y>1792</y>
+      <w>763</w>
+      <h>805</h>
     </coordinates>
     <panel_attributes>Products
 -
-- Department ID {#ID#}
+
+- Department ID {#ID}
 - Product ID {#ID#}
-- Product Name {prodName} </panel_attributes>
+- Product Name {prodName} 
+- Price $</panel_attributes>
     <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>1008</x>
-      <y>1112</y>
-      <w>80</w>
-      <h>40</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;80.0;180.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>324</x>
-      <y>1028</y>
-      <w>48</w>
-      <h>44</h>
+      <x>70</x>
+      <y>1911</y>
+      <w>84</w>
+      <h>77</h>
     </coordinates>
     <panel_attributes>Baseball
 --
@@ -619,10 +613,10 @@ group=group-0</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>316</x>
-      <y>1012</y>
-      <w>404</w>
-      <h>68</h>
+      <x>56</x>
+      <y>1883</y>
+      <w>707</w>
+      <h>119</h>
     </coordinates>
     <panel_attributes>Sports
 --
@@ -632,10 +626,10 @@ group=group-0</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>380</x>
-      <y>1028</y>
-      <w>48</w>
-      <h>44</h>
+      <x>168</x>
+      <y>1911</y>
+      <w>84</w>
+      <h>77</h>
     </coordinates>
     <panel_attributes>Basketball
 --
@@ -647,10 +641,10 @@ group=group-0</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>436</x>
-      <y>1028</y>
-      <w>48</w>
-      <h>44</h>
+      <x>266</x>
+      <y>1911</y>
+      <w>84</w>
+      <h>77</h>
     </coordinates>
     <panel_attributes>Football
 --
@@ -664,10 +658,10 @@ group=group-0</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>492</x>
-      <y>1028</y>
-      <w>48</w>
-      <h>44</h>
+      <x>364</x>
+      <y>1911</y>
+      <w>84</w>
+      <h>77</h>
     </coordinates>
     <panel_attributes>Golf
 --
@@ -679,10 +673,10 @@ group=group-0</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>548</x>
-      <y>1028</y>
-      <w>48</w>
-      <h>44</h>
+      <x>462</x>
+      <y>1911</y>
+      <w>84</w>
+      <h>77</h>
     </coordinates>
     <panel_attributes>Soccer
 --
@@ -696,15 +690,15 @@ group=group-0</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>604</x>
-      <y>1028</y>
-      <w>48</w>
-      <h>44</h>
+      <x>560</x>
+      <y>1911</y>
+      <w>84</w>
+      <h>77</h>
     </coordinates>
     <panel_attributes>Tennis
 --
 Tennis Balls
-Tennis Rackets
+Tennis Racquets
 Tennis Nets
 group=group-0</panel_attributes>
     <additional_attributes/>
@@ -712,10 +706,10 @@ group=group-0</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>660</x>
-      <y>1028</y>
-      <w>48</w>
-      <h>44</h>
+      <x>658</x>
+      <y>1911</y>
+      <w>84</w>
+      <h>77</h>
     </coordinates>
     <panel_attributes>Volleyball
 --
@@ -730,44 +724,34 @@ group=group-0</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>716</x>
-      <y>1020</y>
-      <w>60</w>
-      <h>24</h>
+      <x>756</x>
+      <y>1897</y>
+      <w>105</w>
+      <h>28</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;130.0;40.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>644</x>
-      <y>1096</y>
-      <w>132</w>
-      <h>20</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;30.0;310.0;10.0</additional_attributes>
+    <additional_attributes>10.0;10.0;130.0;20.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>408</x>
-      <y>1100</y>
-      <w>240</w>
-      <h>80</h>
+      <x>196</x>
+      <y>2072</y>
+      <w>420</w>
+      <h>224</h>
     </coordinates>
     <panel_attributes>Outdoors
---</panel_attributes>
+--
+group=group-3</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>420</x>
-      <y>1116</y>
-      <w>48</w>
-      <h>56</h>
+      <x>217</x>
+      <y>2100</y>
+      <w>84</w>
+      <h>189</h>
     </coordinates>
     <panel_attributes>Camping
 --
@@ -775,125 +759,207 @@ Tents
 Tarps
 Mats
 Sleeping Bags
-Mattresses
+Inflatable 
+   Mattresses
+Cooking
+   Grills
+   Propane
+   Utensils
+   Cups
+   Flatware
+   Plates
+   Bowls
+   Pots/Pans
 
-</panel_attributes>
+
+group=group-3</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>476</x>
-      <y>1116</y>
-      <w>48</w>
-      <h>56</h>
+      <x>315</x>
+      <y>2100</y>
+      <w>84</w>
+      <h>77</h>
     </coordinates>
     <panel_attributes>Cycling
 --
-</panel_attributes>
+Helmets
+Bicycles
+Pads
+
+group=group-3</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>532</x>
-      <y>1116</y>
-      <w>48</w>
-      <h>56</h>
+      <x>413</x>
+      <y>2100</y>
+      <w>84</w>
+      <h>77</h>
     </coordinates>
     <panel_attributes>Fishing
 --
-</panel_attributes>
+Rods
+Lures
+Fishing Line
+group=group-3</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>588</x>
-      <y>1116</y>
-      <w>48</w>
-      <h>56</h>
+      <x>511</x>
+      <y>2100</y>
+      <w>84</w>
+      <h>77</h>
     </coordinates>
     <panel_attributes>Kayaking
 --
-</panel_attributes>
+Kayaks
+Paddles
+
+group=group-3</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>416</x>
-      <y>1184</y>
-      <w>252</w>
-      <h>92</h>
+      <x>189</x>
+      <y>2373</y>
+      <w>441</w>
+      <h>161</h>
     </coordinates>
     <panel_attributes>Apparel
---</panel_attributes>
+--
+group=group-2</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>424</x>
-      <y>1200</y>
-      <w>48</w>
-      <h>44</h>
+      <x>203</x>
+      <y>2401</y>
+      <w>84</w>
+      <h>105</h>
     </coordinates>
     <panel_attributes>Men
 --
-</panel_attributes>
+Jerseys
+Cleats
+Shirts
+Shorts
+Pants
+group=group-2</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>480</x>
-      <y>1200</y>
-      <w>48</w>
-      <h>44</h>
+      <x>301</x>
+      <y>2401</y>
+      <w>84</w>
+      <h>105</h>
     </coordinates>
     <panel_attributes>Women
 --
-</panel_attributes>
+Jerseys
+Cleats
+Shirts
+Shorts
+Pants
+Skirts/Skorts
+
+group=group-2</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>544</x>
-      <y>1212</y>
-      <w>48</w>
-      <h>44</h>
+      <x>413</x>
+      <y>2422</y>
+      <w>84</w>
+      <h>91</h>
     </coordinates>
     <panel_attributes>Boys
 --
-</panel_attributes>
+Jerseys
+Cleats
+Shirts
+Shorts
+Pants
+group=group-2</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>600</x>
-      <y>1212</y>
-      <w>48</w>
-      <h>44</h>
+      <x>511</x>
+      <y>2422</y>
+      <w>84</w>
+      <h>91</h>
     </coordinates>
     <panel_attributes>Girls
 --
-</panel_attributes>
+Jerseys
+Cleats
+Shirts
+Shorts
+Pants
+Skirts/Skorts
+
+group=group-2</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>536</x>
-      <y>1200</y>
-      <w>120</w>
-      <h>64</h>
+      <x>399</x>
+      <y>2401</y>
+      <w>210</w>
+      <h>119</h>
     </coordinates>
     <panel_attributes>Kids
 --
-</panel_attributes>
+
+group=group-2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>609</x>
+      <y>2023</y>
+      <w>252</w>
+      <h>77</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;90.0;340.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>623</x>
+      <y>2093</y>
+      <w>238</w>
+      <h>308</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;420.0;320.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1337</x>
+      <y>2044</y>
+      <w>231</w>
+      <h>49</h>
+    </coordinates>
+    <panel_attributes>Order Numbers
+Registered Users : autoassign 1000#
+Guest Users : autoassign 2000#</panel_attributes>
     <additional_attributes/>
   </element>
 </diagram>
