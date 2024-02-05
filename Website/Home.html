@@ -22,14 +22,52 @@
             <li class="navbar__item">
                 <a href="Home.html" class="navbar__links">Home</a>
             </li>
-            <!-- Add Shop menu with hover dropdown list
-                    Apparel
-                        link to Men's
-                        link to Women's
-                        link to Kids
-                    Sports & Outdoors
-                        List of clickable links to sports here
-            -->
+
+            <!-- Apparel Dropdown -->
+            <div class="dropdown">
+                <button>Shop by Apparel</button>
+                    <div class="dropdown-content">
+                     <a href="#">Men's</a>
+                     <a href="#">Women's</a>
+                     <a href="#">Children's</a>
+                     <a href="#">Teens</a>
+                    </div>
+            </div>
+
+            <!-- Sports Dropdown -->
+            <div class="dropdown">        
+                <button>Shop by Sport</button>
+                    <div class="dropdown-content">
+                     <a href="#">Soccer</a>
+                     <a href="#">Basketball</a>
+                     <a href="#">Running</a>
+                     <a href="#">Football</a>
+                     <a href="#">Baseball</a>
+                    </div>
+            </div>
+
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Search for products...">
+              
+                <button class="search-button">Search</button>
+
+
+                <!---- Basic code for search bar, to be adjusted when pages are availble
+                <script>
+                    document.addEventListener('DOMContentLoaded', function () {
+                      var searchButton = document.querySelector('.search-button');
+                      searchButton.addEventListener('click', function () {
+                        var searchTerm = document.querySelector('.search-input').value;
+                        // Perform search operation based on the searchTerm
+                        console.log('Searching for: ' + searchTerm);
+                        // You can add more logic to handle the search results or navigate to a search results page.
+                      });
+                    });
+                  </script>
+                --->
+
+            </div>
+
             <li class="navbar__item">
                 <a href="about.html" class="navbar__links">About</a>
             </li>
