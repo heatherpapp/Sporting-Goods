@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+.container{
+    width: 900px;
+    max-width: 90vw;
+    margin: auto;
+    text-align: center;
+    padding-top: 10px;
+}
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+.btn__cart {
+    display: inline-block;
+    padding: 10px 15px;
+    text-decoration: none;
+    background-color: #3498db;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.4s ease;
+  }
+  
+  .btn__cart:hover {
+    background-color: gold;
+  }
+  
+  /* Adjust the icon size if needed */
+  .btn__cart i {
+    margin-right: 5px;
+    font-size: 18px;
+  }
+  .listProduct .item img{
+    width: 90%;
+    filter: drop-shadow(0 50px 20px #0009);
+  }
+  .listProduct{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  .listProduct .item{
+    background-color: #eeeee6;
+    padding: 20px;
+    border-radius: 20px;
+  }
+  .listProduct .item h2{
+    font-weight: 500;
+    font-size: large;
+  }
+  .listProduct .item .price{
+    letter-spacing: 7px;
+    font-size: small;
+  }
+  .listProduct .item button{
+    background-color: #353432;
+    color: #eee;
+    padding: 5px 10px;
+    border-radius: 20px;
+    margin-top: 10px;
+    border: none;
+    cursor: pointer;
+  }
