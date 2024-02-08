@@ -8,13 +8,14 @@
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
     </head>
-    <body>
+    <body class="">
 
     <div class="container">
         <header>
             <div class="title">MEN'S APPAREL</div>
-            <a href="Cart.html" class="btn__cart">
+            <div class="icon-cart">
                 <i class='bx bxs-cart-alt'></i>Cart <span>0</span></a>
+            </div>
         </header>
         <div class="listProduct">
             <div class="item">
@@ -24,8 +25,29 @@
                 <button class="addCart">Add to Cart</button>
             </div>
         </div>
-
+    </div>
+    <div class="cartTab">
+        <h1>Shopping Cart</h1>
+        <div class="listCart">
+        <div class="item">
+            <div class="image">
+                <img src="/Heather/Product Images/Baseball/014531222.jpg" alt="">
+            </div>
+            <div class="name">Test Item</div>
+            <div class="totalPrice">$2.99</div>
+            <div class="quantity">
+                <span class="Plus"><</span>
+                <span>1</span>
+                <span class="Minus">></span>
+            </div>
+        </div>
+        </div>
+        <div class="btn">
+            <button class="close">CLOSE</button>
+            <button class="checkOut">Check Out</button>
+        </div>
     </div>
 
+<script src="/Website/Javascript/Apparel.js"></script>
 </body>
 </html>
