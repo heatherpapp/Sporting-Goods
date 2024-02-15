@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>8</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>616</x>
+      <y>128</y>
+      <w>592</w>
+      <h>784</h>
+    </coordinates>
+    <panel_attributes>Product Display WebPage Requirements
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>640</x>
+      <y>216</y>
+      <w>488</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>Navigation
+__
+Home | Shop | My Account | About Us | FAQ | Help</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLInterface</id>
+    <coordinates>
+      <x>1136</x>
+      <y>216</y>
+      <w>64</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>Cart
+--
+Checkout</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>672</x>
+      <y>408</y>
+      <w>296</w>
+      <h>328</h>
+    </coordinates>
+    <panel_attributes>Item Photo</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>680</x>
+      <y>336</y>
+      <w>456</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lw=2
+Item Name</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1032</x>
+      <y>448</y>
+      <w>128</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lw=2
+$ Price</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>1048</x>
+      <y>656</y>
+      <w>96</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=.
+Add To Cart
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1040</x>
+      <y>600</y>
+      <w>112</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>Size Selector 
+Dropdown</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>704</x>
+      <y>768</y>
+      <w>416</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>Description
+
+___
+Age Group:
+Gender:</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
