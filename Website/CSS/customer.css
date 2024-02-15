@@ -1,0 +1,106 @@
+/*Start */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+/*base styles */
+body{
+    font-family: 'Inter', sans-serif;
+    background-image: url(/Images/store.jpg);  
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-attachment: fixed;
+    background-position: center center;
+
+}
+/*basic styles */
+.header{
+    background-color: rgba(19, 22, 26, 0.8);
+}
+
+.header__content{
+    min-height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+.logo{
+
+}
+.logo__img{
+    display: block;
+    height: 100px;
+}
+.nav{
+
+}
+.nav__list{
+display: flex;
+column-gap: 40px;
+}
+.nav__item{
+
+}
+.nav__link{
+    font-size: 15px;
+    color: rgba(255, 255, 255, 1);
+    transition: all 0.4s;
+}
+.nav__link:hover, .nav__link:focus {
+    color: rgb(94, 58, 235);
+}
+.btn{
+    color: white;
+    background-color: blue;
+    padding: 7px 18px;
+    border-radius: 1000px;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 500;
+    transition: all 0.4s;
+}
+.btn:hover{
+    background-color: rgb(237, 58, 58);
+}
+body {
+    font-family: Arial, sans-serif; /* Change the font family */
+    background-color: #f0f0f0; /* Change the background color */
+    color: #333; /* Change the text color */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+}
+
+h1 {
+    font-size: 30px; /* Change the font size */
+    color: #ffffff; /* Change the color of the h1 text */
+    text-align: center; /* Align the h1 text to the center */
+    margin-top: 50px; /* Add space on top of the h1 */
+}
+/* media */
+@media (max-width: 650px){
+    .header__content{
+        flex-direction: column;
+        padding: 25px 0;
+        row-gap: 10px;
+
+    }
+    .nav__list{
+        column-gap: 20px;
+    }
+    .logo__img{
+        
+        display: block;
+        height: 90px;
+    }
+}
