@@ -204,4 +204,15 @@ Home | Shop | My Account | About Us | FAQ | Help
 Copyrights</panel_attributes>
     <additional_attributes/>
   </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1000</x>
+      <y>16</y>
+      <w>328</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>Search...</panel_attributes>
+    <additional_attributes/>
+  </element>
 </diagram>
