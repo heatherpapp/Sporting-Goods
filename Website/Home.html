@@ -1,180 +1,99 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WeSports | Home</title>
+    <meta name="viewport" content="width=device-with, initial-scale=1.0">
+    <title>We Sports | Home</title>
     <link rel="stylesheet" href="/Website/CSS/styles.css">
     <script src="https://kit.fontawesome.com/5b6c8cdace.js" crossorigin="anonymous"></script>
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-
 </head>
 <body>
-  <nav class="navbar">
-    <img class="r3" src="Pictures\1.png" alt="logo">
-    <div class="navbar__container">
-        <div class="navbar__toggle" id="mobile-menu">
-            <span class="bar"></span> <span class="bar"></span>
-            <span class="bar"></span>
-        </div>
-        <ul class="navbar__menu">
-            <li class="navbar__item">
-                <!-- a href="Home.html" class="navbar__links">Home</a -->
-            </li>
-
-            <!-- Apparel Dropdown -->
+<div class="container">
+    <nav>
+        <img src="/Website/Pictures/clearw.png" class="logo">
+        <ul>
+        
             <div class="dropdown">
                 <button>Shop by Apparel</button>
                     <div class="dropdown-content">
                      <a href="Apparel/Mens.html">Men's</a>
-                     <a href="#">Women's</a>
-                     <a href="#">Children's</a>
-                     <a href="#">Teens</a>
+                     <a href="Apparel/">Women's</a>
+                     <a href="Apparel/">Children's</a>
+                     <a href="Apparel/">Teens</a>
                     </div>
             </div>
-
-            <!-- Sports Dropdown -->
             <div class="dropdown">        
                 <button>Shop by Sport</button>
                     <div class="dropdown-content">
                      
-                     <a href="#">Baseball</a>
-                     <a href="#">Basketball</a>
-                     <a href="#">Football</a>
-                     <a href="#">Golf</a>
-                     <a href="#">Running</a>
-                     <a href="#">Soccer</a>
-                     <a href="#">Tennis</a>
-                     <a href="#">Volleyball</a>
+                     <a href="Sports/Baseball.html">Baseball</a>
+                     <a href="Sports/">Basketball</a>
+                     <a href="Sports/">Football</a>
+                     <a href="Sports/">Golf</a>
+                     <a href="Sports/">Running</a>
+                     <a href="Sports/">Soccer</a>
+                     <a href="Sports/">Tennis</a>
+                     <a href="Sports/">Volleyball</a>
                      
                     </div>
+                    
             </div>
 
-            <div class="search-container">
-                <input type="text" class="search-input" placeholder="Search for products...">
-              
-                <button class="search-button">Search</button>
 
-
-                <!---- Basic code for search bar, to be adjusted when pages are availble
-                <script>
-                    document.addEventListener('DOMContentLoaded', function () {
-                      var searchButton = document.querySelector('.search-button');
-                      searchButton.addEventListener('click', function () {
-                        var searchTerm = document.querySelector('.search-input').value;
-                        // Perform search operation based on the searchTerm
-                        console.log('Searching for: ' + searchTerm);
-                        // You can add more logic to handle the search results or navigate to a search results page.
-                      });
-                    });
-                  </script>
-                --->
-
-            </div>
-
-            <!-- li class="navbar__item">
-                <a href="about.html" class="navbar__links">About</a>
-            </li -->
-            <li class="navbar__item">
-                <a href="Login.html" class="navbar__links">Login</a>
-            </li>
-            <a href="Cart.html" class="btn__cart">
-                <i class='bx bxs-cart-alt'></i>Cart
-            </a>
-            </li>
+            <li><a href="/Website/contact.html">Contact Us</a></li>
         </ul>
+        
+        <a href="/Website/Cart.html" class="btn">
+            <i class="fa-solid fa-cart-shopping"></i> Cart
+          </a>
+    </nav>
+    <div class="content">
+        <h1>We sports</h1>
+        <h4>We do Sports</h4>
+        <p>Shop with us today and save!</p>
     </div>
-  </nav>
-<div class="main">
-    <div class="main__container">
-        <div class="main__content">
-            <h1>WeSports</h1>
-            <h2>We do sports</h2>
-            <p>Shop with us</p>
-            <button class="main__btn"><a href="Login.html">Login</a></button>
-        </div>
-        <div class="main__img--container">
-            <video id="vid" controls autoplay muted loop>
-            <source src="" type="video/mp4">
-            <source src="" type="video/ogg">
-            Your browser does not support the video.
-                        </video>
-        </div>
+    <div class="search-container">
+        <input type="text" id="search-input" placeholder="Search...">
+        <button id="search-button" onclick="search()">Search</button>
     </div>
-</div>
-   <div class="services">
-    <h1>Shop With Us Today and Save!</h1>
-    <div class="services__container">
-        <div class="services__card">
-            <form action="men.html" target="_blank">
-            <button>Shop for men</button>
-            </form>
-        </div>
-        <div class="services__card">
-            <form action="women.html">
-            <button>Shop for woman</button>
-            </form>
-        </div>
-        <div class="services__card">
-            <form action="men.html" target="_blank">
-            <button>Shop for kids</button>
-            </form>
-        </div>
-        <div class="services__card">
-            <form action="men.html" target="_blank">
-            <button>Shop for Sports & Outdoor</button>
-            </form>
-        </div>
+    
+
+    <div id="search-results">
+        <!-- Search results will be displayed here -->
     </div>
-   </div>
-   <!-- Footer With Links-->
-   <div class="footer__container">
-    <div class="footer__links">
-        <div class="footer__link--wrapper">
-            <div class="footer__link--items">
-               <h2>About US</h2>
-               <a href="/">How it Works</a>
-               <a href="/">Testimonals</a> 
-               <a href="/">Careers</a>
-               <a href="/">Investments</a>
-               <a href="/">Terms of Service</a>
-            </div>
-        </div>
-        <div class="footer__link--wrapper">
-        </div>
+    <div class="card">
+        <a href="page1.html">
+            <img src="/Website/Pictures/man.jpg" alt="Image 1">
+            <button>Shop Men</button>
+        </a>
     </div>
-    <div class="social__media">
-        <div class="social__media--wrap">
-            <div class="footer__logo">
-                <a href="/" id="footer__logo">
-                    <i class="fas faa-gem"></i>WeSports</a>
-            </div>
-        </div>
+    <div class="card">
+        <a href="page1.html">
+            <img src="/Website/Pictures/woman.jpg" alt="Image 1">
+            <button>Shop Woman</button>
+        </a>
     </div>
-                <p class="website__rights">&copy; Wesports 2024. All rights reserved.</p>
-                <div class="social__icons">
-                    <a href="/" class="social__icon--link" target="_blank">
-                        <i class="fab fa-facebook"></i>
-                    </a>
-                    <a href="/" class="social__icon--link" target="_blank">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="/" class="social__icon--link" target="_blank">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a href="/" class="social__icon--link" target="_blank">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="/" class="social__icon--link" target="_blank">
-                        <i class="fab fa-youtube"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
+    <div class="card">
+        <a href="page1.html">
+            <img src="/Website/Pictures/Kids.jpeg" alt="Image 1">
+            <button>Shop Kids</button>
+        </a>
+    </div><div class="card">
+        <a href="page1.html">
+            <img src="/Website/Pictures/outdoor.jpeg" alt="Image 1">
+            <button>Shop Outdoors</button>
+        </a>
     </div>
 </div>
 
-  <script src="script.js"></script>
+
+
+
+
+
+
+
+
+
+
 </body>
 </html>
