@@ -16,46 +16,34 @@
     <body>
         <div class="container">
             <nav>
-                <a href="/Website/Home.html">
-                    <img src="/Website/Pictures/clearw.png" class="logo">
-                </a>
+                <img src="/Website/Pictures/clearw.png" class="logo">
                 <ul>
                 
+                    <div class="dropdown">
+                        <button>Shop by Apparel</button>
+                            <div class="dropdown-content">
+                            <a href="Apparel/Mens.html">Men's</a>
+                            <a href="Apparel/">Women's</a>
+                            <a href="Apparel/">Junior's</a>
+                            <a href="Apparel/">Youth</a>
+                            </div>
+                    </div>
                     <div class="dropdown">        
                         <button>Shop by Sport</button>
                             <div class="dropdown-content">
                             
-                                <!--Need to Update links to JSP on all-->
-                                <a href="Sports/Baseball.html">Baseball</a>
-                                <a href="Sports/Basketball.html">Basketball</a>
-                                <a href="Sports/Cycling.html">Cycling</a>
-                                <a href="Sports/Football.html">Football</a>
-                                <a href="Sports/Golf.html">Golf</a>
-                                <a href="Sports/Running.html">Running</a>
-                                <a href="Sports/Soccer.html">Soccer</a>
-                                <a href="Sports/Tennis.html">Tennis</a>
-                                <a href="Sports/Volleyball.html">Volleyball</a>                            
-                            </div>                            
-                    </div>
-                    <div class="dropdown">
-                        <button>Shop Outdoors</button>
-                            <div class="dropdown-content">
-                                <a href="Outdoors/Camping.html">Camping</a>
-                                <a href="Outdoors/Cycling.html">Climbing</a>
-                                <a href="Outdoors/Fishing.html">Fishing</a>
-                                <a href="Outdoors/Kayaking.html">Kayaking</a>
+                            <a href="Sports/Baseball.html">Baseball</a>
+                            <a href="Sports/">Basketball</a>
+                            <a href="Sports/">Football</a>
+                            <a href="Sports/">Golf</a>
+                            <a href="Sports/">Running</a>
+                            <a href="Sports/">Soccer</a>
+                            <a href="Sports/">Tennis</a>
+                            <a href="Sports/">Volleyball</a>
+                            
                             </div>
+                            
                     </div>
-                    <div class="dropdown">
-                        <button>Shop by Apparel</button>
-                            <div class="dropdown-content">
-                                <a href="Apparel/Mens.html">Men's</a>
-                                <a href="Apparel/">Women's</a>
-                                <a href="Apparel/">Junior's</a>
-                                <a href="Apparel/">Youth</a>
-                            </div>
-                    </div>
-                    
 
                 </ul>
                 <a href="Login.html" class="login-button">Login</a>
@@ -78,44 +66,54 @@
             <div id="search-results">
                 <!-- Search results will be displayed here -->
             </div>
-            <!-- Need to Center cards on page-->
             <div class="card">
-                <a href="Sports.html">
-                    <img src="/Website/Pictures/MultipleSports.jpg" alt="Sporting Equipment">
-                    <button>Shop Sports</button>
-                </a>
-            </div>
-            <div class="card">
-                <a href="Outdoors.html">
-                    <img src="/Website/Pictures/outdoor.jpeg" alt="Image 1">
-                    <button>Shop Outdoors</button>
-                </a>
-            </div>
-            <div class="card">
-                <a href="Men.html">
+                <a href="Baseball.jsp">
                     <img src="/Website/Pictures/man.jpg" alt="Image 1">
-                    <button>Shop Men's Apparel</button>
+                    <button>Baseball</button>
                 </a>
             </div>
             <div class="card">
-                <a href="Women.html">
+                <a href="Basketball.jsp">
                     <img src="/Website/Pictures/woman.jpg" alt="Image 1">
-                    <button>Shop Women's Apparel</button>
+                    <button>Basketball</button>
                 </a>
             </div>
             <div class="card">
-                <a href="Junior.html">
-                    <img src="/Website/Pictures/TeensPlayingSports.jpg" alt="Image 1">
-                    <button>Shop Junior Apparel</button>
-                </a>
-            </div>
-            <div class="card">
-                <a href="Youth.html">
+                <a href="Football.jsp">
                     <img src="/Website/Pictures/Kids.jpeg" alt="Image 1">
-                    <button>Shop Youth Apparel</button>
+                    <button>Football</button>
                 </a>
             </div>
-            
+            <div class="card">
+                <a href="Golf.jsp">
+                    <img src="/Website/Pictures/outdoor.jpeg" alt="Image 1">
+                    <button>Golf</button>
+                </a>
+            </div>
+            <div class="card">
+                <a href="Running.jsp">
+                    <img src="/Website/Pictures/outdoor.jpeg" alt="Image 1">
+                    <button>Running</button>
+                </a>
+            </div>
+            <div class="card">
+                <a href="Soccer.jsp">
+                    <img src="/Website/Pictures/outdoor.jpeg" alt="Image 1">
+                    <button>Soccer</button>
+                </a>
+            </div>
+            <div class="card">
+                <a href="Tennis.jsp">
+                    <img src="/Website/Pictures/outdoor.jpeg" alt="Image 1">
+                    <button>Tennis</button>
+                </a>
+            </div>
+            <div class="card">
+                <a href="Volleyball.jsp">
+                    <img src="/Website/Pictures/outdoor.jpeg" alt="Image 1">
+                    <button>Volleyball</button>
+                </a>
+            </div>
         </div>
 
         <footer class="footer">
