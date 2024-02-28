@@ -103,9 +103,8 @@ backface-visibility: hidden;
 
 /* Style the front side (fallback if image is missing) */
 .flip-card-front {
-
 border-radius: 25px;
-background-color: #bbb;
+background-color:rgba(192,192,192,0.3);
 color: black;
 }
 
@@ -113,7 +112,7 @@ color: black;
 .flip-card-back {
  
   border-radius: 25px;
-  background-color: #bbb;
+  background-color:rgba(192,192,192,0.3);
   color: black;
   transform: rotateY(180deg);
 }
@@ -148,7 +147,7 @@ nav{
 nav ul{
   list-style: none;
   width: 100%;
-  text-align: right;
+  text-align: center;
   padding-right: 60px;
 }
 nav ul li{
