@@ -55,23 +55,23 @@
     transform: translateY(-50%);
     font-size: 20px;
   }
-  .wrapper .remeber-forgot {
+  .wrapper .remember-forgot {
     display: flex;
     justify-content: space-between;
     font-size: 14.5px;
     margin: -15px 0 15px;
   }
-  .remeber-forgot label input{
+  .remember-forgot label input{
     accent-color: #fff;
     margin-right: 3px;
   }
 
-  .remeber-forgot a{
+  .remember-forgot a{
     color: #fff;
     text-decoration: none;
   }
 
-  .remeber-forgot a:hover{
+  .remember-forgot a:hover{
     text-decoration: underline;
   }
   .wrapper .btn {
