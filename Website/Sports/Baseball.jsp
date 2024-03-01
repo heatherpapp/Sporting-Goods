@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -79,49 +80,49 @@
             </div>
             <!-- Need to Center cards on page-->
             <div class="card">
-                <a href="/Sports/Baseball.jsp">
+                <a href="Baseball.jsp">
                     <img src="/Website/Pictures/baseball_and_bat.jpg" alt="baseball in a glove next to a bat on the ground">
                     <button>Baseball</button>
                 </a>
             </div>
             <div class="card">
-                <a href="/Sports/Basketball.jsp">
+                <a href="Basketball.jsp">
                     <img src="/Website/Pictures/basketball_in_net.jpg" alt="basketball in net">
                     <button>Basketball</button>
                 </a>
             </div>
             <div class="card">
-                <a href="/Sports/Football.jsp">
+                <a href="Football.jsp">
                     <img src="/Website/Pictures/football_and_helmet.jpg" alt="football next to helmet on the ground">
                     <button>Football</button>
                 </a>
             </div>
             <div class="card">
-                <a href="/Sports/Golf.jsp">
+                <a href="Golf.jsp">
                     <img src="/Website/Pictures/golf_tee_club_hand.jpg" alt="hand placing golf ball on a tee with club">
                     <button>Golf</button>
                 </a>
             </div>
             <div class="card">
-                <a href="/Sports/Running.jsp">
+                <a href="Running.jsp">
                     <img src="/Website/Pictures/running_start.jpg" alt="runner crouched at starting line">
                     <button>Running</button>
                 </a>
             </div>
             <div class="card">
-                <a href="/Sports/Soccer.jsp">
+                <a href="Soccer.jsp">
                     <img src="/Website/Pictures/soccerball_in_net_score.jpg" alt="soccer ball in net">
                     <button>Soccer</button>
                 </a>
             </div>
             <div class="card">
-                <a href="/Sports/Tennis.jsp">
+                <a href="Tennis.jsp">
                     <img src="/Website/Pictures/tennis_racquets_balls_net.jpg" alt="tennis rackets leaning against net with balls on the ground">
                     <button>Tennis</button>
                 </a>
             </div>
             <div class="card">
-                <a href="/Sports/Volleyball.jsp">
+                <a href="Volleyball.jsp">
                     <img src="/Website/Pictures/volleyball_hands.jpg" alt="hands lobbing a volleyball">
                     <button>Volleyball</button>
                 </a>
