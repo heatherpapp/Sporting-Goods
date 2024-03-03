@@ -30,6 +30,10 @@ public class Product {
     String ProductCode, ProductName, ProductDescription, QuantityPerUnit, AgeGroup, Gender;
     double UnitPrice;
 
+    //ProductPhoto
+    /**
+     * need to figure out how to retrieve product image from database
+     * jlabel.setIcon(new ImageIcon(getScaled(ImageIO.read(new ByteArrayInputStream(((Attachment[])result.getObject("attachment"))[0].getData())),120,120)));
 
     public void getImage() {
         try {
@@ -38,7 +42,7 @@ public class Product {
             Connection connection = DriverManager.getConnection(DBLocation);
             System.out.println("Database Connected");
 
-            File file = new File()
+
 
 
 
@@ -46,6 +50,102 @@ public class Product {
 
         } catch (Exception e) { System.out.println("Exception" + e); }
     }
+     *
+     *
+     */
+
+    /************* Constructors *************/
+    public Product() {
+        ProductID = 0;
+        ProductCode = "";
+        ProductName = "";
+        ProductDescription = "";
+        UnitPrice = 0.00;
+        QuantityPerUnit = "";
+        ProductCategoryID = 0;
+        AgeGroup = "";
+        Gender = "";
+        //ProductPhoto = attachment???;
+    }
+    public Product(int productID, String productCode, String productName, String productDescription, double unitPrice, String quantityPerUnit, int productCategoryID, String ageGroup, String gender) {
+        ProductID = productID;
+        ProductCode = productCode;
+        ProductName = productName;
+        ProductDescription = productDescription;
+        UnitPrice = unitPrice;
+        QuantityPerUnit = quantityPerUnit;
+        ProductCategoryID = productCategoryID;
+        AgeGroup = ageGroup;
+        Gender = gender;
+        //ProductPhoto = attachment???;
+    }
+
+    /************* Behaviors *************/
+
+    public void setProductID(int productID) { ProductID = productID; }
+    public int getProductID() { return ProductID; }
+    public void setProductCode(String productCode) { ProductCode = productCode; }
+    public String getProductCode() { return ProductCode; }
+    public void setProductName(String productName) { ProductName = productName; }
+    public String getProductName() { return ProductName; }
+    public void setProductDescription(String productDescription) { ProductDescription = productDescription; }
+    public String getProductDescription() { return ProductDescription; }
+    public void setUnitPrice(double unitPrice) { UnitPrice = unitPrice; }
+    public double getUnitPrice() { return UnitPrice; }
+    public void setQuantityPerUnit(String quantityPerUnit) { QuantityPerUnit = quantityPerUnit; }
+    public String getQuantityPerUnit() { return QuantityPerUnit; }
+    public void setProductCategoryID(int productCategoryID) { ProductCategoryID = productCategoryID; }
+    public int getProductCategoryID() { return ProductCategoryID; }
+    public void setAgeGroup(String ageGroup) { AgeGroup = ageGroup; }
+    public String getAgeGroup() { return AgeGroup; }
+    public void setGender(String gender) { Gender = gender; }
+    public String getGender() { return Gender; }
+
+    // public void setProductPhoto(byte productPhoto) { ProductPhoto = productPhoto; }
+    // public byte getProductPhoto() { return ProductPhoto; }
+
+
+    /************* Display *************/
+    public void display() {
+
+        System.out.println("Product ID: " + getProductID());
+        System.out.println("Product Code: " + getProductCode());
+        System.out.println("Product Name: " + getProductName());
+        System.out.println("Product Description: " + getProductDescription());
+        System.out.println("Unit Price" + getUnitPrice());
+        System.out.println("Quantity Per Unit: " + getQuantityPerUnit());
+        System.out.println("Product CategoryID: " + getProductCategoryID());
+        System.out.println("Age Group: " + getAgeGroup());
+        System.out.println("Gender: " + getGender());
+
+    }
+
+    public void selectDB() {
+
+    }
+
+    public void insertDB() {
+
+    }
+
+    public void updateDB() {
+
+    }
+
+    public void deleteDB() {
+        
+    }
+
+
+
+
+
+
+
+
+
+
+
 
 
 }
