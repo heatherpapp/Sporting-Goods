@@ -11,9 +11,13 @@
         <meta name="msapplication-TileColor" content="#da532c">
         <meta name="theme-color" content="#ffffff">
         <link rel="stylesheet" href="/css/styles.css">
+        <!-- <link rel="stylesheet" href="" -->
+        <link rel="stylesheet" href="../css/Preloader.css">
         <script src="https://kit.fontawesome.com/5b6c8cdace.js" crossorigin="anonymous"></script>
     </head>
     <body>
+        <div id="preloader">
+        </div>
         <div class="container">
             <nav>
                 <a href="/shop/Home.html">
@@ -130,6 +134,7 @@
             </div>
         </div>
 
+
         <footer class="footer">
             <p>We Sports</p>
             <nav>
@@ -158,5 +163,13 @@
                             </a>
                         </div>
         </footer>
+        <script>
+
+            var loader = document.getElementById("preloader");
+            window.addEventListener("load", function(){
+                loader.style.display = "none";
+            });
+        </script>
+        <script src="/JavaScript/script.js"></script>
     </body>
 </html>
