@@ -1,0 +1,260 @@
+package Business;
+
+import java.sql.*;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+/**
+ *
+ * @author Rayna
+ */
+public class Distributor {
+    
+    /*************************************************************
+    * The Dentist class is used to hold Dentists Information
+    ***************************************************************/
+    
+    
+    //class properties
+    //public ListofOrders aList = new ListofOrders();
+    private String DistID;
+    private String DistUN;
+    private String DistPW;
+    private String DistFN;
+    private String DistLN;
+    private String DistEm;
+    
+/*************************************************************
+    empty args constructor  
+    ***************************************************************/
+    public Distributor(){
+        super();
+        DistID = "";
+        DistUN = "";
+        DistPW = "";
+        DistFN = "";
+        DistLN = "";
+        DistEm = "";
+    }
+    
+    /*************************************************************
+    constructor with 6 args    
+    ***************************************************************/
+    public Distributor (String ID, String un, String pw, String fn, String ln, String em){
+        super();
+        this.DistID = ID;
+        this.DistUN = un;
+        this.DistPW = pw;
+        this.DistFN = fn;
+        this.DistLN = ln;
+        this.DistEm = em;
+    }
+    
+    /*************************************************************
+    get and set methods
+    ***************************************************************/
+    public String getDistID(){return DistID;}
+    public void setDistID(String ID){DistID = ID;}
+
+    public String getDistUN(){return DistUN;}
+    public void setDistUN(String un){DistUN = un;}
+    
+    public String getDistPW(){return DistPW;}
+    public void setDistPW(String pw){DistPW = pw;}
+    
+    public String getDistFN(){return DistFN;}
+    public void setDistFN(String fn){DistFN = fn;}
+    
+    public String getDistLN(){return DistLN;}
+    public void setDistLN(String ln){DistLN = ln;}
+    
+    public String getDistEm(){return DistEm;}
+    public void setDistEm(String em){DistEm = em;}
+    
+    /*************************************************************
+    display method
+    ***************************************************************/ 
+    public void display(){
+        System.out.println("Distributor ID          :" + getDistID());
+        System.out.println("Distributor Password    :" + getDistPW());
+        System.out.println("Distributor First Name  :" + getDistFN());
+        System.out.println("Distributor Last Name   :" + getDistLN());
+        System.out.println("Distributor Email       :" + getDistEm());
+        System.out.println("=========================");
+    }//end method
+    
+    /*************************************************************
+    selectDB method
+    ***************************************************************/
+    public void selectDB (String ID) {
+        DistID = ID;
+        try{
+            Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
+            Connection con = DriverManager.getConnection("jdbc:ucanaccess://C:/Users/Rayna/Downloads/DentistOfficeACCDB.accdb");
+            Statement stmt = con.createStatement();
+            String sql;
+            sql = "SELECT * from Distributor where DistID = '" + getDistID() + "'";
+            System.out.println(sql);
+            ResultSet rs;
+            rs = stmt.executeQuery(sql);
+            rs.next();
+                setDistID(rs.getString(4));
+                setDistPW(rs.getString(5));
+                setDistFN(rs.getString(1));
+                setDistLN(rs.getString(2));
+                setDistEm(rs.getString(3));
+                
+                con.close();//close the connection
+        }
+        catch (Exception e){
+            System.out.println("Error!" + e);
+        }
+        //getOrders();
+    }//end method
+    
+    /*************************************************************
+    getAppointments method
+    ***************************************************************/    
+    /********public ListofAppt getAppointments() {
+        String ApptDT;
+        Appointment a1;
+        
+        //connecting to the database
+        try{
+            Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
+            Connection con = DriverManager.getConnection("jdbc:ucanaccess://C:/Users/Rayna/Downloads/DentistOfficeACCDB.accdb");
+            Statement stmt = con.createStatement();
+            String sql;
+            sql = "SELECT * from Appointments where dentId = '" + getDenID() +"'";
+            System.out.println(sql);
+            Statement ps = con.createStatement();
+            ResultSet rs;
+            rs = stmt.executeQuery(sql);
+            
+            while(rs.next()) {
+                String PatID = rs.getString("patId");
+                a1 = new Appointment();
+                a1.selectDB(PatID);
+                aList.addAppointment(a1);
+                aList.display();
+                System.out.println("Appointment added to List.");
+            }
+            con.close();
+        }
+        catch (Exception e) {
+            System.out.println("Error!" + e);
+        }
+        return aList;
+    }//end method *******/
+    
+    /*************************************************************
+    insertDB method
+    ***************************************************************/
+    public void insertDB(String ID, String un, String pw, String fn, String ln, String em) {
+        DistID = ID;
+        DistUN = un;
+        DistPW = pw;
+        DistFN = fn;
+        DistLN = ln;
+        DistEm = em;
+        
+        try{Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
+        Connection con = DriverManager.getConnection("jdbc:ucanaccess://C:/Users/Rayna/Downloads/DentistOfficeACCDB.accdb");
+        System.out.println("DB Connected :)");
+        Statement stmt = con.createStatement();
+            String sql = "Insert into Distributor values (?, ?, ?, ?, ?, ?)";
+            System.out.println(sql);
+                PreparedStatement ps = con.prepareStatement(sql);
+                ps.setString(4,ID);
+                ps.setString(6,un);
+                ps.setString(1,pw);
+                ps.setString(2,fn);
+                ps.setString(3,ln);
+                ps.setString(5,em);
+                int x = ps.executeUpdate();
+                if (x==1){
+                    System.out.println("INSERT Successful!!");
+                }
+                else {
+                    System.out.println("INSERT Failed!!");
+                    con.close();
+                }
+        }
+        catch(Exception e){
+            System.out.println("Error!" + e);
+        }
+    }//end method
+      
+  /************************************************************
+    updateDB method
+    *************************************************************/
+    public void updateDB(Distributor d1) {
+        try{
+            Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
+            Connection con = DriverManager.getConnection("jdbc:ucanaccess://C:/Users/Rayna/Downloads/DentistOfficeACCDB.accdb");
+            System.out.println("DB COnnected! :)");
+            Statement stmt = con.createStatement();
+            String sql = "UPDATE Distributor set DistUsername = '" + getDistUN() + "', " +
+                  "DistFirstName = '" + getDistFN() + "' " +
+                  "DistLastName = '" + getDistLN() + "', " +
+                  "DistEmail = '" + getDistEm() + "', " +
+                  "where DistID = " + getDistID() + "'";
+            System.out.println(sql);
+            int x = stmt.executeUpdate(sql);
+            if (x==1) {
+                System.out.println("UPDATE Successful!!");
+            }
+            else {
+                   System.out.println("UPDATE Failed!!");
+                   con.close();
+            }
+        }
+        catch (Exception e) {
+            System.out.println("Error!" + e);
+        }
+    }//end method
+    
+    /*************************************************************
+    deleteDB method
+    ***************************************************************/
+    public void deleteDB(String ID) {
+        try{
+            Class.forName("net.ucanacess.jdbc.UcanaccessDriver");
+            //Step 2: Get Connection to DB   
+            Connection con = DriverManager.getConnection("jdbc:ucanaccess://C:/Users/Rayna/Downloads/DentistOfficeACCDB.accdb");
+            System.out.println("DB Connected :)");
+            Statement stmt = con.createStatement();
+            String sql = "DELETE FROM Distributor WHERE DistID = " + getDistID() + "'";
+            System.out.println(sql);
+            int x = stmt.executeUpdate(sql);
+            if (x==1) {
+                System.out.println("UPDATE Successful!!");
+            }
+            else {
+                   System.out.println("UPDATE Failed!!");
+                   con.close();
+            }
+        }
+        catch(Exception e){
+            System.out.println("Error!" + e);
+        }
+    }//end method
+    
+    /*************************************************************
+    main method for testing
+    ***************************************************************/
+    public static void main(String args []) {
+        Distributor d1 = new Distributor();
+        d1.selectDB("4");
+        d1.display();
+        
+        /*ListofOrders ap = d1.getOrders();
+        
+        for(int i = 0; i < ap.orderArr.length ; i++) {
+            if(ap != null)
+                ap.orderArr[i].display();
+        }*/
+    }//end method
+}
