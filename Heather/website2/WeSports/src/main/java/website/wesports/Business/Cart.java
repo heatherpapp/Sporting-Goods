@@ -51,13 +51,16 @@ public class Cart {
     }
      **/
 
+
     /************* Database *************/
     final String DBDriver = "net.ucanaccess.jdbc.UcanaccessDriver";
     final String DBLocation = "jdbc:ucanaccess://C:/WeSportsDB/WeSports.accdb/";
 
+
     /************* Properties *************/
     String CustEmail, ProductCode;
     int Quantity;
+
 
     /************* Constructors *************/
     public Cart() {
@@ -71,6 +74,7 @@ public class Cart {
         Quantity = quantity;
     }
 
+
     /************* Behaviors *************/
     public void setCustEmail(String custEmail) { CustEmail = custEmail; }
     public String getCustEmail() { return CustEmail; }
@@ -79,23 +83,12 @@ public class Cart {
     public void setQuantity(int quantity) { Quantity = quantity; }
     public int getQuantity() { return Quantity; }
 
+
     /************* Display Results *************/
     public void display() {
-        if (CustID.isEmpty()) System.out.println("***** You must enter a Customer ID *****");
-        System.out.println("=======================================================");
-        System.out.println("Customer Email: " + getCustEmail());
-        System.out.println("Customer FirstName: " + getCustFirstName());
-        System.out.println("Customer LastName: " + getCustLastName());
-        System.out.println("Customer Address: " + getCustStreet() + "\n" + getCustCity() + " ," + getCustState() + " " + getCustZip());
-        System.out.println("Customer Username: " + getCustUsername());
-        System.out.println("Customer PW: " + getCustPassword());
-        System.out.println("Customer ID: " + getCustID());
-        System.out.println("Cart");
-        Cart.displayList();
-        System.out.println("Orders Awaiting Shipping");
-        Order.displayList();
-        System.out.println("=======================================================\n");
+
     } // END display()
+
 
     /*************Check if Cart Exists *************/
     public boolean cartExists(String cemail, Connection connection) {
@@ -118,5 +111,32 @@ public class Cart {
         // Return boolean result of customerExists()
         return exists;
     } // END recordExists()
+
+
+    /************* Select from Database: Carts *************/
+    public void selectCDB() {
+
+    } // END selectCDB
+
+
+    /************* Insert New Cart into Database *************/
+    public void insertCDB() {
+
+    } // END insertCDB
+
+
+    /************* Update Existing Cart in Database *************/
+    public void updateCDB() {
+
+    } // END updateCDB
+
+
+    /************* Delete Item in Cart from Database *************/
+    public void deleteCDB() {
+
+    } // END deleteCDB
+
+
+
 
 }

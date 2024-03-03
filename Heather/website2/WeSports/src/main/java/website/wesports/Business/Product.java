@@ -26,8 +26,8 @@ public class Product {
     final String DBLocation = "jdbc:ucanaccess://C:/WeSportsDB/WeSports.accdb/";
 
     /************* Properties *************/
-    String ProductCode, ProductName, ProductDescription, AgeGroup, Gender;
-    int ProductCategoryID;
+    String ProductCode, ProductName, ProductDescription; // primary product info
+    String AgeGroup, Gender, Department, Section; // search tags
     double UnitPrice;
 
     //ProductPhoto
@@ -60,17 +60,19 @@ public class Product {
         ProductName = "";
         ProductDescription = "";
         UnitPrice = 0.00;
-        ProductCategoryID = 0;
+        Department = "";
+        Section = "";
         AgeGroup = "";
         Gender = "";
         //ProductPhoto = attachment???;
     }
-    public Product(String productCode, String productName, String productDescription, double unitPrice, String quantityPerUnit, int productCategoryID, String ageGroup, String gender) {
+    public Product(String productCode, String productName, String productDescription, double unitPrice, String department, String section, String ageGroup, String gender) {
         ProductCode = productCode;
         ProductName = productName;
         ProductDescription = productDescription;
         UnitPrice = unitPrice;
-        ProductCategoryID = productCategoryID;
+        Department = department;
+        Section = section;
         AgeGroup = ageGroup;
         Gender = gender;
         //ProductPhoto = attachment???;
@@ -85,8 +87,10 @@ public class Product {
     public String getProductDescription() { return ProductDescription; }
     public void setUnitPrice(double unitPrice) { UnitPrice = unitPrice; }
     public double getUnitPrice() { return UnitPrice; }
-    public void setProductCategoryID(int productCategoryID) { ProductCategoryID = productCategoryID; }
-    public int getProductCategoryID() { return ProductCategoryID; }
+    public void setDepartment(String department) { Department = department; }
+    public String getDepartment() { return Department; }
+    public void setSection(String section) { Section = section; }
+    public String getSection() { return Section; }
     public void setAgeGroup(String ageGroup) { AgeGroup = ageGroup; }
     public String getAgeGroup() { return AgeGroup; }
     public void setGender(String gender) { Gender = gender; }
@@ -103,7 +107,8 @@ public class Product {
         System.out.println("Product Name: " + getProductName());
         System.out.println("Product Description: " + getProductDescription());
         System.out.println("Unit Price" + getUnitPrice());
-        System.out.println("Product CategoryID: " + getProductCategoryID());
+        System.out.println("Department: " + getDepartment());
+        System.out.println("Section: " + getSection());
         System.out.println("Age Group: " + getAgeGroup());
         System.out.println("Gender: " + getGender());
 
@@ -132,7 +137,8 @@ public class Product {
             setProductName(rs.getString("ProductName"));
             setProductDescription(rs.getString("ProductDescription"));
             setUnitPrice(rs.getDouble("UnitPrice"));
-            setProductCategoryID(rs.getInt("ProductCategoryID"));
+            setDepartment(rs.getString("Department"));
+            setSection(rs.getString("Section"));
             setAgeGroup(rs.getString("AgeGroup"));
             setGender(rs.getString("Gender"));
             connection.close();
@@ -142,12 +148,13 @@ public class Product {
     } // END selectPDB
 
     /************* Insert Product from Database: Products *************/
-    public void insertPDB(String productCode, String productName, String productDescription, double unitPrice, int productCategoryID, String ageGroup, String gender) {
+    public void insertPDB(String productCode, String productName, String productDescription, double unitPrice, String department, String section, String ageGroup, String gender) {
         setProductCode(productCode);
         setProductName(productName);
         setProductDescription(productDescription);
         setUnitPrice(unitPrice);
-        setProductCategoryID(productCategoryID);
+        setDepartment(department);
+        setSection(section);
         setAgeGroup(ageGroup);
         setGender(gender);
 
@@ -160,7 +167,7 @@ public class Product {
             // Check if CustID record exists
             if (!productExists(productCode, connection)) {
                 // Create SQL string
-                String sql = "INSERT INTO Products(ProductCode, ProductName, ProductDescription, UnitPrice, ProductCategoryID, AgeGroup, Gender) Values(?,?,?,?,?,?,?)";
+                String sql = "INSERT INTO Products(ProductCode, ProductName, ProductDescription, UnitPrice, Department, Section, AgeGroup, Gender) Values(?,?,?,?,?,?,?,?)";
 
                 // Prepare SQL statement
                 PreparedStatement pStmt = connection.prepareStatement(sql);
@@ -171,9 +178,10 @@ public class Product {
                 pStmt.setString(2, productName);
                 pStmt.setString(3, productDescription);
                 pStmt.setDouble(4, unitPrice);
-                pStmt.setInt(5, productCategoryID);
-                pStmt.setString(6, ageGroup);
-                pStmt.setString(7, gender);
+                pStmt.setString(5, department);
+                pStmt.setString(6, section);
+                pStmt.setString(7, ageGroup);
+                pStmt.setString(8, gender);
 
                 // Execute SQL Statement & Do Insert
                 int n = pStmt.executeUpdate();
@@ -205,7 +213,8 @@ public class Product {
             String sql = "UPDATE Products SET ProductName = '" + getProductName() + "',"
                     + " ProductDescription = '" + getProductDescription() + "',"
                     + " UnitPrice = '" + getUnitPrice() +"',"
-                    + " ProductCategoryID = '" + getProductCategoryID() + "',"
+                    + " Department = '" + getDepartment() + "',"
+                    + " Section = '" + getSection() + "',"
                     + " AgeGroup = '" + getAgeGroup() + "',"
                     + " Gender = '" + getGender() + "'"
                     + " WHERE ProductCode = '" + getProductCode() + "'";
