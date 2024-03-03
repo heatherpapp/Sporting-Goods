@@ -1,4 +1,4 @@
-package website.wesports.Servlets;
+package website.wesports.Examples.Serv;
 
 import java.io.*;
 import jakarta.servlet.http.*;

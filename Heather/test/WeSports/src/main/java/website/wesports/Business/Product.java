@@ -26,8 +26,8 @@ public class Product {
     final String DBLocation = "jdbc:ucanaccess://C:/WeSportsDB/WeSports.accdb/";
 
     /************* Properties *************/
-    int ProductID, ProductCategoryID;
     String ProductCode, ProductName, ProductDescription, QuantityPerUnit, AgeGroup, Gender;
+    int ProductCategoryID;
     double UnitPrice;
 
     //ProductPhoto
@@ -56,7 +56,6 @@ public class Product {
 
     /************* Constructors *************/
     public Product() {
-        ProductID = 0;
         ProductCode = "";
         ProductName = "";
         ProductDescription = "";
@@ -67,8 +66,7 @@ public class Product {
         Gender = "";
         //ProductPhoto = attachment???;
     }
-    public Product(int productID, String productCode, String productName, String productDescription, double unitPrice, String quantityPerUnit, int productCategoryID, String ageGroup, String gender) {
-        ProductID = productID;
+    public Product(String productCode, String productName, String productDescription, double unitPrice, String quantityPerUnit, int productCategoryID, String ageGroup, String gender) {
         ProductCode = productCode;
         ProductName = productName;
         ProductDescription = productDescription;
@@ -81,9 +79,6 @@ public class Product {
     }
 
     /************* Behaviors *************/
-
-    public void setProductID(int productID) { ProductID = productID; }
-    public int getProductID() { return ProductID; }
     public void setProductCode(String productCode) { ProductCode = productCode; }
     public String getProductCode() { return ProductCode; }
     public void setProductName(String productName) { ProductName = productName; }
@@ -108,7 +103,6 @@ public class Product {
     /************* Display *************/
     public void display() {
 
-        System.out.println("Product ID: " + getProductID());
         System.out.println("Product Code: " + getProductCode());
         System.out.println("Product Name: " + getProductName());
         System.out.println("Product Description: " + getProductDescription());
@@ -120,7 +114,7 @@ public class Product {
 
     }
 
-    public void selectDB() {
+    public void selectDB(String productCode) {
 
     }
 
