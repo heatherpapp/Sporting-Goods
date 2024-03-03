@@ -65,6 +65,15 @@
     </nav>
 </div>
 
+<div class="content">
+    <h1>We sports</h1>
+    <h4>We do Sports</h4>
+    <p>Shop with us today and save!</p>
+</div>
+<div class="search-container">
+    <input type="text" id="search-input" placeholder="Search...">
+    <button id="search-button" onclick="search()">Search</button>
+</div>
 
 
 
