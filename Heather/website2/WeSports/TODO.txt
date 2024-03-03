@@ -4,7 +4,14 @@
     - thanks.html
 
 * Create Cart.html to show cart
-    -
+    When a customer checks out:
+        - Show cart
+            with buttons/links to:
+                * Login then Checkout
+                * Checkout without Logging in
+            - confirm billing and shipping info
+                * billing info will NOT be processed --- dummy fields, no table for storage
+                * shipping info WILL BE stored in Customer table
 
 * Business Objects:
     - Customer
@@ -26,11 +33,7 @@
     - ProcessOrderServlet
 
 
-When a customer checks out:
-Show cart
-    buttons to:
-        Login then Checkout
-        Checkout without Logging in
+
 
 
 ??? Questions ???
