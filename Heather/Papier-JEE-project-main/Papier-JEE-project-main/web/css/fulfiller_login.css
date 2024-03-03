@@ -1,0 +1,19 @@
+.container{
+    padding: 20px;
+    background-color: #F7F7F7;
+    border-radius: 25px;
+}
+
+.form-control {
+    text-align: center;
+}
+
+/* Moves submit button down a little */
+input[type=submit] {
+    margin-top: 10px;
+}
+
+/* Moves "Sign up now" down a little */
+.sign-up {
+    margin-top: 5px;
+}

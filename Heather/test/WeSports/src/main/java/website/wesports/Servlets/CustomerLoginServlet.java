@@ -4,7 +4,7 @@ package website.wesports.Servlets;
  * Class: CIST 2931 : Advanced Systems Project Management
  * Term: Spring 2024
  * Instructor: Chris Bishop
- * Description: Customer Business Object
+ * Description: Customer Login Servlet
  * Authors: Heather Papp
  *
  *
@@ -23,12 +23,17 @@ import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet(name = "LoginServlet", urlPatterns = {"/LoginServlet"})
+/**
+ *   Servlet for Customer Login Page
+ * @author Heather Papp
+ */
+
+@WebServlet(name = "CustomerLoginServlet", urlPatterns = {"/CustomerLoginServlet"})
 public class CustomerLoginServlet extends HttpServlet {
 
     private String message;
-    private static final String DBLocation = "jdbc:ucanaccess://C:/Users/heath/OneDrive/Documents/Business/Chatt Tech/JAVA/databaseFiles/ChattBankACCDB.accdb/";
-    private static final String Driver = "net.ucanaccess.jdbc.UcanaccessDriver";
+    private static final String DBDriver = "net.ucanaccess.jdbc.UcanaccessDriver";
+    private static final String DBLocation = "jdbc:ucanaccess://C:/WeSportsDB/WeSports.accdb/";
 
     public void init() throws ServletException {
         message = "Valid Login";

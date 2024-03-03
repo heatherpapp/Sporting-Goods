@@ -12,58 +12,81 @@ package website.wesports.Business;
  */
 
 import java.sql.*;
+
+/**
+ *   Business Object for Customer
+ * @author Heather Papp
+ */
 public class Customer {
 
-    private String CustID, CustPass, CustUserName;
-    private String CustFirstName, CustLastName, CustAddress, CustEmail;
+    /************* Properties *************/
+    String CustEmail, CustFirstName, CustLastName, CustStreet, CustCity, CustState, CustZip, CustPassword, CustUsername, CustID;
+
+    ProductList cart;
+    ProductList order;
 
     //public AccountList accountList = new AccountList();
-    final static String DBDriver = "net.ucanaccess.jdbc.UcanaccessDriver";
-    final static String DBLocation = "jdbc:ucanaccess://Sporting-Goods/Database/WeSports.accdb;showSchema=true";
+
+    final String DBDriver = "net.ucanaccess.jdbc.UcanaccessDriver";
+    final String DBLocation = "jdbc:ucanaccess://C:/WeSportsDB/WeSports.accdb/";
 
     /************* Constructors *************/
     public Customer() {
-        CustID = "";
-        CustPass = "";
-        CustUserName = "";
+
+        CustEmail = "";
         CustFirstName = "";
         CustLastName = "";
-        CustAddress = "";
-        CustEmail = "";
+        CustStreet = "";
+        CustCity = "";
+        CustState = "";
+        CustZip = "";
+        CustUsername = "";
+        CustPassword = "";
+        CustID = "";
     }
-    public Customer(String cid, String cpw, String cun, String cfn, String cln, String cad, String cem) {
-        CustID = cid;
-        CustPass = cpw;
-        CustUserName = cun;
-        CustFirstName = cfn;
-        CustLastName = cln;
-        CustAddress = cad;
-        CustEmail = cem;
+    public Customer(String custID, String custEmail, String custFirstName, String custLastName, String custStreet, String custCity, String custState, int custZip, String custUsername, String custPassword) {
+        CustID = "";
+        CustEmail = "";
+        CustFirstName = "";
+        CustLastName = "";
+        CustStreet = "";
+        CustCity = "";
+        CustState = "";
+        CustZip = "";
+        CustUsername = "";
+        CustPassword = "";
     }
 
     /************* Behaviors *************/
-    public void setCustID(String cid) { CustID = cid; }
+    public void setCustID(String custID) { CustID = custID; }
     public String getCustID() { return CustID; }
-    public void setCustPW(String cpw) { CustPass = cpw; }
-    public String getCustPW() { return CustPass; }
-    public void setCustUserName(String cun) { CustUserName = cun; }
-    public String getCustUserName() { return CustUserName; }
-    public void setFname(String cfn) { CustFirstName = cfn; }
-    public String getFname() { return CustFirstName; }
-    public void setLname(String cln) { CustLastName = cln; }
-    public String getLname() { return CustLastName; }
-    public void setAddr(String cad) { CustAddress = cad; }
-    public String getAddr() { return CustAddress; }
-    public void setEmail(String cem) { CustEmail = cem; }
-    public String getEmail() { return CustEmail; }
+    public void setCustPassword(String custPass) { CustPassword = custPass; }
+    public String getCustPassword() { return CustPassword; }
+    public void setCustUsername(String custUsername) { CustUsername = custUsername; }
+    public String getCustUsername() { return CustUsername; }
+    public void setCustFirstName(String custFirstName) { CustFirstName = custFirstName; }
+    public String getCustFirstName() { return CustFirstName; }
+    public void setCustLastName(String custLastName) { CustLastName = custLastName; }
+    public String getCustLastName() { return CustLastName; }
+    public void setCustStreet(String custStreet) { CustStreet = custStreet; }
+    public String getCustStreet() { return CustStreet; }
+    public void setCustCity(String custCity) { CustCity = custCity; }
+    public String getCustCity() { return CustCity; }
+    public void setCustState(String custState) { CustState = custState; }
+    public String getCustState() { return CustState; }
+    public void setCustZip(String custZip) { CustZip = custZip; }
+    public String getCustZip() { return CustZip; }
+    public void setCustEmail(String custEmail) { CustEmail = custEmail; }
+    public String getCustEmail() { return CustEmail; }
 
     /*************Check if Record Exists *************/
-    public boolean custIDExists(String cid, Connection connection) {
+    public boolean customerExists(String cemail, Connection connection) {
         boolean exists = false;
         try {
             // Create SQL statement & string
             Statement stmt = connection.createStatement();
-            String sql = "SELECT * FROM Customers WHERE CustID = '" + getCustID() + "'";
+            String sql = "SELECT * FROM Customers WHERE CustEmail = '" + getCustEmail() + "'";
+            //String sql = "SELECT * FROM Customers WHERE CustID = '" + getCustID() + "'";
 
             // Execute SQL Query
             ResultSet rs = stmt.executeQuery(sql);
@@ -71,10 +94,11 @@ public class Customer {
             // Check if CustID record exists
             if (rs.next()) {
                 if(rs.getInt(1) != 0) exists = true;
-                System.out.println("Customer ID: " + cid + " Exists");
+                System.out.println("Customer Email: " + cemail);
+                //System.out.println("Customer ID: " + cid + " Exists");
             }
         } catch (Exception e) { System.out.println("Exception: " + e); }
-        // Return boolean result of recordExists()
+        // Return boolean result of customerExists()
         return exists;
     } // END recordExists()
 
@@ -82,51 +106,21 @@ public class Customer {
     public void display() {
         if (CustID.isEmpty()) System.out.println("***** You must enter a Customer ID *****");
         System.out.println("=======================================================");
-        System.out.println("Customer ID: " + getCustID());
-        System.out.println("Customer PW: " + getCustPW());
-        System.out.println("Customer FirstName: " + getFname());
-        System.out.println("Customer LastName: " + getLname());
-        System.out.println("Customer Address: " + getAddr());
-        System.out.println("Customer Email: " + getEmail());
-        accountList.displayList();
+        System.out.println("Customer Email: " + getCustEmail());
+        System.out.println("Customer FirstName: " + getCustFirstName());
+        System.out.println("Customer LastName: " + getCustLastName());
+        System.out.println("Customer Address: " + getCustStreet() + "\n" + getCustCity() + " ," + getCustState() + " " + getCustZip());
+        System.out.println("Customer Username: " + getCustUsername());
+        System.out.println("Customer PW: " + getCustPassword());
+        System.out.println("Customer Email: " + getCustID());
+        //accountList.displayList();
         System.out.println("=======================================================\n");
     } // END display()
 
-    /************* Get Customer Accounts from Database Accounts *************/
-    public void getAccounts() {
-        // Accounts > 1AcctNo 2Cid 3Type 4Balance
-        try {
-            // Get connection to database
-            Connection connection = DriverManager.getConnection(DBLocation);
-            System.out.println("Database Connected\n************* Ready for Accounts Retrieval *************");
-
-            // Create SQL statement & string
-            Statement stmt = connection.createStatement();
-            String sql = "SELECT AcctNo FROM Accounts WHERE Cid = '" + getCustID() + "'";
-
-            // Execute SQL Query
-            ResultSet rs = stmt.executeQuery(sql);
-            System.out.println("SQL Query: " + sql);
-            String acctNo;
-            Account a1;
-
-            while (rs.next()) {
-                acctNo = rs.getString(1);
-                System.out.println("AccountNo: " + acctNo);
-                a1 = new Account();
-                a1.selectADB(acctNo);
-                accountList.addAccount(a1);
-                System.out.println("Account added to Customer ID: " + getCustID() + "'s Account List");
-            }
-            // Close Connection
-            connection.close();
-        } catch (Exception e) { System.out.println("Exception: " + e); }
-    } // END getAccounts()
-
-    /************* Select Customer from Database Customers *************/
-    public void selectDB(String cid) {
-        // Customers > 1CustID 2CustPassword 3CustFirstName 4CustLastName 5CustAddress 6CustEmail
-        CustID = cid;
+    /************* Select from Database: Customers *************/
+    public void selectDB(String cem) {
+        CustEmail = cem;
+        //CustID = cid;
         try {
             // Get connection to database
             Class.forName(DBDriver);
@@ -134,10 +128,11 @@ public class Customer {
             System.out.println("Database Connected");
 
             // Check if CustID record exists
-            if (custIDExists(cid, connection)) {
+            if (customerExists(cem, connection)) {
                 //Create SQL statement & string
                 Statement stmt = connection.createStatement();
-                String sql = "SELECT * FROM Customers WHERE CustID = '" + getCustID() + "'";
+                String sql = "SELECT * FROM Customers WHERE CustEmail = '" + getCustEmail() + "'";
+                //String sql = "SELECT * FROM Customers WHERE CustID = '" + getCustID() + "'";
 
                 // Execute SQL Query
                 ResultSet rs = stmt.executeQuery(sql);
@@ -145,28 +140,39 @@ public class Customer {
 
                 // Info to retrieve
                 rs.next();
-                setCustPW(rs.getString(2));
-                setFname(rs.getString(3));
-                setLname(rs.getString(4));
-                setAddr(rs.getString(5));
-                setEmail(rs.getString(6));
+
+                setCustEmail(rs.getString(2));
+                setCustFirstName(rs.getString(3));
+                setCustLastName(rs.getString(4));
+                setCustStreet(rs.getString(5));
+                setCustCity(rs.getString(6));
+                setCustState(rs.getString(7));
+                setCustZip(rs.getString(8));
+                setCustUsername(rs.getString(9));
+                setCustPassword(rs.getString(10));
 
             } else System.out.println("***** Customer Retrieval ERROR! ***** \n***** Customer ID: " + cid + " does NOT exist! *****");
             // Close Connection
             connection.close();
         } catch (Exception e) { System.out.println("Exception" + e); }
+        /**
         getAccounts();
+         **/
     } // END selectDB()
 
     /************* Insert into Database *************/
-    public void insertDB(String cid, String cpw, String cfn, String cln, String cad, String cem) {
+    public void insertDB(String cid, String cpassword, String cfirstname, String clastname, String cstreet, String ccity, String cstate, String czip, String cemail) {
         // Customers > 1CustID 2CustPassword 3CustFirstName 4CustLastName 5CustAddress 6CustEmail
         CustID = cid;
-        CustPass = cpw;
-        CustFirstName = cfn;
-        CustLastName = cln;
-        CustAddress = cad;
-        CustEmail = cem;
+        CustPassword = cpassword;
+        CustFirstName = cfirstname;
+        CustLastName = clastname;
+        CustStreet = cstreet;
+        CustCity = ccity;
+        CustState = cstate;
+        CustZip = czip;
+        CustEmail = cemail;
+
         try {
             // Get connection to database
             Class.forName(DBDriver);
@@ -174,9 +180,9 @@ public class Customer {
             System.out.println("Database Connected");
 
             // Check if CustID record exists
-            if (!custIDExists(cid, connection)) {
+            if (!customerExists(cid, connection)) {
                 // Create SQL string
-                String sql = "INSERT INTO Customers(CustID, CustPassword, CustFirstName, CustLastName, CustAddress, CustEmail) Values(?,?,?,?,?,?)";
+                String sql = "INSERT INTO Customers(CustID, CustEmail, CustFirstName, CustLastName, CustStreet, CustCity, CustState, CustZip, CustUsername, CustPassword) Values(?,?,?,?,?,?, ?, ?, ?, ?)";
 
                 // Prepare SQL statement
                 PreparedStatement pStmt = connection.prepareStatement(sql);

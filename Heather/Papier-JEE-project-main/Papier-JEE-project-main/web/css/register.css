@@ -1,0 +1,19 @@
+.container{
+    padding: 20px;
+    background-color: #F7F7F7;
+    border-radius: 25px;
+}
+
+.form-control {
+    text-align: center;
+}
+
+/* Moves submit and reset buttons down a little */
+input[type=submit], input[type=reset] {
+    margin-top: 10px;
+}
+
+/* Moves "Login here" down a little */
+.login {
+    margin-top: 5px;
+}
