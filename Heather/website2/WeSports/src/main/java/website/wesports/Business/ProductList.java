@@ -36,6 +36,7 @@ public class ProductList {
         }
     } // END displayList()
 
+    // get product from a specific index
     public Product getProduct(int index) {
         Product aProduct = productArray[index];
         return aProduct;

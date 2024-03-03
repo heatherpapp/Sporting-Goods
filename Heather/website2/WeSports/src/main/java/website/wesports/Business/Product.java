@@ -26,7 +26,7 @@ public class Product {
     final String DBLocation = "jdbc:ucanaccess://C:/WeSportsDB/WeSports.accdb/";
 
     /************* Properties *************/
-    String ProductCode, ProductName, ProductDescription, QuantityPerUnit, AgeGroup, Gender;
+    String ProductCode, ProductName, ProductDescription, AgeGroup, Gender;
     int ProductCategoryID;
     double UnitPrice;
 
@@ -60,7 +60,6 @@ public class Product {
         ProductName = "";
         ProductDescription = "";
         UnitPrice = 0.00;
-        QuantityPerUnit = "";
         ProductCategoryID = 0;
         AgeGroup = "";
         Gender = "";
@@ -71,7 +70,6 @@ public class Product {
         ProductName = productName;
         ProductDescription = productDescription;
         UnitPrice = unitPrice;
-        QuantityPerUnit = quantityPerUnit;
         ProductCategoryID = productCategoryID;
         AgeGroup = ageGroup;
         Gender = gender;
@@ -87,8 +85,6 @@ public class Product {
     public String getProductDescription() { return ProductDescription; }
     public void setUnitPrice(double unitPrice) { UnitPrice = unitPrice; }
     public double getUnitPrice() { return UnitPrice; }
-    public void setQuantityPerUnit(String quantityPerUnit) { QuantityPerUnit = quantityPerUnit; }
-    public String getQuantityPerUnit() { return QuantityPerUnit; }
     public void setProductCategoryID(int productCategoryID) { ProductCategoryID = productCategoryID; }
     public int getProductCategoryID() { return ProductCategoryID; }
     public void setAgeGroup(String ageGroup) { AgeGroup = ageGroup; }
@@ -107,7 +103,6 @@ public class Product {
         System.out.println("Product Name: " + getProductName());
         System.out.println("Product Description: " + getProductDescription());
         System.out.println("Unit Price" + getUnitPrice());
-        System.out.println("Quantity Per Unit: " + getQuantityPerUnit());
         System.out.println("Product CategoryID: " + getProductCategoryID());
         System.out.println("Age Group: " + getAgeGroup());
         System.out.println("Gender: " + getGender());

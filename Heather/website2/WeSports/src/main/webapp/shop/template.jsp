@@ -95,7 +95,7 @@
             <!--<li><a href="thanks.html">Thank you</a></li>Not needed... Intended for contact page. So once they tried to contact us, it linked to a thank you page to acknowledge-->
         </ul>
     </nav>
-    <p class="website__rights">&copy; Wesports 2024. All rights reserved.</p>
+    <p class="website__rights">&copy; WeSports 2024. All rights reserved.</p>
     <div class="social__icons">
         <a href="/" class="social__icon--link" target="_blank">
             <i class="fab fa-facebook"></i>

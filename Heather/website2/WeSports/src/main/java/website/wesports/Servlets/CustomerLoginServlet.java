@@ -44,15 +44,15 @@ public class CustomerLoginServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
 
         String id, pw;
-        id = request.getParameter("customerID"); //CustID form textbox
-        pw = request.getParameter("password"); //CustPassword form textbox
-        System.out.println("CustomerID: " + id + "\nCustomerPassword: " + pw + "\n");
+        id = request.getParameter("Username"); //CustID form textbox
+        pw = request.getParameter("Password"); //CustPassword form textbox
+        System.out.println("Username: " + id + "\nCustomerPassword: " + pw + "\n");
 
         Customer c1 = new Customer();
         c1.selectDB(id);
 
-        String idDB = c1.getCustID();
-        String pwDB = c1.getCustPW();
+        String idDB = c1.getCustUsername();
+        String pwDB = c1.getCustPassword();
         System.out.println("DBID: " + idDB + "\nDBPW: " + pwDB );
 
         HttpSession ses1 = request.getSession();
@@ -63,7 +63,7 @@ public class CustomerLoginServlet extends HttpServlet {
 
         if (pwDB.equals(pw)) {
             // Successful login forward to DisplayAccount.jsp CHANGE THIS
-            url = "/DisplayAccount.jsp";
+            url = "/CustomerAccountView.html";
             rdObj = request.getRequestDispatcher(url);
             rdObj.forward(request, response);
 
