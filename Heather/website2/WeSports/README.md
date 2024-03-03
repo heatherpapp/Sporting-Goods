@@ -1,4 +1,4 @@
-# WeSports Sporting Goods Website
+# WeSports : A Sporting Goods Website
 
 - CIST 2931 : Advanced Systems Project Management 
 
