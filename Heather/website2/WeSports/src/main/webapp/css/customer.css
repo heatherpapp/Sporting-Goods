@@ -14,7 +14,7 @@ a{
 /*base styles */
 body{
     font-family: 'Inter', sans-serif;
-    background-image: url(/Images/store.jpg);  
+    background-image: url(../pictures/store.jpg);
     background-repeat: no-repeat;
     background-size: cover; 
     background-attachment: fixed;

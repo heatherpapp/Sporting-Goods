@@ -11,7 +11,7 @@
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background:  url('/Website/Pictures/sports.jpg');
+    background:  url('../pictures/sports.jpg');
   background-size: cover;
   }
   
@@ -37,7 +37,6 @@
     width: 100%;
     height: 100%;
     background: transparent;
-    border: none;
     outline: none;
     border: 2px solid rgba(255, 255, 255, .2);
     border-radius: 40px;
@@ -91,7 +90,7 @@
   .wrapper .register-link{
     font-size: 14.5px;
     text-align: center;
-   margin: 20px 0 15px;
+    margin: 20px 0 15px;
   }
   .register-link p a {
     color: white;

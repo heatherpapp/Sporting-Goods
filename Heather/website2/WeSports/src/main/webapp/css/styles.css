@@ -8,7 +8,7 @@
     position: relative;
     width: 100%;
     min-height: 100vh;
-    background-image: linear-gradient(rgba(9,0,77,0.65),rgba(9,0,77,0.65)), url(/Website/Pictures/pexels-juan-salamanca-61135.jpg);
+    background-image: linear-gradient(rgba(9,0,77,0.65),rgba(9,0,77,0.65)), url(../pictures/pexels-juan-salamanca-61135.jpg);
     background-size: cover;
     background-position: center;
     padding: 10px 8%;
@@ -258,22 +258,17 @@ p {
     padding-bottom: 8px;
     padding: 8px;
     margin: 0 5px; /* Adjust spacing between icons */
-<<<<<<< HEAD
-    font-size: 20px;
-    color: black;
-}
-
-.thanks{
-    margin: 15%; /*For thanks page*/
-}
-=======
     font-size: 25px;
     color: white; /* Icon color */
     text-decoration: none; /* Remove default underline */
     transition: color 0.4s; /* Smooth color transition */
 }
 
+.thanks{
+    margin: 15%; /*For thanks page*/
+}
+
 .social__icon--link:hover {
     color: #302f2f; /* Change color on hover */
 }
->>>>>>> ddcecd4144e8cc1e9d883e56ff2df342a39c08ba
+

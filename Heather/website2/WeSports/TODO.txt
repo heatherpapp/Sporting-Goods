@@ -1,0 +1,26 @@
+* Signup.css error on line 106
+
+* Corners of page are oddly rounded:
+    - thanks.html
+
+* Create Cart.html to show cart
+    -
+
+* Business Objects:
+    - Customer
+    - Distributor
+    - Cart
+    - Product
+    - ProductList
+    - Checkout
+
+* Servlets:
+    - CustomerLoginServlet
+    - NewCustomerServlet
+    - CustomerUpdateServlet
+    - DistributorLoginServlet
+    - LogoutServlet
+    - AddToCartServlet
+    - CheckoutServlet
+    - GetOrderServlet
+    - ProcessOrderServlet

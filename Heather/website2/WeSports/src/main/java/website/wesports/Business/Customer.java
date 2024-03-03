@@ -384,4 +384,54 @@ public class Customer {
             connection.close();
         } catch (Exception e) { System.out.println("Exception" + e); }
     } // END deleteDB()
+
+    /************* Get Cart from Database *************/
+    public void getCartDB()
+    {
+        Cart = new ProductList();
+        try {
+            // Get connection to database
+            Class.forName(DBDriver);
+            Connection connection = DriverManager.getConnection(DBLocation);
+            System.out.println("Database Connected");
+
+            Statement stmt = connection.createStatement();
+            String sql = "SELECT * FROM Carts WHERE CustEmail = '" + getCustEmail() + "'";
+            ResultSet rs = stmt.executeQuery(sql);
+            System.out.println("SQL: " +  sql);
+            Product pro1;
+            while (rs.next()) {
+                pro1 = new Product();
+                pro1.selectPDB(rs.getString("ProductCode"));
+                pro1.setQuantity(rs.getString("Quantity"));
+                Cart.addProducts(pro1);
+            }
+
+        } catch (Exception e) { System.out.println("Exception" + e); }
+
+    } // END getCartDB
+
+    /************* Get Order from Database *************/
+    public void getOrderDB() {
+        Order = new ProductList();
+        try {
+            // Get connection to database
+            Class.forName(DBDriver);
+            Connection connection = DriverManager.getConnection(DBLocation);
+            System.out.println("Database Connected");
+
+            Statement stmt = connection.createStatement();
+            String sql = "SELECT * FROM Orders WHERE CustEmail = '" + getCustEmail() + "'";
+            ResultSet rs = stmt.executeQuery(sql);
+            System.out.println("SQL: " +  sql);
+            Product pro1;
+            while (rs.next()) {
+                pro1 = new Product();
+                pro1.selectPDB(rs.getString("ProductCode"));
+                pro1.setQuantity(rs.getString("Quantity"));
+                Order.addProducts(pro1);
+            }
+
+        } catch (Exception e) { System.out.println("Exception" + e); }
+    } // END getOrderDB
 }

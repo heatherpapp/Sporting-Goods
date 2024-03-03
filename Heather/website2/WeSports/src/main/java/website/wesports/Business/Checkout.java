@@ -11,12 +11,11 @@ package website.wesports.Business;
  *
  */
 
-import java.sql.*;
-
 /**
  *   Business Object for Checkout
  * @author Alexander Thurmond
  */
+
 
 public class Checkout {
 

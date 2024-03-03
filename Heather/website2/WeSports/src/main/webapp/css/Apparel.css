@@ -99,7 +99,7 @@ header{
   }
   .cartTab .btn button{
     background-color: #2714b8;
-    font-family: Poppins;
+    font-family: Poppins, sans-serif;
     font-weight: 500;
     cursor: pointer;
   }
