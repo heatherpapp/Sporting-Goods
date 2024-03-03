@@ -24,3 +24,19 @@
     - CheckoutServlet
     - GetOrderServlet
     - ProcessOrderServlet
+
+
+When a customer checks out:
+Show cart
+    buttons to:
+        Login then Checkout
+        Checkout without Logging in
+
+
+??? Questions ???
+
+    * is CustID & Username necessary since email is unique?
+    * password stored when user creates account and can login with that and edit account
+    * really isnt much different from checking out without account
+        - no account requires email &/Or order ID to lookup order?
+    * ??? order changes without an account??? yes or no ???

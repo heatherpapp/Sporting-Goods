@@ -79,7 +79,7 @@ public class Customer {
     public ProductList getCart() { return Cart; }
     public ProductList getOrder() { return Order; }
 
-    /*************Check if Record Exists *************/
+    /*************Check if Customer Record Exists *************/
     public boolean customerExists(String cemail, Connection connection) {
         boolean exists = false;
         try {
@@ -104,7 +104,7 @@ public class Customer {
 
     /************* Display Results *************/
     public void display() {
-        if (CustID.isEmpty()) System.out.println("***** You must enter a Customer ID *****");
+        if (CustEmail.isEmpty()) System.out.println("***** You must enter a Customer Email *****");
         System.out.println("=======================================================");
         System.out.println("Customer Email: " + getCustEmail());
         System.out.println("Customer FirstName: " + getCustFirstName());
