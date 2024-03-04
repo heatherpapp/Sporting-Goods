@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>8</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>344</x>
+      <y>0</y>
+      <w>1016</w>
+      <h>984</h>
+    </coordinates>
+    <panel_attributes>Product Display WebPage Requirements
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>520</x>
+      <y>64</y>
+      <w>728</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>Navigation
+__
+Home | Shop | My Account | About Us | FAQ | Help</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLInterface</id>
+    <coordinates>
+      <x>1272</x>
+      <y>64</y>
+      <w>64</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>Cart
+--
+Checkout</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>616</x>
+      <y>280</y>
+      <w>296</w>
+      <h>328</h>
+    </coordinates>
+    <panel_attributes>Item Photo</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>624</x>
+      <y>208</y>
+      <w>456</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lw=2
+Item Name</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>976</x>
+      <y>320</y>
+      <w>128</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lw=2
+$ Price</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>992</x>
+      <y>528</y>
+      <w>96</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=.
+Add To Cart
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>984</x>
+      <y>472</y>
+      <w>112</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>Size Selector 
+Dropdown</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>656</x>
+      <y>640</y>
+      <w>416</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>Item SKU:
+
+Description
+
+
+___
+
+Age Group:
+Gender:</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>392</x>
+      <y>64</y>
+      <w>88</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>Logo
+__
+Home Link</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLHierarchy</id>
+    <coordinates>
+      <x>384</x>
+      <y>168</y>
+      <w>176</w>
+      <h>664</h>
+    </coordinates>
+    <panel_attributes>type=Package
+Shop
+	Apparel
+		Men
+		Women
+		Juniors
+			Boys
+			Girls
+		Kids
+			Boys
+			Girls
+	Sports
+		Baseball
+		Basketball
+		Football
+		Golf
+		Hockey
+		Soccer
+		Tennis
+		Volleyball
+		
+	Outdoors
+		Camping
+		Cycling
+		Fishing
+		Kayaking</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1192</x>
+      <y>176</y>
+      <w>128</w>
+      <h>656</h>
+    </coordinates>
+    <panel_attributes>Banners/Ads</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>624</x>
+      <y>160</y>
+      <w>288</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>Shop/Category/Subcategory/ItemType</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>504</x>
+      <y>880</y>
+      <w>728</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>Footer Navigation
+__
+Home | Shop | My Account | About Us | FAQ | Help
+
+Copyrights</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1000</x>
+      <y>16</y>
+      <w>328</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>Search...</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

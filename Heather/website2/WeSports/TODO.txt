@@ -1,0 +1,45 @@
+* Signup.css error on line 106
+
+* Corners of page are oddly rounded:
+    - thanks.html
+
+* Create Cart.html to show cart
+    When a customer checks out:
+        - Show cart
+            with buttons/links to:
+                * Login then Checkout
+                * Checkout without Logging in
+            - confirm billing and shipping info
+                * billing info will NOT be processed --- dummy fields, no table for storage
+                * shipping info WILL BE stored in Customer table
+
+* Business Objects:
+    - Customer
+    - Distributor
+    - Cart
+    - Product
+    - ProductList
+    - Checkout
+
+* Servlets:
+    - CustomerLoginServlet
+    - NewCustomerServlet
+    - CustomerUpdateServlet
+    - DistributorLoginServlet
+    - LogoutServlet
+    - AddToCartServlet
+    - CheckoutServlet
+    - GetOrderServlet
+    - ProcessOrderServlet
+
+
+
+
+
+??? Questions ???
+
+    * is CustID & Username necessary since email is unique?
+    * password stored when user creates account and can login with that and edit account
+    * really isnt much different from checking out without account
+        - no account requires email &/Or order ID to lookup order?
+    * ??? order changes without an account??? yes or no ???

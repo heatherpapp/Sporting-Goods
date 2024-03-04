@@ -1,0 +1,236 @@
+package Business;
+
+import java.sql.*;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+/**
+ *
+ * @author Rayna
+ */
+public class Customer {
+    
+        /*************************************************************
+    * The Patient class is used to hold Patient Information.
+    ***************************************************************/
+    
+    
+        //class properties
+    private String CustID;
+    private String CustUN;
+    private String CustPW;
+    private String CustFN;
+    private String CustLN;
+    private String CustAdd;
+    private String CustEm;
+   
+    
+ /*************************************************************
+    empty args constructor  
+    ***************************************************************/
+    public Customer() {
+        super();
+        CustID = "";
+        CustUN = "";
+        CustPW = "";
+        CustFN = "";
+        CustLN = "";
+        CustAdd = "";
+        CustEm = "";
+    }
+    
+    /*************************************************************
+    constructor with 7 args    
+    ***************************************************************/
+    public Customer(String ID, String un, String pw, String fn, String ln, String add, String em, String inC) {
+        super();
+        this.CustID = ID;
+        this.CustUN = un;
+        this.CustPW = pw;
+        this.CustFN = fn;
+        this.CustLN = ln;
+        this.CustAdd = add;
+        this.CustEm = em;
+    }
+    
+    /*************************************************************
+    get and set methods
+    ***************************************************************/
+    public String getCustID(){return CustID;}
+    public void setCustID(String ID){CustID = ID;}
+
+    public String getCustUN(){return CustUN;}
+    public void setCustUN(String un){CustUN = un;}
+    
+    public String getCustPW(){return CustPW;}
+    public void setCustPW(String pw){CustPW = pw;}
+    
+    public String getCustFN(){return CustFN;}
+    public void setCustFN(String fn){CustFN = fn;}
+    
+    public String getCustLN(){return CustLN;}
+    public void setCustLN(String ln){CustLN = ln;}
+    
+    public String getCustAdd(){return CustAdd;}
+    public void setCustAdd(String add){CustAdd = add;}
+    
+    public String getCustEm(){return CustEm;}
+    public void setCustEm(String em){CustEm = em;}
+    
+    /*************************************************************
+    display method
+    ***************************************************************/ 
+    public void display(){
+        System.out.println("Customer ID          :" + getCustID());
+        System.out.println("Customer Username    :" + getCustID());
+        System.out.println("Customer Password     :" + getCustPW());
+        System.out.println("Customer First Name   :" + getCustFN());
+        System.out.println("Customer Last Name    :" + getCustLN());
+        System.out.println("Customer Address      :" + getCustAdd());
+        System.out.println("Customer Email        :" + getCustEm());
+        System.out.println("=========================");
+    }
+    
+    /*************************************************************
+    selectDB method
+    ***************************************************************/
+    public void selectDB(String ID) {
+        CustID = ID; 
+        try{
+            Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
+            //Step #2 - Get Connection
+            Connection con = DriverManager.getConnection("jdbc:ucanaccess://C:/Users/Rayna/Downloads/DentistOfficeACCDB.accdb"); //"C:\Users\Rayna\Downloads\DentistOfficeACCDB.accdb"
+            //Step #3 - Create Statement
+            Statement stmt = con.createStatement();
+            String sql;
+            sql = "SELECT * from Customer where CustID = '" + getCustID() +"'";
+            System.out.println(sql);
+            ResultSet rs;
+            rs = stmt.executeQuery(sql);
+            rs.next();
+                setCustID(rs.getString(6));
+                setCustPW(rs.getString(5));
+                setCustFN(rs.getString(1));
+                setCustLN(rs.getString(2));
+                setCustAdd(rs.getString(3));
+                setCustEm(rs.getString(4));
+                
+                con.close();
+        }
+        catch(Exception e){
+            System.out.println("Error!" + e);
+        }
+    }
+    
+    /*************************************************************
+    insertDB method
+    ***************************************************************/
+    public void insertDB(String ID, String un, String pw, String fn, String ln, String add, String em, String inC) {
+        CustID = ID;
+        CustUN = un;
+        CustPW = pw;
+        CustFN = fn;
+        CustLN = ln;
+        CustAdd = add;
+        CustEm = em;
+        
+        try{Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
+        
+        //Step 2: Get Connection   
+        Connection con = DriverManager.getConnection("jdbc:ucanaccess://C:/Users/Rayna/Downloads/DentistOfficeACCDB.accdb");
+        System.out.println("DB Connected :)");
+        Statement stmt = con.createStatement();
+            //Step 3: Create Statement
+            String sql = "Insert into Customer values (?, ?, ?, ?, ?, ?, ?)";
+            System.out.println(sql);
+                PreparedStatement ps = con.prepareStatement(sql);
+                ps.setString(1,ID);
+                ps.setString(2,pw);
+                ps.setString(3,fn);
+                ps.setString(4,ln);
+                ps.setString(5,add);
+                ps.setString(6,em);
+                ps.setString(7,inC);
+                int x = ps.executeUpdate();
+                if (x==1){
+                    System.out.println("INSERT Successful!!");
+                }
+                else {
+                    System.out.println("INSERT Failed!!");
+                    con.close();
+                }
+        }
+        catch(Exception e){
+            System.out.println("Error!" + e);
+        }
+    }
+    
+  /************************************************************
+    updateDB method
+    *************************************************************/
+    public void updateDB(Customer p1) {
+        try{
+            Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
+            //Step 2: Get Connection
+            Connection con = DriverManager.getConnection("jdbc:ucanaccess://C:/Users/Rayna/Downloads/DentistOfficeACCDB.accdb");
+            System.out.println("DB Connected :)");
+            Statement stmt = con.createStatement();
+            String sql = "UPDATE Customer set CustUsername = '" + getCustUN() + "', " +
+                  "CustFirstName = '" + getCustFN() + "', " +
+                  "CustLastName = '" + getCustLN() + "', " +
+                  "CustAddress = '" + getCustAdd() + "', " +
+                  "CustEmail = '" + getCustEm() + "', " +
+                  "where CustID = " + getCustID() + "'";
+            System.out.println(sql);
+            int x = stmt.executeUpdate(sql);
+            if (x==1) {
+                System.out.println("UPDATE Successful!!");
+            }
+            else {
+                   System.out.println("UPDATE Failed!!");
+                   con.close();
+            }
+        }
+        catch(Exception e){
+            System.out.println("Error!" + e);
+        }
+    }
+
+    /*************************************************************
+    deleteDB method
+    ***************************************************************/
+    public void deleteDB() {
+        try{
+            Class.forName("net.ucanacess.jdbc.UcanaccessDriver");
+            //Step 2: Get Connection to DB   
+            Connection con = DriverManager.getConnection("jdbc:ucanaccess://C:/Users/Rayna/Downloads/DentistOfficeACCDB.accdb");
+            System.out.println("DB Connected :)");
+            Statement stmt = con.createStatement();
+            String sql = "DELETE FROM Customer WHERE CustID = " + getCustID() + "'";
+            System.out.println(sql);
+            int x = stmt.executeUpdate(sql);
+            if (x==1) {
+                System.out.println("UPDATE Successful!!");
+            }
+            else {
+                   System.out.println("UPDATE Failed!!");
+                   con.close();
+            }
+        }
+        catch(Exception e){
+            System.out.println("Error!" + e);
+        }
+    }
+    
+    /*************************************************************
+    main method
+    ***************************************************************/
+    public static void main (String args[]) {
+        Customer c1 = new Customer();
+        //c1.selectDB("A910");
+        c1.display();
+    }
+    
+}
