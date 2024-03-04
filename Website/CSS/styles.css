@@ -258,7 +258,6 @@ p {
     padding-bottom: 8px;
     padding: 8px;
     margin: 0 5px; /* Adjust spacing between icons */
-<<<<<<< HEAD
     font-size: 20px;
     color: black;
 }
@@ -266,14 +265,3 @@ p {
 .thanks{
     margin: 15%; /*For thanks page*/
 }
-=======
-    font-size: 25px;
-    color: white; /* Icon color */
-    text-decoration: none; /* Remove default underline */
-    transition: color 0.4s; /* Smooth color transition */
-}
-
-.social__icon--link:hover {
-    color: #302f2f; /* Change color on hover */
-}
->>>>>>> ddcecd4144e8cc1e9d883e56ff2df342a39c08ba
