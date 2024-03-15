@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="commons-logging-1.1.1">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/Downloads/apache-tomcat-10.1.19/lib/commons-logging-1.1.1.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/apache-tomcat-10.1.19/lib/commons-lang-2.6.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/apache-tomcat-10.1.19/lib/hsqldb.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/apache-tomcat-10.1.19/lib/jackcess-2.1.6.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/apache-tomcat-10.1.19/lib/ucanaccess-4.0.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
