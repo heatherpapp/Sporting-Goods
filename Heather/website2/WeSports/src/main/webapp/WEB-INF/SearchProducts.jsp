@@ -32,15 +32,15 @@
             <div class="dropdown">
                 <button>Shop by Sport</button>
                 <div class="dropdown-content">
-                    <a href="sports/Baseball.html">Baseball</a>
-                    <a href="sports/Basketball.html">Basketball</a>
-                    <a href="sports/Cycling.html">Cycling</a>
-                    <a href="sports/Football.html">Football</a>
-                    <a href="sports/Golf.html">Golf</a>
-                    <a href="sports/Running.html">Running</a>
-                    <a href="sports/Soccer.html">Soccer</a>
-                    <a href="sports/Tennis.html">Tennis</a>
-                    <a href="sports/Volleyball.html">Volleyball</a>
+                    <a href="../shop/sports/Baseball.html">Baseball</a>
+                    <a href="../shop/sports/Basketball.html">Basketball</a>
+                    <a href="../shop/sports/Cycling.html">Cycling</a>
+                    <a href="../shop/sports/Football.html">Football</a>
+                    <a href="../shop/sports/Golf.html">Golf</a>
+                    <a href="../shop/sports/Running.html">Running</a>
+                    <a href="../shop/sports/Soccer.html">Soccer</a>
+                    <a href="../shop/sports/Tennis.html">Tennis</a>
+                    <a href="../shop/sports/Volleyball.html">Volleyball</a>
                 </div>
             </div>
             <div class="dropdown">

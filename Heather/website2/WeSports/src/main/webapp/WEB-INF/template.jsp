@@ -25,33 +25,33 @@
             <div class="dropdown">
                 <button>Shop by Sport</button>
                 <div class="dropdown-content">
-                    <a href="sports/Baseball.html">Baseball</a>
-                    <a href="sports/Basketball.html">Basketball</a>
-                    <a href="sports/Cycling.html">Cycling</a>
-                    <a href="sports/Football.html">Football</a>
-                    <a href="sports/Golf.html">Golf</a>
-                    <a href="sports/Running.html">Running</a>
-                    <a href="sports/Soccer.html">Soccer</a>
-                    <a href="sports/Tennis.html">Tennis</a>
-                    <a href="sports/Volleyball.html">Volleyball</a>
+                    <a href="../shop/sports/Baseball.html">Baseball</a>
+                    <a href="../shop/sports/Basketball.html">Basketball</a>
+                    <a href="../shop/sports/Cycling.html">Cycling</a>
+                    <a href="../shop/sports/Football.html">Football</a>
+                    <a href="../shop/sports/Golf.html">Golf</a>
+                    <a href="../shop/sports/Running.html">Running</a>
+                    <a href="../shop/sports/Soccer.html">Soccer</a>
+                    <a href="../shop/sports/Tennis.html">Tennis</a>
+                    <a href="../shop/sports/Volleyball.html">Volleyball</a>
                 </div>
             </div>
             <div class="dropdown">
                 <button>Shop Outdoors</button>
                 <div class="dropdown-content">
-                    <a href="outdoors/Camping.html">Camping</a>
-                    <a href="outdoors/Climbing.html">Climbing</a>
-                    <a href="outdoors/Fishing.html">Fishing</a>
-                    <a href="outdoors/Kayaking.html">Kayaking</a>
+                    <a href="../shop/outdoors/Camping.html">Camping</a>
+                    <a href="../shop/outdoors/Climbing.html">Climbing</a>
+                    <a href="../shop/outdoors/Fishing.html">Fishing</a>
+                    <a href="../shop/outdoors/Kayaking.html">Kayaking</a>
                 </div>
             </div>
             <div class="dropdown">
                 <button>Shop by Apparel</button>
                 <div class="dropdown-content">
-                    <a href="apparel/Mens.html">Men's</a>
-                    <a href="apparel/Women.html">Women's</a>
-                    <a href="apparel/Junior.html">Junior's</a>
-                    <a href="apparel/Youth.html">Youth</a>
+                    <a href="../shop/apparel/Mens.html">Men's</a>
+                    <a href="../shop/apparel/Women.html">Women's</a>
+                    <a href="../shop/apparel/Junior.html">Junior's</a>
+                    <a href="../shop/apparel/Youth.html">Youth</a>
                 </div>
             </div>
 

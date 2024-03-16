@@ -30,7 +30,6 @@ import java.io.PrintWriter;
 
 @WebServlet(name = "CustomerLoginServlet", urlPatterns = {"/CustomerLoginServlet"})
 public class CustomerLoginServlet extends HttpServlet {
-
     private String message;
     private static final String DBDriver = "net.ucanaccess.jdbc.UcanaccessDriver";
     private static final String DBLocation = "jdbc:ucanaccess://C:/WeSportsDB/WeSports.accdb/";

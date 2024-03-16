@@ -39,10 +39,10 @@
         </div>
           <button type="submit" name="Submit" id="Submit" class="btn">Login</button>
         <div class="register-link">
-          <p>Don't have an account?<a href="Register.html"> Register</a></p>
+          <p>Don't have an account?<a href="../WEB-INF/Register.jsp"> Register</a></p>
         </div>
         <div class="distributor">
-          <p>Distributors Login<a href="../distributor/DistributorsLogin.jsp"> Here</a></p>
+          <p>Distributors Login<a href="../WEB-INF/DistributorsLogin.jsp"> Here</a></p>
         </div>
       </form>
     </div>
