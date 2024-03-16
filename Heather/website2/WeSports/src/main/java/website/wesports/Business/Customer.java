@@ -273,6 +273,7 @@ public class Customer {
     /************* Get Customer Cart from Database: Carts *************/
     public void getCartDB()
     {
+        //WIP
         Cart = new ProductList();
         try {
             // Get connection to database
@@ -291,13 +292,13 @@ public class Customer {
                 pro1.setQuantity(rs.getInt("Quantity"));
                 Cart.addProducts(pro1);
             }
-
         } catch (Exception e) { System.out.println("Exception" + e); }
 
     } // END getCartDB
 
     /************* Get Customer Order from Database: Orders *************/
     public void getOrderDB() {
+        //WIP
         Order = new ProductList();
         try {
             // Get connection to database
@@ -316,7 +317,6 @@ public class Customer {
                 pro1.setQuantity(rs.getString("Quantity"));
                 Order.addProducts(pro1);
             }
-
         } catch (Exception e) { System.out.println("Exception" + e); }
     } // END getOrderDB
 }
