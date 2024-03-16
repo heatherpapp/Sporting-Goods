@@ -110,7 +110,7 @@ public class Customer {
         System.out.println("=======================================================\n");
     } // END display()
 
-    /************* Select from Database: Customers *************/
+    /************* Select from Database: Customer *************/
     //---using Email
     public void selectDB(String cem) {
         CustEmail = cem;
@@ -151,7 +151,7 @@ public class Customer {
     } // END selectDB()
 
 
-    /************* Insert into Database *************/
+    /************* Insert into Database: Customer *************/
     public void insertDB(String custEmail, String custFirstName, String custLastName, String custStreet, String custCity, String custState, String custZip, String custPassword) {
 
         //WIP
@@ -203,7 +203,7 @@ public class Customer {
         } catch (Exception e) { System.out.println("Exception" + e); }
     } // END insertDB()
 
-    /************* Update Existing Record in Database *************/
+    /************* Update Existing Record in Database: Customer *************/
     public void updateDB(String custEmail) {
 
         setCustEmail(custEmail);
@@ -240,7 +240,7 @@ public class Customer {
         } catch (Exception e) { System.out.println("Exception" + e); }
     } // END updateDB()
 
-    /************* Delete from Database *************/
+    /************* Delete from Database: Customer *************/
     public void deleteDB(String cemail) {
 
 
@@ -272,7 +272,7 @@ public class Customer {
         } catch (Exception e) { System.out.println("Exception" + e); }
     } // END deleteDB()
 
-    /************* Get Cart from Database *************/
+    /************* Get Customer Cart from Database: Carts *************/
     public void getCartDB()
     {
         Cart = new ProductList();
@@ -290,7 +290,7 @@ public class Customer {
             while (rs.next()) {
                 pro1 = new Product();
                 pro1.selectPDB(rs.getString("ProductCode"));
-                pro1.setQuantity(rs.getString("Quantity"));
+                pro1.setQuantity(rs.getInt("Quantity"));
                 Cart.addProducts(pro1);
             }
 
@@ -298,7 +298,7 @@ public class Customer {
 
     } // END getCartDB
 
-    /************* Get Order from Database *************/
+    /************* Get Customer Order from Database: Orders *************/
     public void getOrderDB() {
         Order = new ProductList();
         try {

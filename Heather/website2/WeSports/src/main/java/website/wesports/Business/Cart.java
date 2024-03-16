@@ -97,7 +97,6 @@ public class Cart {
             // Create SQL statement & string
             Statement stmt = connection.createStatement();
             String sql = "SELECT * FROM Carts WHERE CustEmail = '" + getCustEmail() + "'";
-            //String sql = "SELECT * FROM Customers WHERE CustID = '" + getCustID() + "'";
 
             // Execute SQL Query
             ResultSet rs = stmt.executeQuery(sql);
@@ -114,25 +113,25 @@ public class Cart {
 
 
     /************* Select from Database: Carts *************/
-    public void selectCDB() {
+    public void selectCartDB() {
 
     } // END selectCDB
 
 
     /************* Insert New Cart into Database *************/
-    public void insertCDB() {
+    public void insertCartDB() {
 
     } // END insertCDB
 
 
     /************* Update Existing Cart in Database *************/
-    public void updateCDB() {
+    public void updateCartDB() {
 
     } // END updateCDB
 
 
     /************* Delete Item in Cart from Database *************/
-    public void deleteCDB() {
+    public void deleteCartDB() {
 
     } // END deleteCDB
 
