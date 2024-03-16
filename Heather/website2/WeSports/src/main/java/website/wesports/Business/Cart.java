@@ -115,8 +115,35 @@ public class Cart {
     // Entire Cart Methods //
 
     /************* Select from Database: Carts *************/
-    public void selectCartDB() {
+    public void selectCartDB(String cemail) {
+        CustEmail = cemail;
+        try {
+            // Get connection to database
+            Class.forName(DBDriver);
+            Connection connection = DriverManager.getConnection(DBLocation);
+            System.out.println("Database Connected");
 
+            // Check if CustID record exists
+            if (cartExists(cemail, connection)) {
+                //Create SQL statement & string
+                Statement stmt = connection.createStatement();
+                String sql = "SELECT * FROM Carts WHERE CustEmail = '" + getCustEmail() + "'";
+
+                // Execute SQL Query
+                ResultSet rs = stmt.executeQuery(sql);
+                System.out.println("SQL Query: " + sql);
+
+                // Info to retrieve
+                rs.next();
+
+                setCustEmail(rs.getString("CustEmail"));
+                setProductCode(rs.getString("ProductCode"));
+                setQuantity(rs.getInt("Quantity"));
+
+            } else System.out.println("***** Customer Retrieval ERROR! ***** \n***** Customer: " + cemail + " does NOT exist! *****");
+            // Close Connection
+            connection.close();
+        } catch (Exception e) { System.out.println("Exception" + e); }
     } // END selectCDB
 
 
