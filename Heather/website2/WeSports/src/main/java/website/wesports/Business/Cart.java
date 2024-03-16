@@ -135,7 +135,6 @@ public class Cart {
 
                 // Info to retrieve
                 rs.next();
-
                 setCustEmail(rs.getString("CustEmail"));
                 setProductCode(rs.getString("ProductCode"));
                 setQuantity(rs.getInt("Quantity"));
@@ -148,8 +147,31 @@ public class Cart {
 
 
     /************* Insert New Cart into Database: Carts *************/
-    public void insertCartDB() {
+    public void insertCartDB(String cemail, String prodCode, int itemQuantity) {
+        setCustEmail(cemail);
+        setProductCode(prodCode);
+        setQuantity(itemQuantity);
 
+        try {
+            Class.forName(DBDriver);
+            Connection connection = DriverManager.getConnection(DBLocation);
+            if (cartExists(cemail, connection)) { //add to existing cart
+                updateCartDB();
+            } else { //create cart & add item --- get email on checkout
+                String sql = "INSERT INTO Carts(CustEmail, ProductCode, Quantity), Values(?,?,?)";
+
+                PreparedStatement pStmt = connection.prepareStatement(sql);
+                System.out.println("SQL Statement: " + sql);
+
+                pStmt.setString(1, CustEmail);
+                pStmt.setString(2, ProductCode);
+                pStmt.setInt(3, Quantity);
+
+                int n = pStmt.executeUpdate();
+                if (n==1) System.out.println("..... Cart INSERT Successful");
+                else System.out.println("!!!!! INSERT FAILED !!!!!");
+            }
+        } catch (Exception e) { System.out.println("Exception" + e); }
     } // END insertCDB
 
 
@@ -166,13 +188,18 @@ public class Cart {
     }
 
     /************* Update Existing Items in Cart in Database: Carts *************/
-    public void updateCartDB() {
-
+    public void updateCartDB(String custEmail) {
+        setCustEmail(custEmail);
+        try {
+            Class.forName(DBDriver);
+            Connection connection = DriverManager.getConnection(DBLocation);
+            
+        } catch (Exception e) { System.out.println("Exception" + e); }
     } // END updateCDB
 
 
     /************* Delete Item in Cart from Database: Carts *************/
-    public void deleteCartDB() {
+    public void deleteCartItemDB() {
 
     } // END deleteCDB
 }
