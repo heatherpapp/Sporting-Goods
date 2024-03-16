@@ -112,30 +112,40 @@ public class Cart {
     } // END recordExists()
 
 
+    // Entire Cart Methods //
+
     /************* Select from Database: Carts *************/
     public void selectCartDB() {
 
     } // END selectCDB
 
 
-    /************* Insert New Cart into Database *************/
+    /************* Insert New Cart into Database: Carts *************/
     public void insertCartDB() {
 
     } // END insertCDB
 
 
-    /************* Update Existing Cart in Database *************/
+    /************* Delete Entire Cart from Database: Carts *************/
+    // require user confirmation before performing this action
+
+
+
+    // Cart Item Methods //
+
+    /************* Insert Item to Existing Cart in Database: Carts *************/
+    public void insertItemToCart() {
+
+    }
+
+    /************* Update Existing Items in Cart in Database: Carts *************/
     public void updateCartDB() {
 
     } // END updateCDB
 
 
-    /************* Delete Item in Cart from Database *************/
+    /************* Delete Item in Cart from Database: Carts *************/
     public void deleteCartDB() {
 
     } // END deleteCDB
-
-
-
-
 }
