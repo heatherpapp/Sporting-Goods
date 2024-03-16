@@ -74,8 +74,14 @@ public class Orders {
     public Date getFulfillmentDate() { return FulfillmentDate; }
     //public void setDistUsername(String distUsername) { DistUsername = distUsername; }
     public String getDistUsername() { return DistUsername; }
-    public void setExists(boolean exists) { Exists = exists; }
-    public boolean getExists() { return  Exists; }
+    //public void setExists(boolean exists) { Exists = exists; }
+    //public boolean getExists() { return  Exists; }
+
+    /**
+     * commented out behaviors due to testing with alternative to pulling orders
+     * see OrdersRepository.java & OrdersRepositoryImpl.java interface
+     * see also link in discord
+     */
 
     @Override
     public String toString() {

@@ -1,4 +1,9 @@
-<!DOCTYPE html>
+<%@ page import="website.wesports.Business.Product" %>
+<%@ page import="website.wesports.Business.ProductList" %>
+<%@ page import="website.wesports.Business.Customer" %>
+<%@ page import="website.wesports.Business.Distributor" %>
+<%@ page import="website.wesports.Business.Orders" %>
+<%@ page import="website.wesports.Business.Cart" %>
 <html>
 <head>
     <meta name="viewport" content="width=device-with, initial-scale=1.0">
@@ -73,8 +78,10 @@
         <p>Shop with us today and save!</p>
     </div>
     <div class="search-container">
-        <input type="text" id="search-input" placeholder="Search...">
-        <button id="search-button" onclick="search()">Search</button>  <!-- search products for input text -->
+        <form method="post" action="SearchProducts.jsp">
+            <input type="text" id="search-input" placeholder="Search...">
+            <button id="search-button" onclick="">Search</button>
+        </form>
     </div>
 
     <!-- Need to Center cards on page-->
@@ -99,25 +106,25 @@
 
 
     <div class="card">
-        <a href="/shop/apparel/Men.html">
+        <a href="../shop/apparel/Men.html">
             <img src="../pictures/man.jpg" alt="Image 1">
             <button>Shop Men's Apparel</button>
         </a>
     </div>
     <div class="card">
-        <a href="/shop/apparel/Women.html">
+        <a href="../shop/apparel/Women.html">
             <img src="../pictures/woman.jpg" alt="Image 1">
             <button>Shop Women's Apparel</button>
         </a>
     </div>
     <div class="card">
-        <a href="/shop/apparel/Junior.html">
+        <a href="../shop/apparel/Junior.html">
             <img src="../pictures/TeensPlayingSports.jpg" alt="Image 1">
             <button>Shop Junior Apparel</button>
         </a>
     </div>
     <div class="card">
-        <a href="/shop/apparel/Youth.html">
+        <a href="../shop/apparel/Youth.html">
             <img src="../pictures/Kids.jpeg" alt="Image 1">
             <button>Shop Youth Apparel</button>
         </a>

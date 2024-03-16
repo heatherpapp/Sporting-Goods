@@ -283,14 +283,13 @@ public class Product {
         return exists;
     } // END recordExists
 
-
-
-
-
-
-
-
-
-
-
+    public void searchProducts(String query) {
+        //SELECT * FROM Products WHERE ProductCode=" +query+
+        //  OR ProductName LIKE '%" +query+ "%'
+        //  OR ProductDescription LIKE '%" +query+ "%'
+        //  OR Department LIKE '%" +query+ "%'
+        //  OR Section LIKE '%" +query+ "%'
+        //  OR Age Group LIKE '%" +query+ "%'
+        //  OR Gender LIKE '%" +query+ "%'"
+    }
 }

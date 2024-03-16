@@ -1,8 +1,15 @@
-<!DOCTYPE html>
+<%--
+    Class: CIST2373 Java Programming 3
+    Term: Spring 2024
+    Instructor: Chris Bishop
+    Description: Solution to Lab     Author: Heather Papp
+    I wrote this code myself...
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="website.wesports.Business.Product" %>
 <html>
 <head>
-    <meta name="viewport" content="width=device-with, initial-scale=1.0">
-    <title>We Sports | Home</title>
+    <title>Title</title>
     <link rel="apple-touch-icon" sizes="180x180" href="../favicon_package_v0.16/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../favicon_package_v0.16/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../favicon_package_v0.16/favicon-16x16.png">
@@ -15,20 +22,16 @@
     <script src="https://kit.fontawesome.com/5b6c8cdace.js" crossorigin="anonymous"></script>
 </head>
 <body>
-<div id="preloader">
-</div>
 <div class="container">
     <nav>
         <a href="../shop/Home.html">
-            <img src="../pictures/clearw.png" class="logo">
+            <img src="../pictures/clearw.png" class="logo" alt="WeSportsLogo">
         </a>
         <ul>
 
             <div class="dropdown">
                 <button>Shop by Sport</button>
                 <div class="dropdown-content">
-
-                    <!--Need to Update links to JSP on all-->
                     <a href="sports/Baseball.html">Baseball</a>
                     <a href="sports/Basketball.html">Basketball</a>
                     <a href="sports/Cycling.html">Cycling</a>
@@ -67,69 +70,58 @@
             <i class="fa-solid fa-cart-shopping"></i> Cart
         </a>
     </nav>
-    <div class="content">
-        <h1>We sports</h1>
-        <h4>We do Sports</h4>
-        <p>Shop with us today and save!</p>
-    </div>
-    <div class="search-container">
-        <input type="text" id="search-input" placeholder="Search...">
-        <button id="search-button" onclick="search()">Search</button>  <!-- search products for input text -->
-    </div>
-
-    <!-- Need to Center cards on page-->
-    <div class="card">
-        <a href="../shop/Sports.html">
-            <img src="../pictures/MultipleSports.jpg" alt="Sporting Equipment">
-            <button>Shop Sports</button>
-        </a>
-    </div>
-    <div class="card">
-        <a href="../shop/Outdoors.html">
-            <img src="../pictures/outdoor.jpeg" alt="Image 1">
-            <button>Shop Outdoors</button>
-        </a>
-    </div>
-    <div class="card">
-        <a href="../shop/Apparel.html">
-            <img src="../pictures/sportApparel.jpg" alt="People in Sports">
-            <button>Shop Apparel</button>
-        </a>
-    </div>
-
-
-    <div class="card">
-        <a href="/shop/apparel/Men.html">
-            <img src="../pictures/man.jpg" alt="Image 1">
-            <button>Shop Men's Apparel</button>
-        </a>
-    </div>
-    <div class="card">
-        <a href="/shop/apparel/Women.html">
-            <img src="../pictures/woman.jpg" alt="Image 1">
-            <button>Shop Women's Apparel</button>
-        </a>
-    </div>
-    <div class="card">
-        <a href="/shop/apparel/Junior.html">
-            <img src="../pictures/TeensPlayingSports.jpg" alt="Image 1">
-            <button>Shop Junior Apparel</button>
-        </a>
-    </div>
-    <div class="card">
-        <a href="/shop/apparel/Youth.html">
-            <img src="../pictures/Kids.jpeg" alt="Image 1">
-            <button>Shop Youth Apparel</button>
-        </a>
-    </div>
-
 </div>
 
-<div id="search-results">
-    <!-- Search results will be displayed here -->
+<div class="content">
+    <h1>We sports</h1>
+    <h4>We do Sports</h4>
+    <p>Shop with us today and save!</p>
+</div>
+<div class="search-container">
+    <input type="text" id="search-input" placeholder="Search...">
+    <button id="search-button" onclick="search()">Search</button>
 </div>
 
-</div>
+
+
+    <h1>Search Results</h1>
+    <table>
+        <tr>
+            <td>Product Code</td>
+            <td>Product Name</td>
+            <td>Unit Price</td>
+            <td>Product Image</td>
+        </tr>
+        <%
+            try{
+                connection = DriverManager.getConnection(connectionUrl+database, userid, password);
+                statement=connection.createStatement();
+                String sql ="SELECT * FROM Products WHERE ProductCode="+ProductCode+ ProductName="+roll_no+"' ";
+                resultSet = statement.executeQuery(sql);
+                while(resultSet.next()){
+        %>
+        <tr>
+            <td><%=resultSet.getString("name") %></td>
+            <td><%=resultSet.getString("email") %></td>
+            <td><%=resultSet.getString("roll_no") %></td>
+        </tr>
+        <%
+                }
+                connection.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        %>
+    </table>
+
+
+
+
+
+
+
+
+
 
 <footer class="footer">
     <p>We Sports</p>
@@ -140,7 +132,7 @@
             <!--<li><a href="thanks.html">Thank you</a></li>Not needed... Intended for contact page. So once they tried to contact us, it linked to a thank you page to acknowledge-->
         </ul>
     </nav>
-    <p class="website__rights">&copy; Wesports 2024. All rights reserved.</p>
+    <p class="website__rights">&copy; WeSports 2024. All rights reserved.</p>
     <div class="social__icons">
         <a href="/" class="social__icon--link" target="_blank">
             <i class="fab fa-facebook"></i>
@@ -164,16 +156,6 @@
 
 </footer>
 
-<script>
-
-    var loader = document.getElementById("preloader");
-    window.addEventListener("load", function(){
-        loader.style.display = "none";
-    });
-</script>
-
-
 <script src="../JavaScript/script.js"></script>
 </body>
-
 </html>
