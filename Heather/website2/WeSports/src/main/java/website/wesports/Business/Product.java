@@ -268,7 +268,7 @@ public class Product {
         try {
             // Create SQL statement & string
             Statement stmt = connection.createStatement();
-            String sql = "SELECT * FROM Customers WHERE ProductCode = '" + getProductCode() + "'";
+            String sql = "SELECT * FROM Product WHERE ProductCode = '" + getProductCode() + "'";
 
             // Execute SQL Query
             ResultSet rs = stmt.executeQuery(sql);
@@ -276,7 +276,7 @@ public class Product {
             // Check if CustID record exists
             if (rs.next()) {
                 if(rs.getInt(1) != 0) exists = true;
-                System.out.println("Customer ID: " + productCode + " Exists");
+                System.out.println("ProductCode: " + productCode + " Exists");
             }
         } catch (Exception e) { System.out.println("Exception: " + e); }
         // Return boolean result of productExists
