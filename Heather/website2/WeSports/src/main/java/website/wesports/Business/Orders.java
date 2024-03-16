@@ -111,7 +111,7 @@ public class Orders {
         System.out.println("=======================================================");
         System.out.println("OrderID\tCustEmail\t\t\tProductCode\tQuantity\tOrderDate\tOrderStatus\tFulfillmentDate\tDistUsername\n");
         /**
-         * each OrderID may have multiple entries, due to each row in orderID representing one item in an order
+         * each OrderID may have multiple entries, due to each row in orderID representing one item set in an order
          * perhaps a foreach loop here to show column headers above, then loop through each order?
          */
         System.out.println(getOrderID()+getCustEmail()+getProductCode()+getQuantity()+getOrderDate()+getOrderStatus()+getFulfillmentDate()+getDistUsername());
@@ -154,17 +154,16 @@ public class Orders {
 
     /************* SELECT All Pending Orders from Database: Orders *************/
     // Placed
-    public void selectPlacedOrders(int oid) {
-        OrderID = oid;
+    public void selectPendingOrders() {
         try {
             // Get connection to database
             Class.forName(DBDriver);
             Connection connection = DriverManager.getConnection(DBLocation);
-            System.out.println("Database Connected");
+            //System.out.println("Database Connected");
 
             //Create SQL statement & string
             Statement stmt = connection.createStatement();
-            String sql = "SELECT * FROM Orders WHERE OrderID='" + oid + "'";
+            String sql = "SELECT * FROM Orders WHERE OrderStatus=Pending";
 
             // Execute SQL Query
             ResultSet rs = stmt.executeQuery(sql);
@@ -189,8 +188,8 @@ public class Orders {
 
 
     /************* SELECT All Completed Orders from Database: Orders *************/
-    // Shipped
-    public void selectCompleteOrders(int oid) {
+    // Complete
+    public void selectCompleteOrders() {
 
     }
 
