@@ -162,7 +162,7 @@ public class Cart {
             Class.forName(DBDriver);
             Connection connection = DriverManager.getConnection(DBLocation);
             if (cartExists(cemail, connection)) { //add to existing cart
-                updateCartDB();
+                updateCartDB(cemail);
             } else { //create cart & add item --- get email on checkout
                 String sql = "INSERT INTO Carts(CustEmail, ProductCode, Quantity), Values(?,?,?)";
 

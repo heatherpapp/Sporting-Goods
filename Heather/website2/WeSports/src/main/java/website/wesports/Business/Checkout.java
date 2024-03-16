@@ -19,6 +19,7 @@ package website.wesports.Business;
 
 public class Checkout {
 
+    /*
 
     public static void processOrder(ShoppingCart cart) {
         System.out.println("Processing order...");
@@ -33,4 +34,7 @@ public class Checkout {
         System.out.println("Order processed successfully.");
         cart.clearCart();
     }
+
+
+     */
 }

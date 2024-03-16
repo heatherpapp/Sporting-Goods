@@ -42,17 +42,17 @@ public class CustomerLoginServlet extends HttpServlet {
 
         PrintWriter out = response.getWriter();
 
-        String id, pw;
-        id = request.getParameter("Username"); //CustID form textbox
+        String un, pw;
+        un = request.getParameter("Username"); //CustID form textbox
         pw = request.getParameter("Password"); //CustPassword form textbox
-        System.out.println("Username: " + id + "\nCustomerPassword: " + pw + "\n");
+        System.out.println("Username: " + un + "\nCustomerPassword: " + pw + "\n");
 
         Customer c1 = new Customer();
-        c1.selectDB(id);
+        c1.selectDB(un);
 
-        String idDB = c1.getCustUsername();
+        String unDB = c1.getCustEmail();
         String pwDB = c1.getCustPassword();
-        System.out.println("DBID: " + idDB + "\nDBPW: " + pwDB );
+        System.out.println("DBID: " + unDB + "\nDBPW: " + pwDB );
 
         HttpSession ses1 = request.getSession();
         ses1.setAttribute("c1", c1);
