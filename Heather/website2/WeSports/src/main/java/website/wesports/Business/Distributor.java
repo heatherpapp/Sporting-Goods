@@ -21,24 +21,22 @@ import java.sql.*;
 public class Distributor {
 
 
-    private String DistPass, DistUserName;
+    private String DistPass, DistUsername;
     private String DistFirstName, DistLastName, DistEmail;
-
-    //public AccountList accountList = new AccountList();
     final static String DBDriver = "net.ucanaccess.jdbc.UcanaccessDriver";
-    final static String DBLocation = "jdbc:ucanaccess://Sporting-Goods/Database/WeSports.accdb;showSchema=true";
+    final String DBLocation = "jdbc:ucanaccess://C:/WeSportsDB/WeSports.accdb;showSchema=true";
 
     /************* Constructors *************/
     public Distributor() {
         DistPass = "";
-        DistUserName = "";
+        DistUsername = "";
         DistFirstName = "";
         DistLastName = "";
         DistEmail = "";
     }
     public Distributor(String dpw, String dun, String dfn, String dln, String dem) {
         DistPass = dpw;
-        DistUserName = dun;
+        DistUsername = dun;
         DistFirstName = dfn;
         DistLastName = dln;
         DistEmail = dem;
@@ -47,8 +45,8 @@ public class Distributor {
     /************* Behaviors *************/
     public void setDistPW(String dpw) { DistPass = dpw; }
     public String getDistPW() { return DistPass; }
-    public void setDistUserName(String dun) { DistUserName = dun; }
-    public String getDistUserName() { return DistUserName; }
+    public void setDistUsername(String dun) { DistUsername = dun; }
+    public String getDistUsername() { return DistUsername; }
     public void setDistFname(String dfn) { DistFirstName = dfn; }
     public String getDistFname() { return DistFirstName; }
     public void setDistLname(String dln) { DistLastName = dln; }
@@ -62,7 +60,7 @@ public class Distributor {
         try {
             // Create SQL statement & string
             Statement stmt = connection.createStatement();
-            String sql = "SELECT * FROM Customers WHERE DistUsername = '" + getDistUserName() + "'";
+            String sql = "SELECT * FROM Customers WHERE DistUsername = '" + getDistUsername() + "'";
 
             // Execute SQL Query
             ResultSet rs = stmt.executeQuery(sql);
@@ -79,9 +77,9 @@ public class Distributor {
 
     /************* Display Results *************/
     public void display() {
-        if (DistUserName.isEmpty()) System.out.println("***** You must enter a Distributor Username *****");
+        if (DistUsername.isEmpty()) System.out.println("***** You must enter a Distributor Username *****");
         System.out.println("=======================================================");
-        System.out.println("Distributor Username: " + getDistUserName());
+        System.out.println("Distributor Username: " + getDistUsername());
         System.out.println("Distributor PW: " + getDistPW());
         System.out.println("Distributor FirstName: " + getDistFname());
         System.out.println("Distributor LastName: " + getDistLname());
@@ -93,7 +91,7 @@ public class Distributor {
         System.out.println("=======================================================\n");
     } // END display()
 
-    /************* Get Unfulfilled Orders from Database Orders *************/
+    /************* Get Unfulfilled Orders from Database Orders *************/ //think this goes in Orders
     /*
     public void getOrders() {
         // Accounts > 1AcctNo 2Cid 3Type 4Balance
@@ -129,7 +127,7 @@ public class Distributor {
 */
     /************* Select Distributor from Database Distributor *************/
     public void selectDB(String dun) {
-        DistUserName = dun;
+        DistUsername = dun;
         try {
             // Get connection to database
             Class.forName(DBDriver);
@@ -140,7 +138,7 @@ public class Distributor {
             if (distUserNameExists(dun, connection)) {
                 //Create SQL statement & string
                 Statement stmt = connection.createStatement();
-                String sql = "SELECT * FROM Distributor WHERE DistUsername = '" + getDistUserName() + "'";
+                String sql = "SELECT * FROM Distributor WHERE DistUsername = '" + getDistUsername() + "'";
 
                 // Execute SQL Query
                 ResultSet rs = stmt.executeQuery(sql);
@@ -153,7 +151,7 @@ public class Distributor {
                 setDistLname(rs.getString(4));
                 setDistEmail(rs.getString(5));
 
-            } else System.out.println("***** Customer Retrieval ERROR! ***** \n***** Customer ID: " + cid + " does NOT exist! *****");
+            } else System.out.println("***** Customer Retrieval ERROR! ***** \n***** Customer ID: " + dun + " does NOT exist! *****");
             // Close Connection
             connection.close();
         } catch (Exception e) { System.out.println("Exception" + e); }
@@ -164,7 +162,7 @@ public class Distributor {
     /************* Insert into Database *************/
     public void insertDB(String dun, String dpw, String dfn, String dln, String dem) {
 
-        DistUserName = dun;
+        DistUsername = dun;
         DistPass = dpw;
         DistFirstName = dfn;
         DistLastName = dln;
@@ -206,8 +204,7 @@ public class Distributor {
 
     /************* Update Existing Record in Database *************/
     public void updateDB(String dun) {
-        // Customers > 1CustID 2CustPassword 3CustFirstName 4CustLastName 5CustAddress 6CustEmail
-        DistUserName = dun;
+        DistUsername = dun;
         try {
             // Get connection to database
             Class.forName(DBDriver);
@@ -219,10 +216,10 @@ public class Distributor {
 
             // Create SQL string
             String sql = "UPDATE Distributor SET DistPassword = '" + getDistPW() + "',"
-                    + " DistFirstName = '" + getFname() + "',"
-                    + " DistLastName = '" + getLname() +"',"
-                    + " DistEmail = '" + getEmail() + "'"
-                    + " WHERE DistUserName = '" + getCustID() + "'";
+                    + " DistFirstName = '" + getDistFname() + "',"
+                    + " DistLastName = '" + getDistLname() +"',"
+                    + " DistEmail = '" + getDistEmail() + "'"
+                    + " WHERE DistUsername = '" + getDistUsername() + "'";
 
             // Execute SQL Statement & Do Update
             int n = stmt.executeUpdate(sql);
@@ -238,9 +235,8 @@ public class Distributor {
     } // END updateDB()
 
     /************* Delete from Database *************/
-    public void deleteDB(String cid) {
-        // Customers > 1CustID 2CustPassword 3CustFirstName 4CustLastName 5CustAddress 6CustEmail
-        CustID = cid;
+    public void deleteDB(String dun) {
+        DistUsername = dun;
         try {
             // Get connection to database
             Class.forName(DBDriver);
@@ -248,7 +244,7 @@ public class Distributor {
             System.out.println("Database Connected");
 
             // Prepare SQL string
-            String sql = "DELETE FROM Customers WHERE CustID = '" + getCustID() + "'";
+            String sql = "DELETE FROM Distributor WHERE DistUsername = '" + getDistUsername() + "'";
 
             // Create SQL statement
             Statement stmt = connection.createStatement();
