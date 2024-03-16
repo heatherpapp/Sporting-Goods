@@ -21,7 +21,7 @@ import java.sql.*;
 public class Distributor {
 
 
-    private String DistID, DistPass, DistUserName;
+    private String DistPass, DistUserName;
     private String DistFirstName, DistLastName, DistEmail;
 
     //public AccountList accountList = new AccountList();
@@ -30,15 +30,13 @@ public class Distributor {
 
     /************* Constructors *************/
     public Distributor() {
-        DistID = "";
         DistPass = "";
         DistUserName = "";
         DistFirstName = "";
         DistLastName = "";
         DistEmail = "";
     }
-    public Distributor(String did, String dpw, String dun, String dfn, String dln, String dem) {
-        DistID = did;
+    public Distributor(String dpw, String dun, String dfn, String dln, String dem) {
         DistPass = dpw;
         DistUserName = dun;
         DistFirstName = dfn;
@@ -47,8 +45,6 @@ public class Distributor {
     }
 
     /************* Behaviors *************/
-    public void setDistID(String did) { DistID = did; }
-    public String getDistID() { return DistID; }
     public void setDistPW(String dpw) { DistPass = dpw; }
     public String getDistPW() { return DistPass; }
     public void setDistUserName(String dun) { DistUserName = dun; }
@@ -60,13 +56,13 @@ public class Distributor {
     public void setDistEmail(String dem) { DistEmail = dem; }
     public String getDistEmail() { return DistEmail; }
 
-    /*************Check if Record Exists *************/
-    public boolean custIDExists(String cid, Connection connection) {
+    /*************Check if Distributor Record Exists *************/
+    public boolean distUserNameExists(String dun, Connection connection) {
         boolean exists = false;
         try {
             // Create SQL statement & string
             Statement stmt = connection.createStatement();
-            String sql = "SELECT * FROM Customers WHERE CustID = '" + getCustID() + "'";
+            String sql = "SELECT * FROM Customers WHERE DistUsername = '" + getDistUserName() + "'";
 
             // Execute SQL Query
             ResultSet rs = stmt.executeQuery(sql);
@@ -74,7 +70,7 @@ public class Distributor {
             // Check if CustID record exists
             if (rs.next()) {
                 if(rs.getInt(1) != 0) exists = true;
-                System.out.println("Customer ID: " + cid + " Exists");
+                System.out.println("Customer ID: " + dun + " Exists");
             }
         } catch (Exception e) { System.out.println("Exception: " + e); }
         // Return boolean result of recordExists()
@@ -83,29 +79,32 @@ public class Distributor {
 
     /************* Display Results *************/
     public void display() {
-        if (DistID.isEmpty()) System.out.println("***** You must enter a Customer ID *****");
+        if (DistUserName.isEmpty()) System.out.println("***** You must enter a Distributor Username *****");
         System.out.println("=======================================================");
-        System.out.println("Customer ID: " + getCustID());
-        System.out.println("Customer PW: " + getCustPW());
-        System.out.println("Customer FirstName: " + getFname());
-        System.out.println("Customer LastName: " + getLname());
-        System.out.println("Customer Address: " + getAddr());
-        System.out.println("Customer Email: " + getEmail());
-        accountList.displayList();
+        System.out.println("Distributor Username: " + getDistUserName());
+        System.out.println("Distributor PW: " + getDistPW());
+        System.out.println("Distributor FirstName: " + getDistFname());
+        System.out.println("Distributor LastName: " + getDistLname());
+        System.out.println("Distributor Email: " + getDistEmail());
+        //accountList.displayList();
+        /**
+         * ? Show Order List? Or nothing here???
+         */
         System.out.println("=======================================================\n");
     } // END display()
 
-    /************* Get Customer Accounts from Database Accounts *************/
-    public void getAccounts() {
+    /************* Get Unfulfilled Orders from Database Orders *************/
+    /*
+    public void getOrders() {
         // Accounts > 1AcctNo 2Cid 3Type 4Balance
         try {
             // Get connection to database
             Connection connection = DriverManager.getConnection(DBLocation);
-            System.out.println("Database Connected\n************* Ready for Accounts Retrieval *************");
+            System.out.println("Database Connected\n************* Ready for Orders Retrieval *************");
 
             // Create SQL statement & string
             Statement stmt = connection.createStatement();
-            String sql = "SELECT AcctNo FROM Accounts WHERE Cid = '" + getCustID() + "'";
+            String sql = "SELECT * FROM Orders WHERE OrderStatus = Placed;
 
             // Execute SQL Query
             ResultSet rs = stmt.executeQuery(sql);
@@ -126,10 +125,11 @@ public class Distributor {
         } catch (Exception e) { System.out.println("Exception: " + e); }
     } // END getAccounts()
 
-    /************* Select Customer from Database Customers *************/
-    public void selectDB(String cid) {
-        // Customers > 1CustID 2CustPassword 3CustFirstName 4CustLastName 5CustAddress 6CustEmail
-        DistID = cid;
+
+*/
+    /************* Select Distributor from Database Distributor *************/
+    public void selectDB(String dun) {
+        DistUserName = dun;
         try {
             // Get connection to database
             Class.forName(DBDriver);
@@ -137,10 +137,10 @@ public class Distributor {
             System.out.println("Database Connected");
 
             // Check if CustID record exists
-            if (custIDExists(cid, connection)) {
+            if (distUserNameExists(dun, connection)) {
                 //Create SQL statement & string
                 Statement stmt = connection.createStatement();
-                String sql = "SELECT * FROM Customers WHERE CustID = '" + getCustID() + "'";
+                String sql = "SELECT * FROM Distributor WHERE DistUsername = '" + getDistUserName() + "'";
 
                 // Execute SQL Query
                 ResultSet rs = stmt.executeQuery(sql);
@@ -148,29 +148,27 @@ public class Distributor {
 
                 // Info to retrieve
                 rs.next();
-                setCustPW(rs.getString(2));
-                setFname(rs.getString(3));
-                setLname(rs.getString(4));
-                setAddr(rs.getString(5));
-                setEmail(rs.getString(6));
+                setDistPW(rs.getString(2));
+                setDistFname(rs.getString(3));
+                setDistLname(rs.getString(4));
+                setDistEmail(rs.getString(5));
 
             } else System.out.println("***** Customer Retrieval ERROR! ***** \n***** Customer ID: " + cid + " does NOT exist! *****");
             // Close Connection
             connection.close();
         } catch (Exception e) { System.out.println("Exception" + e); }
-        getAccounts();
+        //getAccounts();
+        //getOrders();
     } // END selectDB()
 
     /************* Insert into Database *************/
-    public void insertDB(String cid, String cpw, String dun, String cfn, String cln, String cad, String cem) {
+    public void insertDB(String dun, String dpw, String dfn, String dln, String dem) {
 
-        DistID = cid;
-        DistPass = cpw;
         DistUserName = dun;
-        DistFirstName = cfn;
-        DistLastName = cln;
-        DistAddress = cad;
-        DistEmail = cem;
+        DistPass = dpw;
+        DistFirstName = dfn;
+        DistLastName = dln;
+        DistEmail = dem;
         try {
             // Get connection to database
             Class.forName(DBDriver);
@@ -178,21 +176,20 @@ public class Distributor {
             System.out.println("Database Connected");
 
             // Check if CustID record exists
-            if (!custIDExists(cid, connection)) {
+            if (!distUserNameExists(dun, connection)) {
                 // Create SQL string
-                String sql = "INSERT INTO Distributor(DistID, DistPass, DistFirstName, DistLastName, DistAddress, DistEmail) Values(?,?,?,?,?,?)";
+                String sql = "INSERT INTO Distributor(DistUserName, DistPass, DistFirstName, DistEmail) Values(?,?,?,?,?)";
 
                 // Prepare SQL statement
                 PreparedStatement pStmt = connection.prepareStatement(sql);
                 System.out.println("SQL Statement: " + sql);
 
                 // Info to insert
-                pStmt.setString(1, cid);
-                pStmt.setString(2, cpw);
-                pStmt.setString(3, cfn);
-                pStmt.setString(4, cln);
-                pStmt.setString(5, cad);
-                pStmt.setString(6, cem);
+                pStmt.setString(1, dun);
+                pStmt.setString(2, dpw);
+                pStmt.setString(3, dfn);
+                pStmt.setString(4, dln);
+                pStmt.setString(5, dem);
 
                 // Execute SQL Statement & Do Insert
                 int n = pStmt.executeUpdate();
@@ -200,7 +197,7 @@ public class Distributor {
                 // Verify Insert
                 if (n == 1) System.out.println("..... INSERT Successful! .....");
                 else System.out.println("***** INSERT FAILED! *****");
-            } else System.out.println("***** ERROR! ***** Cannot Insert New Record! *****\n***** Customer ID: " + cid + " already exists! *****");
+            } else System.out.println("***** ERROR! ***** Cannot Insert New Record! *****\n***** Customer ID: " + dun + " already exists! *****");
 
             // Close connnection
             connection.close();
@@ -208,9 +205,9 @@ public class Distributor {
     } // END insertDB()
 
     /************* Update Existing Record in Database *************/
-    public void updateDB(String cid) {
+    public void updateDB(String dun) {
         // Customers > 1CustID 2CustPassword 3CustFirstName 4CustLastName 5CustAddress 6CustEmail
-        CustID = cid;
+        DistUserName = dun;
         try {
             // Get connection to database
             Class.forName(DBDriver);
@@ -221,12 +218,11 @@ public class Distributor {
             Statement stmt = connection.createStatement();
 
             // Create SQL string
-            String sql = "UPDATE Customers SET CustPassword = '" + getCustPW() + "',"
-                    + " CustFirstName = '" + getFname() + "',"
-                    + " CustLastName = '" + getLname() +"',"
-                    + " CustAddress = '" + getAddr() + "',"
-                    + " CustEmail = '" + getEmail() + "'"
-                    + " WHERE CustID = '" + getCustID() + "'";
+            String sql = "UPDATE Distributor SET DistPassword = '" + getDistPW() + "',"
+                    + " DistFirstName = '" + getFname() + "',"
+                    + " DistLastName = '" + getLname() +"',"
+                    + " DistEmail = '" + getEmail() + "'"
+                    + " WHERE DistUserName = '" + getCustID() + "'";
 
             // Execute SQL Statement & Do Update
             int n = stmt.executeUpdate(sql);

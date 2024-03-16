@@ -7,7 +7,7 @@ package website.wesports.Business;
  * Description: Checkout Business Object
  * Authors: Alexander Thurmond
  *
- *
+ * i think this is a servlet file
  *
  */
 
