@@ -46,19 +46,19 @@
             <div class="dropdown">
                 <button>Shop Outdoors</button>
                 <div class="dropdown-content">
-                    <a href="outdoors/Camping.html">Camping</a>
-                    <a href="outdoors/Climbing.html">Climbing</a>
-                    <a href="outdoors/Fishing.html">Fishing</a>
-                    <a href="outdoors/Kayaking.html">Kayaking</a>
+                    <a href="../shop/outdoors/Camping.html">Camping</a>
+                    <a href="../shop/outdoors/Climbing.html">Climbing</a>
+                    <a href="../shop/outdoors/Fishing.html">Fishing</a>
+                    <a href="../shop/outdoors/Kayaking.html">Kayaking</a>
                 </div>
             </div>
             <div class="dropdown">
                 <button>Shop by Apparel</button>
                 <div class="dropdown-content">
-                    <a href="apparel/Mens.html">Men's</a>
-                    <a href="apparel/Women.html">Women's</a>
-                    <a href="apparel/Junior.html">Junior's</a>
-                    <a href="apparel/Youth.html">Youth</a>
+                    <a href="../shop/apparel/Mens.html">Men's</a>
+                    <a href="../shop/apparel/Women.html">Women's</a>
+                    <a href="../shop/apparel/Junior.html">Junior's</a>
+                    <a href="../shop/apparel/Youth.html">Youth</a>
                 </div>
             </div>
 
@@ -83,8 +83,11 @@
 </div>
 
 
+    <!-- NEEDS WORK -->
 
-    <h1>Search Results</h1>
+
+
+<h1>Search Results</h1>
     <table>
         <tr>
             <td>Product Code</td>
@@ -93,13 +96,19 @@
             <td>Product Image</td>
         </tr>
         <%
+            /**TODO:
+             * make search work!!!
+             */
+
             try{
                 connection = DriverManager.getConnection(connectionUrl+database, userid, password);
                 statement=connection.createStatement();
                 String sql ="SELECT * FROM Products WHERE ProductCode="+ProductCode+ ProductName="+roll_no+"' ";
                 resultSet = statement.executeQuery(sql);
                 while(resultSet.next()){
+
         %>
+
         <tr>
             <td><%=resultSet.getString("name") %></td>
             <td><%=resultSet.getString("email") %></td>
@@ -113,7 +122,6 @@
             }
         %>
     </table>
-
 
 
 
