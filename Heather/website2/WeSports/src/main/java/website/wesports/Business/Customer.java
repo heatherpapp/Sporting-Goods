@@ -154,8 +154,6 @@ public class Customer {
     /************* Insert into Database: Customer *************/
     public void insertDB(String custEmail, String custFirstName, String custLastName, String custStreet, String custCity, String custState, String custZip, String custPassword) {
 
-        //WIP
-
         setCustEmail(custEmail);
         setCustFirstName(custFirstName);
         setCustLastName(custLastName);
