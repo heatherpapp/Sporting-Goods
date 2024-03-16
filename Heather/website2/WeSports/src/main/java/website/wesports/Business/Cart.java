@@ -60,15 +60,18 @@ public class Cart {
     /************* Properties *************/
     String CustEmail, ProductCode;
     int Quantity;
+    Long CartID;
 
 
     /************* Constructors *************/
     public Cart() {
+        CartID = 0L;
         CustEmail = "";
         ProductCode = "";
         Quantity = 0;
     }
-    public Cart(String custEmail, String productCode, int quantity) {
+    public Cart(Long cartID, String custEmail, String productCode, int quantity) {
+        CartID = cartID;
         CustEmail = custEmail;
         ProductCode = productCode;
         Quantity = quantity;
@@ -76,6 +79,8 @@ public class Cart {
 
 
     /************* Behaviors *************/
+    public void setCartID(Long cartID) { CartID = cartID; }
+    public Long getCartID() { return CartID; }
     public void setCustEmail(String custEmail) { CustEmail = custEmail; }
     public String getCustEmail() { return CustEmail; }
     public void setProductCode(String productCode) { ProductCode = productCode; }
@@ -135,6 +140,7 @@ public class Cart {
 
                 // Info to retrieve
                 rs.next();
+                //Cart ID is autonumber
                 setCustEmail(rs.getString("CustEmail"));
                 setProductCode(rs.getString("ProductCode"));
                 setQuantity(rs.getInt("Quantity"));
@@ -193,7 +199,7 @@ public class Cart {
         try {
             Class.forName(DBDriver);
             Connection connection = DriverManager.getConnection(DBLocation);
-            
+
         } catch (Exception e) { System.out.println("Exception" + e); }
     } // END updateCDB
 
