@@ -210,7 +210,7 @@ public class Product {
             Statement stmt = connection.createStatement();
 
             // Create SQL string
-            String sql = "UPDATE Products SET ProductName = '" + getProductName() + "',"
+            String sql = "UPDATE Products SET ProductName= '" + getProductName() + "',"
                     + " ProductDescription = '" + getProductDescription() + "',"
                     + " UnitPrice = '" + getUnitPrice() +"',"
                     + " Department = '" + getDepartment() + "',"
@@ -242,7 +242,7 @@ public class Product {
             System.out.println("Database Connected");
 
             // Prepare SQL string
-            String sql = "DELETE FROM Products WHERE ProductCode = '" + getProductCode() + "'";
+            String sql = "DELETE FROM Products WHERE ProductCode= '" + getProductCode() + "'";
 
             // Create SQL statement
             Statement stmt = connection.createStatement();
@@ -262,13 +262,13 @@ public class Product {
         } catch (Exception e) { System.out.println("Exception" + e); }
     } // END deletePDB
 
-    /*************Check if Record Exists *************/
+    /*************Check if Product Exists *************/
     public boolean productExists(String productCode, Connection connection) {
         boolean exists = false;
         try {
             // Create SQL statement & string
             Statement stmt = connection.createStatement();
-            String sql = "SELECT * FROM Product WHERE ProductCode = '" + getProductCode() + "'";
+            String sql = "SELECT * FROM Products WHERE ProductCode= '" + getProductCode() + "'";
 
             // Execute SQL Query
             ResultSet rs = stmt.executeQuery(sql);
