@@ -63,13 +63,13 @@ public class DistributorLoginServlet extends HttpServlet {
 
         if (pwDB.equals(distPW)) {
             // Successful login forward to DisplayAccount.jsp CHANGE THIS
-            //url = "/DisplayAccount.jsp";
+            url = "/DisplayAccount.jsp";
             rdObj = request.getRequestDispatcher(url);
             rdObj.forward(request, response);
 
         } else {
             // Failed login forward to ErrorPage.jsp
-            //url = "/ErrorPage.jsp";
+            url = "/ErrorPage.jsp";
             rdObj = request.getRequestDispatcher(url);
             rdObj.forward(request, response);
         }

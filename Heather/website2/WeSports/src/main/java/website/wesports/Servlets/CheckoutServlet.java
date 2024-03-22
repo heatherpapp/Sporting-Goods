@@ -38,8 +38,10 @@ public class CheckoutServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        /*
         try (PrintWriter out = response.getWriter())
         {
+
             Customer c1 = new Customer();
             String name = request.getParameter("userName");
             c1.selectDB(name);
@@ -86,5 +88,7 @@ public class CheckoutServlet extends HttpServlet {
                 rd.forward(request, response);
             }
         }
+
+         */
     }
 }
