@@ -289,7 +289,7 @@ public class Customer {
             while (rs.next()) {
                 pro1 = new Product();
                 pro1.selectPDB(rs.getString("ProductCode"));
-                pro1.setQuantity(rs.getInt("Quantity"));
+                //pro1.setQuantity(rs.getInt("Quantity"));
                 Cart.addProducts(pro1);
             }
         } catch (Exception e) { System.out.println("Exception" + e); }
@@ -314,7 +314,7 @@ public class Customer {
             while (rs.next()) {
                 pro1 = new Product();
                 pro1.selectPDB(rs.getString("ProductCode"));
-                pro1.setQuantity(rs.getString("Quantity"));
+                //pro1.setQuantity(rs.getString("Quantity"));
                 Order.addProducts(pro1);
             }
         } catch (Exception e) { System.out.println("Exception" + e); }

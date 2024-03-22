@@ -18,7 +18,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
-import website.wesports.Business.Customer;
+import website.wesports.Business.Distributor;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -43,33 +43,33 @@ public class DistributorLoginServlet extends HttpServlet {
 
         PrintWriter out = response.getWriter();
 
-        String id, pw;
-        id = request.getParameter("customerID"); //CustID form textbox
-        pw = request.getParameter("password"); //CustPassword form textbox
-        System.out.println("CustomerID: " + id + "\nCustomerPassword: " + pw + "\n");
+        String distID, distPW;
+        distID = request.getParameter("distUserNameInput"); //CustID form textbox
+        distPW = request.getParameter("distPasswordInput"); //CustPassword form textbox
+        System.out.println("DistributorID: " + distID + "\nDistributorPassword: " + distPW + "\n");
 
-        Customer c1 = new Customer();
-        c1.selectDB(id);
+        Distributor d1 = new Distributor();
+        d1.selectDB(distID);
 
-        String idDB = c1.getCustID();
-        String pwDB = c1.getCustPW();
+        String idDB = d1.getDistUsername();
+        String pwDB = d1.getDistPW();
         System.out.println("DBID: " + idDB + "\nDBPW: " + pwDB );
 
         HttpSession ses1 = request.getSession();
-        ses1.setAttribute("c1", c1);
+        ses1.setAttribute("d1", d1);
 
         String url;
         RequestDispatcher rdObj;
 
-        if (pwDB.equals(pw)) {
+        if (pwDB.equals(distPW)) {
             // Successful login forward to DisplayAccount.jsp CHANGE THIS
-            url = "/DisplayAccount.jsp";
+            //url = "/DisplayAccount.jsp";
             rdObj = request.getRequestDispatcher(url);
             rdObj.forward(request, response);
 
         } else {
             // Failed login forward to ErrorPage.jsp
-            url = "/ErrorPage.jsp";
+            //url = "/ErrorPage.jsp";
             rdObj = request.getRequestDispatcher(url);
             rdObj.forward(request, response);
         }
