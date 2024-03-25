@@ -15,7 +15,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
     <title>Signup & Login</title>
-    <link rel="stylesheet" href="resources/css/Signup.css">
+    <link rel="stylesheet" href="../resources/css/Signup.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   </head>
 
@@ -39,10 +39,10 @@
         </div>
           <button type="submit" name="Submit" id="Submit" class="btn">Login</button>
         <div class="register-link">
-          <p>Don't have an account?<a href="Register.jsp"> Register</a></p>
+          <p>Don't have an account?<a href="../customer/Register.jsp"> Register</a></p>
         </div>
         <div class="distributor">
-          <p>Distributors Login<a href="DistributorsLogin.jsp"> Here</a></p>
+          <p>Distributors Login<a href="../distributor/DistributorsLogin.jsp"> Here</a></p>
         </div>
       </form>
     </div>
