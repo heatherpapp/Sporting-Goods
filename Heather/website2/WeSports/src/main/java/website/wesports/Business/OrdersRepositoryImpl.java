@@ -19,8 +19,8 @@ import java.util.List;
  * @author Heather Papp
  */
 public class OrdersRepositoryImpl implements OrdersRepository {
-    //final String DBDriver = "net.ucanaccess.jdbc.UcanaccessDriver";
-    final String DBLocation = "jdbc:ucanaccess://C:/WeSportsDB/WeSports.accdb;showSchema=true";
+    final String DBDriver = "net.ucanaccess.jdbc.UcanaccessDriver";
+    final String DBLocation = "jdbc:ucanaccess://C://WeSportsDB//WeSports.accdb/";
     private static final String FIND_ALL_SQL = "SELECT OrderID, CustEmail, ProductCode, Quantity, OrderDate, OrderStatus, FulfillmentDate, DistUsername";
     private static final String INSERT_SQL = "INSERT INTO Orders(CustEmail, ProductCode, Quantity, OrderDate, OrderStatus, FulfillmentDate, DistUsername) values(?,?,?,?,?,?,?)";
     private Connection connection;

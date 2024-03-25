@@ -24,7 +24,7 @@ public class Distributor {
     private String DistPass, DistUsername;
     private String DistFirstName, DistLastName, DistEmail;
     final static String DBDriver = "net.ucanaccess.jdbc.UcanaccessDriver";
-    final String DBLocation = "jdbc:ucanaccess://C:/WeSportsDB/WeSports.accdb;showSchema=true";
+    final String DBLocation = "jdbc:ucanaccess://C://WeSportsDB//WeSports.accdb/";
 
     /************* Constructors *************/
     public Distributor() {
