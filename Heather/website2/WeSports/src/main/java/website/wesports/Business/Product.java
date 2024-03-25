@@ -23,7 +23,7 @@ public class Product {
 
     /************* Database *************/
     final String DBDriver = "net.ucanaccess.jdbc.UcanaccessDriver";
-    final String DBLocation = "jdbc:ucanaccess://C:/WeSportsDB/WeSports.accdb/";
+    final String DBLocation = "jdbc:ucanaccess://C://WeSportsDB//WeSports.accdb/";
 
     /************* Properties *************/
     String ProductCode, ProductName, ProductDescription; // primary product info
@@ -106,7 +106,7 @@ public class Product {
         System.out.println("Product Code: " + getProductCode());
         System.out.println("Product Name: " + getProductName());
         System.out.println("Product Description: " + getProductDescription());
-        System.out.println("Unit Price" + getUnitPrice());
+        System.out.println("Unit Price: " + getUnitPrice());
         System.out.println("Department: " + getDepartment());
         System.out.println("Section: " + getSection());
         System.out.println("Age Group: " + getAgeGroup());
@@ -291,5 +291,10 @@ public class Product {
         //  OR Section LIKE '%" +query+ "%'
         //  OR Age Group LIKE '%" +query+ "%'
         //  OR Gender LIKE '%" +query+ "%'"
+    }
+
+    public static void main(String[] args) {
+        Product p1 = new Product();
+        p1.selectPDB("002272904");
     }
 }
