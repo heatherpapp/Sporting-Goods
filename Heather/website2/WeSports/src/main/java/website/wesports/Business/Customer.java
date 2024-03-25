@@ -289,7 +289,7 @@ public class Customer {
             while (rs.next()) {
                 pro1 = new Product();
                 pro1.selectPDB(rs.getString("ProductCode"));
-                //pro1.setQuantity(rs.getInt("Quantity"));
+                pro1.setQuantity(rs.getInt("Quantity"));
                 Cart.addProducts(pro1);
             }
         } catch (Exception e) { System.out.println("Exception" + e); }
@@ -314,9 +314,15 @@ public class Customer {
             while (rs.next()) {
                 pro1 = new Product();
                 pro1.selectPDB(rs.getString("ProductCode"));
-                //pro1.setQuantity(rs.getString("Quantity"));
+                pro1.setQuantity(rs.getInt("Quantity"));
                 Order.addProducts(pro1);
             }
         } catch (Exception e) { System.out.println("Exception" + e); }
     } // END getOrderDB
+
+    public static void main(String[] args) {
+        Customer c1 = new Customer();
+        //c1.selectDB("test@email.com");
+        c1.insertDB("test@email.com", "TestFN", "TestLN", "123 Main St", "Testcity", "TS", "12345", "Passw0rd!2");
+    }
 }
