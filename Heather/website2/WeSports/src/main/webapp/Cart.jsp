@@ -1,10 +1,10 @@
-<%@page import="WeSports.Product"%>
-<%@page import="WeSports.ProductList"%>
-<%@page import="WeSports.Customer"%>
+<%@page import="website.wesports.Business.Product"%>
+<%@page import="website.wesports.Business.ProductList"%>
+<%@page import="website.wesports.Business.Customer"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
-<jsp:useBean class="WeSports.ProductList" id="cart" scope="session"/>
-<jsp:useBean class="WeSports.Customer" id="customer" scope="session"/>
+<jsp:useBean class="website.wesports.Business.ProductList" id="cart" scope="session"/>
+<jsp:useBean class="website.wesports.Business.Customer" id="customer" scope="session"/>
 
 <!DOCTYPE html>
 <html>
