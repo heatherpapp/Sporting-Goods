@@ -22,7 +22,7 @@
   <body>
 
     <div class="wrapper">
-      <form action="CustomerLoginServlet" name="CustomerLoginForm" method="post">
+      <form name="CustomerLoginForm" action="CustomerLoginServlet" method="post">
         <h2 style="text-align: center;">Welcome Back!</h2>
         <h1>Login</h1>
         <div class="input-box">
@@ -39,10 +39,10 @@
         </div>
           <button type="submit" name="Submit" id="Submit" class="btn">Login</button>
         <div class="register-link">
-          <p>Don't have an account?<a href="../WEB-INF/Register.jsp"> Register</a></p>
+          <p>Don't have an account?<a href="Register.jsp"> Register</a></p>
         </div>
         <div class="distributor">
-          <p>Distributors Login<a href="../WEB-INF/DistributorsLogin.jsp"> Here</a></p>
+          <p>Distributors Login<a href="DistributorsLogin.jsp"> Here</a></p>
         </div>
       </form>
     </div>
