@@ -62,7 +62,7 @@ public class CustomerLoginServlet extends HttpServlet {
 
         if (pwDB.equals(pw)) {
             // Successful login forward to DisplayAccount.jsp CHANGE THIS
-            url = "/CustomerAccountView.html";
+            url = "/CustomerProfile.html";
             rdObj = request.getRequestDispatcher(url);
             rdObj.forward(request, response);
 

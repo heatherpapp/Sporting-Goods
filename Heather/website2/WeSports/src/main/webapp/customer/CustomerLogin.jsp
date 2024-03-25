@@ -42,7 +42,7 @@
           <p>Don't have an account?<a href="../customer/Register.jsp"> Register</a></p>
         </div>
         <div class="distributor">
-          <p>Distributors Login<a href="../distributor/DistributorsLogin.jsp"> Here</a></p>
+          <p>Distributors Login<a href="../distributor/DistributorLogin.jsp"> Here</a></p>
         </div>
       </form>
     </div>
