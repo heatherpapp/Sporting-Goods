@@ -28,7 +28,7 @@ import java.io.PrintWriter;
  * @author Heather Papp
  */
 
-@WebServlet("/CustomerLoginServlet")
+@WebServlet(name = "CustomerLoginServlet", urlPatterns = "/CustomerLoginServlet")
 public class CustomerLoginServlet extends HttpServlet {
     private String message;
     private static final String DBDriver = "net.ucanaccess.jdbc.UcanaccessDriver";
@@ -45,14 +45,14 @@ public class CustomerLoginServlet extends HttpServlet {
         String emailTextbox, passwordTextbox;
         emailTextbox = request.getParameter("Email"); //Email form textbox
         passwordTextbox = request.getParameter("Password"); //CustPassword form textbox
-        System.out.println("Username: " + emailTextbox + "\nCustomerPassword: " + passwordTextbox + "\n");
+        System.out.println("Email: " + emailTextbox + "\nPassword: " + passwordTextbox + "\n");
 
         Customer c1 = new Customer();
         c1.selectDB(emailTextbox);
 
-        String unDB = c1.getCustEmail();
+        String emailDB = c1.getCustEmail();
         String pwDB = c1.getCustPassword();
-        System.out.println("DBID: " + unDB + "\nDBPW: " + pwDB );
+        System.out.println("DB Email: " + emailDB + "\nDB Password: " + pwDB );
 
         HttpSession ses1 = request.getSession();
         ses1.setAttribute("c1", c1);
@@ -62,13 +62,13 @@ public class CustomerLoginServlet extends HttpServlet {
 
         if (pwDB.equals(passwordTextbox)) {
             // Successful login forward to DisplayAccount.jsp CHANGE THIS
-            url = "/CustomerProfile.html";
+            url = "customer/CustomerProfile.html";
             rdObj = request.getRequestDispatcher(url);
             rdObj.forward(request, response);
 
         } else {
             // Failed login forward to ErrorPage.jsp
-            url = "/ErrorPage.jsp";
+            url = "customer/CustomerLoginError.html";
             rdObj = request.getRequestDispatcher(url);
             rdObj.forward(request, response);
         }

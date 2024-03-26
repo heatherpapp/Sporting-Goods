@@ -55,8 +55,6 @@ public class Customer {
 
     public void setCustEmail(String custEmail) { CustEmail = custEmail; }
     public String getCustEmail() { return CustEmail; }
-    public void setCustPassword(String custPass) { CustPassword = custPass; }
-    public String getCustPassword() { return CustPassword; }
     public void setCustFirstName(String custFirstName) { CustFirstName = custFirstName; }
     public String getCustFirstName() { return CustFirstName; }
     public void setCustLastName(String custLastName) { CustLastName = custLastName; }
@@ -69,12 +67,18 @@ public class Customer {
     public String getCustState() { return CustState; }
     public void setCustZip(String custZip) { CustZip = custZip; }
     public String getCustZip() { return CustZip; }
+    public void setCustPassword(String custPassword) { CustPassword = custPassword; }
+    public String getCustPassword() { return CustPassword; }
     public ProductList getCart() { return Cart; }
     public ProductList getOrder() { return Order; }
 
+
     /*************Check if Customer Record Exists *************/
+    public boolean Exists;
+    public void setExists(boolean exists) { Exists = exists; }
+    public boolean getExists() { return  Exists; }
     public boolean customerExists(String cEmail, Connection connection) {
-        boolean exists = false;
+        Exists = false;
         try {
             // Create SQL statement & string
             Statement stmt = connection.createStatement();
@@ -85,13 +89,12 @@ public class Customer {
 
             // Check if CustID record exists
             if (rs.next()) {
-                if(rs.getInt(1) != 0) exists = true;
+                if(rs.getInt(1) != 0) Exists = true;
                 System.out.println("Customer Email: " + cEmail);
-                //System.out.println("Customer ID: " + cid + " Exists");
             }
         } catch (Exception e) { System.out.println("Exception: " + e); }
         // Return boolean result of customerExists()
-        return exists;
+        return Exists;
     } // END recordExists()
 
     /************* Display Results *************/
@@ -124,7 +127,7 @@ public class Customer {
             if (customerExists(cem, connection)) {
                 //Create SQL statement & string
                 Statement stmt = connection.createStatement();
-                String sql = "SELECT * FROM Customers WHERE CustEmail = '" + getCustEmail() + "'";
+                String sql = "SELECT * FROM Customer WHERE CustEmail = '" + getCustEmail() + "'";
 
                 // Execute SQL Query
                 ResultSet rs = stmt.executeQuery(sql);
@@ -216,7 +219,7 @@ public class Customer {
             Statement stmt = connection.createStatement();
 
             // Create SQL string
-            String sql = "UPDATE Customers SET CustFirstName = '" + getCustFirstName() + "',"
+            String sql = "UPDATE Customer SET CustFirstName = '" + getCustFirstName() + "',"
                     + " CustLastName = '" + getCustLastName() + "',"
                     + "CustStreet = '" + getCustStreet() + "',"
                     + "CustCity = '" + getCustCity() + "',"
@@ -322,7 +325,7 @@ public class Customer {
 
     public static void main(String[] args) {
         Customer c1 = new Customer();
-        //c1.selectDB("test@email.com");
-        c1.insertDB("test@email.com", "TestFN", "TestLN", "123 Main St", "Testcity", "TS", "12345", "Passw0rd!2");
+        c1.selectDB("test@email.com");
+        //c1.insertDB("test@email.com", "TestFN", "TestLN", "123 Main St", "Testcity", "TS", "12345", "Passw0rd!2");
     }
 }

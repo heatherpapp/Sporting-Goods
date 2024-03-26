@@ -22,7 +22,7 @@
   <body>
 
     <div class="wrapper">
-      <form name="CustomerLoginForm" action="CustomerLoginServlet" method="post">
+      <form name="CustomerLoginForm" action="../CustomerLoginServlet" method="post">
         <h2 style="text-align: center;">Welcome Back!</h2>
         <h1>Login</h1>
         <div class="input-box">
