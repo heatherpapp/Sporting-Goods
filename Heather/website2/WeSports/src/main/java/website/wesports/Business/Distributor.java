@@ -70,7 +70,6 @@ public class Distributor {
 
             // Check if CustID record exists
             if (rs.next()) {
-                //if(rs.getInt(1) != 0)
                 Exists = true;
                 System.out.println("Distributor ID: " + dun + " Exists");
             }
