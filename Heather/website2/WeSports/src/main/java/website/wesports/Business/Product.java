@@ -30,6 +30,7 @@ public class Product {
     String AgeGroup, Gender, Department, Section; // search tags
     int Quantity;
     double UnitPrice;
+    ProductList productList = new ProductList();
 
     //ProductPhoto
     /**
@@ -303,6 +304,7 @@ public class Product {
         //  OR Gender LIKE '%" +query+ "%'"
     }
 
+
     public void getDeptProducts(String dept) {
         //like getAccounts from Customer in Chatt Bank, but for a list of all products in given department
         try {
@@ -313,39 +315,31 @@ public class Product {
 
             //Create SQL statement & string
             Statement stmt = connection.createStatement();
-            String sql = "SELECT ProductCode FROM Products WHERE Department = '" + getDepartment() + "'";
+            String sql = "SELECT ProductCode FROM Products WHERE Department = '" + dept + "'";
 
             // Execute SQL Query
             ResultSet rs = stmt.executeQuery(sql);
             System.out.println("SQL Query: " + sql);
-            String deptName;
-            Product p1;
+            String prodCode;
+            Product product;
 
             while (rs.next()) {
-
-
+                prodCode = rs.getString(1);
+                product = new Product();
+                product.selectPDB(prodCode);
+                productList.addProducts(product);
+                product.productList.displayList();
             }
             connection.close();
-
-                setProductCode(rs.getString("ProductCode"));
-                setProductName(rs.getString("ProductName"));
-                setProductDescription(rs.getString("ProductDescription"));
-                setUnitPrice(rs.getDouble("UnitPrice"));
-                setDepartment(rs.getString("Department"));
-                setSection(rs.getString("Section"));
-                setAgeGroup(rs.getString("AgeGroup"));
-                setGender(rs.getString("Gender"));
-                setQuantity(rs.getInt("Quantity"));
-                connection.close();
-                display();
 
         } catch (Exception e) { System.out.println("Exception" + e); }
     }
 
+
     public static void main(String[] args) {
         Product p1 = new Product();
-        p1.selectPDB("002272904");
-        //p1.selectDept("Baseball");
-        //p1.display();
+        //p1.selectPDB("002272904");
+        p1.getDeptProducts("Baseball");
+        p1.display();
     }
 }

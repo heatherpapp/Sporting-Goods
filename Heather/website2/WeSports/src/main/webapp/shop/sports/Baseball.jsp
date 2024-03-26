@@ -1,5 +1,6 @@
-
 <!DOCTYPE html>
+<%@ page import="website.wesports.Business.Product" %>
+<%@ page import="website.wesports.Business.ProductList" %>
 <html>
     <head>
         <meta name="viewport" content="width=device-with, initial-scale=1.0">
@@ -82,6 +83,9 @@
 
             <!-- for each product where department = baseball show a card with product image, name, and price-->
 
+            <%
+
+            %>
 
             <div class="card">
                 <a href="Baseball.jsp">
