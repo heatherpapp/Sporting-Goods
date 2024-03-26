@@ -41,6 +41,7 @@ public class ProductList {
     } // END displayList()
 
     public static void main(String[] args) {
+        // for testing only
         ProductList productList = new ProductList();
 
         Product product = new Product();
