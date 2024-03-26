@@ -88,31 +88,36 @@
                     product.getDeptProducts("Baseball");
             -->
 
-            <%
-                Product product = new Product();
-                product.getDeptProducts("Baseball");
-                product.display();
-                product.productList.displayList();
+            <div class="product">
+                <%
+                    Product product = new Product();
+                    product.getDeptProducts("Baseball");
+                    product.display();
+                    product.productList.displayList();
 
 
 
-                int c1 = product.productList.count;
-                for (int i = 0; i < c1; i++) {
-                    product = product.productList.productArray[i];
+                    int c1 = product.productList.count;
+                    for (int i = 0; i < c1; i++) {
+                        product = product.productList.productArray[i];
 
-            %>
+                %>
 
-            <c:forEach items="${imagenames}" var="imagename">
-                <div class="card">
-                    <img src="${pageContext.request.contextPath}/images/${imagename}">
-                </div>
-            </c:forEach>
+                <c:forEach items="${imagenames}" var="imagename">
+                    <div class="card">
+                        <img src="${pageContext.request.contextPath}/images/${imagename}">
+                        <h3><%= name %></h3>
+                        <p>Description: <%= description %></p>
+                        <p>Price: $<%= price %></p>
+                        <button>Add to Cart</button>
+                    </div>
+                </c:forEach>
 
-            <%
-                }
-            %>
+                <%
+                    }
+                %>
+            </div>
         </div>
-
         <footer class="footer">
             <p>We Sports</p>
             <nav>
