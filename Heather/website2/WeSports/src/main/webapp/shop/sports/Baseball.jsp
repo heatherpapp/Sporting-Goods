@@ -86,6 +86,9 @@
                 use:
                     Product product = new Product();
                     product.getDeptProducts("Baseball");
+
+                    
+                div class "product" is a WIP and does not work
             -->
 
             <div class="product">
