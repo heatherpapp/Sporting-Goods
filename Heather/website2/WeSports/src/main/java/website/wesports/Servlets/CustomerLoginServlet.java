@@ -42,13 +42,13 @@ public class CustomerLoginServlet extends HttpServlet {
 
         PrintWriter out = response.getWriter();
 
-        String un, pw;
-        un = request.getParameter("Username"); //CustID form textbox
-        pw = request.getParameter("Password"); //CustPassword form textbox
-        System.out.println("Username: " + un + "\nCustomerPassword: " + pw + "\n");
+        String emailTextbox, passwordTextbox;
+        emailTextbox = request.getParameter("Email"); //Email form textbox
+        passwordTextbox = request.getParameter("Password"); //CustPassword form textbox
+        System.out.println("Username: " + emailTextbox + "\nCustomerPassword: " + passwordTextbox + "\n");
 
         Customer c1 = new Customer();
-        c1.selectDB(un);
+        c1.selectDB(emailTextbox);
 
         String unDB = c1.getCustEmail();
         String pwDB = c1.getCustPassword();
@@ -60,7 +60,7 @@ public class CustomerLoginServlet extends HttpServlet {
         String url;
         RequestDispatcher rdObj;
 
-        if (pwDB.equals(pw)) {
+        if (pwDB.equals(passwordTextbox)) {
             // Successful login forward to DisplayAccount.jsp CHANGE THIS
             url = "/CustomerProfile.html";
             rdObj = request.getRequestDispatcher(url);

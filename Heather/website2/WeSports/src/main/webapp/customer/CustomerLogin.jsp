@@ -26,7 +26,7 @@
         <h2 style="text-align: center;">Welcome Back!</h2>
         <h1>Login</h1>
         <div class="input-box">
-          <input type="text" placeholder="Username" name="Username" id="Username" required>
+          <input type="text" placeholder="Email" name="Email" id="Email" required>
           <i class='bx bxs-user'></i>
         </div>
         <div class="input-box">
