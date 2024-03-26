@@ -43,13 +43,13 @@ public class DistributorLoginServlet extends HttpServlet {
 
         PrintWriter out = response.getWriter();
 
-        String distUNTextbox, distPWTextbox;
-        distUNTextbox = request.getParameter("distUserNameInput"); //distUserNameInput form textbox
-        distPWTextbox = request.getParameter("distPasswordInput"); //distPasswordInput form textbox
-        System.out.println("DistributorID: " + distUNTextbox + "\nDistributorPassword: " + distPWTextbox + "\n");
+        String usernameTextbox, passwordTextbox;
+        usernameTextbox = request.getParameter("Username"); //Email form textbox
+        passwordTextbox = request.getParameter("Password"); //CustPassword form textbox
+        System.out.println("Username: " + usernameTextbox + "\nPassword: " + passwordTextbox + "\n");
 
         Distributor d1 = new Distributor();
-        d1.selectDB(distUNTextbox);
+        d1.selectDB(usernameTextbox);
 
         String usernameDB = d1.getDistUsername();
         String pwDB = d1.getDistPW();
@@ -57,13 +57,13 @@ public class DistributorLoginServlet extends HttpServlet {
 
         HttpSession ses1 = request.getSession();
         ses1.setAttribute("d1", d1);
-        ses1.setAttribute("distUserNameInput", distUNTextbox);
-        ses1.setAttribute("distPasswordInput", distPWTextbox);
+        ses1.setAttribute("distUserNameInput", usernameTextbox);
+        ses1.setAttribute("distPasswordInput", passwordTextbox);
 
         String url;
         RequestDispatcher rdObj;
 
-        if (pwDB.equals(distPWTextbox)) {
+        if (pwDB.equals(passwordTextbox)) {
             // Successful login forward to DisplayAccount.jsp CHANGE THIS
             url = "distributor/DistributorPortal.html";
             rdObj = request.getRequestDispatcher(url);

@@ -25,12 +25,12 @@
       <form action="../DistributorLoginServlet" name="DistributorLoginForm" method="post">
         <h1>Login</h1>
         <div class="input-box">
-          <input name="distUserNameInput" id="distUserNameInput" type="text" placeholder="Username" required>
-           <i class='bx bxs-user'></i>
+          <input type="text" placeholder="Username" name="Username" id="Username" required>
+          <i class='bx bxs-user'></i>
         </div>
         <div class="input-box">
-          <input name=distPasswordInput" id="distPasswordInput" type="password" placeholder="Password" required>
-           <i class='bx bxs-lock-alt' ></i>
+          <input type="password" placeholder="Password" name="Password" id="Password" required>
+          <i class='bx bxs-lock-alt' ></i>
         </div>
 
         <div class="remember-forgot">
