@@ -93,6 +93,13 @@
                 product.getDeptProducts("Baseball");
                 product.display();
                 product.productList.displayList();
+
+
+
+                int c1 = product.productList.count;
+                for (int i = 0; i < c1; i++) {
+                    product = product.productList.productArray[i];
+
             %>
 
             <c:forEach items="${imagenames}" var="imagename">
@@ -101,6 +108,9 @@
                 </div>
             </c:forEach>
 
+            <%
+                }
+            %>
         </div>
 
         <footer class="footer">
