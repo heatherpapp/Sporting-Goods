@@ -21,7 +21,7 @@ public class Customer {
 
     /************* Database *************/
     final String DBDriver = "net.ucanaccess.jdbc.UcanaccessDriver";
-    final String DBLocation = "jdbc:ucanaccess://C:/WeSportsDB/WeSports.accdb;showSchema=true";
+    final String DBLocation = "jdbc:ucanaccess://C://WeSportsDB//WeSports.accdb/";
 
     /************* Properties *************/
     String CustEmail, CustFirstName, CustLastName, CustStreet, CustCity, CustState, CustZip, CustPassword;
