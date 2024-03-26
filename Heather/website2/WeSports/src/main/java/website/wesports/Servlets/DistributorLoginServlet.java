@@ -43,13 +43,13 @@ public class DistributorLoginServlet extends HttpServlet {
 
         PrintWriter out = response.getWriter();
 
-        String distID, distPW;
-        distID = request.getParameter("distUserNameInput"); //CustID form textbox
-        distPW = request.getParameter("distPasswordInput"); //CustPassword form textbox
-        System.out.println("DistributorID: " + distID + "\nDistributorPassword: " + distPW + "\n");
+        String distUN, distPW;
+        distUN = request.getParameter("distUserNameInput"); //distUserNameInput form textbox
+        distPW = request.getParameter("distPasswordInput"); //distPasswordInput form textbox
+        System.out.println("DistributorID: " + distUN + "\nDistributorPassword: " + distPW + "\n");
 
         Distributor d1 = new Distributor();
-        d1.selectDB(distID);
+        d1.selectDB(distUN);
 
         String idDB = d1.getDistUsername();
         String pwDB = d1.getDistPW();
@@ -57,6 +57,8 @@ public class DistributorLoginServlet extends HttpServlet {
 
         HttpSession ses1 = request.getSession();
         ses1.setAttribute("d1", d1);
+        ses1.setAttribute("distUserNameInput", distUN);
+        ses1.setAttribute("distPasswordInput", distPW);
 
         String url;
         RequestDispatcher rdObj;

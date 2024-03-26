@@ -117,6 +117,7 @@
                     <button>Shop Youth Apparel</button>
                 </a>
             </div>
+        </div>
 
         <footer class="footer">
             <p>We Sports</p>
@@ -145,6 +146,7 @@
                                 <i class="fab fa-youtube"></i>
                             </a>
                         </div>
+
         </footer>
     </body>
 </html>
