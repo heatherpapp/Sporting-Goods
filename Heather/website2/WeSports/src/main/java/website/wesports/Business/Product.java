@@ -294,17 +294,6 @@ public class Product {
         return exists;
     } // END recordExists
 
-    public void searchProducts(String query) {
-        //SELECT * FROM Products WHERE ProductCode=" +query+
-        //  OR ProductName LIKE '%" +query+ "%'
-        //  OR ProductDescription LIKE '%" +query+ "%'
-        //  OR Department LIKE '%" +query+ "%'
-        //  OR Section LIKE '%" +query+ "%'
-        //  OR Age Group LIKE '%" +query+ "%'
-        //  OR Gender LIKE '%" +query+ "%'"
-    }
-
-
     public void getDeptProducts(String dept) {
         //like getAccounts from Customer in Chatt Bank, but for a list of all products in given department
         try {
@@ -335,6 +324,65 @@ public class Product {
         } catch (Exception e) { System.out.println("Exception" + e); }
     }
 
+    public void searchProducts(String query) {
+        //SELECT * FROM Products WHERE ProductCode=" +query+
+        //  OR ProductName LIKE '%" +query+ "%'
+        //  OR ProductDescription LIKE '%" +query+ "%'
+        //  OR Department LIKE '%" +query+ "%'
+        //  OR Section LIKE '%" +query+ "%'
+        //  OR Age Group LIKE '%" +query+ "%'
+        //  OR Gender LIKE '%" +query+ "%'"
+
+        try {
+            // Get connection to database
+            Class.forName(DBDriver);
+            Connection connection = DriverManager.getConnection(DBLocation);
+            System.out.println("Database Connected");
+
+            //Create SQL statement & string
+            Statement stmt = connection.createStatement();
+            String sql = "SELECT ProductCode FROM Products WHERE ProductName LIKE = '%" + query + "%' "
+                    + "OR ProductDescription LIKE = '%" + query + "%' "
+                    + "OR Department LIKE '%" +query+ "%' "
+                    + "OR Section LIKE '%" +query+ "%' "
+                    + "OR AgeGroup LIKE '%" +query+ "%' "
+                    + "OR Gender LIKE '%" +query+ "%' ";
+
+            // Execute SQL Query
+            ResultSet rs = stmt.executeQuery(sql);
+            System.out.println("SQL Query: " + sql);
+
+            String prodCode;
+            String prodDescr;
+            String dept;
+            String sect;
+            String ageGrp;
+            String gend;
+
+            Product product;
+
+            while (rs.next()) {
+                prodCode = rs.getString("ProductCode");
+                prodDescr = rs.getString("ProductDescription");
+                dept = rs.getString("Department");
+                sect = rs.getString("Section");
+                ageGrp = rs.getString("AgeGroup");
+                gend = rs.getString("Gender");
+
+                product = new Product();
+
+                //if ()
+                //switch ()
+
+                product.selectPDB(prodCode);
+                productList.addProducts(product);
+                product.productList.displayList();
+            }
+            connection.close();
+
+        } catch (Exception e) { System.out.println("Exception" + e); }
+
+    }
 
     public static void main(String[] args) {
         Product p1 = new Product();
