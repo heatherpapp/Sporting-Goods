@@ -341,8 +341,8 @@ public class Product {
 
             //Create SQL statement & string
             Statement stmt = connection.createStatement();
-            String sql = "SELECT ProductCode FROM Products WHERE ProductName LIKE = '%" + query + "%' "
-                    + "OR ProductDescription LIKE = '%" + query + "%' "
+            String sql = "SELECT ProductCode FROM Products WHERE ProductName LIKE '%" + query + "%' "
+                    + "OR ProductDescription LIKE '%" + query + "%' "
                     + "OR Department LIKE '%" +query+ "%' "
                     + "OR Section LIKE '%" +query+ "%' "
                     + "OR AgeGroup LIKE '%" +query+ "%' "
@@ -353,27 +353,12 @@ public class Product {
             System.out.println("SQL Query: " + sql);
 
             String prodCode;
-            String prodDescr;
-            String dept;
-            String sect;
-            String ageGrp;
-            String gend;
 
             Product product;
 
             while (rs.next()) {
-                prodCode = rs.getString("ProductCode");
-                prodDescr = rs.getString("ProductDescription");
-                dept = rs.getString("Department");
-                sect = rs.getString("Section");
-                ageGrp = rs.getString("AgeGroup");
-                gend = rs.getString("Gender");
-
+                prodCode = rs.getString(1);
                 product = new Product();
-
-                //if ()
-                //switch ()
-
                 product.selectPDB(prodCode);
                 productList.addProducts(product);
                 product.productList.displayList();
@@ -386,8 +371,9 @@ public class Product {
 
     public static void main(String[] args) {
         Product p1 = new Product();
-        //p1.selectPDB("002272904");
-        p1.getDeptProducts("Baseball");
+        //p1.selectPDB("002272904"); //test select product by productCode
+        //p1.getDeptProducts("Baseball"); //test select products by department
+        p1.searchProducts("ball"); //test search method
         p1.display();
     }
 }
