@@ -81,7 +81,7 @@
                 <!-- Search results will be displayed here -->
             </div>
 
-            <!--
+            <!--WIP!!!
                 for each product where department = baseball show a card with product image, name, and price
                 use:
                     Product product = new Product();
