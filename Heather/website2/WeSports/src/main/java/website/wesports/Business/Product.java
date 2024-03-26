@@ -469,6 +469,7 @@ public class Product {
 
     }
 
+    /************* Main Method for Testing *************/
     public static void main(String[] args) {
         Product p1 = new Product();
         //p1.selectPDB("002272904"); //test select product by productCode
