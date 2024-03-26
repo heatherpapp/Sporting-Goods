@@ -86,33 +86,55 @@
                 use:
                     Product product = new Product();
                     product.getDeptProducts("Baseball");
+
+                    
+                div class "product" is a WIP and does not work
             -->
 
-            <%
-                Product product = new Product();
-                product.getDeptProducts("Baseball");
-                product.display();
-                product.productList.displayList();
+            <div class="product">
+                <%
+                    Product product = new Product();
+                    product.getDeptProducts("Baseball");
+                    product.display();
+                    product.productList.displayList();
 
 
+                    try {
+                        int c1 = product.productList.count;
+                        for (int i = 0; i < c1; i++) {
+                            product = product.productList.productArray[i];
 
-                int c1 = product.productList.count;
-                for (int i = 0; i < c1; i++) {
-                    product = product.productList.productArray[i];
+                            while (rs.next()) {
+                                String name = rs.getString("name");
+                                String description = rs.getString("description");
+                                double price = rs.getDouble("price");
+                                String imageUrl = rs.getString("image_url");
 
-            %>
+                %>
 
-            <c:forEach items="${imagenames}" var="imagename">
-                <div class="card">
-                    <img src="${pageContext.request.contextPath}/images/${imagename}">
-                </div>
-            </c:forEach>
+                <c:forEach items="${imagenames}" var="imagename">
+                    <div class="card">
+                        <img src="${pageContext.request.contextPath}/images/${imagename}">
+                        <h3><%= name %></h3>
+                        <p>Description: <%= description %></p>
+                        <p>Price: $<%= price %></p>
+                        <button>Add to Cart</button>
+                    </div>
+                </c:forEach>
 
-            <%
-                }
-            %>
+                <%
+                            }
+                        }
+                    } catch (Exception e) {
+                    e.printStackTrace();
+                    } finally {
+                        if (rs != null) rs.close();
+                        if (stmt != null) stmt.close();
+                        if (conn != null) conn.close();
+                    }
+                %>
+            </div>
         </div>
-
         <footer class="footer">
             <p>We Sports</p>
             <nav>
