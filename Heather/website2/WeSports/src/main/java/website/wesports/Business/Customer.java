@@ -37,7 +37,7 @@ public class Customer {
         CustState = "";
         CustZip = "";
         CustPassword = "";
-        Order = new ProductList();
+        //Order = new ProductList();
     }
     public Customer(String custEmail, String custFirstName, String custLastName, String custStreet, String custCity, String custState, String custZip, String custPassword, ProductList order) {
         CustEmail = custEmail;
@@ -48,7 +48,7 @@ public class Customer {
         CustState = custState;
         CustZip = custZip;
         CustPassword = custPassword;
-        Order = order;
+        //Order = order;
     }
 
     /************* Behaviors *************/
@@ -77,20 +77,20 @@ public class Customer {
     public boolean Exists;
     public void setExists(boolean exists) { Exists = exists; }
     public boolean getExists() { return  Exists; }
-    public boolean customerExists(String cEmail, Connection connection) {
+    public boolean customerExists(String cem, Connection connection) {
         Exists = false;
         try {
             // Create SQL statement & string
             Statement stmt = connection.createStatement();
             String sql = "SELECT * FROM Customer WHERE CustEmail = '" + getCustEmail() + "'";
+            //System.out.println("Check Exists" + sql);
 
             // Execute SQL Query
             ResultSet rs = stmt.executeQuery(sql);
-
-            // Check if CustID record exists
             if (rs.next()) {
-                if(rs.getInt(1) != 0) Exists = true;
-                System.out.println("Customer Email: " + cEmail);
+                //if(rs.getInt(1) != 0)
+                Exists = true;
+                System.out.println("Customer Email: " + cem + " Exists");
             }
         } catch (Exception e) { System.out.println("Exception: " + e); }
         // Return boolean result of customerExists()
@@ -104,7 +104,7 @@ public class Customer {
         System.out.println("Customer Email: " + getCustEmail());
         System.out.println("Customer FirstName: " + getCustFirstName());
         System.out.println("Customer LastName: " + getCustLastName());
-        System.out.println("Customer Address: " + getCustStreet() + "\n" + getCustCity() + " ," + getCustState() + " " + getCustZip());
+        System.out.println("Customer Address: " + getCustStreet() + "\n" + getCustCity() + ", " + getCustState() + " " + getCustZip());
         System.out.println("Customer PW: " + getCustPassword());
         System.out.println("Cart");
         Cart.displayList();
@@ -135,15 +135,13 @@ public class Customer {
 
                 // Info to retrieve
                 rs.next();
-
-                setCustEmail(rs.getString("CustEmail"));
-                setCustFirstName(rs.getString("CustFirstName"));
-                setCustLastName(rs.getString("CustLastName"));
-                setCustStreet(rs.getString("CustStreet"));
-                setCustCity(rs.getString("CustCity"));
-                setCustState(rs.getString("CustState"));
-                setCustZip(rs.getString("CustZip"));
-                setCustPassword(rs.getString("CustPassword"));
+                setCustFirstName(rs.getString(2));
+                setCustLastName(rs.getString(3));
+                setCustStreet(rs.getString(4));
+                setCustCity(rs.getString(5));
+                setCustState(rs.getString(6));
+                setCustZip(rs.getString(7));
+                setCustPassword(rs.getString(8));
 
             } else System.out.println("***** Customer Retrieval ERROR! ***** \n***** Customer: " + cem + " does NOT exist! *****");
             // Close Connection
@@ -325,7 +323,8 @@ public class Customer {
 
     public static void main(String[] args) {
         Customer c1 = new Customer();
-        c1.selectDB("test@email.com");
-        //c1.insertDB("test@email.com", "TestFN", "TestLN", "123 Main St", "Testcity", "TS", "12345", "Passw0rd!2");
+        c1.selectDB("TestEmail");
+        c1.display();
+        //c1.insertDB("test", "TestFN", "TestLN", "123 Main St", "Testcity", "TS", "12345", "password");
     }
 }

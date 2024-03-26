@@ -56,6 +56,8 @@ public class CustomerLoginServlet extends HttpServlet {
 
         HttpSession ses1 = request.getSession();
         ses1.setAttribute("c1", c1);
+        ses1.setAttribute("Email", emailTextbox);
+        ses1.setAttribute("Password", passwordTextbox);
 
         String url;
         RequestDispatcher rdObj;
