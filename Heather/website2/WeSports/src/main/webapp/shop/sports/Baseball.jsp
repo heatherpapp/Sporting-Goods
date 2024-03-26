@@ -1,24 +1,26 @@
-
 <!DOCTYPE html>
+<%@ page import="website.wesports.Business.Product" %>
+<%@ page import="website.wesports.Business.ProductList" %>
 <html>
     <head>
         <meta name="viewport" content="width=device-with, initial-scale=1.0">
         <title>We Sports | Shop Sports</title>
-        <link rel="apple-touch-icon" sizes="180x180" href="/Website/favicon_package_v0.16/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="/Website/favicon_package_v0.16/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/Website/favicon_package_v0.16/favicon-16x16.png">
-        <link rel="manifest" href="/Website/favicon_package_v0.16/site.webmanifest">
-        <link rel="mask-icon" href="/Website/favicon_package_v0.16/safari-pinned-tab.svg" color="#5bbad5">
+        <link rel="apple-touch-icon" sizes="180x180" href="../../resources/favicon_package_v0.16/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="../../resources/favicon_package_v0.16/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="../../resources/favicon_package_v0.16/favicon-16x16.png">
+        <link rel="manifest" href="../../resources/favicon_package_v0.16/site.webmanifest">
+        <link rel="mask-icon" href="../../resources/favicon_package_v0.16/safari-pinned-tab.svg" color="#5bbad5">
         <meta name="msapplication-TileColor" content="#da532c">
         <meta name="theme-color" content="#ffffff">
-        <link rel="stylesheet" href="/Website/CSS/styles.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../../resources/css/styles.css">
         <script src="https://kit.fontawesome.com/5b6c8cdace.js" crossorigin="anonymous"></script>
     </head>
     <body>
         <div class="container">
             <nav>
-                <a href="/Website/Home.html">
-                    <img src="/Website/Pictures/clearw.png" class="logo">
+                <a href="../../Home.html">
+                    <img src="../../resources/pictures/clearw.png" class="logo">
                 </a>
                 <ul>
                 
@@ -27,40 +29,40 @@
                             <div class="dropdown-content">
                             
                                 <!--Need to Update links to JSP on all-->
-                                <a href="Sports/Baseball.html">Baseball</a>
-                                <a href="Sports/Basketball.html">Basketball</a>
-                                <a href="Sports/Cycling.html">Cycling</a>
-                                <a href="Sports/Football.html">Football</a>
-                                <a href="Sports/Golf.html">Golf</a>
-                                <a href="Sports/Running.html">Running</a>
-                                <a href="Sports/Soccer.html">Soccer</a>
-                                <a href="Sports/Tennis.html">Tennis</a>
-                                <a href="Sports/Volleyball.html">Volleyball</a>                            
+                                <a href="../sports/Baseball.html">Baseball</a>
+                                <a href="../sports/Basketball.html">Basketball</a>
+                                <a href="../sports/Cycling.html">Cycling</a>
+                                <a href="../sports/Football.html">Football</a>
+                                <a href="../sports/Golf.html">Golf</a>
+                                <a href="../sports/Running.html">Running</a>
+                                <a href="../sports/Soccer.html">Soccer</a>
+                                <a href="../sports/Tennis.html">Tennis</a>
+                                <a href="../sports/Volleyball.html">Volleyball</a>
                             </div>                            
                     </div>
                     <div class="dropdown">
                         <button>Shop Outdoors</button>
                             <div class="dropdown-content">
-                                <a href="Outdoors/Camping.html">Camping</a>
-                                <a href="Outdoors/Cycling.html">Climbing</a>
-                                <a href="Outdoors/Fishing.html">Fishing</a>
-                                <a href="Outdoors/Kayaking.html">Kayaking</a>
+                                <a href="../outdoors/Camping.html">Camping</a>
+                                <a href="../outdoors/Climbing.html">Climbing</a>
+                                <a href="../outdoors/Fishing.html">Fishing</a>
+                                <a href="../outdoors/Kayaking.html">Kayaking</a>
                             </div>
                     </div>
                     <div class="dropdown">
                         <button>Shop by Apparel</button>
                             <div class="dropdown-content">
-                                <a href="Apparel/Mens.html">Men's</a>
-                                <a href="Apparel/">Women's</a>
-                                <a href="Apparel/">Junior's</a>
-                                <a href="Apparel/">Youth</a>
+                                <a href="../apparel/Mens.html">Men's</a>
+                                <a href="../apparel/">Women's</a>
+                                <a href="../apparel/">Junior's</a>
+                                <a href="../apparel/">Youth</a>
                             </div>
                     </div>
 
                 </ul>
-                <a href="Login.html" class="login-button">Login</a>
+                <a href="../Login.html" class="login-button">Login</a>
         
-                <a href="/Website/Cart.html" class="btn">
+                <a href="../Cart.html" class="btn">
                     <i class="fa-solid fa-cart-shopping"></i> Cart
                 </a>
             </nav>
@@ -71,71 +73,52 @@
             </div>
             <div class="search-container">
                 <input type="text" id="search-input" placeholder="Search...">
-                <button id="search-button" onclick="search()">Search</button>
+                <button id="search-button" onclick="search()">Search</button>  <!-- this needs to call the SearchProducts.jsp instead -->
             </div>
             
 
             <div id="search-results">
                 <!-- Search results will be displayed here -->
             </div>
-            <!-- Need to Center cards on page-->
-            <div class="card">
-                <a href="Baseball.jsp">
-                    <img src="/Website/Pictures/baseball_and_bat.jpg" alt="baseball in a glove next to a bat on the ground">
-                    <button>Baseball</button>
-                </a>
-            </div>
-            <div class="card">
-                <a href="Basketball.jsp">
-                    <img src="/Website/Pictures/basketball_in_net.jpg" alt="basketball in net">
-                    <button>Basketball</button>
-                </a>
-            </div>
-            <div class="card">
-                <a href="Football.jsp">
-                    <img src="/Website/Pictures/football_and_helmet.jpg" alt="football next to helmet on the ground">
-                    <button>Football</button>
-                </a>
-            </div>
-            <div class="card">
-                <a href="Golf.jsp">
-                    <img src="/Website/Pictures/golf_tee_club_hand.jpg" alt="hand placing golf ball on a tee with club">
-                    <button>Golf</button>
-                </a>
-            </div>
-            <div class="card">
-                <a href="Running.jsp">
-                    <img src="/Website/Pictures/running_start.jpg" alt="runner crouched at starting line">
-                    <button>Running</button>
-                </a>
-            </div>
-            <div class="card">
-                <a href="Soccer.jsp">
-                    <img src="/Website/Pictures/soccerball_in_net_score.jpg" alt="soccer ball in net">
-                    <button>Soccer</button>
-                </a>
-            </div>
-            <div class="card">
-                <a href="Tennis.jsp">
-                    <img src="/Website/Pictures/tennis_racquets_balls_net.jpg" alt="tennis rackets leaning against net with balls on the ground">
-                    <button>Tennis</button>
-                </a>
-            </div>
-            <div class="card">
-                <a href="Volleyball.jsp">
-                    <img src="/Website/Pictures/volleyball_hands.jpg" alt="hands lobbing a volleyball">
-                    <button>Volleyball</button>
-                </a>
-            </div>
+
+            <!--WIP!!!
+                for each product where department = baseball show a card with product image, name, and price
+                use:
+                    Product product = new Product();
+                    product.getDeptProducts("Baseball");
+            -->
+
+            <%
+                Product product = new Product();
+                product.getDeptProducts("Baseball");
+                product.display();
+                product.productList.displayList();
+
+
+
+                int c1 = product.productList.count;
+                for (int i = 0; i < c1; i++) {
+                    product = product.productList.productArray[i];
+
+            %>
+
+            <c:forEach items="${imagenames}" var="imagename">
+                <div class="card">
+                    <img src="${pageContext.request.contextPath}/images/${imagename}">
+                </div>
+            </c:forEach>
+
+            <%
+                }
+            %>
         </div>
 
         <footer class="footer">
             <p>We Sports</p>
             <nav>
                 <ul>
-                    <li><a href="about.html">About us</a></li>
-                    <li><a href="contact.html">Contact us</a></li>
-                    <li><a href="thanks.html">Thank you</a></li>
+                    <li><a href="../about.html">About us</a></li>
+                    <li><a href="../contact.html">Contact us</a></li>
                 </ul>
             </nav>
             <p class="website__rights">&copy; Wesports 2024. All rights reserved.</p>
@@ -157,5 +140,8 @@
                             </a>
                         </div>
         </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+        <script src="../resources/JavaScript/script.js"></script>
     </body>
 </html>

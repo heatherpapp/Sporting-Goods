@@ -24,29 +24,29 @@ public class Distributor {
     private String DistPass, DistUsername;
     private String DistFirstName, DistLastName, DistEmail;
     final static String DBDriver = "net.ucanaccess.jdbc.UcanaccessDriver";
-    final String DBLocation = "jdbc:ucanaccess://C:/WeSportsDB/WeSports.accdb;showSchema=true";
+    final String DBLocation = "jdbc:ucanaccess://C://WeSportsDB//WeSports.accdb/";
 
     /************* Constructors *************/
     public Distributor() {
-        DistPass = "";
         DistUsername = "";
+        DistPass = "";
         DistFirstName = "";
         DistLastName = "";
         DistEmail = "";
     }
-    public Distributor(String dpw, String dun, String dfn, String dln, String dem) {
-        DistPass = dpw;
+    public Distributor(String dun, String dpw, String dfn, String dln, String dem) {
         DistUsername = dun;
+        DistPass = dpw;
         DistFirstName = dfn;
         DistLastName = dln;
         DistEmail = dem;
     }
 
     /************* Behaviors *************/
-    public void setDistPW(String dpw) { DistPass = dpw; }
-    public String getDistPW() { return DistPass; }
     public void setDistUsername(String dun) { DistUsername = dun; }
     public String getDistUsername() { return DistUsername; }
+    public void setDistPW(String dpw) { DistPass = dpw; }
+    public String getDistPW() { return DistPass; }
     public void setDistFname(String dfn) { DistFirstName = dfn; }
     public String getDistFname() { return DistFirstName; }
     public void setDistLname(String dln) { DistLastName = dln; }
@@ -55,24 +55,27 @@ public class Distributor {
     public String getDistEmail() { return DistEmail; }
 
     /*************Check if Distributor Record Exists *************/
+    public boolean Exists;
+    public void setExists(boolean exists) { Exists = exists; }
+    public boolean getExists() { return  Exists; }
     public boolean distUserNameExists(String dun, Connection connection) {
-        boolean exists = false;
+        Exists = false;
         try {
             // Create SQL statement & string
             Statement stmt = connection.createStatement();
-            String sql = "SELECT * FROM Customers WHERE DistUsername = '" + getDistUsername() + "'";
+            String sql = "SELECT * FROM Distributor WHERE DistUsername = '" + getDistUsername() + "'";
 
             // Execute SQL Query
             ResultSet rs = stmt.executeQuery(sql);
 
             // Check if CustID record exists
             if (rs.next()) {
-                if(rs.getInt(1) != 0) exists = true;
-                System.out.println("Customer ID: " + dun + " Exists");
+                Exists = true;
+                System.out.println("Distributor ID: " + dun + " Exists");
             }
         } catch (Exception e) { System.out.println("Exception: " + e); }
         // Return boolean result of recordExists()
-        return exists;
+        return Exists;
     } // END recordExists()
 
     /************* Display Results *************/
@@ -151,7 +154,7 @@ public class Distributor {
                 setDistLname(rs.getString(4));
                 setDistEmail(rs.getString(5));
 
-            } else System.out.println("***** Customer Retrieval ERROR! ***** \n***** Customer ID: " + dun + " does NOT exist! *****");
+            } else System.out.println("***** Distributor Retrieval ERROR! ***** \n***** Distributor ID: " + dun + " does NOT exist! *****");
             // Close Connection
             connection.close();
         } catch (Exception e) { System.out.println("Exception" + e); }
@@ -195,7 +198,7 @@ public class Distributor {
                 // Verify Insert
                 if (n == 1) System.out.println("..... INSERT Successful! .....");
                 else System.out.println("***** INSERT FAILED! *****");
-            } else System.out.println("***** ERROR! ***** Cannot Insert New Record! *****\n***** Customer ID: " + dun + " already exists! *****");
+            } else System.out.println("***** ERROR! ***** Cannot Insert New Record! *****\n***** Distributor ID: " + dun + " already exists! *****");
 
             // Close connnection
             connection.close();
@@ -263,4 +266,11 @@ public class Distributor {
             connection.close();
         } catch (Exception e) { System.out.println("Exception" + e); }
     } // END deleteDB()
+
+
+    public static void main(String[] args) {
+        Distributor d1 = new Distributor();
+        d1.selectDB("hpapp");
+        d1.display();
+    }
 }

@@ -21,7 +21,7 @@ public class Customer {
 
     /************* Database *************/
     final String DBDriver = "net.ucanaccess.jdbc.UcanaccessDriver";
-    final String DBLocation = "jdbc:ucanaccess://C:/WeSportsDB/WeSports.accdb;showSchema=true";
+    final String DBLocation = "jdbc:ucanaccess://C://WeSportsDB//WeSports.accdb/";
 
     /************* Properties *************/
     String CustEmail, CustFirstName, CustLastName, CustStreet, CustCity, CustState, CustZip, CustPassword;
@@ -37,7 +37,7 @@ public class Customer {
         CustState = "";
         CustZip = "";
         CustPassword = "";
-        Order = new ProductList();
+        //Order = new ProductList();
     }
     public Customer(String custEmail, String custFirstName, String custLastName, String custStreet, String custCity, String custState, String custZip, String custPassword, ProductList order) {
         CustEmail = custEmail;
@@ -48,15 +48,13 @@ public class Customer {
         CustState = custState;
         CustZip = custZip;
         CustPassword = custPassword;
-        Order = order;
+        //Order = order;
     }
 
     /************* Behaviors *************/
 
     public void setCustEmail(String custEmail) { CustEmail = custEmail; }
     public String getCustEmail() { return CustEmail; }
-    public void setCustPassword(String custPass) { CustPassword = custPass; }
-    public String getCustPassword() { return CustPassword; }
     public void setCustFirstName(String custFirstName) { CustFirstName = custFirstName; }
     public String getCustFirstName() { return CustFirstName; }
     public void setCustLastName(String custLastName) { CustLastName = custLastName; }
@@ -69,29 +67,34 @@ public class Customer {
     public String getCustState() { return CustState; }
     public void setCustZip(String custZip) { CustZip = custZip; }
     public String getCustZip() { return CustZip; }
+    public void setCustPassword(String custPassword) { CustPassword = custPassword; }
+    public String getCustPassword() { return CustPassword; }
     public ProductList getCart() { return Cart; }
     public ProductList getOrder() { return Order; }
 
+
     /*************Check if Customer Record Exists *************/
-    public boolean customerExists(String cEmail, Connection connection) {
-        boolean exists = false;
+    public boolean Exists;
+    public void setExists(boolean exists) { Exists = exists; }
+    public boolean getExists() { return  Exists; }
+    public boolean customerExists(String cem, Connection connection) {
+        Exists = false;
         try {
             // Create SQL statement & string
             Statement stmt = connection.createStatement();
             String sql = "SELECT * FROM Customer WHERE CustEmail = '" + getCustEmail() + "'";
+            //System.out.println("Check Exists" + sql);
 
             // Execute SQL Query
             ResultSet rs = stmt.executeQuery(sql);
-
-            // Check if CustID record exists
             if (rs.next()) {
-                if(rs.getInt(1) != 0) exists = true;
-                System.out.println("Customer Email: " + cEmail);
-                //System.out.println("Customer ID: " + cid + " Exists");
+                //if(rs.getInt(1) != 0)
+                Exists = true;
+                System.out.println("Customer Email: " + cem + " Exists");
             }
         } catch (Exception e) { System.out.println("Exception: " + e); }
         // Return boolean result of customerExists()
-        return exists;
+        return Exists;
     } // END recordExists()
 
     /************* Display Results *************/
@@ -101,7 +104,7 @@ public class Customer {
         System.out.println("Customer Email: " + getCustEmail());
         System.out.println("Customer FirstName: " + getCustFirstName());
         System.out.println("Customer LastName: " + getCustLastName());
-        System.out.println("Customer Address: " + getCustStreet() + "\n" + getCustCity() + " ," + getCustState() + " " + getCustZip());
+        System.out.println("Customer Address: " + getCustStreet() + "\n" + getCustCity() + ", " + getCustState() + " " + getCustZip());
         System.out.println("Customer PW: " + getCustPassword());
         System.out.println("Cart");
         Cart.displayList();
@@ -124,7 +127,7 @@ public class Customer {
             if (customerExists(cem, connection)) {
                 //Create SQL statement & string
                 Statement stmt = connection.createStatement();
-                String sql = "SELECT * FROM Customers WHERE CustEmail = '" + getCustEmail() + "'";
+                String sql = "SELECT * FROM Customer WHERE CustEmail = '" + getCustEmail() + "'";
 
                 // Execute SQL Query
                 ResultSet rs = stmt.executeQuery(sql);
@@ -132,15 +135,13 @@ public class Customer {
 
                 // Info to retrieve
                 rs.next();
-
-                setCustEmail(rs.getString("CustEmail"));
-                setCustFirstName(rs.getString("CustFirstName"));
-                setCustLastName(rs.getString("CustLastName"));
-                setCustStreet(rs.getString("CustStreet"));
-                setCustCity(rs.getString("CustCity"));
-                setCustState(rs.getString("CustState"));
-                setCustZip(rs.getString("CustZip"));
-                setCustPassword(rs.getString("CustPassword"));
+                setCustFirstName(rs.getString(2));
+                setCustLastName(rs.getString(3));
+                setCustStreet(rs.getString(4));
+                setCustCity(rs.getString(5));
+                setCustState(rs.getString(6));
+                setCustZip(rs.getString(7));
+                setCustPassword(rs.getString(8));
 
             } else System.out.println("***** Customer Retrieval ERROR! ***** \n***** Customer: " + cem + " does NOT exist! *****");
             // Close Connection
@@ -216,8 +217,8 @@ public class Customer {
             Statement stmt = connection.createStatement();
 
             // Create SQL string
-            String sql = "UPDATE Customers SET CustFirstName = '" + getCustFirstName() + "',"
-                    + " CustLastName = '" + getCustLastName() + "',"
+            String sql = "UPDATE Customer SET CustFirstName = '" + getCustFirstName() + "',"
+                    + "CustLastName = '" + getCustLastName() + "',"
                     + "CustStreet = '" + getCustStreet() + "',"
                     + "CustCity = '" + getCustCity() + "',"
                     + "CustState = '" + getCustState() + "',"
@@ -289,7 +290,7 @@ public class Customer {
             while (rs.next()) {
                 pro1 = new Product();
                 pro1.selectPDB(rs.getString("ProductCode"));
-                //pro1.setQuantity(rs.getInt("Quantity"));
+                pro1.setQuantity(rs.getInt("Quantity"));
                 Cart.addProducts(pro1);
             }
         } catch (Exception e) { System.out.println("Exception" + e); }
@@ -314,9 +315,16 @@ public class Customer {
             while (rs.next()) {
                 pro1 = new Product();
                 pro1.selectPDB(rs.getString("ProductCode"));
-                //pro1.setQuantity(rs.getString("Quantity"));
+                pro1.setQuantity(rs.getInt("Quantity"));
                 Order.addProducts(pro1);
             }
         } catch (Exception e) { System.out.println("Exception" + e); }
     } // END getOrderDB
+
+    public static void main(String[] args) {
+        Customer c1 = new Customer();
+        c1.selectDB("TestEmail");
+        c1.display();
+        //c1.insertDB("test", "TestFN", "TestLN", "123 Main St", "Testcity", "TS", "12345", "password");
+    }
 }

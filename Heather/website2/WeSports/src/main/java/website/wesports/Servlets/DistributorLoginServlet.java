@@ -43,33 +43,35 @@ public class DistributorLoginServlet extends HttpServlet {
 
         PrintWriter out = response.getWriter();
 
-        String distID, distPW;
-        distID = request.getParameter("distUserNameInput"); //CustID form textbox
-        distPW = request.getParameter("distPasswordInput"); //CustPassword form textbox
-        System.out.println("DistributorID: " + distID + "\nDistributorPassword: " + distPW + "\n");
+        String usernameTextbox, passwordTextbox;
+        usernameTextbox = request.getParameter("Username"); //Email form textbox
+        passwordTextbox = request.getParameter("Password"); //CustPassword form textbox
+        System.out.println("Username: " + usernameTextbox + "\nPassword: " + passwordTextbox + "\n");
 
         Distributor d1 = new Distributor();
-        d1.selectDB(distID);
+        d1.selectDB(usernameTextbox);
 
-        String idDB = d1.getDistUsername();
+        String usernameDB = d1.getDistUsername();
         String pwDB = d1.getDistPW();
-        System.out.println("DBID: " + idDB + "\nDBPW: " + pwDB );
+        System.out.println("DBID: " + usernameDB + "\nDBPW: " + pwDB );
 
         HttpSession ses1 = request.getSession();
         ses1.setAttribute("d1", d1);
+        ses1.setAttribute("distUserNameInput", usernameTextbox);
+        ses1.setAttribute("distPasswordInput", passwordTextbox);
 
         String url;
         RequestDispatcher rdObj;
 
-        if (pwDB.equals(distPW)) {
+        if (pwDB.equals(passwordTextbox)) {
             // Successful login forward to DisplayAccount.jsp CHANGE THIS
-            //url = "/DisplayAccount.jsp";
+            url = "distributor/DistributorPortal.html";
             rdObj = request.getRequestDispatcher(url);
             rdObj.forward(request, response);
 
         } else {
             // Failed login forward to ErrorPage.jsp
-            //url = "/ErrorPage.jsp";
+            url = "distributor/DistributorLoginError.html";
             rdObj = request.getRequestDispatcher(url);
             rdObj.forward(request, response);
         }
