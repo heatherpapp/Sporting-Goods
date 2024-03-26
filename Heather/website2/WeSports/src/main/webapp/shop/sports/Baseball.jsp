@@ -85,7 +85,14 @@
 
             <%
 
+
             %>
+
+
+            <c:forEach items="${imagenames}" var="imagename">
+                <img src="${pageContext.request.contextPath}/images/${imagename}.jpg">
+            </c:forEach>
+
 
             <div class="card">
                 <a href="Baseball.jsp">
