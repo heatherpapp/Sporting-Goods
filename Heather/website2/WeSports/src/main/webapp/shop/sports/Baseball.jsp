@@ -91,6 +91,8 @@
             <%
                 Product product = new Product();
                 product.getDeptProducts("Baseball");
+                product.display();
+                product.productList.displayList();
             %>
 
             <c:forEach items="${imagenames}" var="imagename">

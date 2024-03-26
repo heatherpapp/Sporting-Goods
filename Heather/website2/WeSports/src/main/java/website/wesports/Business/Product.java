@@ -30,7 +30,7 @@ public class Product {
     String AgeGroup, Gender, Department, Section; // search tags
     int Quantity;
     double UnitPrice;
-    ProductList productList = new ProductList();
+    public ProductList productList = new ProductList();
 
     //ProductPhoto
     /**
