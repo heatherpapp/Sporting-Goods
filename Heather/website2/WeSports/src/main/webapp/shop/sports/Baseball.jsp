@@ -97,7 +97,7 @@
 
             <c:forEach items="${imagenames}" var="imagename">
                 <div class="card">
-                    <img src="${pageContext.request.contextPath}/images/${imagename}.jpg">
+                    <img src="${pageContext.request.contextPath}/images/${imagename}">
                 </div>
             </c:forEach>
 
