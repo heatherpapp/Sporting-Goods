@@ -28,25 +28,25 @@ public class Distributor {
 
     /************* Constructors *************/
     public Distributor() {
-        DistPass = "";
         DistUsername = "";
+        DistPass = "";
         DistFirstName = "";
         DistLastName = "";
         DistEmail = "";
     }
-    public Distributor(String dpw, String dun, String dfn, String dln, String dem) {
-        DistPass = dpw;
+    public Distributor(String dun, String dpw, String dfn, String dln, String dem) {
         DistUsername = dun;
+        DistPass = dpw;
         DistFirstName = dfn;
         DistLastName = dln;
         DistEmail = dem;
     }
 
     /************* Behaviors *************/
-    public void setDistPW(String dpw) { DistPass = dpw; }
-    public String getDistPW() { return DistPass; }
     public void setDistUsername(String dun) { DistUsername = dun; }
     public String getDistUsername() { return DistUsername; }
+    public void setDistPW(String dpw) { DistPass = dpw; }
+    public String getDistPW() { return DistPass; }
     public void setDistFname(String dfn) { DistFirstName = dfn; }
     public String getDistFname() { return DistFirstName; }
     public void setDistLname(String dln) { DistLastName = dln; }

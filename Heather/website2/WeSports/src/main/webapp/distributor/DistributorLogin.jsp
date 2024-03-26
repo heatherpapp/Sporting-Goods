@@ -22,7 +22,7 @@
   <body>
 
     <div class="wrapper">
-      <form action="DistributorLoginServlet" name="DistributorLoginForm" method="post">
+      <form action="../DistributorLoginServlet" name="DistributorLoginForm" method="post">
         <h1>Login</h1>
         <div class="input-box">
           <input name="distUserNameInput" id="distUserNameInput" type="text" placeholder="Username" required>

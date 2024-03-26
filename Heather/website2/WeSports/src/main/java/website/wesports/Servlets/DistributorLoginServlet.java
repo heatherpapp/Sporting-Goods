@@ -43,35 +43,35 @@ public class DistributorLoginServlet extends HttpServlet {
 
         PrintWriter out = response.getWriter();
 
-        String distUN, distPW;
-        distUN = request.getParameter("distUserNameInput"); //distUserNameInput form textbox
-        distPW = request.getParameter("distPasswordInput"); //distPasswordInput form textbox
-        System.out.println("DistributorID: " + distUN + "\nDistributorPassword: " + distPW + "\n");
+        String distUNTextbox, distPWTextbox;
+        distUNTextbox = request.getParameter("distUserNameInput"); //distUserNameInput form textbox
+        distPWTextbox = request.getParameter("distPasswordInput"); //distPasswordInput form textbox
+        System.out.println("DistributorID: " + distUNTextbox + "\nDistributorPassword: " + distPWTextbox + "\n");
 
         Distributor d1 = new Distributor();
-        d1.selectDB(distUN);
+        d1.selectDB(distUNTextbox);
 
-        String idDB = d1.getDistUsername();
+        String usernameDB = d1.getDistUsername();
         String pwDB = d1.getDistPW();
-        System.out.println("DBID: " + idDB + "\nDBPW: " + pwDB );
+        System.out.println("DBID: " + usernameDB + "\nDBPW: " + pwDB );
 
         HttpSession ses1 = request.getSession();
         ses1.setAttribute("d1", d1);
-        ses1.setAttribute("distUserNameInput", distUN);
-        ses1.setAttribute("distPasswordInput", distPW);
+        ses1.setAttribute("distUserNameInput", distUNTextbox);
+        ses1.setAttribute("distPasswordInput", distPWTextbox);
 
         String url;
         RequestDispatcher rdObj;
 
-        if (pwDB.equals(distPW)) {
+        if (pwDB.equals(distPWTextbox)) {
             // Successful login forward to DisplayAccount.jsp CHANGE THIS
-            url = "/DisplayAccount.jsp";
+            url = "distributor/DistributorPortal.html";
             rdObj = request.getRequestDispatcher(url);
             rdObj.forward(request, response);
 
         } else {
             // Failed login forward to ErrorPage.jsp
-            url = "/ErrorPage.jsp";
+            url = "distributor/DistributorLoginError.html";
             rdObj = request.getRequestDispatcher(url);
             rdObj.forward(request, response);
         }
