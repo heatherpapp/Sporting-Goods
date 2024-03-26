@@ -73,7 +73,7 @@
             </div>
             <div class="search-container">
                 <input type="text" id="search-input" placeholder="Search...">
-                <button id="search-button" onclick="search()">Search</button>
+                <button id="search-button" onclick="search()">Search</button>  <!-- this needs to call the SearchProducts.jsp instead -->
             </div>
             
 
@@ -81,25 +81,23 @@
                 <!-- Search results will be displayed here -->
             </div>
 
-            <!-- for each product where department = baseball show a card with product image, name, and price-->
+            <!--
+                for each product where department = baseball show a card with product image, name, and price
+                use:
+                    Product product = new Product();
+                    product.getDeptProducts("Baseball");
+            -->
 
             <%
-
-
+                Product product = new Product();
+                product.getDeptProducts("Baseball");
             %>
 
-
             <c:forEach items="${imagenames}" var="imagename">
-                <img src="${pageContext.request.contextPath}/images/${imagename}.jpg">
+                <div class="card">
+                    <img src="${pageContext.request.contextPath}/images/${imagename}.jpg">
+                </div>
             </c:forEach>
-
-
-            <div class="card">
-                <a href="Baseball.jsp">
-                    <img src="../../resources/pictures/baseball_and_bat.jpg" alt="baseball in a glove next to a bat on the ground">
-                    <button>Baseball</button>
-                </a>
-            </div>
 
         </div>
 

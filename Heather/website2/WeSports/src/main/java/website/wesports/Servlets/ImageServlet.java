@@ -15,7 +15,8 @@ import java.sql.*;
 public class ImageServlet extends HttpServlet {
 
     // content=blob, name=varchar(255) UNIQUE.
-    private static final String SQL_FIND = "SELECT content FROM Image WHERE name = ?";
+    //private static final String SQL_FIND = "SELECT content FROM Image WHERE name = ?";
+    private static final String SQL_FIND = "SELECT content FROM ProductPhoto WHERE ProductCode = ?";
 
     @Resource(name="jdbc:ucanaccess://C://WeSportsDB//WeSports.accdb/") // For Tomcat, define as <Resource> in context.xml and declare as <resource-ref> in web.xml.
     private DataSource dataSource;
