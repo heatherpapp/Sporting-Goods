@@ -96,10 +96,16 @@
                     product.productList.displayList();
 
 
+                    try {
+                        int c1 = product.productList.count;
+                        for (int i = 0; i < c1; i++) {
+                            product = product.productList.productArray[i];
 
-                    int c1 = product.productList.count;
-                    for (int i = 0; i < c1; i++) {
-                        product = product.productList.productArray[i];
+                            while (rs.next()) {
+                                String name = rs.getString("name");
+                                String description = rs.getString("description");
+                                double price = rs.getDouble("price");
+                                String imageUrl = rs.getString("image_url");
 
                 %>
 
@@ -114,6 +120,14 @@
                 </c:forEach>
 
                 <%
+                            }
+                        }
+                    } catch (Exception e) {
+                    e.printStackTrace();
+                    } finally {
+                        if (rs != null) rs.close();
+                        if (stmt != null) stmt.close();
+                        if (conn != null) conn.close();
                     }
                 %>
             </div>
