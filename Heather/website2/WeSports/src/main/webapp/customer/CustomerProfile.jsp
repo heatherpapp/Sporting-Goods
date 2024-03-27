@@ -94,27 +94,43 @@
         <input type="text" id="search-input" placeholder="Search...">
         <button id="search-button" onclick="search()">Search</button>  <!-- this needs to call the SearchProducts.jsp instead -->
     </div>
-</div>
-
-<!-- Page Contents -->
 
 
 
+    <!-- Page Contents -->
+
+    <div>
+        <%
+            Customer c1 = (Customer) session.getAttribute("c1");
+            c1.display();
+        %>
+        <h1> Welcome, <%=c1.getCustFirstName()%>! </h1> <!-- get customer first name and display here -->
+
+        <ul style="list-style-type: none">
+            <li>
+                <!-- Display Address Here -->
+
+            </li>
+            <li>
+                <h4> <a href="CustomerUpdateProfile.jsp">Update Account</a> </h4>
+            </li>
+            <li>
+                <h4> <a href="CustomerOrders.jsp">Orders</a> </h4>
+            </li>
+            <li>
+                <h4> <a href="../shop/Help.html">Help & FAQs</a> </h4>
+            </li>
+            <li>
+                <h4> <a href="CustomerLogout.html">Logout</a> </h4>
+            </li>
+        </ul>
+
+    </div>
+
+    <!-- End Page Contents -->
+</div> <!--End div container -->
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- End Page Contents -->
 <!-- Footer and Info Links -->
 <footer class="footer">
     <p>WeSports</p>

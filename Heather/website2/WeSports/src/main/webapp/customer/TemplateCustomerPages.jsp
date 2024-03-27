@@ -3,17 +3,16 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-with, initial-scale=1.0">
-    <title>WeSports | Customer Portal | Update Profile</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="../resources/favicon_package_v0.16/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="../resources/favicon_package_v0.16/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="../resources/favicon_package_v0.16/favicon-16x16.png">
-    <link rel="manifest" href="../resources/favicon_package_v0.16/site.webmanifest">
-    <link rel="mask-icon" href="../resources/favicon_package_v0.16/safari-pinned-tab.svg" color="#5bbad5">
+    <title>WeSports | Customer Portal</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="${pageContext.request.contextPath}/resources/favicon_package_v0.16/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="${pageContext.request.contextPath}/resources/favicon_package_v0.16/favicon-16x16.png">
+    <link rel="manifest" href="${pageContext.request.contextPath}/resources/favicon_package_v0.16/site.webmanifest">
+    <link rel="mask-icon" href="${pageContext.request.contextPath}/resources/favicon_package_v0.16/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../resources/css/styles.css">
-    <link rel="stylesheet" href="../resources/css/customerProfile.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/styles.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/customerProfile.css">
     <script src="https://kit.fontawesome.com/5b6c8cdace.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,8 +24,8 @@
 <!-- Navigation -->
 <div class="container">
     <nav>
-        <a href="../Home.html">
-            <img src="../resources/pictures/clearw.png" class="logo">
+        <a href="${pageContext.request.contextPath}/Home.html">
+            <img src="${pageContext.request.contextPath}/resources/pictures/clearw.png" class="logo">
         </a>
         <ul>
             <div class="dropdown">
@@ -34,31 +33,31 @@
                 <div class="dropdown-content">
 
                     <!--Need to Update links to JSP on all-->
-                    <a href="../shop/sports/Baseball.jsp">Baseball</a>
-                    <a href="../shop/sports/Basketball.jsp">Basketball</a>
-                    <a href="../shop/sports/Football.jsp">Football</a>
-                    <a href="../shop/sports/Golf.jsp">Golf</a>
-                    <a href="../shop/sports/Soccer.jsp">Soccer</a>
-                    <a href="../shop/sports/Tennis.jsp">Tennis</a>
-                    <a href="../shop/sports/Volleyball.jsp">Volleyball</a>
+                    <a href="${pageContext.request.contextPath}/shop/sports/Baseball.jsp">Baseball</a>
+                    <a href="${pageContext.request.contextPath}/shop/sports/Basketball.jsp">Basketball</a>
+                    <a href="${pageContext.request.contextPath}/shop/sports/Football.jsp">Football</a>
+                    <a href="${pageContext.request.contextPath}/shop/sports/Golf.jsp">Golf</a>
+                    <a href="${pageContext.request.contextPath}/shop/sports/Soccer.jsp">Soccer</a>
+                    <a href="${pageContext.request.contextPath}/shop/sports/Tennis.jsp">Tennis</a>
+                    <a href="${pageContext.request.contextPath}/shop/sports/Volleyball.jsp">Volleyball</a>
                 </div>
             </div>
             <div class="dropdown">
                 <button>Shop Outdoors</button>
                 <div class="dropdown-content">
-                    <a href="../shop/outdoors/Camping.jsp">Camping</a>
-                    <a href="../shop/outdoors/Climbing.jsp">Climbing</a>
-                    <a href="../shop/outdoors/Fishing.jsp">Fishing</a>
-                    <a href="../shop/outdoors/Kayaking.jsp">Kayaking</a>
+                    <a href="${pageContext.request.contextPath}/shop/outdoors/Camping.jsp">Camping</a>
+                    <a href="${pageContext.request.contextPath}/shop/outdoors/Climbing.jsp">Climbing</a>
+                    <a href="${pageContext.request.contextPath}/shop/outdoors/Fishing.jsp">Fishing</a>
+                    <a href="${pageContext.request.contextPath}/shop/outdoors/Kayaking.jsp">Kayaking</a>
                 </div>
             </div>
             <div class="dropdown">
                 <button>Shop by Apparel</button>
                 <div class="dropdown-content">
-                    <a href="../shop/apparel/Men.jsp">Men's</a>
-                    <a href="../shop/apparel/Women.jsp">Women's</a>
-                    <a href="../shop/apparel/Junior.jsp">Junior's</a>
-                    <a href="../shop/apparel/Youth.jsp">Youth</a>
+                    <a href="${pageContext.request.contextPath}/shop/apparel/Men.jsp">Men's</a>
+                    <a href="${pageContext.request.contextPath}/shop/apparel/Women.jsp">Women's</a>
+                    <a href="${pageContext.request.contextPath}/shop/apparel/Junior.jsp">Junior's</a>
+                    <a href="${pageContext.request.contextPath}/shop/apparel/Youth.jsp">Youth</a>
                 </div>
             </div>
 
@@ -71,7 +70,7 @@
                 <a href="CustomerProfile.html">View Account</a>
                 <a href="CustomerUpdateProfile.jsp">Update Account</a>
                 <a href="CustomerOrders.jsp">Orders</a>
-                <a href="../shop/Help.html">Help & FAQs</a>
+                <a href="${pageContext.request.contextPath}/shop/Help.html">Help & FAQs</a>
                 <a href="CustomerLogout.html">Logout</a>
             </div>
         </div>
@@ -95,10 +94,8 @@
         <input type="text" id="search-input" placeholder="Search...">
         <button id="search-button" onclick="search()">Search</button>  <!-- this needs to call the SearchProducts.jsp instead -->
     </div>
-</div>
 
-<!-- Page Contents -->
-
+    <!-- Page Contents -->
 
 
 
@@ -115,14 +112,17 @@
 
 
 
-<!-- End Page Contents -->
+
+    <!-- End Page Contents -->
+</div> <!-- End div container -->
+
 <!-- Footer and Info Links -->
 <footer class="footer">
     <p>WeSports</p>
     <nav>
         <ul>
-            <li><a href="../shop/about.html">About Us</a></li>
-            <li><a href="../shop/contact.html">Contact Us</a></li>
+            <li><a href="${pageContext.request.contextPath}/shop/about.html">About Us</a></li>
+            <li><a href="${pageContext.request.contextPath}/shop/contact.html">Contact Us</a></li>
         </ul>
     </nav>
     <p class="website__rights">&copy; WeSports 2024. All rights reserved.</p>
@@ -147,7 +147,7 @@
 
 <!-- Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
-<script src="../resources/JavaScript/script.js"></script>
+<script src="${pageContext.request.contextPath}/resources/JavaScript/script.js"></script>
 
 
 
