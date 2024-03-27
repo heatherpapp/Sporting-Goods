@@ -5,7 +5,7 @@
       <meta charset="UTF-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
-      <title>Register</title>
+      <title>WeSports | Register</title>
       <link rel="stylesheet" href="../resources/css/Info.css">
       <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     </head>

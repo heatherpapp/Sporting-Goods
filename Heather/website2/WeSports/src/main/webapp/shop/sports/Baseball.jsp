@@ -4,7 +4,7 @@
 <html>
     <head>
         <meta name="viewport" content="width=device-with, initial-scale=1.0">
-        <title>We Sports | Shop Sports</title>
+        <title>WeSports | Shop Sports</title>
         <link rel="apple-touch-icon" sizes="180x180" href="../../resources/favicon_package_v0.16/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="../../resources/favicon_package_v0.16/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="../../resources/favicon_package_v0.16/favicon-16x16.png">
@@ -29,33 +29,33 @@
                             <div class="dropdown-content">
                             
                                 <!--Need to Update links to JSP on all-->
-                                <a href="../sports/Baseball.html">Baseball</a>
-                                <a href="../sports/Basketball.html">Basketball</a>
-                                <a href="../sports/Cycling.html">Cycling</a>
-                                <a href="../sports/Football.html">Football</a>
-                                <a href="../sports/Golf.html">Golf</a>
-                                <a href="../sports/Running.html">Running</a>
-                                <a href="../sports/Soccer.html">Soccer</a>
-                                <a href="../sports/Tennis.html">Tennis</a>
-                                <a href="../sports/Volleyball.html">Volleyball</a>
+                                <a href="../sports/Baseball.jsp">Baseball</a>
+                                <a href="../sports/Basketball.jsp">Basketball</a>
+                                <a href="../sports/Cycling.jsp">Cycling</a>
+                                <a href="../sports/Football.jsp">Football</a>
+                                <a href="../sports/Golf.jsp">Golf</a>
+                                <a href="../sports/Running.jsp">Running</a>
+                                <a href="../sports/Soccer.jsp">Soccer</a>
+                                <a href="../sports/Tennis.jsp">Tennis</a>
+                                <a href="../sports/Volleyball.jsp">Volleyball</a>
                             </div>                            
                     </div>
                     <div class="dropdown">
                         <button>Shop Outdoors</button>
                             <div class="dropdown-content">
-                                <a href="../outdoors/Camping.html">Camping</a>
-                                <a href="../outdoors/Climbing.html">Climbing</a>
-                                <a href="../outdoors/Fishing.html">Fishing</a>
-                                <a href="../outdoors/Kayaking.html">Kayaking</a>
+                                <a href="../outdoors/Camping.jsp">Camping</a>
+                                <a href="../outdoors/Climbing.jsp">Climbing</a>
+                                <a href="../outdoors/Fishing.jsp">Fishing</a>
+                                <a href="../outdoors/Kayaking.jsp">Kayaking</a>
                             </div>
                     </div>
                     <div class="dropdown">
                         <button>Shop by Apparel</button>
                             <div class="dropdown-content">
-                                <a href="../apparel/Mens.html">Men's</a>
-                                <a href="../apparel/">Women's</a>
-                                <a href="../apparel/">Junior's</a>
-                                <a href="../apparel/">Youth</a>
+                                <a href="../apparel/Men.jsp">Men's</a>
+                                <a href="../apparel/Women.jsp">Women's</a>
+                                <a href="../apparel/Junior.jsp">Junior's</a>
+                                <a href="../apparel/Youth.jsp">Youth</a>
                             </div>
                     </div>
 
@@ -136,14 +136,14 @@
             </div>
         </div>
         <footer class="footer">
-            <p>We Sports</p>
+            <p>WeSports</p>
             <nav>
                 <ul>
-                    <li><a href="../about.html">About us</a></li>
-                    <li><a href="../contact.html">Contact us</a></li>
+                    <li><a href="../about.html">About Us</a></li>
+                    <li><a href="../contact.html">Contact Us</a></li>
                 </ul>
             </nav>
-            <p class="website__rights">&copy; Wesports 2024. All rights reserved.</p>
+            <p class="website__rights">&copy; WeSports 2024. All rights reserved.</p>
                         <div class="social__icons">
                             <a href="/" class="social__icon--link" target="_blank">
                                 <i class="fab fa-facebook"></i>
@@ -164,6 +164,6 @@
         </footer>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
-        <script src="../resources/JavaScript/script.js"></script>
+        <script src="../../resources/JavaScript/script.js"></script>
     </body>
 </html>

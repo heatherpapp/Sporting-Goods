@@ -44,28 +44,28 @@
                         <!--Need to Update links to JSP on all-->
                         <a href="../shop/sports/Baseball.jsp">Baseball</a>
                         <a href="../shop/sports/Basketball.jsp">Basketball</a>
-                        <a href="../shop/sports/Cycling.html">Cycling</a>
-                        <a href="../shop/sports/Football.html">Football</a>
-                        <a href="../shop/sports/Golf.html">Golf</a>
-                        <a href="../shop/sports/Running.html">Running</a>
-                        <a href="../shop/sports/Soccer.html">Soccer</a>
-                        <a href="../shop/sports/Tennis.html">Tennis</a>
-                        <a href="../shop/sports/Volleyball.html">Volleyball</a>
+                        <a href="../shop/sports/Cycling.jsp">Cycling</a>
+                        <a href="../shop/sports/Football.jsp">Football</a>
+                        <a href="../shop/sports/Golf.jsp">Golf</a>
+                        <a href="../shop/sports/Running.jsp">Running</a>
+                        <a href="../shop/sports/Soccer.jsp">Soccer</a>
+                        <a href="../shop/sports/Tennis.jsp">Tennis</a>
+                        <a href="../shop/sports/Volleyball.jsp">Volleyball</a>
                     </div>
                 </div>
                 <div class="dropdown">
                     <button>Shop Outdoors</button>
                     <div class="dropdown-content">
-                        <a href="../shop/outdoors/Camping.html">Camping</a>
-                        <a href="../shop/outdoors/Climbing.html">Climbing</a>
-                        <a href="../shop/outdoors/Fishing.html">Fishing</a>
-                        <a href="../shop/outdoors/Kayaking.html">Kayaking</a>
+                        <a href="../shop/outdoors/Camping.jsp">Camping</a>
+                        <a href="../shop/outdoors/Climbing.jsp">Climbing</a>
+                        <a href="../shop/outdoors/Fishing.jsp">Fishing</a>
+                        <a href="../shop/outdoors/Kayaking.jsp">Kayaking</a>
                     </div>
                 </div>
                 <div class="dropdown">
                     <button>Shop by Apparel</button>
                     <div class="dropdown-content">
-                        <a href="../shop/apparel/Mens.html">Men's</a>
+                        <a href="../shop/apparel/Mens.jsp">Men's</a>
                         <a href="../shop/apparel/">Women's</a>
                         <a href="../shop/apparel/">Junior's</a>
                         <a href="../shop/apparel/">Youth</a>
@@ -119,8 +119,8 @@
         <p>WeSports</p>
         <nav>
             <ul>
-                <li><a href="../shop/about.html">About us</a></li>
-                <li><a href="../shop/contact.html">Contact us</a></li>
+                <li><a href="../shop/about.html">About Us</a></li>
+                <li><a href="../shop/contact.html">Contact Us</a></li>
             </ul>
         </nav>
         <p class="website__rights">&copy; WeSports 2024. All rights reserved.</p>
