@@ -86,6 +86,15 @@ nav ul li a{
   .dropdown:hover .dropdown-content {
     display: block;
   }
+
+  /* Show dropdown content for customer account options */
+.customer-dropdown-menu {
+
+}
+
+.customer-dropdown-content {
+
+}
   .login-button {
     margin-right: 30px;
     display: inline-block;
@@ -98,7 +107,9 @@ nav ul li a{
     text-decoration: none; /* Remove default underline */
     cursor: pointer;
     transition: background-color 0.3s ease; /* Smooth transition for background color */
-}
+  }
+
+
 
 .login-button:hover {
     background-color: #f93838; /* Darker shade on hover */

@@ -66,6 +66,7 @@
             <i class="fa-solid fa-cart-shopping"></i> Cart
         </a>
     </nav>
+
     <div class="content">
         <h1>WeSports</h1>
         <h4>We do Sports</h4>
@@ -133,14 +134,14 @@
 </div>
 
 <footer class="footer">
-    <p>We Sports</p>
+    <p>WeSports</p>
     <nav>
         <ul>
             <li><a href="../about.html">About us</a></li>
             <li><a href="../contact.html">Contact us</a></li>
         </ul>
     </nav>
-    <p class="website__rights">&copy; Wesports 2024. All rights reserved.</p>
+    <p class="website__rights">&copy; WeSports 2024. All rights reserved.</p>
     <div class="social__icons">
         <a href="/" class="social__icon--link" target="_blank">
             <i class="fab fa-facebook"></i>
@@ -161,5 +162,5 @@
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
-<script src="../resources/JavaScript/script.js"></script>
+<script src="../../resources/JavaScript/script.js"></script>
 </body>

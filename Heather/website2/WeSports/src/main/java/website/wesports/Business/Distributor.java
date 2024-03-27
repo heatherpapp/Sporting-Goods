@@ -3,7 +3,7 @@ package website.wesports.Business;
 /*
  * Class: CIST 2931 : Advanced Systems Project Management
  * Term: Spring 2024
- * Instructor: Chris Bishop
+ * Instructor: Ron Enz
  * Description: Distributor Business Object
  * Authors: Heather Papp
  *

@@ -1,5 +1,14 @@
 package website.wesports.Servlets;
-
+/*
+ * Class: CIST 2931 : Advanced Systems Project Management
+ * Term: Spring 2024
+ * Instructor: Ron Enz
+ * Description: Home Servlet
+ * Authors: Heather Papp
+ *
+ *
+ *
+ */
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
