@@ -44,10 +44,8 @@
                         <!--Need to Update links to JSP on all-->
                         <a href="../shop/sports/Baseball.jsp">Baseball</a>
                         <a href="../shop/sports/Basketball.jsp">Basketball</a>
-                        <a href="../shop/sports/Cycling.jsp">Cycling</a>
                         <a href="../shop/sports/Football.jsp">Football</a>
                         <a href="../shop/sports/Golf.jsp">Golf</a>
-                        <a href="../shop/sports/Running.jsp">Running</a>
                         <a href="../shop/sports/Soccer.jsp">Soccer</a>
                         <a href="../shop/sports/Tennis.jsp">Tennis</a>
                         <a href="../shop/sports/Volleyball.jsp">Volleyball</a>
@@ -65,10 +63,10 @@
                 <div class="dropdown">
                     <button>Shop by Apparel</button>
                     <div class="dropdown-content">
-                        <a href="../shop/apparel/Mens.jsp">Men's</a>
-                        <a href="../shop/apparel/">Women's</a>
-                        <a href="../shop/apparel/">Junior's</a>
-                        <a href="../shop/apparel/">Youth</a>
+                        <a href="../shop/apparel/Men.jsp">Men's</a>
+                        <a href="../shop/apparel/Women.jsp">Women's</a>
+                        <a href="../shop/apparel/Junior.jsp">Junior's</a>
+                        <a href="../shop/apparel/Youth.jsp">Youth</a>
                     </div>
                 </div>
 
