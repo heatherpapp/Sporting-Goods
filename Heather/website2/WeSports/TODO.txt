@@ -1,5 +1,6 @@
 TODO LIST
 
+ISSUES
 * Signup.css error on line 106
 
 * Corners of page are oddly rounded:
@@ -14,6 +15,9 @@ TODO LIST
             - confirm billing and shipping info
                 * billing info will NOT be processed --- dummy fields, no table for storage
                 * shipping info WILL BE stored in Customer table
+
+* When a customer is logged in but goes elsewhere they are being logged out/pages arent reflecting logged in status
+
 
 
 * Servlets:
