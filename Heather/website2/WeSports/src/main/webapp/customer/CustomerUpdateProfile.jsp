@@ -29,14 +29,13 @@
 </head>
 
 <body>
-
+    <!-- Navigation -->
     <div class="container">
         <nav>
             <a href="../Home.html">
                 <img src="../resources/pictures/clearw.png" class="logo">
             </a>
             <ul>
-
                 <div class="dropdown">
                     <button>Shop by Sport</button>
                     <div class="dropdown-content">
@@ -90,19 +89,21 @@
             </a>
             -->
         </nav>
-
+    <!-- Greeting -->
         <div class="content">
             <h1>WeSports</h1>
             <h4>We do Sports</h4>
             <p>Shop with us today and save!</p>
         </div>
 
+        <!-- Search bar -->
         <div class="search-container">
             <input type="text" id="search-input" placeholder="Search...">
             <button id="search-button" onclick="search()">Search</button>  <!-- this needs to call the SearchProducts.jsp instead -->
         </div>
     </div>
 
+    <!-- Page Contents -->
 
 
 
@@ -113,6 +114,10 @@
 
 
 
+
+
+    <!-- End Page Contents -->
+    <!-- Footer and Info Links -->
     <footer class="footer">
         <p>WeSports</p>
         <nav>
@@ -141,6 +146,7 @@
         </div>
     </footer>
 
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
     <script src="../resources/JavaScript/script.js"></script>
 
