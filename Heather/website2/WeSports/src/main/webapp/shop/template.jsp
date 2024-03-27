@@ -66,7 +66,7 @@
 </div>
 
 <div class="content">
-    <h1>We sports</h1>
+    <h1>WeSports</h1>
     <h4>We do Sports</h4>
     <p>Shop with us today and save!</p>
 </div>
