@@ -26,7 +26,7 @@
                     <label>Username</label>
             <input type="text" placeholder="Username" required>
                 </div>
-                <div class="column">av
+                <div class="column">
                     <div class="input-box">
                         <label>First Name</label>
                 <input type="text" placeholder="First name" required>
@@ -59,6 +59,7 @@
             <input type="text" placeholder="City" required>
                 </div>
                 <div class="column">
+                    <label>State</label>
                     <div class="select-box">
                        <select>
                         <option>State</option>

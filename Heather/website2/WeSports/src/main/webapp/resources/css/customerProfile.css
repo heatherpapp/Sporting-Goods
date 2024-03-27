@@ -7,6 +7,17 @@
  */
 
 /************************WIP*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+body{
+    min-height: 10vh;
+    align-items: center;
+    justify-content: center;
+}
 .customerMenu {
     position: relative;
     display: inline-flex;
@@ -55,7 +66,8 @@
 }
 
 
-/* list */
+
+/* CustomerProfile.jsp task list */
 .customerTaskList ul {
     list-style-type: none;
     text-align: center;
@@ -68,4 +80,92 @@
     color: white;
     text-decoration: none;
     line-height: 2em;
+}
+
+
+/* CustomerUpdateProfile.jsp task list */
+.updateContainer header {
+    margin-top: 1em;
+    font-weight: bold;
+    text-align: center;
+    font-size: 20px;
+}
+
+.updateContainer form {
+    margin-top: 1em;
+}
+.customerUpdateList {
+}
+
+.customerUpdateList table {
+    caption-side: top;
+    border-radius: 10px;
+}
+
+.customerUpdateList td {
+    white-space: pre;
+    line-height: 1em;
+    font-size: 20px;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+.updateContainer {
+    position: relative;
+    width: 100%;
+    min-height: 50vh;
+    background-color: #007bff;
+    background-size: cover;
+    background-position: center;
+    padding: 10px 8%;
+    border-radius: 10px;
+}
+
+.centerRow {
+    column-span: all;
+    text-align: center;
+}
+
+.form .input-box{
+    width: 100%;
+    margin-top: 20px;
+}
+.form :where(.input-box input, .select-box){
+    position: relative;
+    height: 50px;
+    width: 100%;
+    outline: none;
+    font-size: 1rem;
+    color: #707070;
+    margin-top: 8px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 0 15px;
+}
+.form .column{
+    display: flex;
+    column-gap: 15px;
+}
+.select-box select{
+    outline: none;
+    border: none;
+    color: #707070;
+    font-size: 1rem;
+    column-gap: 15px;
+}
+.form button{
+    height: 55px;
+    width: 100%;
+    color: black;
+    border: none;
+    font-size: 1rem;
+    margin-top: 30px;
+    cursor: pointer;
+    border-radius: 6px;
+    font-weight: 400;
+    transition: all 0.4s ease;
+    background-color: blue;
+}
+.form button:hover{
+    background-color: red;
 }
