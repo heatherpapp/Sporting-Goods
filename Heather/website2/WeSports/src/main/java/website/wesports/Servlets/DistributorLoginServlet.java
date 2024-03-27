@@ -70,7 +70,6 @@ public class DistributorLoginServlet extends HttpServlet {
             rdObj.forward(request, response);
 
         } else {
-            // Failed login forward to ErrorPage.jsp
             url = "distributor/DistributorLoginError.html";
             rdObj = request.getRequestDispatcher(url);
             rdObj.forward(request, response);

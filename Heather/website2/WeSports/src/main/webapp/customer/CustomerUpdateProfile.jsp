@@ -43,7 +43,7 @@
 
                         <!--Need to Update links to JSP on all-->
                         <a href="../shop/sports/Baseball.jsp">Baseball</a>
-                        <a href="../shop/sports/Basketball.html">Basketball</a>
+                        <a href="../shop/sports/Basketball.jsp">Basketball</a>
                         <a href="../shop/sports/Cycling.html">Cycling</a>
                         <a href="../shop/sports/Football.html">Football</a>
                         <a href="../shop/sports/Golf.html">Golf</a>

@@ -69,7 +69,7 @@ public class CustomerLoginServlet extends HttpServlet {
             rdObj.forward(request, response);
 
         } else {
-            // Failed login forward to ErrorPage.jsp
+
             url = "customer/CustomerLoginError.html";
             rdObj = request.getRequestDispatcher(url);
             rdObj.forward(request, response);
