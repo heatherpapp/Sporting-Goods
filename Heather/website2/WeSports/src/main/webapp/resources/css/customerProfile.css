@@ -130,6 +130,7 @@ body{
     width: 100%;
     margin-top: 20px;
 }
+
 .form :where(.input-box input, .select-box){
     position: relative;
     height: 50px;
@@ -142,10 +143,7 @@ body{
     border-radius: 6px;
     padding: 0 15px;
 }
-.form .column{
-    display: flex;
-    column-gap: 15px;
-}
+
 .select-box select{
     outline: none;
     border: none;
@@ -153,6 +151,7 @@ body{
     font-size: 1rem;
     column-gap: 15px;
 }
+
 .form button{
     height: 55px;
     width: 100%;
@@ -165,7 +164,9 @@ body{
     font-weight: 400;
     transition: all 0.4s ease;
     background-color: blue;
+    padding: 5px;
 }
+
 .form button:hover{
     background-color: red;
 }

@@ -108,23 +108,28 @@
                 <!-- Update Name -->
                 <div class="input-box">
                     <label>Name:</label>
-                        <input type="text" placeholder="<%=c1.getCustFirstName()%>"> <input type="text" placeholder="<%=c1.getCustLastName()%>">
+                        <input type="text" id="FirstName" name="FirstName" placeholder="<%=c1.getCustFirstName()%>"> <input type="text" id="LastName" name="LastName" placeholder="<%=c1.getCustLastName()%>">
                 </div>
 
-                <!-- Update Address -->
+                <br>
+
+                <!-- Update Street Address -->
                 <div class="input-box">
                     <label>Street Address: </label>
-                        <input type="text" width="200px" placeholder="<%=c1.getCustStreet()%>">
+                        <input type="text" id="Street" name="Street" placeholder="<%=c1.getCustStreet()%>">
                 </div>
 
+                <br>
+
+                <!-- Update City -->
                 <div class="input-box">
                     <label>City: </label>
-                    <input type="text" placeholder="City" required>
+                    <input type="text" id="City" name="updateCity" placeholder="<%=c1.getCustCity()%>">
 
+                    <!-- Update State -->
                     <label>State: </label>
-
-                        <select>
-                            <option> -- </option>
+                        <select id="State" name="updateState">
+                            <option> <%=c1.getCustState()%> </option>
                             <option value="AL">Alabama</option>
                             <option value="AK">Alaska</option>
                             <option value="AZ">Arizona</option>
@@ -177,29 +182,22 @@
                             <option value="WY">Wyoming</option>
                         </select>
 
+                    <!-- Update Zip -->
                         <label>Zip: </label>
-                        <input type="text" placeholder="12345" required>
-
+                        <input type="text" id="Zip" name="updateZip" placeholder="<%=c1.getCustZip()%>">
                 </div>
 
                 <hr>
 
+                <div class="input-box">
                     <!-- Update Password -->
-                    <tr>
-                        <td>Update Password: <input type="text"> Confirm New Password: <input type="text"></td>
-                    </tr>
+                    <label>Update Password: </label><input type="text" id="NewPassword" name="NewPassword" placeholder="Enter New Password"> <label>Confirm New Password: </label> <input type="text" id="ConfirmNewPassword" name="ConfirmNewPassword" placeholder="Confirm New Password">
+                </div>
 
                 <hr>
 
                     <!-- Submit Button -->
-                    <tr>
-                        <td class="centerRow"> <input type="submit" name="submitUpdate" value="Submit"></td>
-                    </tr>
-
-
-
-
-
+                <button type="submit"> Submit </button>
 
             </form>
 

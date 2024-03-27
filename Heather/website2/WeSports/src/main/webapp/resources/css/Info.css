@@ -36,7 +36,7 @@
     margin-top: 20px;
   }
   .input-box label{
-color: #333;
+    color: #333;
   }
   .form :where(.input-box input, .select-box){
     position: relative;
