@@ -77,9 +77,10 @@
             <div class="customer-dropdown">
                 <button class="login-button">Account</button>
                     <div class="customer-dropdown-content">
-                        <a href="CustomerProfile.html">Profile</a>
+                        <a href="CustomerProfile.html">View Account</a>
                         <a href="CustomerUpdateProfile.jsp">Update Account</a>
-                        <a href="CustomerOrders.jsp">Your Orders</a>
+                        <a href="CustomerOrders.jsp">Orders</a>
+                        <a href="../shop/Help.html">Help & FAQs</a>
                         <a href="CustomerLogout.html">Logout</a>
                     </div>
             </div>
@@ -146,30 +147,6 @@
     <script src="../resources/JavaScript/script.js"></script>
 
 
-<!--
-<header class="header">
-    <div class="header__content">
-        <a href="../Home.html" class="logo">
-            <img src="../resources/pictures/clearw.png" alt="logo" class="logo__img">
-        </a>
-        <nav class="nav">
-            <ul class="nav__list">
-                <li class="nav__item">
-                    <a href="#" class="nav__link">Account Settings</a>
-                </li>
-                <li class="nav__item">
-                    <a href="#" class="nav__link">Contact</a>
-                </li>
-                <li class="nav__item">
-                    <a href="#" class="btn">Log out</a>
-                </li>
-            </ul>
-        </nav>
-    </div>
-</header>
 
-<h1>Order History</h1>
--->
-<!-- Insert order history info here -->
 </body>
 </html>
