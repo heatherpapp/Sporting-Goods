@@ -58,7 +58,7 @@
             </div>
 
         </ul>
-        <a href="../Login.html" class="login-button">Login</a>
+        <a href="../../customer/CustomerLogin.jsp" class="login-button">Login</a>
 
         <a href="../Cart.html" class="btn">
             <i class="fa-solid fa-cart-shopping"></i> Cart
