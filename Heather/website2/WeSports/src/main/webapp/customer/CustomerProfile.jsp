@@ -67,7 +67,7 @@
         <div class="customerMenu">
             <button>Account</button>
             <div class="customerMenu-content">
-                <a href="${pageContext.request.contextPath}/customer/CustomerProfile.jsp">View Account</a>
+                <a href="${pageContext.request.contextPath}/customer/CustomerProfile.jsp">Account Home</a>
                 <a href="${pageContext.request.contextPath}/customer/CustomerUpdateProfile.jsp">Update Account</a>
                 <a href="${pageContext.request.contextPath}/customer/CustomerOrders.jsp">Orders</a>
                 <a href="${pageContext.request.contextPath}/shop/Help.html">Help & FAQs</a>
@@ -104,12 +104,12 @@
             Customer c1 = (Customer) session.getAttribute("c1");
             c1.display();
         %>
-        <hr>
-        <h1> Welcome, <%=c1.getCustFirstName()%>! </h1> <!-- get customer first name and display here -->
-        <br>
+
         <ul>
             <li>
-                <!-- Display Address Here -->
+                <hr><br>
+                <h2> Welcome, <%=c1.getCustFirstName()%>! </h2> <!-- get customer first name and display here -->
+                <br><hr>
 
             </li>
             <li>

@@ -67,7 +67,7 @@
         <div class="customerMenu">
             <button>Account</button>
             <div class="customerMenu-content">
-                <a href="${pageContext.request.contextPath}/customer/CustomerProfile.jsp">View Account</a>
+                <a href="${pageContext.request.contextPath}/customer/CustomerProfile.jsp">Account Home</a>
                 <a href="${pageContext.request.contextPath}/customer/CustomerUpdateProfile.jsp">Update Account</a>
                 <a href="${pageContext.request.contextPath}/customer/CustomerOrders.jsp">Orders</a>
                 <a href="${pageContext.request.contextPath}/shop/Help.html">Help & FAQs</a>

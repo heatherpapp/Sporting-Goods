@@ -59,9 +59,13 @@
 .customerTaskList ul {
     list-style-type: none;
     text-align: center;
+    background-color: #007bff;
+    border-radius: 10px;
+    padding: 20px;
 }
 
 .customerTaskList li a {
+    color: white;
     text-decoration: none;
-    line-height: 1em;
+    line-height: 2em;
 }
