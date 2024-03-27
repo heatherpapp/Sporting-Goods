@@ -23,7 +23,7 @@
 </head>
 
 <body>
-    <!-- Navigation -->
+<!-- Navigation -->
     <div class="container">
         <nav>
             <a href="../Home.html">
@@ -67,13 +67,13 @@
             <!-- Customer account options dropdown menu -->
             <div class="customer-dropdown">
                 <button class="login-button">Account</button>
-                    <div class="customer-dropdown-content">
-                        <a href="CustomerProfile.html">View Account</a>
-                        <a href="CustomerUpdateProfile.jsp">Update Account</a>
-                        <a href="CustomerOrders.jsp">Orders</a>
-                        <a href="../shop/Help.html">Help & FAQs</a>
-                        <a href="CustomerLogout.html">Logout</a>
-                    </div>
+                <div class="customer-dropdown-content">
+                    <a href="CustomerProfile.html">View Account</a>
+                    <a href="CustomerUpdateProfile.jsp">Update Account</a>
+                    <a href="CustomerOrders.jsp">Orders</a>
+                    <a href="../shop/Help.html">Help & FAQs</a>
+                    <a href="CustomerLogout.html">Logout</a>
+                </div>
             </div>
 
             <!-- other page elements not used here
@@ -83,7 +83,7 @@
             </a>
             -->
         </nav>
-    <!-- Greeting -->
+        <!-- Greeting -->
         <div class="content">
             <h1>WeSports</h1>
             <h4>We do Sports</h4>
@@ -99,32 +99,30 @@
 
     <!-- Page Contents -->
 
-    <!-- Update Name -->
+    <%
+        Customer c1 = (Customer) session.getAttribute("c1");
+        c1.display();
+    %>
+    <h1> Welcome, <%=c1.getCustFirstName()%>! </h1> <!-- get customer first name and display here -->
 
+    <ul>
+        <li>
+            <!-- Display Address Here -->
 
-
-
-
-
-
-
-
-
-    <!-- Update Address -->
-
-
-
-
-
-
-
-
-
-
-    <!-- Update Password -->
-
-
-
+        </li>
+        <li>
+            <h4> <a href="CustomerUpdateProfile.jsp">Update Account</a> </h4>
+        </li>
+        <li>
+            <h4> <a href="CustomerOrders.jsp">Orders</a> </h4>
+        </li>
+        <li>
+            <h4> <a href="../shop/Help.html">Help & FAQs</a> </h4>
+        </li>
+        <li>
+            <h4> <a href="CustomerLogout.html">Logout</a> </h4>
+        </li>
+    </ul>
 
 
 

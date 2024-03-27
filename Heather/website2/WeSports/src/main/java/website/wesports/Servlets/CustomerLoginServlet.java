@@ -64,7 +64,7 @@ public class CustomerLoginServlet extends HttpServlet {
 
         if (pwDB.equals(passwordTextbox)) {
             // Successful login forward to DisplayAccount.jsp CHANGE THIS
-            url = "customer/CustomerProfile.html";
+            url = "customer/CustomerProfile.jsp";
             rdObj = request.getRequestDispatcher(url);
             rdObj.forward(request, response);
 
@@ -74,11 +74,6 @@ public class CustomerLoginServlet extends HttpServlet {
             rdObj = request.getRequestDispatcher(url);
             rdObj.forward(request, response);
         }
-
-
-
-
-
     }
 
     public void destroy() {}
