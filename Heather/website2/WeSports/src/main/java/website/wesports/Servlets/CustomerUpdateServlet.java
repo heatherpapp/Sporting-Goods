@@ -55,6 +55,7 @@ public class CustomerUpdateServlet extends HttpServlet {
         HttpSession session = request.getSession();
         Customer c1 = (Customer) session.getAttribute("c1");
 
+        //prepare to update with retrieved values
         c1.setCustFirstName(firstName);
         c1.setCustLastName(lastName);
         c1.setCustStreet(street);
@@ -70,7 +71,10 @@ public class CustomerUpdateServlet extends HttpServlet {
             }
         }
 
+        // commit update
         c1.updateDB(c1.getCustEmail());
+
+        session.setAttribute("c1", c1);
 
 
 
