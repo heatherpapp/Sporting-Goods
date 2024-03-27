@@ -24,28 +24,28 @@ nav{
     width: 100px;
     cursor: pointer;
 }
-nav ul{
-    list-style: none;
-    width: 100%;
-    text-align: center;
-    padding-right: 60px;
-}
-nav ul li{
-    display: inline-block;
-    margin: 10px 20px;
+    nav ul{
+        list-style: none;
+        width: 100%;
+        text-align: center;
+        padding-right: 60px;
+    }
+    nav ul li{
+        display: inline-block;
+        margin: 10px 20px;
 
-}
-nav ul li a{
-    color: white;
-    text-decoration: none;
-}
+    }
+    nav ul li a{
+        color: white;
+        text-decoration: none;
+    }
 .dropdown {
     position: relative;
     display: inline-flex;
     margin-right: 10px;
-  }
+}
 
-  .dropdown button {
+    .dropdown button {
     background-color: #6200ff;
     border-radius: 10px;
     color: white;
@@ -54,10 +54,10 @@ nav ul li a{
     border: none;
     cursor: pointer;
     min-width: 160px;
-  }
+    }
 
-  /* Style for the dropdown content (hidden by default) */
-  .dropdown-content {
+    /* Style for the dropdown content (hidden by default) */
+    .dropdown-content {
     transition: 0.7s;
     display: none;
     position: absolute;
@@ -66,35 +66,71 @@ nav ul li a{
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
     top: 100%;
-  }
+    }
 
-  /* Style for the dropdown items */
-  .dropdown-content a {
+    /* Style for the dropdown items */
+    .dropdown-content a {
     color: black;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
-  }
+    }
 
-  /* Change color on hover */
-  .dropdown-content a:hover {
+    /* Change color on hover */
+    .dropdown-content a:hover {
     transition: 0.4s;
     background-color: #6200ff54;
-  }
+    }
 
-  /* Show the dropdown content when the dropdown button is hovered over */
-  .dropdown:hover .dropdown-content {
+    /* Show the dropdown content when the dropdown button is hovered over */
+    .dropdown:hover .dropdown-content {
     display: block;
-  }
+    }
 
   /* Show dropdown content for customer account options */
-.customer-dropdown-menu {
-
+.customer-dropdown {
+    position: relative;
+    display: inline-flex;
+    margin-right: 10px;
 }
+    .customer-dropdown button {
+        background-color: #6200ff;
+        border-radius: 10px;
+        color: white;
+        padding: 10px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+        min-width: 160px;
+    }
+    /* Style for the dropdown content (hidden by default) */
+    .customer-dropdown {
+        transition: 0.7s;
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        top: 100%;
+    }
+    /* Style for the dropdown items */
+    .customer-dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+    /* Change color on hover */
+    .customer-dropdown-content a:hover {
+        transition: 0.4s;
+        background-color: #6200ff54;
+    }
+    /* Show the dropdown content when the dropdown button is hovered over */
+    .customer-dropdown:hover .customer-dropdown-content {
+        display: block;
+    }
 
-.customer-dropdown-content {
-
-}
   .login-button {
     margin-right: 30px;
     display: inline-block;

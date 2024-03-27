@@ -74,8 +74,8 @@
 
             </ul>
             <!-- Customer account options dropdown menu -->
-            <div class="customer-dropdown-menu">
-                <button>Account</button>
+            <div class="customer-dropdown">
+                <button class="login-button">Account</button>
                     <div class="customer-dropdown-content">
                         <a href="CustomerProfile.html">Profile</a>
                         <a href="CustomerUpdateProfile.jsp">Update Account</a>

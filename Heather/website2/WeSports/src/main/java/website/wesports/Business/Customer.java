@@ -323,7 +323,8 @@ public class Customer {
 
     public static void main(String[] args) {
         Customer c1 = new Customer();
-        c1.selectDB("TestEmail");
+        c1.updateDB();
+        //c1.selectDB("TestEmail@email.com");
         c1.display();
         //c1.insertDB("test", "TestFN", "TestLN", "123 Main St", "Testcity", "TS", "12345", "password");
     }
