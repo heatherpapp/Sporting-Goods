@@ -4,7 +4,6 @@
 <head>
     <meta name="viewport" content="width=device-with, initial-scale=1.0">
     <title>WeSports | Customer Portal | Update Profile</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="../resources/favicon_package_v0.16/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../resources/favicon_package_v0.16/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../resources/favicon_package_v0.16/favicon-16x16.png">
     <link rel="manifest" href="../resources/favicon_package_v0.16/site.webmanifest">

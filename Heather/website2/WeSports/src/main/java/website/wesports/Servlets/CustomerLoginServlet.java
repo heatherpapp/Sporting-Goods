@@ -63,14 +63,13 @@ public class CustomerLoginServlet extends HttpServlet {
         RequestDispatcher rdObj;
 
         if (pwDB.equals(passwordTextbox)) {
-            // Successful login forward to DisplayAccount.jsp CHANGE THIS
-            url = "customer/CustomerProfile.jsp";
+            url = "/customer/CustomerProfile.jsp";
             rdObj = request.getRequestDispatcher(url);
             rdObj.forward(request, response);
 
         } else {
 
-            url = "customer/CustomerLoginError.html";
+            url = "/customer/CustomerLoginError.html";
             rdObj = request.getRequestDispatcher(url);
             rdObj.forward(request, response);
         }
