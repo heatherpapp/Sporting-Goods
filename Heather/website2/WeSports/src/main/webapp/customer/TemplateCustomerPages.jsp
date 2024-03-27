@@ -2,7 +2,7 @@
 <%@ page import="website.wesports.Business.Customer" %>
 <html>
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-with, initial-scale=1.0">
     <title>WeSports | Customer Portal | Update Profile</title>
     <link rel="apple-touch-icon" sizes="180x180" href="../resources/favicon_package_v0.16/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../resources/favicon_package_v0.16/favicon-32x32.png">
@@ -13,6 +13,7 @@
     <meta name="theme-color" content="#ffffff">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../resources/css/styles.css">
+    <link rel="stylesheet" href="../resources/css/customerProfile.css">
     <script src="https://kit.fontawesome.com/5b6c8cdace.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -63,9 +64,10 @@
 
         </ul>
         <!-- Customer account options dropdown menu -->
-        <div class="customer-dropdown">
-            <button class="login-button">Account</button>
-            <div class="customer-dropdown-content">
+
+        <div class="customerMenu">
+            <button>Account</button>
+            <div class="customerMenu-content">
                 <a href="CustomerProfile.html">View Account</a>
                 <a href="CustomerUpdateProfile.jsp">Update Account</a>
                 <a href="CustomerOrders.jsp">Orders</a>
@@ -96,6 +98,11 @@
 </div>
 
 <!-- Page Contents -->
+
+
+
+
+
 
 
 
