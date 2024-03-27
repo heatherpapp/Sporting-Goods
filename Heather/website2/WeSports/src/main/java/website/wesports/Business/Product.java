@@ -30,6 +30,7 @@ public class Product {
     String AgeGroup, Gender, Department, Section; // search tags
     int Quantity;
     double UnitPrice;
+    public ProductList productList = new ProductList();
 
     //ProductPhoto
     /**
@@ -272,7 +273,7 @@ public class Product {
         } catch (Exception e) { System.out.println("Exception" + e); }
     } // END deletePDB
 
-    /*************Check if Product Exists *************/
+    /************* Check if Product Exists *************/
     public boolean productExists(String productCode, Connection connection) {
         boolean exists = false;
         try {
@@ -293,18 +294,187 @@ public class Product {
         return exists;
     } // END recordExists
 
-    public void searchProducts(String query) {
-        //SELECT * FROM Products WHERE ProductCode=" +query+
-        //  OR ProductName LIKE '%" +query+ "%'
-        //  OR ProductDescription LIKE '%" +query+ "%'
-        //  OR Department LIKE '%" +query+ "%'
-        //  OR Section LIKE '%" +query+ "%'
-        //  OR Age Group LIKE '%" +query+ "%'
-        //  OR Gender LIKE '%" +query+ "%'"
+    /************* Display Products by Department *************/
+    public void getDeptProducts(String dept) {
+        // pass in a department term from web page in JSP
+        // Departments are:
+        // "Baseball" Or "Basketball" Or "Football" Or "Golf" Or "Soccer" Or "Tennis" Or "Volleyball"
+        // Or "Apparel"
+        // Or "Outdoors"
+        try {
+            // Get connection to database
+            Class.forName(DBDriver);
+            Connection connection = DriverManager.getConnection(DBLocation);
+            System.out.println("Database Connected");
+
+            //Create SQL statement & string
+            Statement stmt = connection.createStatement();
+            String sql = "SELECT ProductCode FROM Products WHERE Department = '" + dept + "'";
+
+            // Execute SQL Query
+            ResultSet rs = stmt.executeQuery(sql);
+            System.out.println("SQL Query: " + sql);
+            String prodCode;
+            Product product;
+
+            while (rs.next()) {
+                prodCode = rs.getString(1);
+                product = new Product();
+                product.selectPDB(prodCode);
+                productList.addProducts(product);
+                product.productList.displayList();
+            }
+            connection.close();
+
+        } catch (Exception e) { System.out.println("Exception" + e); }
     }
 
+    /************* Display Products by Section *************/
+    public void getSectionProducts(String sect) {
+        // pass in a section term from web page in JSP
+        // Sections are:
+        // "Bats" Or "Balls" Or "Gloves" Or "Hoops" Or "Helmets" Or "Shoulder Pads" Or "Clubs" Or "Goals" Or "Nets" Or "Racquets"
+        // Or "Men" Or "Women" Or "Junior" Or "Youth"
+        // Or "Camping" Or "Climbing" Or "Fishing" Or "Kayaking"
+        try {
+            // Get connection to database
+            Class.forName(DBDriver);
+            Connection connection = DriverManager.getConnection(DBLocation);
+            System.out.println("Database Connected");
+
+            //Create SQL statement & string
+            Statement stmt = connection.createStatement();
+            String sql = "SELECT ProductCode FROM Products WHERE Section = '" + sect + "'";
+
+            // Execute SQL Query
+            ResultSet rs = stmt.executeQuery(sql);
+            System.out.println("SQL Query: " + sql);
+            String prodCode;
+            Product product;
+
+            while (rs.next()) {
+                prodCode = rs.getString(1);
+                product = new Product();
+                product.selectPDB(prodCode);
+                productList.addProducts(product);
+                product.productList.displayList();
+            }
+            connection.close();
+
+        } catch (Exception e) { System.out.println("Exception" + e); }
+    }
+
+    /************* Display Products by Age Group *************/
+    public void getAgeGroupProducts(String ageGrp) {
+        // pass in an age group term from web page in JSP
+        // Age Groups are:
+        // "All" Or "Adult" Or "Junior" Or "Youth"
+        try {
+            // Get connection to database
+            Class.forName(DBDriver);
+            Connection connection = DriverManager.getConnection(DBLocation);
+            System.out.println("Database Connected");
+
+            //Create SQL statement & string
+            Statement stmt = connection.createStatement();
+            String sql = "SELECT ProductCode FROM Products WHERE Section = '" + ageGrp + "'";
+
+            // Execute SQL Query
+            ResultSet rs = stmt.executeQuery(sql);
+            System.out.println("SQL Query: " + sql);
+            String prodCode;
+            Product product;
+
+            while (rs.next()) {
+                prodCode = rs.getString(1);
+                product = new Product();
+                product.selectPDB(prodCode);
+                productList.addProducts(product);
+                product.productList.displayList();
+            }
+            connection.close();
+
+        } catch (Exception e) { System.out.println("Exception" + e); }
+    }
+
+    /************* Display Products by Gender *************/
+    public void getGenderProducts(String gendered) {
+        // pass in a gender term from web page in JSP
+        // Genders are:
+        // "Unisex" Or "Men" Or "Women" Or "Boys" Or "Girls"
+        try {
+            // Get connection to database
+            Class.forName(DBDriver);
+            Connection connection = DriverManager.getConnection(DBLocation);
+            System.out.println("Database Connected");
+
+            //Create SQL statement & string
+            Statement stmt = connection.createStatement();
+            String sql = "SELECT ProductCode FROM Products WHERE Section = '" + gendered + "'";
+
+            // Execute SQL Query
+            ResultSet rs = stmt.executeQuery(sql);
+            System.out.println("SQL Query: " + sql);
+            String prodCode;
+            Product product;
+
+            while (rs.next()) {
+                prodCode = rs.getString(1);
+                product = new Product();
+                product.selectPDB(prodCode);
+                productList.addProducts(product);
+                product.productList.displayList();
+            }
+            connection.close();
+
+        } catch (Exception e) { System.out.println("Exception" + e); }
+    }
+
+    /************* Search All Products by Search Box Query *************/
+    public void searchProducts(String query) {
+        // pass in search query from web page in JSP
+        try {
+            // Get connection to database
+            Class.forName(DBDriver);
+            Connection connection = DriverManager.getConnection(DBLocation);
+            System.out.println("Database Connected");
+
+            //Create SQL statement & string
+            Statement stmt = connection.createStatement();
+            String sql = "SELECT ProductCode FROM Products WHERE ProductName LIKE '%" + query + "%' "
+                    + "OR ProductDescription LIKE '%" + query + "%' "
+                    + "OR Department LIKE '%" +query+ "%' "
+                    + "OR Section LIKE '%" +query+ "%' "
+                    + "OR AgeGroup LIKE '%" +query+ "%' "
+                    + "OR Gender LIKE '%" +query+ "%' ";
+
+            // Execute SQL Query
+            ResultSet rs = stmt.executeQuery(sql);
+            System.out.println("SQL Query: " + sql);
+
+            String prodCode;
+
+            Product product;
+
+            while (rs.next()) {
+                prodCode = rs.getString(1);
+                product = new Product();
+                product.selectPDB(prodCode);
+                productList.addProducts(product);
+                product.productList.displayList();
+            }
+            connection.close();
+
+        } catch (Exception e) { System.out.println("Exception" + e); }
+
+    }
+
+    /************* Main Method for Testing *************/
     public static void main(String[] args) {
         Product p1 = new Product();
-        p1.selectPDB("002272904");
+        //p1.selectPDB("002272904"); //test select product by productCode
+        //p1.getDeptProducts("Baseball"); //test select products by department
+        p1.searchProducts("ball"); //test search method
+        p1.display();
     }
 }

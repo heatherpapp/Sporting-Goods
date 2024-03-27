@@ -23,6 +23,10 @@ public class ProductList {
     public int count = 0;
     public Product productArray[] = new Product[500];
 
+    /************* Constructors *************/
+    public ProductList() {}
+
+    /************* Methods *************/
     public void addProducts(Product aProduct) {
         productArray[count] = aProduct;
         count++;
@@ -35,6 +39,19 @@ public class ProductList {
             System.out.println("-------------------------------------------------------");
         }
     } // END displayList()
+
+    public static void main(String[] args) {
+        // for testing only
+        ProductList productList = new ProductList();
+
+        Product product = new Product();
+        //product.selectPDB("002272904");
+        //productList.addProducts(product);
+
+        product.getDeptProducts("Baseball");
+        productList.addProducts(product);
+
+    }
 
     // get product from a specific index
     public Product getProduct(int index) {

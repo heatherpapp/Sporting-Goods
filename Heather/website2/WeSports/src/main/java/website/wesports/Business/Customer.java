@@ -218,7 +218,7 @@ public class Customer {
 
             // Create SQL string
             String sql = "UPDATE Customer SET CustFirstName = '" + getCustFirstName() + "',"
-                    + " CustLastName = '" + getCustLastName() + "',"
+                    + "CustLastName = '" + getCustLastName() + "',"
                     + "CustStreet = '" + getCustStreet() + "',"
                     + "CustCity = '" + getCustCity() + "',"
                     + "CustState = '" + getCustState() + "',"

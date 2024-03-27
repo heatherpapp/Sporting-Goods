@@ -1,0 +1,71 @@
+Images from a Database:
+
+    - JSP is basically a view technology which is supposed to generate HTML output.
+    - To display an image in HTML, you need the HTML <img> element.
+    - To let it locate an image, you need to specify its src attribute.
+    - The src attribute needs to point to a valid http:// URL and thus not a local disk file system path file:// as that would never work when the server and client run at physically different machines.
+    - The image URL needs to have the image identifier in either the request path (e.g. http://example.com/context/images/foo.png) or as request parameter (e.g. http://example.com/context/images?id=1).
+    - In JSP/Servlet world, you can let a Servlet listen on a certain URL pattern like /images/*, so that you can just execute some Java code on specific URL's.
+    - Images are binary data and are to be obtained as either a byte[] or InputStream from the DB, the JDBC API offers the ResultSet#getBytes() and ResultSet#getBinaryStream() for this, and JPA API offers @Lob for this.
+    - In the Servlet you can just write this byte[] or InputStream to the OutputStream of the response the usual Java IO way.
+    - The client side needs to be instructed that the data should be handled as an image, thus at least the Content-Type response header needs to be set as well. You can obtain the right one via ServletContext#getMimeType() based on image file extension which you can extend and/or override via <mime-mapping> in web.xml.
+
+That should be it. It almost writes code itself. Let's start with HTML (in JSP):
+
+	<img src="${pageContext.request.contextPath}/images/foo.png">
+	<img src="${pageContext.request.contextPath}/images/bar.png">
+	<img src="${pageContext.request.contextPath}/images/baz.png">
+
+You can if necessary also dynamically set src with EL while iterating using JSTL:
+
+	<c:forEach items="${imagenames}" var="imagename">
+		<img src="${pageContext.request.contextPath}/images/${imagename}">
+	</c:forEach>
+
+Then define/create a servlet which listens on GET requests on URL pattern of /images/*, the below example uses plain vanilla JDBC for the job:
+
+	@WebServlet("/images/*")
+	public class ImageServlet extends HttpServlet {
+
+		// content=blob, name=varchar(255) UNIQUE.
+		private static final String SQL_FIND = "SELECT content FROM Image WHERE name = ?";
+
+		@Resource(name="jdbc/yourDB") // For Tomcat, define as <Resource> in context.xml and declare as <resource-ref> in web.xml.
+		private DataSource dataSource;
+		
+		@Override
+		protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+			String imageName = request.getPathInfo().substring(1); // Returns "foo.png".
+
+			try (Connection connection = dataSource.getConnection(); PreparedStatement statement = connection.prepareStatement(SQL_FIND)) {
+				statement.setString(1, imageName);
+				
+				try (ResultSet resultSet = statement.executeQuery()) {
+					if (resultSet.next()) {
+						byte[] content = resultSet.getBytes("content");
+						response.setContentType(getServletContext().getMimeType(imageName));
+						response.setContentLength(content.length);
+						response.getOutputStream().write(content);
+					} else {
+						response.sendError(HttpServletResponse.SC_NOT_FOUND); // 404.
+					}
+				}
+			} catch (SQLException e) {
+				throw new ServletException("Something failed at SQL/DB level.", e);
+			}
+		}
+
+	}
+
+
+
+MS Access Image Data Types:
+
+* OLE Object 	
+	- An object (such as a Microsoft Excel spreadsheet, a Microsoft Word document, graphics, sounds, or other binary data) linked to or embedded in a Microsoft Access table. 	
+	- Up to 1 gigabyte (limited by available disk space)
+* Attachment 	
+	- Any supported type of file 	
+	- You can attach images, spreadsheet files, documents, charts, and other types of supported files to the records in your database, much like you attach files to email messages. 
+	- You can also view and edit attached files, depending on how the database designer sets up the Attachment field. 
+	- Attachment fields provide greater flexibility than OLE Object fields, and they use storage space more efficiently because they don't create a bitmap image of the original file.
