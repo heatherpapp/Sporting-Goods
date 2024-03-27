@@ -67,11 +67,11 @@
         <div class="customerMenu">
             <button>Account</button>
             <div class="customerMenu-content">
-                <a href="CustomerProfile.html">View Account</a>
-                <a href="CustomerUpdateProfile.jsp">Update Account</a>
-                <a href="CustomerOrders.jsp">Orders</a>
+                <a href="${pageContext.request.contextPath}/customer/CustomerProfile.jsp">View Account</a>
+                <a href="${pageContext.request.contextPath}/customer/CustomerUpdateProfile.jsp">Update Account</a>
+                <a href="${pageContext.request.contextPath}/customer/CustomerOrders.jsp">Orders</a>
                 <a href="${pageContext.request.contextPath}/shop/Help.html">Help & FAQs</a>
-                <a href="CustomerLogout.html">Logout</a>
+                <a href="${pageContext.request.contextPath}/customer/CustomerLogout.html">Logout</a>
             </div>
         </div>
 

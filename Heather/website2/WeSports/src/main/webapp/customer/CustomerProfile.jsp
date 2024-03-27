@@ -67,11 +67,11 @@
         <div class="customerMenu">
             <button>Account</button>
             <div class="customerMenu-content">
-                <a href="CustomerProfile.html">View Account</a>
-                <a href="CustomerUpdateProfile.jsp">Update Account</a>
-                <a href="CustomerOrders.jsp">Orders</a>
+                <a href="${pageContext.request.contextPath}/customer/CustomerProfile.jsp">View Account</a>
+                <a href="${pageContext.request.contextPath}/customer/CustomerUpdateProfile.jsp">Update Account</a>
+                <a href="${pageContext.request.contextPath}/customer/CustomerOrders.jsp">Orders</a>
                 <a href="${pageContext.request.contextPath}/shop/Help.html">Help & FAQs</a>
-                <a href="CustomerLogout.html">Logout</a>
+                <a href="${pageContext.request.contextPath}/customer/CustomerLogout.html">Logout</a>
             </div>
         </div>
 
@@ -99,29 +99,30 @@
 
     <!-- Page Contents -->
 
-    <div>
+    <div class="customerTaskList">
         <%
             Customer c1 = (Customer) session.getAttribute("c1");
             c1.display();
         %>
+        <hr>
         <h1> Welcome, <%=c1.getCustFirstName()%>! </h1> <!-- get customer first name and display here -->
-
-        <ul style="list-style-type: none">
+        <br>
+        <ul>
             <li>
                 <!-- Display Address Here -->
 
             </li>
             <li>
-                <h4> <a href="CustomerUpdateProfile.jsp">Update Account</a> </h4>
+                <h2> <a href="${pageContext.request.contextPath}/customer/CustomerUpdateProfile.jsp">Update Account</a> </h2>
             </li>
             <li>
-                <h4> <a href="CustomerOrders.jsp">Orders</a> </h4>
+                <h2> <a href="${pageContext.request.contextPath}/customer/CustomerOrders.jsp">Orders</a> </h2>
             </li>
             <li>
-                <h4> <a href="../shop/Help.html">Help & FAQs</a> </h4>
+                <h2> <a href="${pageContext.request.contextPath}/shop/Help.html">Help & FAQs</a> </h2>
             </li>
             <li>
-                <h4> <a href="CustomerLogout.html">Logout</a> </h4>
+                <h2> <a href="${pageContext.request.contextPath}/customer/CustomerLogout.html">Logout</a> </h2>
             </li>
         </ul>
 
