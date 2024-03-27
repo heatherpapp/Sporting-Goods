@@ -30,6 +30,7 @@ public class Product {
     String AgeGroup, Gender, Department, Section; // search tags
     int Quantity;
     double UnitPrice;
+    private String imagePath;
     public ProductList productList = new ProductList();
 
     //ProductPhoto
@@ -67,9 +68,9 @@ public class Product {
         AgeGroup = "";
         Gender = "";
         Quantity = 0;
-        //ProductPhoto = attachment???;
+        imagePath = "";
     }
-    public Product(String productCode, String productName, String productDescription, double unitPrice, String department, String section, String ageGroup, String gender, int quantity) {
+    public Product(String productCode, String productName, String productDescription, double unitPrice, String department, String section, String ageGroup, String gender, int quantity, String photo) {
         ProductCode = productCode;
         ProductName = productName;
         ProductDescription = productDescription;
@@ -79,7 +80,7 @@ public class Product {
         AgeGroup = ageGroup;
         Gender = gender;
         Quantity = quantity;
-        //ProductPhoto = attachment???;
+        imagePath = photo;
     }
 
     /************* Behaviors *************/
@@ -101,6 +102,8 @@ public class Product {
     public String getGender() { return Gender; }
     public void setQuantity(int quantity) { Quantity = quantity; }
     public int getQuantity() { return  Quantity; }
+    public String getImagePath() {return imagePath;}
+    public void setImagePath(String photo) { imagePath = photo;}
 
     // public void setProductPhoto(byte productPhoto) { ProductPhoto = productPhoto; }
     // public byte getProductPhoto() { return ProductPhoto; }
@@ -118,7 +121,7 @@ public class Product {
         System.out.println("Age Group: " + getAgeGroup());
         System.out.println("Gender: " + getGender());
         System.out.println("Quantity: " + getQuantity());
-
+        System.out.println("Photo path: " + getImagePath());
     }
 
     /************* Select Product from Database: Products *************/
@@ -149,6 +152,7 @@ public class Product {
             setAgeGroup(rs.getString("AgeGroup"));
             setGender(rs.getString("Gender"));
             setQuantity(rs.getInt("Quantity"));
+            setImagePath(rs.getString("PhotoPath"));
             connection.close();
             display();
         } catch (Exception e) { System.out.println("Exception" + e); }

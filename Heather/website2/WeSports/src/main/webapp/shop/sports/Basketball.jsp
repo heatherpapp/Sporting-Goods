@@ -81,6 +81,55 @@
         <!-- Search results will be displayed here -->
     </div>
 
+    <div class="product">
+        <h1>Product List</h1>
+        <table>
+            <thead>
+            <tr>
+                <th>Picture</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Department</th>
+                <th>Section</th>
+                <th>Age Group</th>
+                <th>Gender</th>
+                <th>Quantity</th>
+                <th>Product Code</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        <%
+            Product product = new Product();
+            product.getDeptProducts("Basketball");
+            product.display();
+            product.productList.displayList();
+
+            for (Product productItem : product.productList.productArray) {
+        %>
+        <tr>
+            <td><img src="<%= productItem.getImagePath() %>" width="100" height="100"></td>
+            <td><%= productItem.getProductName() %></td>
+            <td><%= productItem.getProductDescription() %></td>
+            <td><%= productItem.getUnitPrice() %></td>
+            <td><%= productItem.getDepartment() %></td>
+            <td><%= productItem.getSection() %></td>
+            <td><%= productItem.getAgeGroup() %></td>
+            <td><%= productItem.getGender() %></td>
+            <td><%= productItem.getQuantity() %></td>
+            <td><%= productItem.getProductCode() %></td>
+        </tr>
+        <%
+            }
+        %>
+        </tbody>
+        </table>
+
+
+
+    </div>
+
 </div>
 
 <footer class="footer">
