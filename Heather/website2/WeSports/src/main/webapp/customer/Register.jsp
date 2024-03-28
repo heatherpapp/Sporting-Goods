@@ -13,27 +13,29 @@
     <!-- needs navigation -->
         <section class="container">
             <header>Registration Form</header>
-            <form action="RegisterServlet" class="form">
+            <form name="NewCustomerRegisterForm" action="RegisterServlet" class="form">
                 <div class="input-box">
                     <label>Email</label>
-            <input type="text" placeholder="you@example.com" required>
+            <input type="text" name="newEmail" id="newEmail" placeholder="you@example.com" required>
                 </div>
+                <!-- not using these fields
                 <div class="input-box">
                     <label>Phone Number</label>
-            <input type="text" placeholder="111-222-3333" required>
+            <input type="text" name="newPhone" id="newPhone" placeholder="111-222-3333" required>
                 </div>
                 <div class="input-box">
                     <label>Username</label>
             <input type="text" placeholder="Username" required>
                 </div>
+                -->
                 <div class="column">
                     <div class="input-box">
                         <label>First Name</label>
-                <input type="text" placeholder="First name" required>
+                <input type="text" name="newFName" id="newFName" placeholder="First name" required>
                     </div>
                     <div class="input-box">
                         <label>Last name</label>
-                <input type="text" placeholder="Last name" required>
+                <input type="text" name="newLName" id="newLName" placeholder="Last name" required>
                     <div class="input-box">
                     </div>
                 </div>
@@ -41,27 +43,27 @@
                 <div class="column">
                     <div class="input-box">
                         <label>Password</label>
-                <input type="text" placeholder="Password" required>
+                <input type="text" name="newPass" id="newPass" placeholder="Password" required>
                     </div>
                     <div class="input-box">
                         <label>Confirm Password</label>
-                <input type="text" placeholder="Password" required>
+                <input type="text" name="confNewPass" id="confNewPass" placeholder="Password" required>
                     <div class="input-box">
                     </div>
                 </div>
                 </div>
                 <div class="input-box">
                     <label>Street Address</label>
-            <input type="text" placeholder="123 Your Street" required>
+            <input type="text" name="newStreet" id="newStreet" placeholder="123 Your Street" required>
                 </div>
                 <div class="input-box">
                     <label>City</label>
-            <input type="text" placeholder="City" required>
+            <input type="text" name="newCity" id="newCity" placeholder="City" required>
                 </div>
                 <div class="column">
                     <label>State</label>
                     <div class="select-box">
-                       <select>
+                       <select name="newState" id="newState">
                         <option>State</option>
                         <option value="AL">Alabama</option>
                         <option value="AK">Alaska</option>
@@ -117,7 +119,7 @@
                     </div>
                     <div class="input-box">
                         <label>Zipcode</label>
-                <input type="text" placeholder="Zipcode" required>
+                <input type="text" name="newZip" id="newZip" placeholder="Zipcode" required>
                     <div class="input-box">
                     </div>
                 </div>

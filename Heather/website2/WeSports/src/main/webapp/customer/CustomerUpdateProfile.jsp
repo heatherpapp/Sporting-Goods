@@ -98,8 +98,12 @@
     <!-- Page Contents -->
 
     <section class="updateContainer">
-        <header>Update Your Information</header>
-        <hr>
+        <div>
+            <header>Update Your Information</header>
+            <hr>
+        </div>
+
+
         <div class="customerUpdateList">
             <%
                 Customer c1 = (Customer) session.getAttribute("c1");
@@ -193,7 +197,10 @@
 
                 <div class="input-box">
                     <!-- Update Password -->
-                    <label>Update Password: </label><input type="text" id="NewPassword" name="NewPassword" placeholder="Enter New Password"> <label>Confirm New Password: </label> <input type="text" id="ConfirmNewPassword" name="ConfirmNewPassword" placeholder="Confirm New Password">
+                    <label>Update Password: </label><input type="text" id="NewPassword" name="NewPassword" placeholder="Enter New Password">
+                    <br>
+                    <br>
+                    <label>Confirm New Password: </label> <input type="text" id="ConfirmNewPassword" name="ConfirmNewPassword" placeholder="Confirm New Password">
                 </div>
 
                 <hr>

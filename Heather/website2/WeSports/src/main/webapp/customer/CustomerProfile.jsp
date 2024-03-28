@@ -112,7 +112,7 @@
             <table>
                 <tr>
                     <td class="topCellAlign">Shipping Address:</td>
-                    <td class="leftCellAlign"><%=c1.getCustFirstName() + " " + c1.getCustLastName()%><br><%=c1.getCustStreet()%><br><%=c1.getCustCity() + ", " + c1.getCustState() + " " + c1.getCustZip() %></td>
+                    <td class="leftCellAlign"><%=c1.getCustFirstName() + " " + c1.getCustLastName()%><br><%=c1.getCustStreet()%><br><%=c1.getCustCity() + ", " + c1.getCustState() + " " + c1.getCustZip() %><br><%=c1.getCustEmail()%></td>
                     <td><h3> <a href="${pageContext.request.contextPath}/customer/CustomerUpdateProfile.jsp">Update</a> </h3></td>
                 </tr>
                 <tr>

@@ -50,6 +50,8 @@ public class CustomerUpdateServlet extends HttpServlet {
         String newPassword = request.getParameter("NewPassword");
         String confirmNewPassword = request.getParameter("ConfirmNewPassword");
 
+        System.out.println("Form Data: " + firstName + lastName + "\n" + street + "\n" + city + ", " + state + " " + zip);
+
         HttpSession session = request.getSession();
         Customer c1 = (Customer) session.getAttribute("c1");
 

@@ -10,6 +10,7 @@ body {
     font-family: "Poppins", sans-serif;
     min-height: 100vh; /* Changed to 100vh for full viewport height */
     /* display: flex; /* causes conflict so commented out */ /* Added for flex container properties */
+
     align-items: center;
     justify-content: center;
 }
@@ -63,6 +64,8 @@ body {
 .customerMenu:hover .customerMenu-content {
     display: block;
 }
+
+
 
 
 /* CustomerProfile.jsp styles */
@@ -126,6 +129,7 @@ body {
 }
 
 .updateContainer {
+    display: block;
     position: relative;
     max-width: 1000px;
     width: 100%;
