@@ -72,7 +72,6 @@ public class CustomerUpdateServlet extends HttpServlet {
         // commit update
         c1.updateDB(c1.getCustEmail());
         c1.selectDB(c1.getCustEmail());
-
         session.setAttribute("c1", c1);
 
         String url = "/customer/CustomerProfile.jsp";

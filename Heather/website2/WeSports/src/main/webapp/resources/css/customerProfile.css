@@ -9,7 +9,7 @@
 body {
     font-family: "Poppins", sans-serif;
     min-height: 100vh; /* Changed to 100vh for full viewport height */
-    display: flex; /* Added for flex container properties */
+    /* display: flex; /* causes conflict so commented out */ /* Added for flex container properties */
     align-items: center;
     justify-content: center;
 }
@@ -23,20 +23,69 @@ body {
 
 .customerMenu button {
     /* Your button styles */
+    background-color: #007bff;
+    border-radius: 10px;
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    min-width: 160px;
 }
 
 /* Dropdown menu styles */
 .customerMenu-content {
     /* Your dropdown menu styles */
+    transition: 0.7s;
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    top: 100%;
 }
 
 .customerMenu-content a {
     /* Your dropdown menu link styles */
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.customerMenu-content a:hover {
+    /* Your dropdown menu link hover styles */
+    transition: 0.4s;
+    background-color: #6200ff54;
+}
+
+.customerMenu:hover .customerMenu-content {
+    display: block;
+}
+
+.customerTaskList {
+
 }
 
 /* Other styles for different sections of your page */
-.customerTaskList ul {
+.table_background {
+    display: flex;
+    background-color: white;
+    margin-left: 3vw;
+    margin-right: 3vw;
+    margin-bottom: 10vh;
+    margin-top: 5vh;
+    box-shadow: 0px 0 10px rgba(114, 114, 113, 0.5);
+    border-radius: 15px;
+}
+
+.customerTaskList table {
     /* Your styles for task list */
+    border-radius: 15px;
+    border-collapse: collapse;
+    overflow: hidden;
+    width: 100%;
 }
 
 .customerUpdateList {
@@ -60,12 +109,21 @@ body {
     /* Your button hover styles */
 }
 
+.showBorder {
+
+}
+
 .topCellAlign {
     /* align text with top of table cell */
     vertical-align: top;
 }
 
-.centerCellSpanAll {
+.leftCellAlign {
+    /* align text with top of table cell */
+    vertical-align: top;
+}
+
+.centerText {
     text-align: center;
 }
 

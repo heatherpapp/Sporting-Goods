@@ -105,31 +105,33 @@
             c1.display();
         %>
 
+        <br>
+        <h1 class="centerText">Welcome, <%=c1.getCustFirstName()%>! <!-- get customer first name and display here --></h1>
+        <br>
 
             <table>
                 <tr>
-                    <td colspan="3" class="centerCellSpanAll">
-                        <hr><br>
-                        <h2> Welcome, <%=c1.getCustFirstName()%>! </h2> <!-- get customer first name and display here -->
-                        <br><hr>
-                    </td>
-                </tr>
-                <tr>
                     <td class="topCellAlign">Shipping Address:</td>
-                    <td><%=c1.getCustFirstName() + " " + c1.getCustLastName()%><br><%=c1.getCustStreet()%><br><%=c1.getCustCity() + ", " + c1.getCustState() + " " + c1.getCustZip() %></td>
-                    <td><h2> <a href="${pageContext.request.contextPath}/customer/CustomerUpdateProfile.jsp">Update</a> </h2></td>
+                    <td class="leftCellAlign"><%=c1.getCustFirstName() + " " + c1.getCustLastName()%><br><%=c1.getCustStreet()%><br><%=c1.getCustCity() + ", " + c1.getCustState() + " " + c1.getCustZip() %></td>
+                    <td><h3> <a href="${pageContext.request.contextPath}/customer/CustomerUpdateProfile.jsp">Update</a> </h3></td>
                 </tr>
                 <tr>
-                    <td></td>
-                    <td><h2> <a href="${pageContext.request.contextPath}/customer/CustomerOrders.jsp">Orders</a> </h2></td>
+                    <td colspan="3" class="centerText"><hr></td>
                 </tr>
                 <tr>
+                    <td><h3> <a href="${pageContext.request.contextPath}/customer/CustomerOrders.jsp">Orders</a> </h3></td>
                     <td></td>
-                    <td><h2> <a href="${pageContext.request.contextPath}/shop/Help.html">Help & FAQs</a> </h2></td>
+                    <td></td>
                 </tr>
                 <tr>
+                    <td><h3> <a href="${pageContext.request.contextPath}/shop/Help.html">Help & FAQs</a> </h3></td>
                     <td></td>
-                    <td><h2> <a href="${pageContext.request.contextPath}/customer/CustomerLogout.html">Logout</a> </h2></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><h3> <a href="${pageContext.request.contextPath}/customer/CustomerLogout.html">Logout</a> </h3></td>
+                    <td></td>
+                    <td></td>
                 </tr>
             </table>
 
