@@ -271,3 +271,38 @@ p {
     color: #302f2f; /* Change color on hover */
 }
 
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th, table td {
+    padding: 10px;
+    text-align: left;
+}
+
+table th {
+    background-color: #333;
+    color: #af0000; /* Text color for table headers */
+}
+
+table td {
+    background-color: #555; /* Background color for table cells */
+    color: #fff; /* Text color for table cells */
+}
+
+table tr:nth-child(even) {
+    background-color: #444; /* Alternate background color for even rows */
+}
+
+table tr:hover {
+    background-color: #666; /* Background color for rows on hover */
+}
+
+/* Adjust text color and shadow for better readability */
+table th, table td {
+    color: #fff; /* Text color */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8); /* Text shadow */
+}
+

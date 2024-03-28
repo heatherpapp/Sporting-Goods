@@ -154,7 +154,7 @@ public class Product {
             setQuantity(rs.getInt("Quantity"));
             setImagePath(rs.getString("PhotoPath"));
             connection.close();
-            display();
+            //display();
         } catch (Exception e) { System.out.println("Exception" + e); }
 
     } // END selectPDB
@@ -381,7 +381,7 @@ public class Product {
 
             //Create SQL statement & string
             Statement stmt = connection.createStatement();
-            String sql = "SELECT ProductCode FROM Products WHERE Section = '" + ageGrp + "'";
+            String sql = "SELECT ProductCode FROM Products WHERE AgeGroup = '" + ageGrp + "'";
 
             // Execute SQL Query
             ResultSet rs = stmt.executeQuery(sql);
@@ -394,7 +394,7 @@ public class Product {
                 product = new Product();
                 product.selectPDB(prodCode);
                 productList.addProducts(product);
-                product.productList.displayList();
+                //product.productList.displayList();
             }
             connection.close();
 
@@ -475,10 +475,10 @@ public class Product {
 
     /************* Main Method for Testing *************/
     public static void main(String[] args) {
-        Product p1 = new Product();
+        //Product p1 = new Product();
         //p1.selectPDB("002272904"); //test select product by productCode
         //p1.getDeptProducts("Baseball"); //test select products by department
-        p1.searchProducts("ball"); //test search method
-        p1.display();
+        //p1.searchProducts("ball"); //test search method
+        //p1.display();
     }
 }
