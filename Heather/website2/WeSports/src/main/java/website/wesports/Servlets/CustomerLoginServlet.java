@@ -3,7 +3,7 @@ package website.wesports.Servlets;
 /*
  * Class: CIST 2931 : Advanced Systems Project Management
  * Term: Spring 2024
- * Instructor: Chris Bishop
+ * Instructor: Ron Enz
  * Description: Customer Login Servlet
  * Authors: Heather Papp
  *
@@ -63,22 +63,16 @@ public class CustomerLoginServlet extends HttpServlet {
         RequestDispatcher rdObj;
 
         if (pwDB.equals(passwordTextbox)) {
-            // Successful login forward to DisplayAccount.jsp CHANGE THIS
-            url = "customer/CustomerProfile.html";
+            url = "/customer/CustomerProfile.jsp";
             rdObj = request.getRequestDispatcher(url);
             rdObj.forward(request, response);
 
         } else {
-            // Failed login forward to ErrorPage.jsp
-            url = "customer/CustomerLoginError.html";
+
+            url = "/customer/CustomerLoginError.html";
             rdObj = request.getRequestDispatcher(url);
             rdObj.forward(request, response);
         }
-
-
-
-
-
     }
 
     public void destroy() {}

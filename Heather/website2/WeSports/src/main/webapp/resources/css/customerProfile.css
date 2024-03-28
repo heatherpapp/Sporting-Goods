@@ -1,0 +1,67 @@
+/* Class: CIST2373 Java Programming 3
+   Term: Spring 2024
+   Instructor: Chris Bishop
+   Description: Solution to Lab
+   Author: Heather Papp */
+
+/* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Set default font family */
+body {
+    font-family: "Poppins", sans-serif;
+    min-height: 100vh; /* Changed to 100vh for full viewport height */
+    display: flex; /* Added for flex container properties */
+    align-items: center;
+    justify-content: center;
+}
+
+/* Header and menu styles */
+.customerMenu {
+    position: relative;
+    display: inline-flex;
+    margin-right: 10px;
+}
+
+.customerMenu button {
+    /* Your button styles */
+}
+
+/* Dropdown menu styles */
+.customerMenu-content {
+    /* Your dropdown menu styles */
+}
+
+.customerMenu-content a {
+    /* Your dropdown menu link styles */
+}
+
+/* Other styles for different sections of your page */
+.customerTaskList ul {
+    /* Your styles for task list */
+}
+
+.customerUpdateList {
+    /* Your styles for update list */
+}
+
+/* Form styles */
+.form .input-box {
+    /* Your styles for input boxes */
+}
+
+.select-box select {
+    /* Your styles for select boxes */
+}
+
+.form button {
+    /* Your button styles */
+}
+
+.form button:hover {
+    /* Your button hover styles */
+}

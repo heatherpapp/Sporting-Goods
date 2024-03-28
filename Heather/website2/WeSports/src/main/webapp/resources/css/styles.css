@@ -24,28 +24,29 @@ nav{
     width: 100px;
     cursor: pointer;
 }
-nav ul{
-    list-style: none;
-    width: 100%;
-    text-align: center;
-    padding-right: 60px;
-}
-nav ul li{
-    display: inline-block;
-    margin: 10px 20px;
+    nav ul{
+        list-style: none;
+        width: 100%;
+        text-align: center;
+        padding-right: 60px;
+    }
+    nav ul li{
+        display: inline-block;
+        margin: 10px 20px;
 
-}
-nav ul li a{
-    color: white;
-    text-decoration: none;
-}
-.dropdown {
-    position: relative;
-    display: inline-flex;
-    margin-right: 10px;
-  }
+    }
+    nav ul li a{
+        color: white;
+        text-decoration: none;
+    }
 
-  .dropdown button {
+
+    .dropdown {
+        position: relative;
+        display: inline-flex;
+        margin-right: 10px;
+    }
+    .dropdown button {
     background-color: #6200ff;
     border-radius: 10px;
     color: white;
@@ -54,10 +55,9 @@ nav ul li a{
     border: none;
     cursor: pointer;
     min-width: 160px;
-  }
-
-  /* Style for the dropdown content (hidden by default) */
-  .dropdown-content {
+    }
+    /* Style for the dropdown content (hidden by default) */
+    .dropdown-content {
     transition: 0.7s;
     display: none;
     position: absolute;
@@ -66,26 +66,25 @@ nav ul li a{
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
     top: 100%;
-  }
-
-  /* Style for the dropdown items */
-  .dropdown-content a {
+    }
+    /* Style for the dropdown items */
+    .dropdown-content a {
     color: black;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
-  }
-
-  /* Change color on hover */
-  .dropdown-content a:hover {
+    }
+    /* Change color on hover */
+    .dropdown-content a:hover {
     transition: 0.4s;
     background-color: #6200ff54;
-  }
-
-  /* Show the dropdown content when the dropdown button is hovered over */
-  .dropdown:hover .dropdown-content {
+    }
+    /* Show the dropdown content when the dropdown button is hovered over */
+    .dropdown:hover .dropdown-content {
     display: block;
-  }
+    }
+
+    /* login button styling */
   .login-button {
     margin-right: 30px;
     display: inline-block;
@@ -98,7 +97,7 @@ nav ul li a{
     text-decoration: none; /* Remove default underline */
     cursor: pointer;
     transition: background-color 0.3s ease; /* Smooth transition for background color */
-}
+  }
 
 .login-button:hover {
     background-color: #f93838; /* Darker shade on hover */
@@ -270,5 +269,40 @@ p {
 
 .social__icon--link:hover {
     color: #302f2f; /* Change color on hover */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th, table td {
+    padding: 10px;
+    text-align: left;
+}
+
+table th {
+    background-color: #333;
+    color: #af0000; /* Text color for table headers */
+}
+
+table td {
+    background-color: #555; /* Background color for table cells */
+    color: #fff; /* Text color for table cells */
+}
+
+table tr:nth-child(even) {
+    background-color: #444; /* Alternate background color for even rows */
+}
+
+table tr:hover {
+    background-color: #666; /* Background color for rows on hover */
+}
+
+/* Adjust text color and shadow for better readability */
+table th, table td {
+    color: #fff; /* Text color */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8); /* Text shadow */
 }
 

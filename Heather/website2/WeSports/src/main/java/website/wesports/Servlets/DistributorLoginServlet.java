@@ -3,7 +3,7 @@ package website.wesports.Servlets;
 /*
  * Class: CIST 2931 : Advanced Systems Project Management
  * Term: Spring 2024
- * Instructor: Chris Bishop
+ * Instructor: Ron Enz
  * Description: Distributor Login Servlet
  * Authors: Heather Papp
  *
@@ -70,7 +70,6 @@ public class DistributorLoginServlet extends HttpServlet {
             rdObj.forward(request, response);
 
         } else {
-            // Failed login forward to ErrorPage.jsp
             url = "distributor/DistributorLoginError.html";
             rdObj = request.getRequestDispatcher(url);
             rdObj.forward(request, response);

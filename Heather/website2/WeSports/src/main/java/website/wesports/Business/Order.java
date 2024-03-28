@@ -1,5 +1,14 @@
 package website.wesports.Business;
-
+/*
+ * Class: CIST 2931 : Advanced Systems Project Management
+ * Term: Spring 2024
+ * Instructor: Ron Enz
+ * Description: Order Business Object
+ * Authors: Heather Papp
+ *
+ *
+ *
+ */
 import java.sql.*;
 
 public class Order {

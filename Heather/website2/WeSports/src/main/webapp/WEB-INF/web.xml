@@ -6,4 +6,7 @@
     <resource-ref>
         <res-ref-name>"jdbc:ucanaccess://C://WeSportsDB//WeSports.accdb/"</res-ref-name>
     </resource-ref>
+    <welcome-file-list>
+        <welcome-file>Home.html</welcome-file>
+    </welcome-file-list>
 </web-app>
