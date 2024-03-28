@@ -130,8 +130,7 @@ body {
 
 .updateContainer {
     display: block;
-    position: relative;
-    max-width: 1000px;
+    vertical-align: center;
     width: 100%;
     background: white;
     padding: 25px;

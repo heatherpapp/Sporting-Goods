@@ -54,11 +54,15 @@ public class CustomerUpdateServlet extends HttpServlet {
             try {
 
                 String currentPassword = request.getParameter(c1.getCustPassword());
-
                 if (!currentPassword.equals(newPassword)) {
                     if (newPassword.equals(confirmNewPassword)) {
                         c1.setCustPassword(newPassword);
+                        c1.updateCustomer();
                     }
+                }
+
+                if (!c1.getCustFirstName().equals(firstName)) {
+                    c1.setCustFirstName(firstName);
                 }
 
 
