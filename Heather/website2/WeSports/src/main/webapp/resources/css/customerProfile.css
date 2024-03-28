@@ -59,3 +59,13 @@ body {
 .form button:hover {
     /* Your button hover styles */
 }
+
+.topCellAlign {
+    /* align text with top of table cell */
+    vertical-align: top;
+}
+
+.centerCellSpanAll {
+    text-align: center;
+}
+

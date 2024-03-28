@@ -105,26 +105,37 @@
             c1.display();
         %>
 
-        <ul>
-            <li>
-                <hr><br>
-                <h2> Welcome, <%=c1.getCustFirstName()%>! </h2> <!-- get customer first name and display here -->
-                <br><hr>
 
-            </li>
-            <li>
-                <h2> <a href="${pageContext.request.contextPath}/customer/CustomerUpdateProfile.jsp">Update Account</a> </h2>
-            </li>
-            <li>
-                <h2> <a href="${pageContext.request.contextPath}/customer/CustomerOrders.jsp">Orders</a> </h2>
-            </li>
-            <li>
-                <h2> <a href="${pageContext.request.contextPath}/shop/Help.html">Help & FAQs</a> </h2>
-            </li>
-            <li>
-                <h2> <a href="${pageContext.request.contextPath}/customer/CustomerLogout.html">Logout</a> </h2>
-            </li>
-        </ul>
+            <table>
+                <tr>
+                    <td colspan="3" class="centerCellSpanAll">
+                        <hr><br>
+                        <h2> Welcome, <%=c1.getCustFirstName()%>! </h2> <!-- get customer first name and display here -->
+                        <br><hr>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="topCellAlign">Shipping Address:</td>
+                    <td><%=c1.getCustFirstName() + " " + c1.getCustLastName()%><br><%=c1.getCustStreet()%><br><%=c1.getCustCity() + ", " + c1.getCustState() + " " + c1.getCustZip() %></td>
+                    <td><h2> <a href="${pageContext.request.contextPath}/customer/CustomerUpdateProfile.jsp">Update</a> </h2></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><h2> <a href="${pageContext.request.contextPath}/customer/CustomerOrders.jsp">Orders</a> </h2></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><h2> <a href="${pageContext.request.contextPath}/shop/Help.html">Help & FAQs</a> </h2></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><h2> <a href="${pageContext.request.contextPath}/customer/CustomerLogout.html">Logout</a> </h2></td>
+                </tr>
+            </table>
+
+
+
+
 
     </div>
 
