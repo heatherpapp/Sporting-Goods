@@ -114,7 +114,7 @@
                 <!-- Update Name -->
                 <div class="input-box">
                     <label>Name:</label>
-                        <input type="text" id="FirstName" name="FirstName" placeholder="<%=c1.getCustFirstName()%>"> <input type="text" id="LastName" name="LastName" placeholder="<%=c1.getCustLastName()%>">
+                        <input type="text" id="FirstName" name="FirstName" value="<%=c1.getCustFirstName()%>"> <input type="text" id="LastName" name="LastName" value="<%=c1.getCustLastName()%>">
                 </div>
 
                 <br>
@@ -122,7 +122,7 @@
                 <!-- Update Street Address -->
                 <div class="input-box">
                     <label>Street Address: </label>
-                        <input type="text" id="Street" name="Street" placeholder="<%=c1.getCustStreet()%>">
+                        <input type="text" id="Street" name="Street" value="<%=c1.getCustStreet()%>">
                 </div>
 
                 <br>
@@ -130,12 +130,12 @@
                 <!-- Update City -->
                 <div class="input-box">
                     <label>City: </label>
-                    <input type="text" id="City" name="updateCity" placeholder="<%=c1.getCustCity()%>">
+                    <input type="text" id="City" name="updateCity" value="<%=c1.getCustCity()%>">
 
                     <!-- Update State -->
                     <label>State: </label>
                         <select id="State" name="updateState">
-                            <option> <%=c1.getCustState()%> </option>
+                            <option value="<%=c1.getCustState()%>"><%=c1.getCustState()%></option>
                             <option value="AL">Alabama</option>
                             <option value="AK">Alaska</option>
                             <option value="AZ">Arizona</option>
@@ -190,17 +190,16 @@
 
                     <!-- Update Zip -->
                         <label>Zip: </label>
-                        <input type="text" id="Zip" name="updateZip" placeholder="<%=c1.getCustZip()%>">
+                        <input type="text" id="Zip" name="updateZip" value="<%=c1.getCustZip()%>">
                 </div>
 
                 <hr>
 
                 <div class="input-box">
                     <!-- Update Password -->
-                    <label>Update Password: </label><input type="text" id="NewPassword" name="NewPassword" placeholder="Enter New Password">
+                    <label>Update Password: </label> <input class="box" type="password" id="NewPassword" name="NewPassword" placeholder="Enter New Password">
                     <br>
-                    <br>
-                    <label>Confirm New Password: </label> <input type="text" id="ConfirmNewPassword" name="ConfirmNewPassword" placeholder="Confirm New Password">
+                    <label>Confirm New Password: </label> <input type="password" id="ConfirmNewPassword" name="ConfirmNewPassword" placeholder="Confirm New Password"> <input class="showPassword_box" type="checkbox" id="checkbox"> <label>Show password</label>
                 </div>
 
                 <hr>
@@ -255,6 +254,21 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
     <script src="${pageContext.request.contextPath}/resources/JavaScript/script.js"></script>
 
+<script type="text/javascript">
+    let password1 = document.getElementById("NewPassword");
+    let password2 = document.getElementById("ConfirmNewPassword");
+    let checkbox = document.getElementById("checkbox");
+
+    checkbox.onclick = function(){
+        if (checkbox.checked) {
+            password1.type = "text";
+            password2.type = "text";
+        }else{
+            password1.type = "password";
+            password2.type = "password";
+        }
+    };
+</script>
 
 
 </body>

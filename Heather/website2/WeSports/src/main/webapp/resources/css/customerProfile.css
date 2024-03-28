@@ -162,6 +162,13 @@ body {
     text-decoration: none;
 }
 
+.showPassword_box {
+    display: inline-block;
+    margin-top: 25px;
+}
 
+.box input[type="checkbox"] {
+    width: 16px;
+}
 
 

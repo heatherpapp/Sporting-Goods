@@ -38,47 +38,47 @@ public class CustomerUpdateServlet extends HttpServlet {
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
 
-        PrintWriter out = response.getWriter();
+        try (PrintWriter out = response.getWriter()) {
+            Customer c1 = new Customer();
+            //get values from form and assign to local variables
+            String firstName = request.getParameter("FirstName");
+            String lastName = request.getParameter("LastName");
+            String street = request.getParameter("Street");
+            String city = request.getParameter("City");
+            String state = request.getParameter("State");
+            String zip = request.getParameter("Zip");
+            String newPassword = request.getParameter("NewPassword");
+            String confirmNewPassword = request.getParameter("ConfirmNewPassword");
+            System.out.println("Form Data: " + firstName + lastName + "\n" + street + "\n" + city + ", " + state + " " + zip);
 
-        //get values from form and assign to local variables
-        String firstName = request.getParameter("FirstName");
-        String lastName = request.getParameter("LastName");
-        String street = request.getParameter("Street");
-        String city = request.getParameter("City");
-        String state = request.getParameter("State");
-        String zip = request.getParameter("Zip");
-        String newPassword = request.getParameter("NewPassword");
-        String confirmNewPassword = request.getParameter("ConfirmNewPassword");
+            try {
 
-        System.out.println("Form Data: " + firstName + lastName + "\n" + street + "\n" + city + ", " + state + " " + zip);
+                String currentPassword = request.getParameter(c1.getCustPassword());
 
-        HttpSession session = request.getSession();
-        Customer c1 = (Customer) session.getAttribute("c1");
+                if (!currentPassword.equals(newPassword)) {
+                    if (newPassword.equals(confirmNewPassword)) {
+                        c1.setCustPassword(newPassword);
+                    }
+                }
 
-        //prepare to update with retrieved values
-        c1.setCustFirstName(firstName);
-        c1.setCustLastName(lastName);
-        c1.setCustStreet(street);
-        c1.setCustCity(city);
-        c1.setCustState(state);
-        c1.setCustZip(zip);
 
-        String currentPassword = c1.getCustPassword();
 
-        if (!currentPassword.equals(newPassword)) {
-            if (newPassword.equals(confirmNewPassword)) {
-                c1.setCustPassword(newPassword);
+
+
             }
+            catch(Exception e) {
+                System.out.println(e);
+            }
+
+            //add customer c1 to session
+            HttpSession session;
+            session = request.getSession();
+            session.setAttribute("c1", c1);
+
+            //forward control back to Display Cart
+            RequestDispatcher rd = request.getRequestDispatcher("/customer/CustomerProfile.jsp");
+            rd.forward(request, response);
         }
-
-        // commit update
-        c1.updateDB(c1.getCustEmail());
-        c1.selectDB(c1.getCustEmail());
-        session.setAttribute("c1", c1);
-
-        String url = "/customer/CustomerProfile.jsp";
-        RequestDispatcher rdObj = request.getRequestDispatcher(url);
-        rdObj.forward(request, response);
     }
 
     public void destroy() {}

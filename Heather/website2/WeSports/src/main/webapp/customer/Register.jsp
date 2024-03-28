@@ -13,7 +13,7 @@
     <!-- needs navigation -->
         <section class="container">
             <header>Registration Form</header>
-            <form name="NewCustomerRegisterForm" action="RegisterServlet" class="form">
+            <form name="NewCustomerRegisterForm" action="../RegisterServlet" class="form">
                 <div class="input-box">
                     <label>Email</label>
             <input type="text" name="newEmail" id="newEmail" placeholder="you@example.com" required>
