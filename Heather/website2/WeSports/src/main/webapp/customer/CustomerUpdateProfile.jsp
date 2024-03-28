@@ -95,8 +95,9 @@
         <button id="search-button" onclick="search()">Search</button>
     </div>
     -->
-    <!-- Page Contents -->
 
+    <!-- Page Contents -->
+    <br>
     <section class="updateContainer">
         <div>
             <header>Update Your Information</header>
