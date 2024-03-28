@@ -11,6 +11,7 @@ package website.wesports.Servlets;
  *
  */
 
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -39,18 +40,15 @@ public class CustomerUpdateServlet extends HttpServlet {
 
         PrintWriter out = response.getWriter();
 
-        //declare local variables
-        String firstName, lastName, street, city, state, zip, newPassword, confirmNewPassword;
-
         //get values from form and assign to local variables
-        firstName = request.getParameter("FirstName");
-        lastName = request.getParameter("LastName");
-        street = request.getParameter("Street");
-        city = request.getParameter("City");
-        state = request.getParameter("State");
-        zip = request.getParameter("Zip");
-        newPassword = request.getParameter("NewPassword");
-        confirmNewPassword = request.getParameter("ConfirmNewPassword");
+        String firstName = request.getParameter("FirstName");
+        String lastName = request.getParameter("LastName");
+        String street = request.getParameter("Street");
+        String city = request.getParameter("City");
+        String state = request.getParameter("State");
+        String zip = request.getParameter("Zip");
+        String newPassword = request.getParameter("NewPassword");
+        String confirmNewPassword = request.getParameter("ConfirmNewPassword");
 
         HttpSession session = request.getSession();
         Customer c1 = (Customer) session.getAttribute("c1");
@@ -65,7 +63,7 @@ public class CustomerUpdateServlet extends HttpServlet {
 
         String currentPassword = c1.getCustPassword();
 
-        if (currentPassword != newPassword) {
+        if (!currentPassword.equals(newPassword)) {
             if (newPassword.equals(confirmNewPassword)) {
                 c1.setCustPassword(newPassword);
             }
@@ -73,13 +71,13 @@ public class CustomerUpdateServlet extends HttpServlet {
 
         // commit update
         c1.updateDB(c1.getCustEmail());
+        c1.selectDB(c1.getCustEmail());
 
         session.setAttribute("c1", c1);
 
-
-
-
-
+        String url = "/customer/CustomerProfile.jsp";
+        RequestDispatcher rdObj = request.getRequestDispatcher(url);
+        rdObj.forward(request, response);
     }
 
     public void destroy() {}

@@ -102,6 +102,7 @@
         <div class="customerUpdateList">
             <%
                 Customer c1 = (Customer) session.getAttribute("c1");
+                c1.display();
             %>
             <form name="CustomerUpdateForm" action="../CustomerUpdateServlet" method="post">
 
