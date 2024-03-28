@@ -198,8 +198,12 @@
 
                 <hr>
 
+                <div class="removeUnderline">
+                    <h4><a href="CustomerProfile.jsp">Cancel Update and Return to Profile</a> </h4>
+                </div>
+
                     <!-- Submit Button -->
-                <button class="formButton" type="submit"> Submit </button>
+                <button class="updateCustomerFormButton" type="submit"> Submit </button>
 
             </form>
 

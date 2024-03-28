@@ -135,7 +135,7 @@ body {
     box-shadow: 0 0 15px rgb(0, 0, 0);
 }
 
-.formButton {
+.updateCustomerFormButton {
     /* Your button styles */
     height: 55px;
     width: 100%;
@@ -150,8 +150,12 @@ body {
     background-color: blue;
 }
 
-.form button:hover {
+.updateCustomerFormButton button:hover {
     /* Your button hover styles */
+}
+
+.removeUnderline a {
+    text-decoration: none;
 }
 
 
