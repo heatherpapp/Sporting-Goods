@@ -28,7 +28,7 @@ import java.io.PrintWriter;
  * @author Heather Papp
  */
 
-@WebServlet(name = "CustomerLoginServlet", urlPatterns = "/CustomerLoginServlet")
+@WebServlet(name = "CustomerLoginServlet", urlPatterns = "../CustomerLoginServlet")
 public class CustomerLoginServlet extends HttpServlet {
     private String message;
     private static final String DBDriver = "net.ucanaccess.jdbc.UcanaccessDriver";
