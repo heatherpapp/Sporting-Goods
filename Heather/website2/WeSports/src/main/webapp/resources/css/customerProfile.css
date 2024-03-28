@@ -64,6 +64,8 @@ body {
     display: block;
 }
 
+
+/* CustomerProfile.jsp styles */
 .customerTaskList {
 
 }
@@ -88,31 +90,6 @@ body {
     width: 100%;
 }
 
-.customerUpdateList {
-    /* Your styles for update list */
-}
-
-/* Form styles */
-.form .input-box {
-    /* Your styles for input boxes */
-}
-
-.select-box select {
-    /* Your styles for select boxes */
-}
-
-.form button {
-    /* Your button styles */
-}
-
-.form button:hover {
-    /* Your button hover styles */
-}
-
-.showBorder {
-
-}
-
 .topCellAlign {
     /* align text with top of table cell */
     vertical-align: top;
@@ -126,4 +103,57 @@ body {
 .centerText {
     text-align: center;
 }
+
+
+/* CustomerUpdateProfile.jsp styles */
+.updateContainer header {
+    font-weight: bold;
+    text-align: center;
+}
+
+.customerUpdateList {
+    /* Your styles for update list */
+
+}
+
+/* Form styles */
+.form .input-box {
+    /* Your styles for input boxes */
+}
+
+.select-box select {
+    /* Your styles for select boxes */
+}
+
+.updateContainer {
+    position: relative;
+    max-width: 1000px;
+    width: 100%;
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgb(0, 0, 0);
+}
+
+.formButton {
+    /* Your button styles */
+    height: 55px;
+    width: 100%;
+    color: #007bff;
+    border: none;
+    font-size: 1rem;
+    margin-top: 30px;
+    cursor: pointer;
+    border-radius: 6px;
+    font-weight: 400;
+    transition: all 0.4s ease;
+    background-color: blue;
+}
+
+.form button:hover {
+    /* Your button hover styles */
+}
+
+
+
 

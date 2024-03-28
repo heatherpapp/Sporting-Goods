@@ -99,6 +99,7 @@
 
     <section class="updateContainer">
         <header>Update Your Information</header>
+        <hr>
         <div class="customerUpdateList">
             <%
                 Customer c1 = (Customer) session.getAttribute("c1");
@@ -198,7 +199,7 @@
                 <hr>
 
                     <!-- Submit Button -->
-                <button type="submit"> Submit </button>
+                <button class="formButton" type="submit"> Submit </button>
 
             </form>
 
