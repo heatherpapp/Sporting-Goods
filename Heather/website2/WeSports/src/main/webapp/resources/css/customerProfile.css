@@ -1,172 +1,67 @@
-/**
- * Class: CIST2373 Java Programming 3
- * Term: Spring 2024
- * Instructor: Chris Bishop
- * Description: Solution to Lab * Author: Heather Papp
- * I wrote this code myself...
- */
+/* Class: CIST2373 Java Programming 3
+   Term: Spring 2024
+   Instructor: Chris Bishop
+   Description: Solution to Lab
+   Author: Heather Papp */
 
-/************************WIP*/
+/* Reset styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
 }
-body{
-    min-height: 10vh;
+
+/* Set default font family */
+body {
+    font-family: "Poppins", sans-serif;
+    min-height: 100vh; /* Changed to 100vh for full viewport height */
+    display: flex; /* Added for flex container properties */
     align-items: center;
     justify-content: center;
 }
+
+/* Header and menu styles */
 .customerMenu {
     position: relative;
     display: inline-flex;
     margin-right: 10px;
 }
+
 .customerMenu button {
-    border-radius: 10px; /* Rounded corners */
-    background-color: #007bff; /* Blue background color */
-    color: white; /* White text color */
-    text-decoration: none; /* Remove default underline */
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-    min-width: 160px;
-    margin-right: 30px;
-    display: inline-block;
-    padding: 10px 20px;
-    transition: background-color 0.3s ease; /* Smooth transition for background color */
+    /* Your button styles */
 }
-/* Style for the dropdown content (hidden by default) */
+
+/* Dropdown menu styles */
 .customerMenu-content {
-    transition: 0.7s;
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-    top: 100%;
+    /* Your dropdown menu styles */
 }
-/* Style for the dropdown items */
+
 .customerMenu-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-/* Change color on hover */
-.customerMenu-content a:hover {
-    transition: 0.4s;
-    background-color: #6200ff54;
-}
-/* Show the dropdown content when the dropdown button is hovered over */
-.customerMenu:hover .customerMenu-content {
-    display: block;
+    /* Your dropdown menu link styles */
 }
 
-
-
-/* CustomerProfile.jsp task list */
+/* Other styles for different sections of your page */
 .customerTaskList ul {
-    list-style-type: none;
-    text-align: center;
-    background-color: #007bff;
-    border-radius: 10px;
-    padding: 20px;
+    /* Your styles for task list */
 }
 
-.customerTaskList li a {
-    color: white;
-    text-decoration: none;
-    line-height: 2em;
-}
-
-
-/* CustomerUpdateProfile.jsp task list */
-.updateContainer header {
-    margin-top: 1em;
-    font-weight: bold;
-    text-align: center;
-    font-size: 20px;
-}
-
-.updateContainer form {
-    margin-top: 1em;
-}
 .customerUpdateList {
+    /* Your styles for update list */
 }
 
-.customerUpdateList table {
-    caption-side: top;
-    border-radius: 10px;
+/* Form styles */
+.form .input-box {
+    /* Your styles for input boxes */
 }
 
-.customerUpdateList td {
-    white-space: pre;
-    line-height: 1em;
-    font-size: 20px;
-    padding-top: 1em;
-    padding-bottom: 1em;
+.select-box select {
+    /* Your styles for select boxes */
 }
 
-.updateContainer {
-    position: relative;
-    width: 100%;
-    min-height: 50vh;
-    background-color: #007bff;
-    background-size: cover;
-    background-position: center;
-    padding: 10px 8%;
-    border-radius: 10px;
+.form button {
+    /* Your button styles */
 }
 
-.centerRow {
-    column-span: all;
-    text-align: center;
-}
-
-.form .input-box{
-    width: 100%;
-    margin-top: 20px;
-}
-
-.form :where(.input-box input, .select-box){
-    position: relative;
-    height: 50px;
-    width: 100%;
-    outline: none;
-    font-size: 1rem;
-    color: #707070;
-    margin-top: 8px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    padding: 0 15px;
-}
-
-.select-box select{
-    outline: none;
-    border: none;
-    color: #707070;
-    font-size: 1rem;
-    column-gap: 15px;
-}
-
-.form button{
-    height: 55px;
-    width: 100%;
-    color: black;
-    border: none;
-    font-size: 1rem;
-    margin-top: 30px;
-    cursor: pointer;
-    border-radius: 6px;
-    font-weight: 400;
-    transition: all 0.4s ease;
-    background-color: blue;
-    padding: 5px;
-}
-
-.form button:hover{
-    background-color: red;
+.form button:hover {
+    /* Your button hover styles */
 }
