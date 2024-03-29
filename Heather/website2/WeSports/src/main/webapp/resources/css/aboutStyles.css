@@ -7,6 +7,9 @@ html {
  .main {
   display: inline-block;
  }
+ h1 {
+   color: whitesmoke;
+ }
 
 a:link {
   color: white;
@@ -72,7 +75,7 @@ color: #282A35;
   padding: 50px;
   border-radius: 25px;
   width: 500px;
-  height: 600px;
+  height: 625px;
   background-color: transparent;
   perspective: 1000px; /* Remove this if you don't want the 3D effect */
 }
