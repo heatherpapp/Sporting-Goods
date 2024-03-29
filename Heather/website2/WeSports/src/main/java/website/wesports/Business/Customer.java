@@ -223,7 +223,7 @@ public class Customer {
                     + "CustCity = '" + getCustCity() + "',"
                     + "CustState = '" + getCustState() + "',"
                     + "CustZip = '" + getCustZip() + "',"
-                    + "CustPassword = '" + getCustPassword() + "',"
+                    + "CustPassword = '" + getCustPassword() + "'"
                     + "WHERE CustEmail = '" + getCustEmail() +"'";
 
             // Execute SQL Statement & Do Update
@@ -253,7 +253,7 @@ public class Customer {
                     + "CustCity = '" + getCustCity() + "',"
                     + "CustState = '" + getCustState() + "',"
                     + "CustZip = '" + getCustZip() + "',"
-                    + "CustPassword = '" + getCustPassword() + "',"
+                    + "CustPassword = '" + getCustPassword() + "'"
                     + "WHERE CustEmail = '" + getCustEmail() +"'";
 
             // Execute SQL Statement & Do Update

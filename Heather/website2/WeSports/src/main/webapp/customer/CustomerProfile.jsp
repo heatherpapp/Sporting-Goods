@@ -89,13 +89,12 @@
         <p>Shop with us today and save!</p>
     </div>
 
-    <!-- Search bar -->
+    <!-- Search bar
     <div class="search-container">
         <input type="text" id="search-input" placeholder="Search...">
-        <button id="search-button" onclick="search()">Search</button>  <!-- this needs to call the SearchProducts.jsp instead -->
+        <button id="search-button" onclick="search()">Search</button>
     </div>
-
-
+    -->
 
     <!-- Page Contents -->
 

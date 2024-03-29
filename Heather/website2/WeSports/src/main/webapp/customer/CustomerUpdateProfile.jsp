@@ -112,6 +112,9 @@
             %>
             <form name="CustomerUpdateForm" action="../CustomerUpdateServlet" method="post">
 
+                <div>
+                    <input type="hidden" name="custEmail" id="custEmail" value="<%=c1.getCustEmail()%>">
+                </div>
                 <!-- Update Name -->
                 <div class="input-box">
                     <label>Name:</label>
@@ -198,7 +201,7 @@
 
                 <div class="input-box">
                     <!-- Update Password -->
-                    <label>Update Password: </label> <input class="box" type="password" id="updateNewPassword" name="updateNewPassword" placeholder="Enter New Password">
+                    <label>Update Password: </label> <input class="box" type="password" id="updateNewPassword" name="updateNewPassword" placeholder="Enter New Password" value="<%=c1.getCustPassword()%>">
                     <br>
                     <label>Confirm New Password: </label> <input type="password" id="updateConfirmNewPassword" name="updateConfirmNewPassword" placeholder="Confirm New Password"> <input class="showPassword_box" type="checkbox" id="checkbox"> <label>Show password</label>
                 </div>
