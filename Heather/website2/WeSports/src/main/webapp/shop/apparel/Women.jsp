@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<%@ page import="website.wesports.Business.Customer" %>
 <%@ page import="website.wesports.Business.Product" %>
 <%@ page import="website.wesports.Business.ProductList" %>
 <html>

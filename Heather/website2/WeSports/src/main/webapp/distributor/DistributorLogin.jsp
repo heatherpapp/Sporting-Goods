@@ -1,11 +1,5 @@
-<%--
- Class: CIST 2931 : Advanced Systems Project Management
- Term: Spring 2024
- Instructor: Chris Bishop
- Description: Customer Business Object
- Authors: Diego Carrillo Garcia, Heather Papp
---%>
-
+<%@ page import="website.wesports.Business.Customer" %>
+<%@ page import="website.wesports.Business.Distributor" %>
 <%@ page contentType="text/html; charset=UTF-8" %>
 <!DOCTYPE html>
 <html>
