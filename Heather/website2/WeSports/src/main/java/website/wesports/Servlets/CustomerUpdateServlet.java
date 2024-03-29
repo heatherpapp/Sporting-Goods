@@ -63,8 +63,23 @@ public class CustomerUpdateServlet extends HttpServlet {
 
                 if (!c1.getCustFirstName().equals(firstName)) {
                     c1.setCustFirstName(firstName);
+                    c1.updateCustomer();
                 }
 
+                if (!c1.getCustLastName().equals(lastName)) {
+                    c1.setCustLastName(lastName);
+                    c1.updateCustomer();
+                }
+
+                if (!c1.getCustStreet().equals(street)) {
+                    c1.setCustStreet(street);
+                    c1.updateCustomer();
+                }
+
+                if (!c1.getCustCity().equals(city)) {
+                    c1.setCustCity(city);
+
+                }
 
 
 
