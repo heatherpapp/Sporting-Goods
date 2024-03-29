@@ -239,6 +239,42 @@ public class Customer {
         } catch (Exception e) { System.out.println("Exception" + e); }
     } // END updateDB()
 
+    public void updateCustomer() {
+        try {
+            Class.forName(DBDriver);
+            Connection connection = DriverManager.getConnection(DBLocation);
+            System.out.println("Database Connected");
+
+            // Prepare SQL statement
+            Statement stmt = connection.createStatement();
+            String sql = "UPDATE Customer SET CustFirstName = '" + getCustFirstName() + "',"
+                    + "CustLastName = '" + getCustLastName() + "',"
+                    + "CustStreet = '" + getCustStreet() + "',"
+                    + "CustCity = '" + getCustCity() + "',"
+                    + "CustState = '" + getCustState() + "',"
+                    + "CustZip = '" + getCustZip() + "',"
+                    + "CustPassword = '" + getCustPassword() + "',"
+                    + "WHERE CustEmail = '" + getCustEmail() +"'";
+
+            // Execute SQL Statement & Do Update
+            int n = stmt.executeUpdate(sql);
+            System.out.println("SQL Statement: " + sql);
+
+            // Verify Insert
+            if (n == 1) System.out.println("..... UPDATE Successful! .....");
+            else System.out.println("***** UPDATE FAILED! *****");
+
+
+        } catch (Exception e) { System.out.println("Exception" + e); }
+    }
+
+    public void updateName() {
+
+    }
+
+    public void updateAddress() {
+
+    }
     /************* Delete from Database: Customer *************/
     public void deleteDB(String cemail) {
 
@@ -323,8 +359,8 @@ public class Customer {
 
     public static void main(String[] args) {
         Customer c1 = new Customer();
-        c1.selectDB("TestEmail@mail.com");
-        c1.display();
+        c1.selectDB("cat@mail.com");
+        //c1.deleteDB("Avery");
         //c1.insertDB("TestEmail@mail.com", "TestFN", "TestLN", "123 Main St", "Testcity", "TS", "12345", "password");
     }
 }

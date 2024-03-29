@@ -116,6 +116,9 @@ body {
 
 .customerUpdateList {
     /* Your styles for update list */
+    vertical-align: center;
+    width: 100%;
+    padding: 25px;
 
 }
 
@@ -130,11 +133,10 @@ body {
 
 .updateContainer {
     display: block;
-    position: relative;
-    max-width: 1000px;
+    vertical-align: center;
     width: 100%;
     background: white;
-    padding: 25px;
+    padding: 25px 75px 25px 75px;
     border-radius: 8px;
     box-shadow: 0 0 15px rgb(0, 0, 0);
 }
@@ -162,6 +164,13 @@ body {
     text-decoration: none;
 }
 
+.showPassword_box {
+    display: inline-block;
+    margin-top: 25px;
+}
 
+.box input[type="checkbox"] {
+    width: 16px;
+}
 
 
