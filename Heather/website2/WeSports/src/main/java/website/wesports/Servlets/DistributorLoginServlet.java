@@ -65,7 +65,8 @@ public class DistributorLoginServlet extends HttpServlet {
 
         if (pwDB.equals(passwordTextbox)) {
             // Successful login forward to DisplayAccount.jsp CHANGE THIS
-            url = "distributor/DistributorPortal.html";
+            // url = "distributor/DistributorPortal.html";
+            url = "distributor/DistributorPortal.jsp";
             rdObj = request.getRequestDispatcher(url);
             rdObj.forward(request, response);
 
