@@ -24,7 +24,7 @@
 <!-- Navigation -->
 <div class="container">
     <nav>
-        <a href="${pageContext.request.contextPath}/Home.html">
+        <a href="${pageContext.request.contextPath}/shop/Home.jsp">
             <img src="${pageContext.request.contextPath}/resources/pictures/clearw.png" class="logo">
         </a>
         <ul>
@@ -62,18 +62,26 @@
             </div>
 
         </ul>
-        <!-- Customer account options dropdown menu -->
 
+        <!-- Logged in Customer -->
+        <%
+            Customer c1 = (Customer) session.getAttribute("c1");
+            c1.display();
+        %>
+        <!-- Customer menu button show account options in dropdown -->
         <div class="customerMenu">
             <button>Account</button>
             <div class="customerMenu-content">
                 <a href="${pageContext.request.contextPath}/customer/CustomerProfile.jsp">Account Home</a>
                 <a href="${pageContext.request.contextPath}/customer/CustomerUpdateProfile.jsp">Update Account</a>
                 <a href="${pageContext.request.contextPath}/customer/CustomerOrders.jsp">Orders</a>
-                <a href="${pageContext.request.contextPath}/shop/Help.html">Help & FAQs</a>
-                <a href="${pageContext.request.contextPath}/customer/CustomerLogout.html">Logout</a>
+                <a href="${pageContext.request.contextPath}/shop/Help.jsp">Help & FAQs</a>
+                <a href="${pageContext.request.contextPath}/Home.html">Logout</a>
             </div>
         </div>
+        <a href="${pageContext.request.contextPath}/shop/Cart.jsp" class="btn">
+            <i class="fa-solid fa-cart-shopping"></i> Cart
+        </a>
 
         <!-- other page elements not used here
         <a href="CustomerLogin.jsp" class="login-button">Login</a>
@@ -99,10 +107,6 @@
     <!-- Page Contents -->
 
     <div class="customerTaskList">
-        <%
-            Customer c1 = (Customer) session.getAttribute("c1");
-            c1.display();
-        %>
 
         <br>
         <h1 class="centerText">Welcome, <%=c1.getCustFirstName()%>! <!-- get customer first name and display here --></h1>
@@ -149,8 +153,8 @@
     <p>WeSports</p>
     <nav>
         <ul>
-            <li><a href="${pageContext.request.contextPath}/shop/about.html">About Us</a></li>
-            <li><a href="${pageContext.request.contextPath}/shop/contact.html">Contact Us</a></li>
+            <li><a href="${pageContext.request.contextPath}/shop/about.jsp">About Us</a></li>
+            <li><a href="${pageContext.request.contextPath}/shop/contact.jsp">Contact Us</a></li>
         </ul>
     </nav>
     <p class="website__rights">&copy; WeSports 2024. All rights reserved.</p>

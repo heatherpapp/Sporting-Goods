@@ -16,6 +16,8 @@
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"> -->
      <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/styles.css">
      <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/Preloader.css">
+
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/customerProfile.css">
  </head>
  <body>
  <div id="preloader">
@@ -62,10 +64,32 @@
 
         </ul>
 
-        <a href="${pageContext.request.contextPath}/customer/CustomerLogin.jsp" class="login-button">Login</a>
-        <a href="${pageContext.request.contextPath}/shop/Cart.jsp" class="btn">
-            <i class="fa-solid fa-cart-shopping"></i> Cart
-        </a>
+         <!-- Logged in Customer -->
+         <%
+             Customer c1 = (Customer) session.getAttribute("c1");
+             c1.display();
+         %>
+         <!-- Customer menu button show account options in dropdown -->
+         <div class="customerMenu">
+             <button>Account</button>
+             <div class="customerMenu-content">
+                 <a href="${pageContext.request.contextPath}/customer/CustomerProfile.jsp">Account Home</a>
+                 <a href="${pageContext.request.contextPath}/customer/CustomerUpdateProfile.jsp">Update Account</a>
+                 <a href="${pageContext.request.contextPath}/customer/CustomerOrders.jsp">Orders</a>
+                 <a href="${pageContext.request.contextPath}/shop/Help.jsp">Help & FAQs</a>
+                 <a href="${pageContext.request.contextPath}/Home.html">Logout</a>
+             </div>
+         </div>
+         <a href="${pageContext.request.contextPath}/shop/Cart.jsp" class="btn">
+             <i class="fa-solid fa-cart-shopping"></i> Cart
+         </a>
+
+         <!-- other page elements not used here
+         <a href="CustomerLogin.jsp" class="login-button">Login</a>
+         <a href="../shop/Cart.html" class="btn">
+             <i class="fa-solid fa-cart-shopping"></i> Cart
+         </a>
+         -->
 
     </nav>
     <div class="content">

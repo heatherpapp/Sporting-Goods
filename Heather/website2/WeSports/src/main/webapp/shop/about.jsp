@@ -5,27 +5,28 @@
 
         <meta name="viewport" content="width=device-with, initial-scale=1.0">
         <title>WeSports | About</title>
-        <link rel="apple-touch-icon" sizes="180x180" href="../resources/favicon_package_v0.16/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="../resources/favicon_package_v0.16/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="../resources/favicon_package_v0.16/favicon-16x16.png">
-        <link rel="manifest" href="../resources/favicon_package_v0.16/site.webmanifest">
-        <link rel="mask-icon" href="../resources/favicon_package_v0.16/safari-pinned-tab.svg" color="#5bbad5">
+        <link rel="apple-touch-icon" sizes="180x180" href="${pageContext.request.contextPath}/resources/favicon_package_v0.16/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="${pageContext.request.contextPath}/resources/favicon_package_v0.16/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="${pageContext.request.contextPath}/resources/favicon_package_v0.16/favicon-16x16.png">
+        <link rel="manifest" href="${pageContext.request.contextPath}/resources/favicon_package_v0.16/site.webmanifest">
+        <link rel="mask-icon" href="${pageContext.request.contextPath}/resources/favicon_package_v0.16/safari-pinned-tab.svg" color="#5bbad5">
         <meta name="msapplication-TileColor" content="#da532c">
         <meta name="theme-color" content="#ffffff">
         <!--<link rel="stylesheet" href="/Website/CSS/styles.css">Need to edit about styles to not conflict-->
         <!--<link rel="stylesheet" href="../resources/css/styles.css">-->
-        <link rel="stylesheet" href="../resources/css/aboutStyles.css">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/aboutStyles.css">
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://kit.fontawesome.com/5b6c8cdace.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/customerProfile.css">
 
     </head>
     <body>
         <div class="BGcontainer">
             <nav>
-                <a href="Home.html">
-                    <img src="resources/pictures/clearw.png" class="logo" alt="WeSports logo">
+                <a href="${pageContext.request.contextPath}/shop/Home.jsp">
+                    <img src="${pageContext.request.contextPath}/resources/pictures/clearw.png" class="logo" alt="WeSports logo">
                 </a>
                 <ul>
 
@@ -34,41 +35,63 @@
                         <div class="dropdown-content">
 
                             <!--Need to Update links to JSP on all-->
-                            <a href="shop/sports/Baseball.jsp">Baseball</a>
-                            <a href="shop/sports/Basketball.jsp">Basketball</a>
-                            <a href="shop/sports/Football.jsp">Football</a>
-                            <a href="shop/sports/Golf.jsp">Golf</a>
-                            <a href="shop/sports/Soccer.jsp">Soccer</a>
-                            <a href="shop/sports/Tennis.jsp">Tennis</a>
-                            <a href="shop/sports/Volleyball.jsp">Volleyball</a>
+                            <a href="${pageContext.request.contextPath}/shop/sports/Baseball.jsp">Baseball</a>
+                            <a href="${pageContext.request.contextPath}/shop/sports/Basketball.jsp">Basketball</a>
+                            <a href="${pageContext.request.contextPath}/shop/sports/Football.jsp">Football</a>
+                            <a href="${pageContext.request.contextPath}/shop/sports/Golf.jsp">Golf</a>
+                            <a href="${pageContext.request.contextPath}/shop/sports/Soccer.jsp">Soccer</a>
+                            <a href="${pageContext.request.contextPath}/shop/sports/Tennis.jsp">Tennis</a>
+                            <a href="${pageContext.request.contextPath}/shop/sports/Volleyball.jsp">Volleyball</a>
                         </div>
                     </div>
                     <div class="dropdown">
                         <button>Shop Outdoors</button>
                         <div class="dropdown-content">
-                            <a href="shop/outdoors/Camping.jsp">Camping</a>
-                            <a href="shop/outdoors/Climbing.jsp">Climbing</a>
-                            <a href="shop/outdoors/Fishing.jsp">Fishing</a>
-                            <a href="shop/outdoors/Kayaking.jsp">Kayaking</a>
+                            <a href="${pageContext.request.contextPath}/shop/outdoors/Camping.jsp">Camping</a>
+                            <a href="${pageContext.request.contextPath}/shop/outdoors/Climbing.jsp">Climbing</a>
+                            <a href="${pageContext.request.contextPath}/shop/outdoors/Fishing.jsp">Fishing</a>
+                            <a href="${pageContext.request.contextPath}/shop/outdoors/Kayaking.jsp">Kayaking</a>
                         </div>
                     </div>
                     <div class="dropdown">
                         <button>Shop by Apparel</button>
                         <div class="dropdown-content">
-                            <a href="shop/apparel/Men.jsp">Men's</a>
-                            <a href="shop/apparel/Women.jsp">Women's</a>
-                            <a href="shop/apparel/Junior.jsp">Junior's</a>
-                            <a href="shop/apparel/Youth.jsp">Youth</a>
+                            <a href="${pageContext.request.contextPath}/shop/apparel/Men.jsp">Men's</a>
+                            <a href="${pageContext.request.contextPath}/shop/apparel/Women.jsp">Women's</a>
+                            <a href="${pageContext.request.contextPath}/shop/apparel/Junior.jsp">Junior's</a>
+                            <a href="${pageContext.request.contextPath}/shop/apparel/Youth.jsp">Youth</a>
                         </div>
                     </div>
 
 
                 </ul>
 
-                <a href="customer/CustomerLogin.jsp" class="login-button">Login</a>
-                <a href="shop/Cart.html" class="btn">
+                <!-- Logged in Customer -->
+                <%
+                    Customer c1 = (Customer) session.getAttribute("c1");
+                    c1.display();
+                %>
+                <!-- Customer menu button show account options in dropdown -->
+                <div class="customerMenu">
+                    <button>Account</button>
+                    <div class="customerMenu-content">
+                        <a href="${pageContext.request.contextPath}/customer/CustomerProfile.jsp">Account Home</a>
+                        <a href="${pageContext.request.contextPath}/customer/CustomerUpdateProfile.jsp">Update Account</a>
+                        <a href="${pageContext.request.contextPath}/customer/CustomerOrders.jsp">Orders</a>
+                        <a href="${pageContext.request.contextPath}/shop/Help.jsp">Help & FAQs</a>
+                        <a href="${pageContext.request.contextPath}/Home.html">Logout</a>
+                    </div>
+                </div>
+                <a href="${pageContext.request.contextPath}/shop/Cart.jsp" class="btn">
                     <i class="fa-solid fa-cart-shopping"></i> Cart
                 </a>
+
+                <!-- other page elements not used here
+                <a href="CustomerLogin.jsp" class="login-button">Login</a>
+                <a href="../shop/Cart.html" class="btn">
+                    <i class="fa-solid fa-cart-shopping"></i> Cart
+                </a>
+                -->
 
             </nav>
 
@@ -195,11 +218,11 @@
                                 <h2>
                                     <br><a href="https://www.figma.com/file/FSbUEQ1jmHuOSOU9EWT3j2/SportingFlow?type=whiteboard&node-id=0%3A1&t=AwMhwfw5V1Z9fVEg-1">- Flow Charts</a>
                                     <br>
-                                    <br><a href="../resources/pictures/UX/Colors.jpg">- Color Scheme</a>
+                                    <br><a href="${pageContext.request.contextPath}/resources/pictures/UX/Colors.jpg">- Color Scheme</a>
                                     <br>
-                                    <br><a href="../resources/pictures/UX/Persona 2.png">- Character Study</a>
+                                    <br><a href="${pageContext.request.contextPath}/resources/pictures/UX/Persona 2.png">- Character Study</a>
                                     <br>
-                                    <br><a href="../resources/pictures/UX/Persona 1.png">- Character Study</a>
+                                    <br><a href="${pageContext.request.contextPath}/resources/pictures/UX/Persona 1.png">- Character Study</a>
                                     <br>
                                     <br><a href="../resources/pictures/UX/User Journey Mapping.png">- User Mapping</a>
                                     <br>
@@ -228,9 +251,9 @@
             <p>WeSports</p>
             <nav>
                 <ul>
-                    <!--<li><a href="about.html">About us</a></li>-->
-                    <li><a href="../Home.html">Home</a></li>
-                    <li><a href="../shop/contact.html">Contact Us</a></li>
+                    <!--<li><a href="about.jsp">About us</a></li>-->
+                    <li><a href="${pageContext.request.contextPath}/shop/Home.jsp">Home</a></li>
+                    <li><a href="${pageContext.request.contextPath}/shop/contact.jsp">Contact Us</a></li>
                 </ul>
             </nav>
 
@@ -261,7 +284,7 @@
         </footer>
 
 
-        <script src="../resources/JavaScript/script.js"></script>
+        <script src="${pageContext.request.contextPath}//resources/JavaScript/script.js"></script>
 
     </body>
 </html>

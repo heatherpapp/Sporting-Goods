@@ -1,72 +1,68 @@
-<%--
-    Class: CIST2373 Java Programming 3
-    Term: Spring 2024
-    Instructor: Chris Bishop
-    Description: Solution to Lab     Author: Heather Papp
-    I wrote this code myself...
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="website.wesports.Business.Product" %>
+<%@ page import="website.wesports.Business.Customer" %>
 <html>
 <head>
     <title>Title</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="resources/favicon_package_v0.16/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="resources/favicon_package_v0.16/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="resources/favicon_package_v0.16/favicon-16x16.png">
-    <link rel="manifest" href="resources/favicon_package_v0.16/site.webmanifest">
-    <link rel="mask-icon" href="resources/favicon_package_v0.16/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="apple-touch-icon" sizes="180x180" href="${pageContext.request.contextPath}/resources/favicon_package_v0.16/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="${pageContext.request.contextPath}/resources/favicon_package_v0.16/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="${pageContext.request.contextPath}/resources/favicon_package_v0.16/favicon-16x16.png">
+    <link rel="manifest" href="${pageContext.request.contextPath}/resources/favicon_package_v0.16/site.webmanifest">
+    <link rel="mask-icon" href="${pageContext.request.contextPath}/resources/favicon_package_v0.16/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
-    <link rel="stylesheet" href="resources/css/styles.css">
-    <link rel="stylesheet" href="resources/css/Preloader.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/styles.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/Preloader.css">
     <script src="https://kit.fontawesome.com/5b6c8cdace.js" crossorigin="anonymous"></script>
 </head>
 <body>
 <div class="container">
     <nav>
-        <a href="Home.html">
-            <img src="resources/pictures/clearw.png" class="logo" alt="WeSportsLogo">
+        <a href="${pageContext.request.contextPath}/shop/Home.jsp">
+            <img src="${pageContext.request.contextPath}/resources/pictures/clearw.png" class="logo" alt="WeSportsLogo">
         </a>
         <ul>
 
             <div class="dropdown">
                 <button>Shop by Sport</button>
                 <div class="dropdown-content">
-                    <a href="shop/sports/Baseball.html">Baseball</a>
-                    <a href="shop/sports/Basketball.html">Basketball</a>
-                    <a href="shop/sports/Cycling.html">Cycling</a>
-                    <a href="shop/sports/Football.html">Football</a>
-                    <a href="shop/sports/Golf.html">Golf</a>
-                    <a href="shop/sports/Running.html">Running</a>
-                    <a href="shop/sports/Soccer.html">Soccer</a>
-                    <a href="shop/sports/Tennis.html">Tennis</a>
-                    <a href="shop/sports/Volleyball.html">Volleyball</a>
+                    <a href="${pageContext.request.contextPath}/shop/sports/Baseball.jsp">Baseball</a>
+                    <a href="${pageContext.request.contextPath}/shop/sports/Basketball.jsp">Basketball</a>
+                    <a href="${pageContext.request.contextPath}/shop/sports/Football.jsp">Football</a>
+                    <a href="${pageContext.request.contextPath}/shop/sports/Golf.jsp">Golf</a>
+                    <a href="${pageContext.request.contextPath}/shop/sports/Soccer.jsp">Soccer</a>
+                    <a href="${pageContext.request.contextPath}/shop/sports/Tennis.jsp">Tennis</a>
+                    <a href="${pageContext.request.contextPath}/shop/sports/Volleyball.jsp">Volleyball</a>
                 </div>
             </div>
             <div class="dropdown">
                 <button>Shop Outdoors</button>
                 <div class="dropdown-content">
-                    <a href="shop/outdoors/Camping.html">Camping</a>
-                    <a href="shop/outdoors/Climbing.html">Climbing</a>
-                    <a href="shop/outdoors/Fishing.html">Fishing</a>
-                    <a href="shop/outdoors/Kayaking.html">Kayaking</a>
+                    <a href="${pageContext.request.contextPath}/shop/outdoors/Camping.jsp">Camping</a>
+                    <a href="${pageContext.request.contextPath}/shop/outdoors/Climbing.jsp">Climbing</a>
+                    <a href="${pageContext.request.contextPath}/shop/outdoors/Fishing.jsp">Fishing</a>
+                    <a href="${pageContext.request.contextPath}/shop/outdoors/Kayaking.jsp">Kayaking</a>
                 </div>
             </div>
             <div class="dropdown">
                 <button>Shop by Apparel</button>
                 <div class="dropdown-content">
-                    <a href="shop/apparel/Mens.html">Men's</a>
-                    <a href="shop/apparel/Women.html">Women's</a>
-                    <a href="shop/apparel/Junior.html">Junior's</a>
-                    <a href="shop/apparel/Youth.html">Youth</a>
+                    <a href="${pageContext.request.contextPath}/shop/apparel/Men.jsp">Men's</a>
+                    <a href="${pageContext.request.contextPath}/shop/apparel/Women.jsp">Women's</a>
+                    <a href="${pageContext.request.contextPath}/shop/apparel/Junior.jsp">Junior's</a>
+                    <a href="${pageContext.request.contextPath}/shop/apparel/Youth.jsp">Youth</a>
                 </div>
             </div>
 
 
         </ul>
-        <a href="CustomerLogin.jsp" class="login-button">Login</a>
-
-        <a href="shop/Cart.html" class="btn">
+        <a href="${pageContext.request.contextPath}/customer/CustomerLogin.jsp" class="login-button">Login</a>
+        <!-- Logged in Customer -->
+        <%
+            Customer c1 = (Customer) session.getAttribute("c1");
+            c1.display();
+        %>
+        <a href="${pageContext.request.contextPath}/shop/Cart.jsp" class="btn">
             <i class="fa-solid fa-cart-shopping"></i> Cart
         </a>
     </nav>
@@ -135,8 +131,8 @@
     <p>We Sports</p>
     <nav>
         <ul>
-            <li><a href="shop/about.html">About us</a></li>
-            <li><a href="shop/contact.html">Contact us</a></li>
+            <li><a href="${pageContext.request.contextPath}/shop/about.html">About us</a></li>
+            <li><a href="${pageContext.request.contextPath}/shop/contact.html">Contact us</a></li>
             <!--<li><a href="thanks.html">Thank you</a></li>Not needed... Intended for contact page. So once they tried to contact us, it linked to a thank you page to acknowledge-->
         </ul>
     </nav>
@@ -164,6 +160,6 @@
 
 </footer>
 
-<script src="resources/JavaScript/script.js"></script>
+<script src="${pageContext.request.contextPath}/resources/JavaScript/script.js"></script>
 </body>
 </html>
