@@ -38,23 +38,25 @@ public class CustomerUpdateServlet extends HttpServlet {
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
 
+        HttpSession session = request.getSession();
+        Customer c1 = (Customer) session.getAttribute("c1");
+        
         try (PrintWriter out = response.getWriter()) {
-            Customer c1 = new Customer();
+
             //get values from form and assign to local variables
-            String firstName = request.getParameter("FirstName");
-            String lastName = request.getParameter("LastName");
-            String street = request.getParameter("Street");
-            String city = request.getParameter("City");
-            String state = request.getParameter("State");
-            String zip = request.getParameter("Zip");
-            String newPassword = request.getParameter("NewPassword");
-            String confirmNewPassword = request.getParameter("ConfirmNewPassword");
-            System.out.println("Form Data: " + firstName + lastName + "\n" + street + "\n" + city + ", " + state + " " + zip);
+            String firstName = request.getParameter("updateFirstName");
+            String lastName = request.getParameter("updateLastName");
+            String street = request.getParameter("updateStreet");
+            String city = request.getParameter("updateCity");
+            String state = request.getParameter("updateState");
+            String zip = request.getParameter("updateZip");
+            String newPassword = request.getParameter("updateNewPassword");
+            String confirmNewPassword = request.getParameter("updateConfirmNewPassword");
+            System.out.println("Form Data: " + firstName + " " + lastName + "\n" + street + "\n" + city + ", " + state + " " + zip);
 
             try {
 
-                String currentPassword = request.getParameter(c1.getCustPassword());
-                if (!currentPassword.equals(newPassword)) {
+                if (!c1.getCustPassword().equals(newPassword)) {
                     if (newPassword.equals(confirmNewPassword)) {
                         c1.setCustPassword(newPassword);
                         c1.updateCustomer();
@@ -78,11 +80,18 @@ public class CustomerUpdateServlet extends HttpServlet {
 
                 if (!c1.getCustCity().equals(city)) {
                     c1.setCustCity(city);
-
+                    c1.updateCustomer();
                 }
 
+                if (!c1.getCustState().equals(state)) {
+                    c1.setCustState(state);
+                    c1.updateCustomer();
+                }
 
-
+                if (!c1.getCustZip().equals(zip)) {
+                    c1.setCustZip(zip);
+                    c1.updateCustomer();
+                }
 
             }
             catch(Exception e) {
@@ -90,9 +99,8 @@ public class CustomerUpdateServlet extends HttpServlet {
             }
 
             //add customer c1 to session
-            HttpSession session;
-            session = request.getSession();
-            session.setAttribute("c1", c1);
+            HttpSession session2 = request.getSession();
+            session2.setAttribute("c1", c1);
 
             //forward control back to Display Cart
             RequestDispatcher rd = request.getRequestDispatcher("/customer/CustomerProfile.jsp");
