@@ -145,12 +145,14 @@ p {
 .search-container {
     display: flex;
     margin: 20px;
+    align-content: center;
 }
 
 #search-input {
     width: 88%;
     padding: 8px;
     font-size: 16px;
+    align-content: center;
 }
 
 #search-results {
@@ -183,6 +185,8 @@ p {
     display: inline-block; /* Arrange cards in a row */
     overflow: hidden; /* Ensure images fit within the card */
     position: relative;
+    align-content: center;
+    padding-left: 20px;
 }
 .card img {
     width: 100%; /* Make sure the image fills the card */
