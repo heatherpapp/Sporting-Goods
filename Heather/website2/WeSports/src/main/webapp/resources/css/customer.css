@@ -12,15 +12,7 @@ a{
     color: inherit;
 }
 /*base styles */
-body{
-    font-family: 'Inter', sans-serif;
-    background-image: url(../pictures/store.jpg);
-    background-repeat: no-repeat;
-    background-size: cover; 
-    background-attachment: fixed;
-    background-position: center center;
 
-}
 /*basic styles */
 .header{
     background-color: rgba(19, 22, 26, 0.8);

@@ -177,23 +177,27 @@ p {
 }
 
 .card {
-    width: 240px; /* Adjust width and height as needed */
-    height: 300px; /* Increased height to accommodate the button */
+    /* Set dimensions and styling for the card */
+    width: 240px;
+    height: 300px;
     background-color: #302f2f;
     border: 1px solid #ccc;
     margin: 10px;
-    display: inline-block; /* Arrange cards in a row */
-    overflow: hidden; /* Ensure images fit within the card */
+    display: inline-block;
+    overflow: hidden;
     position: relative;
-    align-content: center;
-    padding-left: 20px;
 }
+
 .card img {
-    width: 100%; /* Make sure the image fills the card */
-    height: 80%; /* Adjust image height */
-    object-fit: cover; /* Maintain aspect ratio */
+    /* Ensure the image fills the card while maintaining aspect ratio */
+    padding-right: 10px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
+
 .card button {
+    /* Style the button within the card */
     width: 100%;
     height: 20%;
     background-color: rgb(63, 63, 255);
@@ -201,16 +205,23 @@ p {
     border: none;
     cursor: pointer;
 }
+
 .card button:hover {
+    /* Highlight the button on hover */
     transition: 0.8s;
     background-color: #f93838;
 }
+
 .card a {
-    display: block; /* Make the entire card clickable */
+    /* Make the entire card clickable and align contents */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     width: 100%;
     height: 100%;
     text-decoration: none;
 }
+
 .footer {
     background-color: #007bff; /* Background color */
     padding: 20px;
