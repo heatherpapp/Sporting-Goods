@@ -2,6 +2,7 @@
 <%@ page import="website.wesports.Business.Customer" %>
 <%@ page import="website.wesports.Business.Product" %>
 <%@ page import="website.wesports.Business.ProductList" %>
+<%@ page import="java.util.List" %>
 <html>
 <head>
     <meta name="viewport" content="width=device-with, initial-scale=1.0">
@@ -13,9 +14,10 @@
     <link rel="mask-icon" href="${pageContext.request.contextPath}/resources/favicon_package_v0.16/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <!--  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"> -->
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/styles.css">
     <script src="https://kit.fontawesome.com/5b6c8cdace.js" crossorigin="anonymous"></script>
+
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/customerProfile.css">
 </head>
 <body>
@@ -62,8 +64,8 @@
         </ul>
         <!-- Logged in Customer -->
         <%
-            Customer c1 = (Customer) session.getAttribute("c1");
-            c1.display();
+            //Customer c1 = (Customer) session.getAttribute("c1");
+            //c1.display();
         %>
         <!-- Customer menu button show account options in dropdown -->
         <div class="customerMenu">
@@ -94,7 +96,7 @@
         <p>Shop with us today and save!</p>
     </div>
     <div class="search-container">
-        <form action="../../SearchServlet" method="get">
+        <form action="SearchServlet" method="get">
             <input type="text" id="search-input" name="query" placeholder="Search...">
             <button id="search-button" onclick="search()">Search</button>  <!-- search products for input text -->
         </form>
@@ -106,36 +108,33 @@
     </div>
 
     <div class="product">
-        <h1>Youth Product List</h1>
+        <h1>Search Results</h1>
         <table>
             <thead>
             <tr>
-                <th></th>
+                <th>Picture</th>
                 <th>Name</th>
                 <th>Description</th>
                 <th>Price</th>
-                <th>Department</th>
-                <th>Section</th>
+                <th>Age Group</th>
+                <th>Gender</th>
                 <th>Quantity</th>
             </tr>
             </thead>
             <tbody>
 
             <%
-                Product product = new Product();
-                product.getAgeGroupProducts("Youth");
-                //product.display();
-                //product.productList.displayList();
+                List<Product> products = (List<Product>) request.getAttribute("products");
 
-                for (Product productItem : product.productList.productArray) {
+                for (Product productItem : products) {
             %>
             <tr>
-                <td><img src="../<%= productItem.getImagePath() %>" width="100" height="100"></td>
+                <td><img src="shop/<%= productItem.getImagePath() %>" width="100" height="100"></td>
                 <td><%= productItem.getProductName() %></td>
                 <td><%= productItem.getProductDescription() %></td>
                 <td><%= productItem.getUnitPrice() %></td>
-                <td><%= productItem.getDepartment() %></td>
-                <td><%= productItem.getSection() %></td>
+                <td><%= productItem.getAgeGroup() %></td>
+                <td><%= productItem.getGender() %></td>
                 <td><%= productItem.getQuantity() %></td>
             </tr>
             <%
@@ -154,8 +153,8 @@
     <p>WeSports</p>
     <nav>
         <ul>
-            <li><a href="../about.html">About Us</a></li>
-            <li><a href="../contact.html">Contact Us</a></li>
+            <li><a href="${pageContext.request.contextPath}/shop/about.jsp">About Us</a></li>
+            <li><a href="${pageContext.request.contextPath}/shop/contact.jsp">Contact Us</a></li>
         </ul>
     </nav>
     <p class="website__rights">&copy; WeSports 2024. All rights reserved.</p>
@@ -178,6 +177,6 @@
     </div>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
-<script src="../../resources/JavaScript/script.js"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script> -->
+<script src="${pageContext.request.contextPath}/resources/JavaScript/script.js"></script>
 </body>

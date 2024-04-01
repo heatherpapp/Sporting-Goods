@@ -3,8 +3,6 @@ TODO LIST
 ISSUES
 * Signup.css error on line 106
 
-* Corners of page are oddly rounded:
-    - thanks.html
 
 * Create Cart
     When a customer checks out:

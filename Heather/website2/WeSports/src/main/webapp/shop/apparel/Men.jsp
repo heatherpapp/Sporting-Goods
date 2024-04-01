@@ -94,8 +94,10 @@
         <p>Shop with us today and save!</p>
     </div>
     <div class="search-container">
-        <input type="text" id="search-input" placeholder="Search...">
-        <button id="search-button" onclick="search()">Search</button>  <!-- this needs to call the SearchProducts.jsp instead -->
+        <form action="../../SearchServlet" method="get">
+            <input type="text" id="search-input" name="query" placeholder="Search...">
+            <button id="search-button" onclick="search()">Search</button>  <!-- search products for input text -->
+        </form>
     </div>
 
 
@@ -129,7 +131,7 @@
                 for (Product productItem : product.productList.productArray) {
             %>
             <tr>
-                <td><img src="<%= productItem.getImagePath() %>" width="100" height="100"></td>
+                <td><img src="../<%= productItem.getImagePath() %>" width="100" height="100"></td>
                 <td><%= productItem.getProductName() %></td>
                 <td><%= productItem.getProductDescription() %></td>
                 <td><%= productItem.getUnitPrice() %></td>

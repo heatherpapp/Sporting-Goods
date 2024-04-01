@@ -202,7 +202,7 @@ nav ul li a{
 /* Change color on hover */
 .dropdown-content a:hover {
   transition: 0.4s;
-  background-color: #f1f1f1;
+  background-color: #6200ff54;
 }
 
 /* Show the dropdown content when the dropdown button is hovered over */
