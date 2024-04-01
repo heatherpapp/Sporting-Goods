@@ -44,7 +44,7 @@ public class SearchServlet extends HttpServlet {
         List<Product> products = searchProducts(query);
 
         request.setAttribute("products", products);
-        request.getRequestDispatcher("shop/sports/SearchResults.jsp").forward(request, response);
+        request.getRequestDispatcher("shop/SearchResults.jsp").forward(request, response);
     }
 
     private List<Product> searchProducts(String query) {
