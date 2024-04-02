@@ -105,7 +105,7 @@
          <!-- END login/customer buttons -->
 
     </nav>
- </div>
+
     <div class="content">
         <h1>WeSports</h1>
         <h4>We Do Sports</h4>
@@ -138,10 +138,9 @@
 
 </div>
 
-<div id="search-results">
-    <!-- Search results will be displayed here -->
-</div>
-
+    <div id="search-results">
+        <!-- Search results will be displayed here -->
+    </div>
 
 
 <footer class="footer">

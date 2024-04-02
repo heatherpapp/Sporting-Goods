@@ -117,7 +117,7 @@
                 <!-- Search results will be displayed here -->
             </div>
 
-        </div>
+
 
             <!-- Need to Center cards on page-->
             <div class="card">
@@ -143,9 +143,9 @@
                     <img src="${pageContext.request.contextPath}/resources/pictures/kayakingSunset.jpg" alt="People kayaking">
                     <button>Kayaking</button>
                 </a>
-            </div>            
+            </div>
 
-
+        </div>
         <footer class="footer">
             <p>WeSports</p>
             <nav>

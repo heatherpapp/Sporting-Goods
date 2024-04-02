@@ -112,7 +112,7 @@
     <div id="search-results">
         <!-- Search results will be displayed here -->
     </div>
-</div>
+
 
             <div class="card">
                 <a href="${pageContext.request.contextPath}/shop/sports/Baseball.jsp">
@@ -157,7 +157,7 @@
                 </a>
             </div>
 
-
+</div>
 
         <footer class="footer">
             <p>WeSports</p>

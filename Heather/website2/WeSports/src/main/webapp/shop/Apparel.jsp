@@ -61,10 +61,11 @@
                 <!-- START login/customer buttons -->
                 <%
                     try {
+                        session = request.getSession();
                         // Logged in Customer
                         Customer c1 = (Customer) session.getAttribute("c1");
                         c1.display();
-                        if (c1.Exists) {
+                        if (session != null) {
                 %>
 
                 <!-- Customer menu button show account options in dropdown -->
@@ -113,7 +114,7 @@
                 <!-- Search results will be displayed here -->
             </div>
 
-        </div>
+
 
 
             <div class="card">
@@ -141,6 +142,7 @@
                 </a>
             </div>
 
+        </div>
 
             <footer class="footer">
                 <p>WeSports</p>

@@ -10,11 +10,13 @@
         session = request.getSession(false);
         if (session != null) {
             session.invalidate();
-            %>
-    <a href="javascript:location.replace('${pageContext.request.contextPath}/shop/Home.html')"></a>
-    <%
         }
     %>
+    <script type="text/javascript">
+        window.location.replace("${pageContext.request.contextPath}/Home.html");
+    </script>
+
+
 
 
 </body>
