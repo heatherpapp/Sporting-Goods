@@ -3,7 +3,7 @@
 <html>
     <head>
         <meta name="viewport" content="width=device-with, initial-scale=1.0">
-        <title>WeSports | Shop Outdoors</title>
+        <title>WeSports | Shop Apparel</title>
         <link rel="apple-touch-icon" sizes="180x180" href="${pageContext.request.contextPath}/resources/favicon_package_v0.16/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="${pageContext.request.contextPath}/resources/favicon_package_v0.16/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="${pageContext.request.contextPath}/resources/favicon_package_v0.16/favicon-16x16.png">
@@ -11,7 +11,6 @@
         <link rel="mask-icon" href="${pageContext.request.contextPath}/resources/favicon_package_v0.16/safari-pinned-tab.svg" color="#5bbad5">
         <meta name="msapplication-TileColor" content="#da532c">
         <meta name="theme-color" content="#ffffff">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/styles.css">
         <script src="https://kit.fontawesome.com/5b6c8cdace.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/customerProfile.css">
@@ -171,7 +170,6 @@
                             </div>
             </footer>
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
         <script src="${pageContext.request.contextPath}/resources/JavaScript/script.js"></script>
     </body>
 </html>
