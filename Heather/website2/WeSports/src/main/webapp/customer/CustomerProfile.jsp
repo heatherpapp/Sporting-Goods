@@ -132,7 +132,7 @@
                     <td></td>
                 </tr>
                 <tr>
-                    <td><h3> <a href="${pageContext.request.contextPath}/customer/CustomerLogout.html">Logout</a> </h3></td>
+                    <td><h3> <a href="${pageContext.request.contextPath}/customer/CustomerLogout.jsp">Logout</a> </h3></td>
                     <td></td>
                     <td></td>
                 </tr>
