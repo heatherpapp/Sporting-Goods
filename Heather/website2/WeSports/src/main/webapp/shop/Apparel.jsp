@@ -61,11 +61,10 @@
                 <!-- START login/customer buttons -->
                 <%
                     try {
-                        session = request.getSession();
                         // Logged in Customer
                         Customer c1 = (Customer) session.getAttribute("c1");
                         c1.display();
-                        if (session != null) {
+                        if (c1.Exists) {
                 %>
 
                 <!-- Customer menu button show account options in dropdown -->
@@ -83,17 +82,16 @@
                     <i class="fa-solid fa-cart-shopping"></i> Cart
                 </a>
                 <%
-                } else {
+                    }
+                }
+                catch (Exception e) {
                 %>
                 <a href="${pageContext.request.contextPath}/customer/CustomerLogin.jsp" class="login-button">Login</a>
                 <a href="${pageContext.request.contextPath}/shop/Cart.html" class="btn">
                     <i class="fa-solid fa-cart-shopping"></i> Cart
                 </a>
                 <%
-                        }
-                    }
-                    catch (Exception e) {
-                        System.out.println(e + "\nThere was an error with user buttons");
+
                     }
 
                 %>

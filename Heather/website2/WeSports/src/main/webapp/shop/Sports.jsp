@@ -82,17 +82,16 @@
             <i class="fa-solid fa-cart-shopping"></i> Cart
         </a>
         <%
-        } else {
-        %>
-        <a href="${pageContext.request.contextPath}/customer/CustomerLogin.jsp" class="login-button">Login</a>
-        <a href="${pageContext.request.contextPath}/shop/Cart.html" class="btn">
-            <i class="fa-solid fa-cart-shopping"></i> Cart
-        </a>
-        <%
-                }
+        }
             }
             catch (Exception e) {
-                System.out.println(e + "\nThere was an error with user buttons");
+        %>
+            <a href="${pageContext.request.contextPath}/customer/CustomerLogin.jsp" class="login-button">Login</a>
+            <a href="${pageContext.request.contextPath}/shop/Cart.html" class="btn">
+                <i class="fa-solid fa-cart-shopping"></i> Cart
+            </a>
+        <%
+
             }
 
         %>
