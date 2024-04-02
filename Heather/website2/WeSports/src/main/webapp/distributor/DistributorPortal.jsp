@@ -30,13 +30,13 @@
 <body>
 <header class="header">
     <div class="header__content">
-        <a href="//Home.html" class="logo">
+        <a href="${pageContext.request.contextPath}/Home.html" class="logo">
             <img src="${pageContext.request.contextPath}/resources/pictures/clearw.png" alt="logo" class="logo__img">
         </a>
         <nav class="nav">
             <ul class="nav__list">
                 <li class="nav__item">
-                    <a href="<%= request.getContextPath() %>/Home.html" class="btn">Log out</a>
+                    <a href="${pageContext.request.contextPath}/Home.html" class="btn">Log out</a>
                 </li>
             </ul>
         </nav>
