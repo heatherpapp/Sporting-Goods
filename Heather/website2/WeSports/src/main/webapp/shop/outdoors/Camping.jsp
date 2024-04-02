@@ -131,16 +131,17 @@
                 <th>Price</th>
                 <th>Age Group</th>
                 <th>Gender</th>
-                <th>Quantity</th>
+                <!-- don't show Quantity on Hand <th>Quantity</th> -->
+                <th>Add to Cart</th>
             </tr>
             </thead>
             <tbody>
 
             <%
                 Product product = new Product();
-                product.getDeptProducts("Camping");
-                //product.display();
-                //product.productList.displayList();
+                product.getSectionProducts("Camping");
+                product.display();
+                product.productList.displayList();
 
                 for (Product productItem : product.productList.productArray) {
             %>
@@ -149,9 +150,11 @@
                 <td><%= productItem.getProductName() %></td>
                 <td><%= productItem.getProductDescription() %></td>
                 <td><%= productItem.getUnitPrice() %></td>
+                <td><%= productItem.getDepartment() %></td>
+                <td><%= productItem.getSection() %></td>
                 <td><%= productItem.getAgeGroup() %></td>
-                <td><%= productItem.getGender() %></td>
-                <td><%= productItem.getQuantity() %></td>
+                <!-- don't show Quantity on Hand <td><%= productItem.getQuantity() %></td> -->
+                <td><button>Add to Cart</button></td>
             </tr>
             <%
                 }

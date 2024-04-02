@@ -131,7 +131,8 @@
                 <th>Department</th>
                 <th>Section</th>
                 <th>Age Group</th>
-                <th>Quantity</th>
+                <!-- don't show Quantity on Hand <th>Quantity</th> -->
+                <th>Add to Cart</th>
             </tr>
             </thead>
             <tbody>
@@ -152,7 +153,8 @@
                 <td><%= productItem.getDepartment() %></td>
                 <td><%= productItem.getSection() %></td>
                 <td><%= productItem.getAgeGroup() %></td>
-                <td><%= productItem.getQuantity() %></td>
+                <!-- don't show Quantity on Hand <td><%= productItem.getQuantity() %></td> -->
+                <td><button>Add to Cart</button></td>
             </tr>
             <%
                 }
