@@ -5,7 +5,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-with, initial-scale=1.0">
-    <title>WeSports | Shop Sports</title>
+    <title>WeSports | Shop Outdoors | Fishing</title>
     <link rel="apple-touch-icon" sizes="180x180" href="${pageContext.request.contextPath}/resources/favicon_package_v0.16/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="${pageContext.request.contextPath}/resources/favicon_package_v0.16/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="${pageContext.request.contextPath}/resources/favicon_package_v0.16/favicon-16x16.png">
