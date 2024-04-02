@@ -88,25 +88,24 @@
              <i class="fa-solid fa-cart-shopping"></i> Cart
          </a>
          <%
-             } else {
+         } else {
          %>
-                 <a href="${pageContext.request.contextPath}/customer/CustomerLogin.jsp" class="login-button">Login</a>
-                 <a href="${pageContext.request.contextPath}/shop/Cart.html" class="btn">
-                     <i class="fa-solid fa-cart-shopping"></i> Cart
-                 </a>
+         <a href="${pageContext.request.contextPath}/customer/CustomerLogin.jsp" class="login-button">Login</a>
+         <a href="${pageContext.request.contextPath}/shop/Cart.html" class="btn">
+             <i class="fa-solid fa-cart-shopping"></i> Cart
+         </a>
          <%
+                 }
              }
-         }
-         catch (Exception e) {
-             System.out.println(e + "\nThere was an error with user buttons");
-         } finally {
-
+             catch (Exception e) {
+                 System.out.println(e + "\nThere was an error with user buttons");
              }
 
          %>
          <!-- END login/customer buttons -->
 
     </nav>
+ </div>
     <div class="content">
         <h1>WeSports</h1>
         <h4>We Do Sports</h4>
@@ -143,7 +142,7 @@
     <!-- Search results will be displayed here -->
 </div>
 
-</div>
+
 
 <footer class="footer">
     <p>WeSports</p>

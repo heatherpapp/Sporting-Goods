@@ -116,6 +116,9 @@
             <div id="search-results">
                 <!-- Search results will be displayed here -->
             </div>
+
+        </div>
+
             <!-- Need to Center cards on page-->
             <div class="card">
                 <a href="${pageContext.request.contextPath}/shop/outdoors/Camping.jsp">
@@ -141,7 +144,7 @@
                     <button>Kayaking</button>
                 </a>
             </div>            
-        </div>
+
 
         <footer class="footer">
             <p>WeSports</p>

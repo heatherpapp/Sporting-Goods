@@ -12,7 +12,7 @@
         <meta name="msapplication-TileColor" content="#da532c">
         <meta name="theme-color" content="#ffffff">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-        <link rel="stylesheet" href="../resources/css/styles.css">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/styles.css">
         <script src="https://kit.fontawesome.com/5b6c8cdace.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/customerProfile.css">
     </head>
@@ -112,7 +112,10 @@
             <div id="search-results">
                 <!-- Search results will be displayed here -->
             </div>
-            <!-- Need to Center cards on page-->
+
+        </div>
+
+
             <div class="card">
                 <a href="${pageContext.request.contextPath}/shop/apparel/Men.jsp">
                     <img src="${pageContext.request.contextPath}/resources/pictures/man.jpg" alt="Image 1">
@@ -137,7 +140,7 @@
                     <button>Shop Youth Apparel</button>
                 </a>
             </div>
-        </div>
+
 
             <footer class="footer">
                 <p>WeSports</p>
