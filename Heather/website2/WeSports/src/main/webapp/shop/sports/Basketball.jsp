@@ -131,7 +131,8 @@
                 <th>Price</th>
                 <th>Age Group</th>
                 <th>Gender</th>
-                <th>Quantity</th>
+                <!-- don't show Quantity on Hand <th>Quantity</th> -->
+                <th>Add to Cart</th>
             </tr>
         </thead>
         <tbody>
@@ -151,7 +152,8 @@
             <td><%= productItem.getUnitPrice() %></td>
             <td><%= productItem.getAgeGroup() %></td>
             <td><%= productItem.getGender() %></td>
-            <td><%= productItem.getQuantity() %></td>
+            <!-- don't show Quantity on Hand <td><%= productItem.getQuantity() %></td> -->
+            <td><button>Add to Cart</button></td>
         </tr>
         <%
             }
