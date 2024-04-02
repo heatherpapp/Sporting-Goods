@@ -91,8 +91,10 @@
 
     <!-- Search bar -->
     <div class="search-container">
-        <input type="text" id="search-input" placeholder="Search...">
-        <button id="search-button" onclick="search()">Search</button>  <!-- this needs to call the SearchProducts.jsp instead -->
+        <form action="../../SearchServlet" method="get">
+            <input type="text" id="search-input" name="query" placeholder="Search...">
+            <button id="search-button" onclick="search()">Search</button>  <!-- search products for input text -->
+        </form>
     </div>
 
     <!-- Page Contents -->
