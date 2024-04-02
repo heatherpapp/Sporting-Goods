@@ -30,4 +30,6 @@ import java.io.PrintWriter;
 public class AddToCartServlet {
     private static final String DBDriver = "net.ucanaccess.jdbc.UcanaccessDriver";
     private static final String DBLocation = "jdbc:ucanaccess://C:/WeSportsDB/WeSports.accdb/";
+
+
 }
