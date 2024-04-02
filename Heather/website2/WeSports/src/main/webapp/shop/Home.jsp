@@ -99,7 +99,9 @@
          }
          catch (Exception e) {
              System.out.println(e + "\nThere was an error with user buttons");
-         }
+         } finally {
+
+             }
 
          %>
          <!-- END login/customer buttons -->

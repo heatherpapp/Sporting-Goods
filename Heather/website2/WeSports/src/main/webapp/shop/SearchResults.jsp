@@ -62,11 +62,15 @@
             </div>
 
         </ul>
-        <!-- Logged in Customer -->
+        <!-- START login/customer buttons -->
         <%
-            //Customer c1 = (Customer) session.getAttribute("c1");
-            //c1.display();
+            try {
+                // Logged in Customer
+                Customer c1 = (Customer) session.getAttribute("c1");
+                c1.display();
+                if (c1.Exists) {
         %>
+
         <!-- Customer menu button show account options in dropdown -->
         <div class="customerMenu">
             <button>Account</button>
@@ -75,19 +79,28 @@
                 <a href="${pageContext.request.contextPath}/customer/CustomerUpdateProfile.jsp">Update Account</a>
                 <a href="${pageContext.request.contextPath}/customer/CustomerOrders.jsp">Orders</a>
                 <a href="${pageContext.request.contextPath}/shop/Help.jsp">Help & FAQs</a>
-                <a href="${pageContext.request.contextPath}/Home.html">Logout</a>
+                <a href="${pageContext.request.contextPath}/customer/CustomerLogout.jsp">Logout</a>
             </div>
         </div>
         <a href="${pageContext.request.contextPath}/shop/Cart.jsp" class="btn">
             <i class="fa-solid fa-cart-shopping"></i> Cart
         </a>
-
-        <!-- other page elements not used here
-        <a href="CustomerLogin.jsp" class="login-button">Login</a>
-        <a href="../shop/Cart.html" class="btn">
+        <%
+        } else {
+        %>
+        <a href="${pageContext.request.contextPath}/customer/CustomerLogin.jsp" class="login-button">Login</a>
+        <a href="${pageContext.request.contextPath}/shop/Cart.html" class="btn">
             <i class="fa-solid fa-cart-shopping"></i> Cart
         </a>
-        -->
+        <%
+                }
+            }
+            catch (Exception e) {
+                System.out.println(e + "\nThere was an error with user buttons");
+            }
+
+        %>
+        <!-- END login/customer buttons -->
     </nav>
 
     <div class="content">
