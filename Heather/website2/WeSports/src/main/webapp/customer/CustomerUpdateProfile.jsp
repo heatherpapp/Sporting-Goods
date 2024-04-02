@@ -71,7 +71,7 @@
                 <a href="${pageContext.request.contextPath}/customer/CustomerUpdateProfile.jsp">Update Account</a>
                 <a href="${pageContext.request.contextPath}/customer/CustomerOrders.jsp">Orders</a>
                 <a href="${pageContext.request.contextPath}/shop/Help.jsp">Help & FAQs</a>
-                <a href="${pageContext.request.contextPath}/Home.html">Logout</a>
+                <a href="${pageContext.request.contextPath}/customer/CustomerLogout.jsp">Logout</a>
             </div>
         </div>
         <a href="${pageContext.request.contextPath}/shop/Cart.jsp" class="btn">
