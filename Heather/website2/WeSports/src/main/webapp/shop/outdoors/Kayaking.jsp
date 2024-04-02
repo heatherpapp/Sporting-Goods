@@ -138,14 +138,14 @@
 
             <%
                 Product product = new Product();
-                product.getDeptProducts("Kayaks");
+                product.getDeptProducts("Kayaking");
                 //product.display();
                 //product.productList.displayList();
 
                 for (Product productItem : product.productList.productArray) {
             %>
             <tr>
-                <td><img src="../<%= productItem.getImagePath() %>" width="100" height="100"></td>
+                <td><img src="<%= productItem.getImagePath() %>" width="100" height="100"></td>
                 <td><%= productItem.getProductName() %></td>
                 <td><%= productItem.getProductDescription() %></td>
                 <td><%= productItem.getUnitPrice() %></td>

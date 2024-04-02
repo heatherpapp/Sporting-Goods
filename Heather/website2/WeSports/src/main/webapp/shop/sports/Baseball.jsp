@@ -144,7 +144,7 @@
                 for (Product productItem : product.productList.productArray) {
             %>
             <tr>
-                <td><img src="../<%= productItem.getImagePath() %>" width="100" height="100"></td>
+                <td><img src="<%= productItem.getImagePath() %>" width="100" height="100"></td>
                 <td><%= productItem.getProductName() %></td>
                 <td><%= productItem.getProductDescription() %></td>
                 <td><%= productItem.getUnitPrice() %></td>
@@ -191,6 +191,5 @@
         </a>
     </div>
 </footer>
-
 <script src="${pageContext.request.contextPath}/resources/JavaScript/script.js"></script>
 </body>
