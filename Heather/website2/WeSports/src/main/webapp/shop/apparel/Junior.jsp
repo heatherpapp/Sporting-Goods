@@ -100,7 +100,7 @@
 
         %>
         <!-- END login/customer buttons -->
-        
+
     </nav>
 
     <div class="content">
