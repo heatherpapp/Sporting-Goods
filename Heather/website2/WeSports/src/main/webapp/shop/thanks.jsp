@@ -104,7 +104,9 @@
             %>
             <!-- END login/customer buttons -->
 
+
         </nav>
+
         <h1 class="thanks">Thank You!</h1>
         </div>
             <!-- Footer With Links-->

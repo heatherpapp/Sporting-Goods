@@ -101,14 +101,12 @@
                 <h4>We do Sports</h4>
                 <p>Shop with us today and save!</p>
             </div>
-            <div class="search-container">
-                <input type="text" id="search-input" placeholder="Search...">
-                <button id="search-button" onclick="search()">Search</button>
-            </div>
-            
 
-            <div id="search-results">
-                <!-- Search results will be displayed here -->
+            <div class="search-container">
+                <form action="../SearchServlet" method="get">
+                    <input type="text" id="search-input" name="query" placeholder="Search...">
+                    <button id="search-button" onclick="search()">Search</button>  <!-- search products for input text -->
+                </form>
             </div>
 
 
