@@ -116,9 +116,31 @@
 
     <h1>Pending Orders</h1>
     <!-- Insert new order info here -->
+    <table>
+        <tr>
+            <th>Order Number</th>
+            <th>Order Date</th>
+            <th>Order Details</th>
+        </tr>
+        <tr>
+            <td></td>
+        </tr>
+    </table>
 
     <h1>Completed Orders</h1>
     <!-- Insert new order info here -->
+    <table>
+        <tr>
+            <th>Order Number</th>
+            <th>Order Date</th>
+            <th>Ship Date</th>
+            <th>Order Details</th>
+        </tr>
+        <tr>
+            <td></td>
+        </tr>
+    </table>
+
 
 </div>
 
