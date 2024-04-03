@@ -115,61 +115,64 @@
 
 
     <br>
-    <h1>Pending Orders</h1>
-    <!-- Insert new order info here -->
-    <table>
-        <colgroup>
-            <col class="column1"/>
-            <col class="column2"/>
-            <col class="column3-6" span="4"/>
-            <col class="column7"/>
-        </colgroup>
-        <tr>
-            <th rowspan="2">Order Number</th>
-            <th rowspan="2">Order Date</th>
-            <th colspan="5">Order Details</th> <!-- center this across columns -->
-        </tr>
-        <tr>
-            <td>Product Code</td>
-            <td>Product Name</td>
-            <td>Unit Quantity</td>
-            <td>Unit Price</td>
-            <td>Unit Subtotal</td>
-        </tr>
-        <tr>
-            <td>GET Order Number</td>
-            <td>GET Order Date</td>
-            <td>GET Product Code</td>
-            <td>GET Product Name</td>
-            <td>GET Unit Quantity</td>
-            <td>GET Unit Price</td>
-            <td>GET Unit Subtotal</td>
-        </tr>
-        <tr>
-            <td colspan="6">GET Order Total</td>
-            <td>$GET$</td>
-        </tr>
-        <tr><td colspan="7"><hr></td></tr>
-    </table>
+    <div class="orderContainer">
+        <h1>Pending Orders</h1>
+        <!-- Insert new order info here -->
+        <table class="orderTable">
+            <colgroup>
+                <col class="column1"/>
+                <col class="column2"/>
+                <col class="column3-6" span="4"/>
+                <col class="column7"/>
+            </colgroup>
+            <tr>
+                <th rowspan="2">Order Number</th>
+                <th rowspan="2">Order Date</th>
+                <th colspan="5">Order Details</th> <!-- center this across columns -->
+            </tr>
+            <tr>
+                <th>Product Code</th>
+                <th>Product Name</th>
+                <th>Unit Quantity</th>
+                <th>Unit Price</th>
+                <th>Unit Subtotal</th>
+            </tr>
+            <tr>
+                <td>GET Order Number</td>
+                <td>GET Order Date</td>
+                <td>GET Product Code</td>
+                <td>GET Product Name</td>
+                <td>GET Unit Quantity</td>
+                <td>GET Unit Price</td>
+                <td>GET Unit Subtotal</td>
+            </tr>
+            <tr>
+                <td colspan="6">GET Order Total</td>
+                <td>$GET$</td>
+            </tr>
+            <tr><td colspan="7"><hr></td></tr>
+        </table>
 
-    <br>
-    <hr>
-    <br>
+        <br>
+        <hr>
+        <br>
 
-    <h1>Completed Orders</h1>
-    <!-- Insert new order info here -->
-    <table>
-        <tr>
-            <th>Order Number</th>
-            <th>Order Date</th>
-            <th>Ship Date</th>
-            <th>Order Details</th> <!-- Product Code, Product Name, Quantity, Price -->
-            <th>Order Total</th>
-        </tr>
-        <tr>
-            <td></td>
-        </tr>
-    </table>
+        <h1>Completed Orders</h1>
+        <!-- Insert new order info here -->
+        <table>
+            <tr>
+                <th>Order Number</th>
+                <th>Order Date</th>
+                <th>Ship Date</th>
+                <th>Order Details</th> <!-- Product Code, Product Name, Quantity, Price -->
+                <th>Order Total</th>
+            </tr>
+            <tr>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+
 
 
 </div>
