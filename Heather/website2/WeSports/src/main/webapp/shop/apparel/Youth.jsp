@@ -131,7 +131,7 @@
                 <th>Department</th>
                 <th>Section</th>
                 <!-- don't show Quantity on Hand <th>Quantity</th> -->
-                <th>Add to Cart</th>
+                <th></th>
             </tr>
             </thead>
             <tbody>
