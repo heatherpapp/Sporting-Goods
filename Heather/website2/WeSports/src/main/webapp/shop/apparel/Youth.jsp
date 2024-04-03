@@ -122,6 +122,15 @@
     <div class="product">
         <h1>Youth Product List</h1>
         <table>
+            <%
+                Product product = new Product();
+                product.getAgeGroupProducts("Youth");
+                //product.display();
+                //product.productList.displayList();
+
+                for (Product productItem : product.productList.productArray) {
+            %>
+
             <thead>
             <tr>
                 <th></th>
@@ -131,19 +140,10 @@
                 <th>Department</th>
                 <th>Section</th>
                 <!-- don't show Quantity on Hand <th>Quantity</th> -->
-                <th>Add to Cart</th>
+                <th><button id="addToCartButton" name="addToCartButton" onclick="" >Add to Cart</button></th>
             </tr>
             </thead>
             <tbody>
-
-            <%
-                Product product = new Product();
-                product.getAgeGroupProducts("Youth");
-                //product.display();
-                //product.productList.displayList();
-
-                for (Product productItem : product.productList.productArray) {
-            %>
             <tr>
                 <td><img src="../<%= productItem.getImagePath() %>" width="100" height="100"></td>
                 <td><%= productItem.getProductName() %></td>
