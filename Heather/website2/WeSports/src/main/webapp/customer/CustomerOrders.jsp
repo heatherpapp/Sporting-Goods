@@ -16,7 +16,9 @@
         <meta name="theme-color" content="#ffffff">
         <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"> -->
         <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/styles.css">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/CustomerOrders.css">
         <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/customerProfile.css">
+
         <script src="https://kit.fontawesome.com/5b6c8cdace.js" crossorigin="anonymous"></script>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -117,12 +119,11 @@
     <br>
     <div class="orderContainer">
         <h1>Pending Orders</h1>
-        <!-- Insert new order info here -->
         <table class="orderTable">
             <colgroup>
                 <col class="column1"/>
                 <col class="column2"/>
-                <col class="column3-6" span="4"/>
+                <col class="column3-6"/>
                 <col class="column7"/>
             </colgroup>
             <tr>
@@ -137,20 +138,24 @@
                 <th>Unit Price</th>
                 <th>Unit Subtotal</th>
             </tr>
-            <tr>
-                <td>GET Order Number</td>
-                <td>GET Order Date</td>
-                <td>GET Product Code</td>
-                <td>GET Product Name</td>
-                <td>GET Unit Quantity</td>
-                <td>GET Unit Price</td>
-                <td>GET Unit Subtotal</td>
-            </tr>
-            <tr>
-                <td colspan="6">GET Order Total</td>
-                <td>$GET$</td>
-            </tr>
-            <tr><td colspan="7"><hr></td></tr>
+            <!-- START repeating rows for each order -->
+                <tr class="productRow">
+                    <td id="getOrderNumber">GET Order Number</td>
+                    <td id="getOrderDate">GET Order Date</td>
+                    <!-- START repeating rows for each ITEM in order -->
+                    <td id="getProductCode">GET Product Code</td>
+                    <td id="getProductName">GET Product Name</td>
+                    <td id="getQuantityOrdered">GET Unit Quantity</td>
+                    <td id="getUnitPrice">GET Unit Price</td>
+                    <td id="subtotalUnitsOrdered">GET Unit Subtotal</td>
+                    <!-- END repeating rows for each ITEM in order -->
+                </tr>
+                <tr>
+                    <td class="totalRow" colspan="6">GET Order Total</td>
+                    <td id="getOrderTotal" class="totalCell">$GET$</td>
+                </tr>
+                <tr><td colspan="7"><hr></td></tr>
+            <!-- END repeating rows for each order -->
         </table>
 
         <br>
@@ -158,7 +163,6 @@
         <br>
 
         <h1>Completed Orders</h1>
-        <!-- Insert new order info here -->
         <table>
             <tr>
                 <th>Order Number</th>

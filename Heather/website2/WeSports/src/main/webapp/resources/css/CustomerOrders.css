@@ -1,0 +1,45 @@
+
+
+
+
+
+/* Orders Tables on CustomerOrders.jsp */
+.orderContainer {
+    background-color: #7070db;
+    border-collapse: collapse;
+    border-radius: 30px;
+    padding: 25px;
+}
+
+.orderTable {
+    background-color: #007bff;
+}
+
+.column1 {
+    text-align: center;
+}
+
+.column2 {
+    text-align: center;
+}
+
+.column3-6 {
+    column-span: 4;
+    text-align: center;
+}
+
+.column7 {
+    text-align: center;
+}
+
+.totalRow {
+    background-color: #946a99;
+}
+
+.totalCell {
+    background-color: #946a99;
+}
+
+.productRow td {
+    background-color: #7d6a99;
+}

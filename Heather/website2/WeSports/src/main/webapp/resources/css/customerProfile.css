@@ -174,32 +174,3 @@ body {
 }
 
 
-/* Orders Tables on CustomerOrders.jsp */
-.orderContainer {
-    background-color: #007bff;
-    border-collapse: collapse;
-    border-radius: 30px;
-    padding: 5px;
-}
-
-.orderTable {
-    background-color: #007bff;
-}
-
-.column1 {
-    vertical-align: center;
-}
-
-.column2 {
-    vertical-align: center;
-}
-
-.column3-6 {
-    vertical-align: center;
-}
-
-.column7 {
-    vertical-align: center;
-}
-
-
