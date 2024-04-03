@@ -11,35 +11,28 @@
     padding: 25px;
 }
 
-.orderTable {
-    background-color: #007bff;
+.orderNumberCol, .orderDateCol, .orderStatusCol {
+    text-align: center;
+    vertical-align: top;
 }
 
-.column1 {
+.orderDetailsCol {
     text-align: center;
 }
 
-.column2 {
-    text-align: center;
+.totalRow, .totalCell {
+    background-color: #b6b6c3;
+    color: black;
+    text-shadow: none;
 }
 
-.column3-6 {
-    column-span: 4;
-    text-align: center;
-}
-
-.column7 {
-    text-align: center;
-}
-
-.totalRow {
-    background-color: #946a99;
-}
-
-.totalCell {
-    background-color: #946a99;
-}
 
 .productRow td {
-    background-color: #7d6a99;
+    background-color: white;
+    color: black;
+    text-shadow: none;
+}
+
+.detailsRow th {
+    background-color: #444448;
 }
