@@ -28,6 +28,17 @@ public class AddToCartServlet extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+
+        /**
+         * on customer click add to cart:
+         * check if logged in
+         * if not: add to carts and get cartID from db
+         * if logged in: add to cart linked to email & get cartID
+         *
+         * do not redirect! customer should remain on same product page
+         *
+         */
+
         PrintWriter out = response.getWriter();
 
 
