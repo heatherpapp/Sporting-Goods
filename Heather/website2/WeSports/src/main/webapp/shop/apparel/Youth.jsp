@@ -122,15 +122,6 @@
     <div class="product">
         <h1>Youth Product List</h1>
         <table>
-            <%
-                Product product = new Product();
-                product.getAgeGroupProducts("Youth");
-                //product.display();
-                //product.productList.displayList();
-
-                for (Product productItem : product.productList.productArray) {
-            %>
-
             <thead>
             <tr>
                 <th></th>
@@ -140,10 +131,19 @@
                 <th>Department</th>
                 <th>Section</th>
                 <!-- don't show Quantity on Hand <th>Quantity</th> -->
-                <th><button id="addToCartButton" name="addToCartButton" onclick="" >Add to Cart</button></th>
+                <th>Add to Cart</th>
             </tr>
             </thead>
             <tbody>
+
+            <%
+                Product product = new Product();
+                product.getAgeGroupProducts("Youth");
+                //product.display();
+                //product.productList.displayList();
+
+                for (Product productItem : product.productList.productArray) {
+            %>
             <tr>
                 <td><img src="../<%= productItem.getImagePath() %>" width="100" height="100"></td>
                 <td><%= productItem.getProductName() %></td>
@@ -152,7 +152,7 @@
                 <td><%= productItem.getDepartment() %></td>
                 <td><%= productItem.getSection() %></td>
                 <!-- don't show Quantity on Hand <td><%= productItem.getQuantity() %></td> -->
-                <td><button>Add to Cart</button></td>
+                <td><button id="addToCartBtn">Add to Cart</button></td>
             </tr>
             <%
                 }
@@ -193,5 +193,6 @@
         </a>
     </div>
 </footer>
+
 <script src="${pageContext.request.contextPath}/resources/JavaScript/script.js"></script>
 </body>
