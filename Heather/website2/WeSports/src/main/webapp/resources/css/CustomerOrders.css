@@ -11,19 +11,34 @@
     padding: 25px;
 }
 
+
+
 .orderNumberCol, .orderDateCol, .orderStatusCol {
     text-align: center;
     vertical-align: top;
+    text-shadow: none;
+    font-size: 20px;
 }
 
 .orderDetailsCol {
     text-align: center;
+    text-shadow: none;
+    font-size: 20px;
 }
 
 .totalRow, .totalCell {
     background-color: #b6b6c3;
     color: black;
     text-shadow: none;
+    font-weight: bold;
+}
+
+.totalRow {
+    text-align: right;
+}
+
+.totalCell {
+    text-align: center;
 }
 
 
@@ -31,8 +46,16 @@
     background-color: white;
     color: black;
     text-shadow: none;
+    font-size: 17px;
+    text-align: center;
+    vertical-align: top;
 }
 
 .detailsRow th {
     background-color: #444448;
+    font-size: 15px;
+    text-align: center;
 }
+
+
+

@@ -115,46 +115,53 @@
 
     <!-- Page Contents -->
 
-
     <br>
+
     <div class="orderContainer">
         <h1>Your Orders</h1>
         <table class="orderTable">
             <tr>
-                <th class="orderNumberCol" rowspan="2">Order Number</th>
-                <th class="orderDateCol" rowspan="2">Order Date</th>
-                <th class="orderStatusCol" rowspan="2">Order Status</th>
-                <th class="orderDetailsCol" colspan="5">Order Details</th> <!-- center this across columns -->
+                <th class="orderNumberCol">Order Number</th>
+                <th class="orderDateCol">Order Date</th>
+                <th class="orderStatusCol">Order Status</th>
+                <th class="orderDetailsCol">Order Total</th>
+                <th></th>
             </tr>
-            <tr class="detailsRow">
-                <th>Product Code</th>
-                <th>Product Name</th>
-                <th>Unit Quantity</th>
-                <th>Unit Price</th>
-                <th>Unit Subtotal</th>
-            </tr>
-            <!-- START repeating rows for each order -->
-                <tr class="productRow">
-                    <td id="getOrderNumber">GET Order Number</td>
-                    <td id="getOrderDate">GET Order Date</td>
-                    <td id="getOrderStatus">GET Order Status</td>
-                    <!-- START repeating rows for each ITEM in order -->
-                    <td id="getProductCode">GET Product Code</td>
-                    <td id="getProductName">GET Product Name</td>
-                    <td id="getQuantityOrdered">GET Unit Quantity</td>
-                    <td id="getUnitPrice">GET Unit Price</td>
-                    <td id="subtotalUnitsOrdered">GET Unit Subtotal</td>
-                    <!-- END repeating rows for each ITEM in order -->
-                </tr>
-                <tr>
-                    <td class="totalRow" colspan="7">ORDER TOTAL</td>
-                    <td id="getOrderTotal" class="totalCell">$GET$</td>
-                </tr>
-                <tr><td colspan="8"><hr></td></tr>
-            <!-- END repeating rows for each order -->
-        </table>
-    </div>
+            <tr class="productRow">
+                <td id="getOrderNumber">GET Order Number</td>
+                <td id="getOrderDate">GET Order Date</td>
+                <td id="getOrderStatus">GET Order Status</td>
+                <td id="getOrderTotal" class="totalCell">$GET$</td>
+                <td>
+                    <details><summary>Order Details</summary>
+                        <table>
+                            <tr>
+                                <td>Product Code</td>
+                                <td>Product Name</td>
+                                <td>Unit Quantity</td>
+                                <td>Unit Price</td>
+                                <td>Unit Subtotal</td>
+                            </tr>
+                            <tr></tr>
+                            <tr> <!-- repeating rows for items in order -->
+                                <td id="getProductCode">GET</td>
+                                <td id="getProductName">GET</td>
+                                <td id="getQuantityOrdered">GET</td>
+                                <td id="getUnitPrice">GET</td>
+                                <td id="subtotalUnitsOrdered">GET</td>
+                            </tr>
+                        </table>
+                    </details>
+                </td>
 
+            </tr>
+            <tr>
+
+            </tr>
+        </table>
+
+
+    </div>
 
 
 </div>
