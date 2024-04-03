@@ -131,7 +131,7 @@
 <div class="cartContainer">
     <h1>Your Cart</h1>
     <table class="cartTable">
-        <tr class="cartTableHeaders">
+        <tr class="cartTableHeaders"> <!-- hidden -->
             <th>Product Image</th>
             <th>Product Code</th>
             <th>Product Name</th>
