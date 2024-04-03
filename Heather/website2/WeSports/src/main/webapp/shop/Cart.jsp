@@ -139,14 +139,14 @@
             <th>Unit Price</th>
             <th>Unit Subtotal</th>
         </tr>
-        <tr class="productRow"> <!-- repeating row for each item in cart -->
+        <tr class="productRow"> <!-- repeat this row for each item in cart -->
             <td id="getProductImage">GET</td>
             <td id="getProductCode">GET</td>
             <td id="getProductName">GET</td>
             <td id="getQuantityOrdered">GET</td>
             <td id="getUnitPrice">GET</td>
             <td id="subtotalCostUnits">GET</td>
-        </tr>
+        </tr> <!-- END repeating row for items in order -->
         <tr class="totalRow">
             <td class="totalHeader" colspan="5">Order Total:</td>
             <td id="getOrderTotal" class="totalCell">$GET$</td>
