@@ -135,7 +135,7 @@
                 <td>
                     <details><summary>Order Details</summary>
                         <table>
-                            <tr>
+                            <tr class="detailsColHead">
                                 <td>Product Code</td>
                                 <td>Product Name</td>
                                 <td>Unit Quantity</td>
@@ -143,13 +143,13 @@
                                 <td>Unit Subtotal</td>
                             </tr>
                             <tr></tr>
-                            <tr> <!-- repeating rows for items in order -->
+                            <tr> <!-- START repeating rows for items in order -->
                                 <td id="getProductCode">GET</td>
                                 <td id="getProductName">GET</td>
                                 <td id="getQuantityOrdered">GET</td>
                                 <td id="getUnitPrice">GET</td>
                                 <td id="subtotalUnitsOrdered">GET</td>
-                            </tr>
+                            </tr> <!-- END repeating rows for items in order -->
                         </table>
                     </details>
                 </td>

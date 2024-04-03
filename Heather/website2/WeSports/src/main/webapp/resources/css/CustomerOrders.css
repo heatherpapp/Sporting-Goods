@@ -11,16 +11,7 @@
     padding: 25px;
 }
 
-
-
-.orderNumberCol, .orderDateCol, .orderStatusCol {
-    text-align: center;
-    vertical-align: top;
-    text-shadow: none;
-    font-size: 20px;
-}
-
-.orderDetailsCol {
+.orderNumberCol, .orderDateCol, .orderStatusCol, .orderDetailsCol {
     text-align: center;
     text-shadow: none;
     font-size: 20px;
@@ -57,5 +48,8 @@
     text-align: center;
 }
 
+.detailsColHead td {
+    font-weight: bold;
+}
 
 
