@@ -173,6 +173,8 @@ body {
     width: 16px;
 }
 
+
+/* Orders Tables on CustomerOrders.jsp */
 .orderContainer {
     background-color: #007bff;
     border-collapse: collapse;
