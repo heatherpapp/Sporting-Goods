@@ -142,28 +142,19 @@
                                 <td>Unit Price</td>
                                 <td>Unit Subtotal</td>
                             </tr>
-                            <tr></tr>
-                            <tr> <!-- START repeating rows for items in order -->
+                            <tr> <!-- START repeating row for items in order -->
                                 <td id="getProductCode">GET</td>
                                 <td id="getProductName">GET</td>
                                 <td id="getQuantityOrdered">GET</td>
                                 <td id="getUnitPrice">GET</td>
-                                <td id="subtotalUnitsOrdered">GET</td>
-                            </tr> <!-- END repeating rows for items in order -->
+                                <td id="subtotalCostUnits">GET</td>
+                            </tr> <!-- END repeating row for items in order -->
                         </table>
                     </details>
                 </td>
-
-            </tr>
-            <tr>
-
             </tr>
         </table>
-
-
     </div>
-
-
 </div>
 
 <!-- End Page Contents -->

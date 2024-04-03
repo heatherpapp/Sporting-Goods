@@ -42,8 +42,39 @@
         </nav>
     </div>
 </header>
-<h1>Incoming Orders</h1>
-<!-- Insert new order info here -->
+<div class="orderContainer">
+    <h1>Pending Orders</h1>
+    <table class="orderTable">
+        <tr>
+            <th class="orderNumberCol">Order Number</th>
+            <th class="orderDateCol">Order Date</th>
+            <th class="orderStatusCol">Order Status</th>
+            <th></th>
+        </tr>
+        <tr class="productRow">
+            <td id="getOrderNumber">GET Order Number</td>
+            <td id="getOrderDate">GET Order Date</td>
+            <td id="getOrderStatus">GET Order Status</td>
+            <td id="getOrderTotal" class="totalCell">$GET$</td>
+            <td>
+                <details><summary>Order Details</summary>
+                    <table>
+                        <tr class="detailsColHead">
+                            <td>Product Code</td>
+                            <td>Product Name</td>
+                            <td>Unit Quantity</td>
+                        </tr>
+                        <tr> <!-- START repeating row for items in order -->
+                            <td id="getProductCode">GET</td>
+                            <td id="getProductName">GET</td>
+                            <td id="getQuantityOrdered">GET</td>
+                        </tr> <!-- END repeating row for items in order -->
+                    </table>
+                </details>
+            </td>
+        </tr>
+    </table>
+</div>
 
 </body>
 

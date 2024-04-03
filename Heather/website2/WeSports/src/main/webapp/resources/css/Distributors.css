@@ -80,6 +80,62 @@ h1 {
   text-align: center; /* Align the h1 text to the center */
   margin-top: 50px; /* Add space on top of the h1 */
 }
+
+
+/* Orders Table on DistributorPortal.jsp */
+.orderContainer {
+  background-color: #7070db;
+  border-collapse: collapse;
+  border-radius: 30px;
+  padding: 25px;
+}
+
+.orderNumberCol, .orderDateCol, .orderStatusCol, .orderDetailsCol {
+  text-align: center;
+  text-shadow: none;
+  font-size: 20px;
+}
+
+.totalRow, .totalCell {
+  background-color: #b6b6c3;
+  color: black;
+  text-shadow: none;
+  font-weight: bold;
+}
+
+.totalRow {
+  text-align: right;
+}
+
+.totalCell {
+  text-align: center;
+}
+
+
+.productRow td {
+  background-color: white;
+  color: black;
+  text-shadow: none;
+  font-size: 17px;
+  text-align: center;
+  vertical-align: top;
+}
+
+.detailsRow th {
+  background-color: #444448;
+  font-size: 15px;
+  text-align: center;
+}
+
+.detailsColHead td {
+  font-weight: bold;
+}
+
+
+
+
+
+
 /* media */
 @media (max-width: 650px){
   .header__content{
