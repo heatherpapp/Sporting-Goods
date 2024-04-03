@@ -98,10 +98,12 @@
     </div>
 
     <!-- Search bar
-    <div class="search-container">
-        <input type="text" id="search-input" placeholder="Search...">
-        <button id="search-button" onclick="search()">Search</button>
-    </div>
+        <div class="search-container">
+            <form action="../../SearchServlet" method="get">
+                <input type="text" id="search-input" name="query" placeholder="Search...">
+                <button id="search-button" onclick="search()">Search</button>
+            </form>
+        </div>
     -->
 
     <!-- Page Contents -->
