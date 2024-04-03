@@ -140,7 +140,7 @@
             <th>Unit Subtotal</th>
         </tr>
         <tr class="productRow"> <!-- repeat this row for each item in cart -->
-            <td id="getProductImage">GET</td>
+            <td id="getProductImage">GET<%=%></td>
             <td id="getProductCode">GET</td>
             <td id="getProductName">GET</td>
             <td id="getQuantityOrdered">GET</td>

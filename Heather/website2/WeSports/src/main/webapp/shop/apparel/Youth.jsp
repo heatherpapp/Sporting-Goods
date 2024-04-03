@@ -193,6 +193,5 @@
         </a>
     </div>
 </footer>
-
 <script src="${pageContext.request.contextPath}/resources/JavaScript/script.js"></script>
 </body>
