@@ -41,7 +41,6 @@ public class AddToCartServlet extends HttpServlet {
 
         PrintWriter out = response.getWriter();
 
-
         try {
             Customer c1 = new Customer();
             if (request.getParameter("userName") == null) {
@@ -91,7 +90,6 @@ public class AddToCartServlet extends HttpServlet {
         } catch (Exception e) {
             System.out.println(e);
         }
-
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
