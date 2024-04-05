@@ -1,41 +1,37 @@
-
 <%@ page contentType="text/html; charset=UTF-8" %>
 <!DOCTYPE html>
 <html>
 
-  <head>
-    <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
-    <title>Distributor Login</title>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/Distributors.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/Signup.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-  </head>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+  <title>Signup & Login</title>
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/Distributors.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
 
-  <body>
+<body>
 
-    <div class="wrapper">
-      <form action="../DistributorLoginServlet" name="DistributorLoginForm" method="post">
-        <h1>Login</h1>
-        <div class="input-box">
-          <input type="text" placeholder="Username" name="Username" id="Username" required>
-          <i class='bx bxs-user'></i>
-        </div>
-        <div class="input-box">
-          <input type="password" placeholder="Password" name="Password" id="Password" required>
-          <i class='bx bxs-lock-alt' ></i>
-        </div>
-
-        <div class="remember-forgot">
-          <label><input type="checkbox">Remember Me</label>
-          <a href="#">Forgot Password?</a>
-        </div>
-
-        <button type="submit" class="btn">Login</button>
-
-      </form>
-
+<div class="wrapper">
+  <form action="../DistributorLoginServlet" name="DistributorLoginForm" method="post">
+    <h1>Login</h1>
+    <div class="input-box">
+      <input type="text" placeholder="Username" name="Username" id="Username" required>
+      <i class='bx bxs-user'></i>
+    </div>
+    <div class="input-box">
+      <input type="password" placeholder="Password" name="Password" id="Password" required>
+      <i class='bx bxs-lock-alt' ></i>
     </div>
 
-  </body>
+    <div class="remember-forgot">
+      <label><input type="checkbox">Remember Me</label>
+      <a href="#">Forgot Password?</a>
+    </div>
 
-</html>
+    <button type="submit" class="btn">Login</button>
+
+  </form>
+
+</div>

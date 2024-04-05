@@ -1,155 +1,84 @@
-/*Start */
-*{
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-
   font-family: "Poppins", sans-serif;
 }
-ul{
-  list-style: none;
-}
-a{
-  text-decoration: none;
-  color: inherit;
-}
-/*base styles */
-/*basic styles */
-.header{
-  background-color: rgba(19, 22, 26, 0.8);
-}
-
-.header__content{
-  min-height: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 30px;
-}
-.logo{
-
-}
-.logo__img{
-  display: block;
-  height: 100px;
-}
-.nav{
-
-}
-.nav__list{
-  display: flex;
-  column-gap: 40px;
-}
-.nav__item{
-
-}
-.nav__link{
-  font-size: 15px;
-  color: rgba(255, 255, 255, 1);
-  transition: all 0.4s;
-}
-.nav__link:hover, .nav__link:focus {
-  color: rgb(94, 58, 235);
-}
-.btn{
-  color: white;
-  background-color: blue;
-  padding: 7px 18px;
-  border-radius: 1000px;
-  text-transform: uppercase;
-  font-size: 12px;
-  font-weight: 500;
-  transition: all 0.4s;
-}
-.btn:hover{
-  background-color: rgb(237, 58, 58);
-}
 body {
-  font-family: Arial, sans-serif; /* Change the font family */
-  background-color: #f0f0f0; /* Change the background color */
-  color: #333; /* Change the text color */
-  margin: 0; /* Remove default margin */
-  padding: 0; /* Remove default padding */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: url('../pictures/Distributors.jpg');
+  background-size: cover;
 }
-
-h1 {
-  font-size: 30px; /* Change the font size */
-  color: #ffffff; /* Change the color of the h1 text */
-  text-align: center; /* Align the h1 text to the center */
-  margin-top: 50px; /* Add space on top of the h1 */
+.wrapper {
+  width: 420px;
+  color: white;
+  background-color: #060b65;
+  border-radius: 10px;
+  padding: 30px 40px;
 }
-
-
-/* Orders Table on DistributorPortal.jsp */
-.orderContainer {
-  background-color: #7070db;
-  border-collapse: collapse;
-  border-radius: 30px;
-  padding: 25px;
-}
-
-.orderNumberCol, .orderDateCol, .orderStatusCol, .orderDetailsCol {
+.wrapper h1 {
+  font-size: 36px;
   text-align: center;
-  text-shadow: none;
+}
+.wrapper .input-box {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  margin: 30px 0;
+}
+.input-box input {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  border: 2px solid rgba(255, 255, 255, .2);
+  border-radius: 40px;
+  font-size: 16px;
+  color: white;
+  padding: 20px 45px 20px 20px;
+}
+.input-box::placeholder {
+  color: white;
+}
+.input-box i {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
   font-size: 20px;
 }
-
-.totalRow, .totalCell {
-  background-color: #b6b6c3;
-  color: black;
-  text-shadow: none;
-  font-weight: bold;
+.wrapper .remember-forgot {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14.5px;
+  margin: -15px 0 15px;
 }
-
-.totalRow {
-  text-align: right;
+.remember-forgot label input {
+  background-color: #fff; /* Changed from accent-color */
+  margin-right: 3px;
 }
-
-.totalCell {
-  text-align: center;
+.remember-forgot a {
+  color: #fff;
+  text-decoration: none;
 }
-
-
-.productRow td {
-  background-color: white;
-  color: black;
-  text-shadow: none;
-  font-size: 17px;
-  text-align: center;
-  vertical-align: top;
+.remember-forgot a:hover {
+  text-decoration: underline;
 }
-
-.detailsRow th {
-  background-color: #444448;
-  font-size: 15px;
-  text-align: center;
-}
-
-.detailsColHead td {
-  font-weight: bold;
-}
-
-
-
-
-
-
-/* media */
-@media (max-width: 650px){
-  .header__content{
-    flex-direction: column;
-    padding: 25px 0;
-    row-gap: 10px;
-
-  }
-  .nav__list{
-    column-gap: 20px;
-  }
-  .logo__img{
-
-    display: block;
-    height: 90px;
-  }
+.wrapper .btn {
+  width: 100%;
+  height: 45px;
+  background: #fff;
+  border: none;
+  outline: none;
+  border-radius: 40px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+  cursor: pointer;
+  font-size: 16px;
+  color: #333;
+  font-weight: 600;
 }
