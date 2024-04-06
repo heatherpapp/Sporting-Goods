@@ -8,6 +8,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
+import website.wesports.Business.Cart;
 import website.wesports.Business.Customer;
 import website.wesports.Business.Product;
 
@@ -41,54 +42,60 @@ public class AddToCartServlet extends HttpServlet {
 
         PrintWriter out = response.getWriter();
 
+
         try {
             HttpSession session = request.getSession();
             Customer c1 = (Customer) session.getAttribute("c1");
-            if (request.getAttribute("CustEmail") == null) {
-                //c1.selectDB("guest");
-            } else {
-                String email = request.getParameter("CustEmail");
-                c1.selectDB(email);
-            }
-
+            Cart cart = new Cart();
+            Long CartID;
+            Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
+            Connection conn = DriverManager.getConnection("jdbc:ucanaccess://C:/WeSportsDB/WeSports.accdb/");
+            Statement stmt = conn.createStatement();
             Product p1 = new Product();
             p1.selectPDB(request.getParameter("ProductCode"));
             String quantity = request.getParameter("Quantity");
             p1.setQuantity(Integer.parseInt(quantity));
-            boolean add = false;
+
+            //Establish CartID
+            if (request.getAttribute("CustEmail") == null) { //non-logged in customer
+                if (request.getAttribute("CartID") == null) {  //empty cart
+                    cart.assignNextCartID();
+                    CartID = cart.getNextCartID();
+                    System.out.println("Non-registered customer CartID: " + CartID);
+                    request.setAttribute("CartID", CartID);
+                } else { //add to established cart, non-registered customer CartID
+                    request.getAttribute("CartID");
+                    CartID = cart.getCartID();
+                    request.setAttribute("CartID", CartID);
+                }
+            } else { //logged in customer
+                String email = request.getParameter("CustEmail");
+                c1.selectDB(email);
+                //check for existing cartID attached to email
+                cart.getCustCartID(email);
+                if (cart.Exists) { //custEmail already has a CartID
+                    CartID = cart.getCartID();
+                    request.setAttribute("CartID", CartID);
+                    System.out.println("Existing CartID: " + CartID + " already assigned to CustEmail: " + email);
+                } else { //custEmail does NOT have a CartID
+                    cart.assignNextCartID();
+                    CartID = cart.getNextCartID();
+                    request.setAttribute("CartID", CartID);
+                    //cart.insertCartDB(c1.getCustEmail(), p1.getProductCode(), p1.getQuantity());
+                    System.out.println("New CartID: " + CartID + " assigned to CustEmail: " + email);
+                }
+            }
             if (Integer.parseInt(quantity) > 0) {
                 try {
-                    Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
-                    Connection conn = DriverManager.getConnection("jdbc:ucanaccess://C:/WeSportsDB/WeSports.accdb/");
-                    Statement stmt = conn.createStatement();
-                    String sql = "INSERT INTO Carts (CustEmail, ProductCode, Quantity) values ('" + c1.getCustEmail() + "', '" + p1.getProductCode() + "', '" + quantity + "')";
-                    System.out.println(sql);
-                    int n1 = stmt.executeUpdate(sql);
-                    if (n1 == 1) {
-                        System.out.println("Added to cart!");
-                        add = true;
-                    } else {
-                        System.out.println("!!!!!!!!!!!INSERT FAILED!!!!!!!!!!!!!");
-                    }
-
-                    conn.close();
+                    cart.insertCart(CartID, c1.getCustEmail(), p1.getProductCode(), p1.getQuantity());
                     String name = c1.getCustEmail();
                     c1.selectDB(name);
                 } catch (Exception e) {
                     System.out.println(e);
                 }
             }
-
             HttpSession session1 = request.getSession();
             session1.setAttribute("c1", c1);
-            RequestDispatcher rd;
-            if (add) {
-                rd = request.getRequestDispatcher("/shop/products.jsp");
-                rd.forward(request, response);
-            } else {
-                rd = request.getRequestDispatcher("/shop/products.jsp");
-                rd.forward(request, response);
-            }
         } catch (Exception e) {
             System.out.println(e);
         }

@@ -58,6 +58,7 @@ public class CustomerLoginServlet extends HttpServlet {
         ses1.setAttribute("c1", c1);
         ses1.setAttribute("Email", emailTextbox);
         ses1.setAttribute("Password", passwordTextbox);
+        ses1.setAttribute("CartID", );
 
         String url;
         RequestDispatcher rdObj;

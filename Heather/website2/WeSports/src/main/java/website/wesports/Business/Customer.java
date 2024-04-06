@@ -26,6 +26,7 @@ public class Customer {
     /************* Properties *************/
     String CustEmail, CustFirstName, CustLastName, CustStreet, CustCity, CustState, CustZip, CustPassword;
     ProductList Cart, Order;
+    public Long CustCartID;
 
     /************* Constructors *************/
     public Customer() {
@@ -71,6 +72,8 @@ public class Customer {
     public String getCustPassword() { return CustPassword; }
     public ProductList getCart() { return Cart; }
     public ProductList getOrder() { return Order; }
+    public void setCustCartID(Long custCartID) { CustCartID = custCartID; }
+    public Long getCustCartID() { return CustCartID; }
 
 
     /*************Check if Customer Record Exists *************/
@@ -310,26 +313,7 @@ public class Customer {
     /************* Get Customer Cart from Database: Carts *************/
     public void getCartDB()
     {
-        //WIP
-        Cart = new ProductList();
-        try {
-            // Get connection to database
-            Class.forName(DBDriver);
-            Connection connection = DriverManager.getConnection(DBLocation);
-            System.out.println("Database Connected");
 
-            Statement stmt = connection.createStatement();
-            String sql = "SELECT * FROM Carts WHERE CustEmail = '" + getCustEmail() + "'";
-            ResultSet rs = stmt.executeQuery(sql);
-            System.out.println("SQL: " +  sql);
-            Product pro1;
-            while (rs.next()) {
-                pro1 = new Product();
-                pro1.selectPDB(rs.getString("ProductCode"));
-                pro1.setQuantity(rs.getInt("Quantity"));
-                Cart.addProducts(pro1);
-            }
-        } catch (Exception e) { System.out.println("Exception" + e); }
 
     } // END getCartDB
 
