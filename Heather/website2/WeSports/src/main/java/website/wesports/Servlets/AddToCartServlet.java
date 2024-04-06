@@ -42,11 +42,13 @@ public class AddToCartServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
 
         try {
-            Customer c1 = new Customer();
-            if (request.getParameter("userName") == null) {
-                c1.selectDB("guest");
+            HttpSession session = request.getSession();
+            Customer c1 = (Customer) session.getAttribute("c1");
+            if (request.getAttribute("CustEmail") == null) {
+                //c1.selectDB("guest");
             } else {
-                c1.selectDB(request.getParameter("userName"));
+                String email = request.getParameter("CustEmail");
+                c1.selectDB(email);
             }
 
             Product p1 = new Product();

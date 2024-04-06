@@ -69,6 +69,8 @@
              try {
                  // Logged in Customer
                  Customer c1 = (Customer) session.getAttribute("c1");
+                 String email = c1.getCustEmail();
+                 session.setAttribute("CustEmail", email);
                  c1.display();
                  if (c1.Exists) {
          %>
