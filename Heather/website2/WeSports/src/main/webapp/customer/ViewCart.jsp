@@ -118,6 +118,13 @@
 
     <!-- Page Contents Here -->
 
+    <!-- TODO finish view cart page
+    *get CartID
+    *(hidden values) get ProductCode & Quantity of items in Cart
+    *display ProductName, ProductImage, ProductCost x Quantity per item
+    *display total of items in cart
+    *button to go to Checkout.jsp
+    -->
 
 
 

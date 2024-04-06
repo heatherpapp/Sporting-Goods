@@ -119,6 +119,12 @@
     <!-- Page Contents Here -->
 
 
+    <!-- TODO finish checkout page
+    *get cart total
+    *inputs for Shipping information
+    *submit info to Orders
+    -->
+
 
 
 

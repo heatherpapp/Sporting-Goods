@@ -118,6 +118,7 @@
 
     <!-- Page Contents Here -->
 
+    <!-- TODO finish page-->
     <h1>Added to Cart!</h1>
     <a href="javascript:history.back()">Continue Shopping</a>
     <a href="">Go to Checkout</a>

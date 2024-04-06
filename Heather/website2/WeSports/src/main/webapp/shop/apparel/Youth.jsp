@@ -120,6 +120,7 @@
         <!-- Search results will be displayed here -->
     </div>
 
+    <!-- TODO update all product pages with new flex-box contents seen here -->
     <!-- DO NOT ALTER THIS SECTION! -->
     <div class="product">
         <h1>Youth Product List</h1>
