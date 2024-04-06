@@ -1,0 +1,14 @@
+/**
+ * Class: CIST2373 Java Programming 3
+ * Term: Spring 2024
+ * Instructor: Chris Bishop
+ * Description: Solution to Lab * Author: Heather Papp
+ * I wrote this code myself...
+ */
+
+.flex-box {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+

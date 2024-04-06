@@ -116,76 +116,42 @@
     </div>
 
 
-    <div id="search-results">
-        <!-- Search results will be displayed here -->
-    </div>
+    <!-- Page Contents Here -->
 
-    <div class="product">
-        <h1>Youth Product List</h1>
+    <h1>Added to Cart!</h1>
+    <a href="javascript:history.back()">Continue Shopping</a>
+    <a href="">Go to Checkout</a>
 
-
-            <%
-                Product product = new Product();
-                product.getAgeGroupProducts("Youth");
-                //product.display();
-                //product.productList.displayList();
-
-                for (Product productItem : product.productList.productArray) {
-            %>
-
-
-        <div class="flex-box">
-            <form name="productListForm" method="post" action="../../AddToCartServlet">
-                <input hidden="hidden" value="<%=productItem.getProductCode()%>" name="ProductCode">
-                <div><img src="../<%= productItem.getImagePath() %>" width="100" height="100" alt="product image"></div>
-                <div><%= productItem.getProductName() %></div>
-                <div><%= productItem.getProductDescription() %></div>
-                <div><%= productItem.getUnitPrice() %></div>
-                <div><%= productItem.getDepartment() %></div>
-                <div><%= productItem.getSection() %></div>
-                <div><label>Quantity<input type="text" name="Quantity"></label></div>
-                <div><label><input type="submit" name="addToCartBtn" value="Add to Cart"></label></div>
-                <div></div>
-            </form>
-
-            <%
-                }
-            %>
-        </div>
-
-
-
-    </div>
 
 </div>
 
-<footer class="footer">
-    <p>WeSports</p>
-    <nav>
-        <ul>
-            <li><a href="${pageContext.request.contextPath}/shop/about.jsp">About Us</a></li>
-            <li><a href="${pageContext.request.contextPath}/shop/contact.jsp">Contact Us</a></li>
-        </ul>
-    </nav>
-    <p class="website__rights">&copy; WeSports 2024. All rights reserved.</p>
-    <div class="social__icons">
-        <a href="/" class="social__icon--link" target="_blank">
-            <i class="fab fa-facebook"></i>
-        </a>
-        <a href="/" class="social__icon--link" target="_blank">
-            <i class="fab fa-instagram"></i>
-        </a>
-        <a href="/" class="social__icon--link" target="_blank">
-            <i class="fab fa-twitter"></i>
-        </a>
-        <a href="/" class="social__icon--link" target="_blank">
-            <i class="fab fa-linkedin"></i>
-        </a>
-        <a href="/" class="social__icon--link" target="_blank">
-            <i class="fab fa-youtube"></i>
-        </a>
-    </div>
-</footer>
+    <footer class="footer">
+        <p>WeSports</p>
+        <nav>
+            <ul>
+                <li><a href="${pageContext.request.contextPath}/shop/about.jsp">About Us</a></li>
+                <li><a href="${pageContext.request.contextPath}/shop/contact.jsp">Contact Us</a></li>
+            </ul>
+        </nav>
+        <p class="website__rights">&copy; WeSports 2024. All rights reserved.</p>
+        <div class="social__icons">
+            <a href="/" class="social__icon--link" target="_blank">
+                <i class="fab fa-facebook"></i>
+            </a>
+            <a href="/" class="social__icon--link" target="_blank">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="/" class="social__icon--link" target="_blank">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="/" class="social__icon--link" target="_blank">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="/" class="social__icon--link" target="_blank">
+                <i class="fab fa-youtube"></i>
+            </a>
+        </div>
+    </footer>
 
-<script src="${pageContext.request.contextPath}/resources/JavaScript/script.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/JavaScript/script.js"></script>
 </body>

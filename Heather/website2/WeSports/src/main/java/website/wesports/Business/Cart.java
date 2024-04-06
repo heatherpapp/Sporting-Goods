@@ -224,7 +224,7 @@ public class Cart {
             if (cartExists(cemail, connection)) { //add to existing cart
                 updateCartDB(cemail);
             } else { //create cart & add item --- get email on checkout
-                String sql = "INSERT INTO Carts(CartID, CustEmail, ProductCode, Quantity) Values(?,?,?)";
+                String sql = "INSERT INTO Carts(CartID, CustEmail, ProductCode, Quantity) Values(?,?,?,?)";
 
                 PreparedStatement pStmt = connection.prepareStatement(sql);
                 System.out.println("SQL Statement: " + sql);
