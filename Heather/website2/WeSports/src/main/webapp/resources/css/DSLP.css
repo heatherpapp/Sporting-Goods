@@ -1,0 +1,111 @@
+/* Header and Navigation styles */
+.header {
+    background-color: rgba(19, 22, 26, 0.8);
+    padding: 10px 0;
+}
+
+.header__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+.logo__img {
+    display: block;
+    height: 100px;
+}
+
+.nav__list {
+    display: flex;
+    gap: 20px;
+}
+
+.nav__link {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 1);
+    transition: color 0.4s ease;
+}
+
+.nav__link:hover, .nav__link:focus {
+    color: rgb(94, 58, 235);
+}
+
+.btn{
+    color: white;
+    background-color: blue;
+    padding: 7px 18px;
+    border-radius: 1000px;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 500;
+    transition: all 0.4s;
+    text-decoration: none;
+}
+.btn:hover{
+    background-color: rgb(237, 58, 58);
+}
+
+/* Table and Container styles */
+.orderContainer {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.orderTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.orderTable th, .orderTable td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.orderNumberCol, .orderDateCol, .orderStatusCol {
+    width: 20%;
+}
+
+.totalCell {
+    text-align: right;
+}
+
+.productRow:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.productRow:hover {
+    background-color: #f0f0f0;
+}
+
+.detailsColHead {
+    background-color: #f0f0f0;
+    font-weight: bold;
+}
+
+.detailsColHead td {
+    padding: 8px;
+}
+
+details summary {
+    cursor: pointer;
+    outline: none;
+    padding: 5px;
+    background-color: #e0e0e0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 5px;
+}
+
+details[open] summary {
+    background-color: #ccc;
+}
