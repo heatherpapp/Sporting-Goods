@@ -120,10 +120,9 @@
         <!-- Search results will be displayed here -->
     </div>
 
+    <!-- DO NOT ALTER THIS SECTION! -->
     <div class="product">
         <h1>Youth Product List</h1>
-
-
             <%
                 Product product = new Product();
                 product.getAgeGroupProducts("Youth");
@@ -132,8 +131,6 @@
 
                 for (Product productItem : product.productList.productArray) {
             %>
-
-
         <div class="flex-box">
             <form name="productListForm" method="post" action="../../AddToCartServlet">
                 <input hidden="hidden" value="<%=productItem.getProductCode()%>" name="ProductCode">
@@ -147,15 +144,12 @@
                 <div><label><input type="submit" name="addToCartBtn" value="Add to Cart"></label></div>
                 <div></div>
             </form>
-
             <%
                 }
             %>
         </div>
-
-
-
     </div>
+    <!-- END OF DO NOT ALTER THIS SECTION! -->
 
 </div>
 
