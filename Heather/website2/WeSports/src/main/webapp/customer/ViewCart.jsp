@@ -126,6 +126,11 @@
     *button to go to Checkout.jsp
     -->
 
+    <div>
+        <%
+            request.getAttribute("CartID");
+        %>
+    </div>
 
 
 

@@ -32,6 +32,8 @@ import jakarta.servlet.http.HttpSession;
 
 @WebServlet(name = "CheckoutServlet", urlPatterns = {"/CheckoutServlet"})
 public class CheckoutServlet extends HttpServlet {
+
+    //TODO finish CheckoutServlet
     /************* Database *************/
     final String DBDriver = "net.ucanaccess.jdbc.UcanaccessDriver";
     final String DBLocation = "jdbc:ucanaccess://C:/WeSportsDB/WeSports.accdb/";

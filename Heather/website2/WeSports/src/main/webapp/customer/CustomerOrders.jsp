@@ -117,6 +117,7 @@
 
     <br>
 
+    <!-- TODO update Customer Orders view page with data from Orders -->
     <div class="orderContainer">
         <h1>Your Orders</h1>
         <table class="orderTable">
