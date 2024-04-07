@@ -8,7 +8,7 @@
     position: relative;
     width: 100%;
     min-height: 100vh;
-    background-image: linear-gradient(rgba(9,0,77,0.65),rgba(9,0,77,0.65)), url(../pictures/pexels-juan-salamanca-61135.jpg);
+    background-image: linear-gradient(rgba(9,0,77,0.65),rgba(9,0,77,0.65)), url(/resources/pictures/pexels-juan-salamanca-61135.jpg);
     background-size: cover;
     background-position: center;
     padding: 10px 8%;
@@ -24,29 +24,29 @@ nav{
     width: 100px;
     cursor: pointer;
 }
-    nav ul{
-        list-style: none;
-        width: 100%;
-        text-align: center;
-        padding-right: 60px;
-    }
-    nav ul li{
-        display: inline-block;
-        margin: 10px 20px;
+nav ul{
+    list-style: none;
+    width: 100%;
+    text-align: center;
+    padding-right: 60px;
+}
+nav ul li{
+    display: inline-block;
+    margin: 10px 20px;
 
-    }
-    nav ul li a{
-        color: white;
-        text-decoration: none;
-    }
+}
+nav ul li a{
+    color: white;
+    text-decoration: none;
+}
 
 
-    .dropdown {
-        position: relative;
-        display: inline-flex;
-        margin-right: 10px;
-    }
-    .dropdown button {
+.dropdown {
+    position: relative;
+    display: inline-flex;
+    margin-right: 10px;
+}
+.dropdown button {
     background-color: #6200ff;
     border-radius: 10px;
     color: white;
@@ -55,9 +55,9 @@ nav{
     border: none;
     cursor: pointer;
     min-width: 160px;
-    }
-    /* Style for the dropdown content (hidden by default) */
-    .dropdown-content {
+}
+/* Style for the dropdown content (hidden by default) */
+.dropdown-content {
     transition: 0.7s;
     display: none;
     position: absolute;
@@ -66,26 +66,26 @@ nav{
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
     top: 100%;
-    }
-    /* Style for the dropdown items */
-    .dropdown-content a {
+}
+/* Style for the dropdown items */
+.dropdown-content a {
     color: black;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
-    }
-    /* Change color on hover */
-    .dropdown-content a:hover {
+}
+/* Change color on hover */
+.dropdown-content a:hover {
     transition: 0.4s;
     background-color: #6200ff54;
-    }
-    /* Show the dropdown content when the dropdown button is hovered over */
-    .dropdown:hover .dropdown-content {
+}
+/* Show the dropdown content when the dropdown button is hovered over */
+.dropdown:hover .dropdown-content {
     display: block;
-    }
+}
 
-    /* login button styling */
-  .login-button {
+/* login button styling */
+.login-button {
     margin-right: 30px;
     display: inline-block;
     padding: 10px 20px;
@@ -97,7 +97,7 @@ nav{
     text-decoration: none; /* Remove default underline */
     cursor: pointer;
     transition: background-color 0.3s ease; /* Smooth transition for background color */
-  }
+}
 
 .login-button:hover {
     background-color: #f93838; /* Darker shade on hover */
@@ -124,7 +124,7 @@ h1 {
     font-size: 24px;
     font-weight: bold;
     color: #e8e5e5;
-    margin-bottom: 10px; 
+    margin-bottom: 10px;
 }
 
 h4 {
@@ -144,76 +144,80 @@ p {
 }
 .search-container {
     display: flex;
-    margin: 20px;
-    align-content: center;
+    justify-content: space-between; /* Align items and distribute space between them */
+    margin-top: 20px; /* Reduced margin for search bar */
 }
 
 #search-input {
-    width: 88%;
+    flex: 1; /* Take remaining space */
+    width: 900px;
     padding: 8px;
     font-size: 16px;
-    align-content: center;
 }
 
-#search-results {
-    margin-top: 10px;
-}
 #search-button {
-    display: flex;
-    align-items: center;
     padding: 10px 20px;
-    border: 0;
-    outline: 0;
     border-radius: 5px;
-    background: #007bff; /* Blue background color */
-    color: #fff; /* White text color */
+    background: #007bff;
+    color: #fff;
     font-weight: 500;
     cursor: pointer;
-    transition: background-color 0.3s ease; /* Smooth transition for background color */
+    transition: background-color 0.3s ease;
 }
 
+
 #search-button:hover {
-    background: #0056b3; /* Darker shade on hover */
+    background: #0056b3;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center; /* Align items vertically */
+    margin-top: 20px;
+    min-height: 80vh; /* Set a minimum height for the container */
 }
 
 .card {
-    /* Set dimensions and styling for the card */
-    width: 240px;
-    height: 300px;
+    width: calc(33.33% - 20px); /* Adjust card width */
+    max-width: 240px; /* Limit maximum card width */
+    height: 360px;
     background-color: #302f2f;
     border: 1px solid #ccc;
-    margin: 10px;
+    margin: 30px;
     display: inline-block;
     overflow: hidden;
     position: relative;
+    transition: transform 0.3s ease;
+}
+
+
+.card:hover {
+    transform: translateY(-5px);
 }
 
 .card img {
-    /* Ensure the image fills the card while maintaining aspect ratio */
-    padding-right: 10px;
     width: 100%;
-    height: 100%;
+    height: 80%;
     object-fit: cover;
 }
 
 .card button {
-    /* Style the button within the card */
     width: 100%;
     height: 20%;
     background-color: rgb(63, 63, 255);
     color: white;
     border: none;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .card button:hover {
-    /* Highlight the button on hover */
-    transition: 0.8s;
     background-color: #f93838;
 }
 
 .card a {
-    /* Make the entire card clickable and align contents */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -355,4 +359,24 @@ table th, table td {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
+}
+/* Media query for mobile devices */
+@media only screen and (max-width: 600px) {
+    /* Adjust the search input width for smaller screens */
+    #search-input {
+        width: 100%; /* Take up full width on smaller screens */
+        max-width: none; /* Remove max-width restriction */
+        margin-right: 10px; /* Add margin for spacing */
+    }
+
+    /* Adjust search button styling for smaller screens */
+    #search-button {
+        padding: 10px; /* Adjust padding */
+        font-size: 14px; /* Decrease font size */
+    }
+
+    /* Optional: Center align the search button on smaller screens */
+    .search-container {
+        justify-content: center;
+    }
 }
