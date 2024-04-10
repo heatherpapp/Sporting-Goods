@@ -1,10 +1,12 @@
 <%@page import="website.wesports.Business.Product"%>
 <%@page import="website.wesports.Business.ProductList"%>
 <%@page import="website.wesports.Business.Customer"%>
+<%@page import="website.wesports.Business.Cart"%>
+<%@ page import="java.util.List" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
-<jsp:useBean class="website.wesports.Business.ProductList" id="cart" scope="session"/>
 <jsp:useBean class="website.wesports.Business.Customer" id="customer" scope="session"/>
+<jsp:useBean class="website.wesports.Business.Cart" id="cart" scope="session"/>
 
 <!DOCTYPE html>
 <html>
@@ -27,6 +29,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 
 </head>
 <body>
@@ -131,47 +134,53 @@
 <div class="cartContainer">
 
     <%
-        Product product = new Product();
-        //product.getAgeGroupProducts("Youth");
-        //product.display();
-        //product.productList.displayList();
+        // Retrieve the Customer object from the session
+        Customer c1 = (Customer) session.getAttribute("c1");
+        String customerEmail = null;
+        Long cartID = null;
 
-        for (Product productItem : product.productList.productArray) {
+        if (c1 != null && c1.Exists) {
+            customerEmail = c1.getCustEmail();
+        } else {
+            cartID = (Long) session.getAttribute("CartID");
+        }
+
+        // Fetch cart based on customerEmail or cartID
+        if (customerEmail != null) {
+            cart.getCartByCustomerEmail(customerEmail);
+        } else if (cartID != null) {
+            cart.getCartByCartID(cartID);
+        }
+
+        // Display cart items
+        List<Product> productList = cart.getProductArray();
+
+        if (productList != null && !productList.isEmpty()) {
+            for (Product productItem : productList) {
     %>
-
-    <h1>Your Cart</h1>
-    <table class="cartTable">
-        <tr class="cartTableHeaders"> <!-- hidden -->
-            <th>Product Image</th>
-            <th>Product Code</th>
-            <th>Product Name</th>
-            <th>Unit Quantity</th>
-            <th>Unit Price</th>
-            <th>Unit Subtotal</th>
-        </tr>
-        <tr class="productRow"> <!-- repeat this row for each item in cart -->
-            <td id="getProductImage">GET<%= productItem.getImagePath() %></td>
-            <td id="getProductCode">GET<%= productItem.getProductCode() %></td>
-            <td id="getProductName">GET<%= productItem.getProductName() %></td>
-            <td id="getQuantityAdded">GET<%= productItem.getQuantity() %></td>
-            <td id="getUnitPrice">GET<%= productItem.getUnitPrice() %></td>
-            <td id="subtotalCostUnits">Unit Price x Quantity</td>
-        </tr> <!-- END repeating row for items in order -->
-        <tr class="totalRow">
-            <td class="totalHeader" colspan="5">Order Total:</td>
-            <td id="getOrderTotal" class="totalCell">$GET$</td>
-        </tr>
-    </table>
+    <div class="productRow">
+        <img src="${pageContext.request.contextPath}/resources/images/<%= productItem.getImagePath() %>" alt="<%= productItem.getProductName() %>">
+        <p>Product Code: <%= productItem.getProductCode() %></p>
+        <p>Product Name: <%= productItem.getProductName() %></p>
+        <p>Unit Quantity: <%= productItem.getQuantity() %></p>
+        <p>Unit Price: $<%= productItem.getUnitPrice() %></p>
+        <p>Unit Subtotal: $<%= productItem.getQuantity() * productItem.getUnitPrice() %></p>
+    </div>
+    <%
+        }
+    } else {
+    %>
+    <div class="emptyCart">
+        <p>Your cart is empty.</p>
+    </div>
+    <%
+        }
+    %>
+    <div class="totalRow">
+        <p class="totalHeader">Order Total:</p>
+        <p>$<%= cart.getTotalPrice() %></p>
+    </div>
 </div>
-
-
-
-
-
-
-
-
-
 
 
 </div>

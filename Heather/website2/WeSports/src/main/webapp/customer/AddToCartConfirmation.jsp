@@ -90,7 +90,7 @@
         catch (Exception e) {
         %>
         <a href="${pageContext.request.contextPath}/customer/CustomerLogin.jsp" class="login-button">Login</a>
-        <a href="${pageContext.request.contextPath}/shop/Cart.html" class="btn">
+        <a href="${pageContext.request.contextPath}/shop/Cart.jpg" class="btn">
             <i class="fa-solid fa-cart-shopping"></i> Cart
         </a>
         <%
@@ -119,9 +119,28 @@
     <!-- Page Contents Here -->
 
     <!-- TODO finish AddToCartConfirmation.jsp page-->
-    <h1>Added to Cart!</h1>
-    <a href="javascript:history.back()">Continue Shopping</a>
-    <a href="">Go to Checkout</a>
+    <div class="confirmation-content">
+        <h1>Added to Cart!</h1>
+
+        <%
+            Customer c1 = (Customer) session.getAttribute("c1");
+
+            if (c1 != null && c1.Exists) {
+        %>
+        <p>Product successfully added to your cart. View your <a href="${pageContext.request.contextPath}/shop/Cart.jsp">Cart</a>.</p>
+        <%
+        } else {
+        %>
+        <p>Product successfully added to your cart. Your Cart ID is: <%= request.getAttribute("CartID") %>.</p>
+        <%
+            }
+        %>
+
+        <div class="action-buttons">
+            <a href="javascript:history.back()" class="btn">Continue Shopping</a>
+            <a href="${pageContext.request.contextPath}/shop/Cart.jsp" class="btn">Go to Checkout</a>
+        </div>
+    </div>
 
 
 </div>

@@ -91,7 +91,7 @@
         catch (Exception e) {
         %>
         <a href="${pageContext.request.contextPath}/customer/CustomerLogin.jsp" class="login-button">Login</a>
-        <a href="${pageContext.request.contextPath}/shop/Cart.html" class="btn">
+        <a href="${pageContext.request.contextPath}/shop/Cart.jsp" class="btn">
             <i class="fa-solid fa-cart-shopping"></i> Cart
         </a>
         <%
@@ -182,4 +182,13 @@
 
 <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script> -->
 <script src="${pageContext.request.contextPath}/resources/JavaScript/script.js"></script>
+<script>
+    document.getElementById('productListForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        var productCode = this.querySelector('input[name="ProductCode"]').value;
+
+        this.submit();
+    });
+</script>
 </body>
