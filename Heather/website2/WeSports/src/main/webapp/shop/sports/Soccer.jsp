@@ -122,21 +122,6 @@
 
     <div class="product">
         <h1>Soccer Product List</h1>
-        <table>
-            <thead>
-            <tr>
-                <th>Picture</th>
-                <th>Name</th>
-                <th>Description</th>
-                <th>Price</th>
-                <th>Age Group</th>
-                <th>Gender</th>
-                <!-- don't show Quantity on Hand <th>Quantity</th> -->
-                <th>Add to Cart</th>
-            </tr>
-            </thead>
-            <tbody>
-
             <%
                 Product product = new Product();
                 product.getDeptProducts("Soccer");
@@ -145,23 +130,23 @@
 
                 for (Product productItem : product.productList.productArray) {
             %>
-            <tr>
-                <td><img src="../<%= productItem.getImagePath() %>" width="100" height="100"></td>
-                <td><%= productItem.getProductName() %></td>
-                <td><%= productItem.getProductDescription() %></td>
-                <td><%= productItem.getUnitPrice() %></td>
-                <td><%= productItem.getAgeGroup() %></td>
-                <td><%= productItem.getGender() %></td>
-                <!-- don't show Quantity on Hand <td><%= productItem.getQuantity() %></td> -->
-                <td><button>Add to Cart</button></td>
-            </tr>
+        <div class="flex-box">
+            <form name="productListForm" method="post" action="../../AddToCartServlet">
+                <input hidden="hidden" value="<%=productItem.getProductCode()%>" name="ProductCode">
+                <div><img src="../<%= productItem.getImagePath() %>" width="100" height="100" alt="product image"></div>
+                <div><%= productItem.getProductName() %></div>
+                <div><%= productItem.getProductDescription() %></div>
+                <div><%= productItem.getUnitPrice() %></div>
+                <div><%= productItem.getDepartment() %></div>
+                <div><%= productItem.getSection() %></div>
+                <div><label>Quantity<input type="text" name="Quantity"></label></div>
+                <div><label><input type="submit" name="addToCartBtn" value="Add to Cart"></label></div>
+                <div></div>
+            </form>
             <%
                 }
             %>
-            </tbody>
-        </table>
-
-
+        </div>
 
     </div>
 
