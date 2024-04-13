@@ -398,7 +398,7 @@ public class Cart {
     }
 
 
-    /************* Get Max CartID from Database: Carts *************/
+    /************* Get Next CartID from Database: Carts *************/
     public Long NextCartID;
     public void setNextCartID(Long nextCartID) { NextCartID = nextCartID; }
     public Long getNextCartID() { return NextCartID; }
