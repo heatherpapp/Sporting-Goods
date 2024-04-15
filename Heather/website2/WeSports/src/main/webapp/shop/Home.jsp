@@ -95,7 +95,7 @@
          catch (Exception e) {
          %>
          <a href="${pageContext.request.contextPath}/customer/CustomerLogin.jsp" class="login-button">Login</a>
-         <a href="${pageContext.request.contextPath}/shop/Cart.html" class="btn">
+         <a href="${pageContext.request.contextPath}/shop/Cart.jsp" class="btn">
              <i class="fa-solid fa-cart-shopping"></i> Cart
          </a>
          <%

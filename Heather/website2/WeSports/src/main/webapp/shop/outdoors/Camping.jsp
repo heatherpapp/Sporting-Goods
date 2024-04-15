@@ -5,7 +5,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-with, initial-scale=1.0">
-    <title>WeSports | Shop Outdoors | Camping</title>
+    <title>WeSports | Shop Youth's</title>
     <link rel="apple-touch-icon" sizes="180x180" href="${pageContext.request.contextPath}/resources/favicon_package_v0.16/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="${pageContext.request.contextPath}/resources/favicon_package_v0.16/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="${pageContext.request.contextPath}/resources/favicon_package_v0.16/favicon-16x16.png">
@@ -13,10 +13,8 @@
     <link rel="mask-icon" href="${pageContext.request.contextPath}/resources/favicon_package_v0.16/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
-    <!--  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"> -->
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/styles.css">
     <script src="https://kit.fontawesome.com/5b6c8cdace.js" crossorigin="anonymous"></script>
-
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/customerProfile.css">
 </head>
 <body>
@@ -80,6 +78,7 @@
                 <a href="${pageContext.request.contextPath}/customer/CustomerOrders.jsp">Orders</a>
                 <a href="${pageContext.request.contextPath}/shop/Help.jsp">Help & FAQs</a>
                 <a href="${pageContext.request.contextPath}/customer/CustomerLogout.jsp">Logout</a>
+                <a href="${pageContext.request.contextPath}/resources/css/products.css">Logout</a>
             </div>
         </div>
         <a href="${pageContext.request.contextPath}/shop/Cart.jsp" class="btn">
@@ -91,7 +90,7 @@
         catch (Exception e) {
         %>
         <a href="${pageContext.request.contextPath}/customer/CustomerLogin.jsp" class="login-button">Login</a>
-        <a href="${pageContext.request.contextPath}/shop/Cart.html" class="btn">
+        <a href="${pageContext.request.contextPath}/shop/Cart.jsp" class="btn">
             <i class="fa-solid fa-cart-shopping"></i> Cart
         </a>
         <%
@@ -109,6 +108,7 @@
         <p>Shop with us today and save!</p>
     </div>
     <div class="search-container">
+
         <form action="../../SearchServlet" method="get">
             <input type="text" id="search-input" name="query" placeholder="Search...">
             <button id="search-button" onclick="search()">Search</button>  <!-- search products for input text -->
@@ -122,48 +122,31 @@
 
     <div class="product">
         <h1>Camping Product List</h1>
-        <table>
-            <thead>
-            <tr>
-                <th>Picture</th>
-                <th>Name</th>
-                <th>Description</th>
-                <th>Price</th>
-                <th>Age Group</th>
-                <th>Gender</th>
-                <!-- don't show Quantity on Hand <th>Quantity</th> -->
-                <th>Add to Cart</th>
-            </tr>
-            </thead>
-            <tbody>
+        <%
+            Product product = new Product();
+            product.getSectionProducts("Camping");
+            //product.display();
+            //product.productList.displayList();
 
-            <%
-                Product product = new Product();
-                product.getSectionProducts("Camping");
-                product.display();
-                product.productList.displayList();
-
-                for (Product productItem : product.productList.productArray) {
-            %>
-            <tr>
-                <td><img src="../<%= productItem.getImagePath() %>" width="100" height="100"></td>
-                <td><%= productItem.getProductName() %></td>
-                <td><%= productItem.getProductDescription() %></td>
-                <td><%= productItem.getUnitPrice() %></td>
-                <td><%= productItem.getDepartment() %></td>
-                <td><%= productItem.getSection() %></td>
-                <td><%= productItem.getAgeGroup() %></td>
-                <!-- don't show Quantity on Hand <td><%= productItem.getQuantity() %></td> -->
-                <td><button>Add to Cart</button></td>
-            </tr>
+            for (Product productItem : product.productList.productArray) {
+        %>
+        <div class="flex-box">
+            <form name="productListForm" method="post" action="../../AddToCartServlet">
+                <input hidden="hidden" value="<%=productItem.getProductCode()%>" name="ProductCode">
+                <div><img src="../<%= productItem.getImagePath() %>" width="100" height="100" alt="product image"></div>
+                <div><%= productItem.getProductName() %></div>
+                <div><%= productItem.getProductDescription() %></div>
+                <div><%= productItem.getUnitPrice() %></div>
+                <div><%= productItem.getDepartment() %></div>
+                <div><%= productItem.getSection() %></div>
+                <div><label>Quantity<input type="text" name="Quantity"></label></div>
+                <div><label><input type="submit" name="addToCartBtn" value="Add to Cart"></label></div>
+                <div></div>
+            </form>
             <%
                 }
             %>
-            </tbody>
-        </table>
-
-
-
+        </div>
     </div>
 
 </div>
@@ -196,6 +179,5 @@
     </div>
 </footer>
 
-<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script> -->
 <script src="${pageContext.request.contextPath}/resources/JavaScript/script.js"></script>
 </body>
