@@ -110,7 +110,9 @@ public class Customer {
         System.out.println("Customer Address: " + getCustStreet() + "\n" + getCustCity() + ", " + getCustState() + " " + getCustZip());
         System.out.println("Customer PW: " + getCustPassword());
         System.out.println("Cart");
-        Cart.displayList();
+        if (Cart != null) {
+            Cart.displayList();
+        }
         System.out.println("Orders Awaiting Shipping");
         Order.displayList();
         System.out.println("=======================================================\n");
