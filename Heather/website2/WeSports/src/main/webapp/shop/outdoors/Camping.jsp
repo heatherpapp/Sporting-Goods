@@ -5,7 +5,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-with, initial-scale=1.0">
-    <title>WeSports | Shop Youth's</title>
+    <title>WeSports | Shop Women's</title>
     <link rel="apple-touch-icon" sizes="180x180" href="${pageContext.request.contextPath}/resources/favicon_package_v0.16/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="${pageContext.request.contextPath}/resources/favicon_package_v0.16/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="${pageContext.request.contextPath}/resources/favicon_package_v0.16/favicon-16x16.png">
@@ -24,7 +24,6 @@
             <img src="${pageContext.request.contextPath}/resources/pictures/clearw.png" class="logo">
         </a>
         <ul>
-
             <div class="dropdown">
                 <button>Shop by Sport</button>
                 <div class="dropdown-content">
@@ -78,7 +77,6 @@
                 <a href="${pageContext.request.contextPath}/customer/CustomerOrders.jsp">Orders</a>
                 <a href="${pageContext.request.contextPath}/shop/Help.jsp">Help & FAQs</a>
                 <a href="${pageContext.request.contextPath}/customer/CustomerLogout.jsp">Logout</a>
-                <a href="${pageContext.request.contextPath}/resources/css/products.css">Logout</a>
             </div>
         </div>
         <a href="${pageContext.request.contextPath}/shop/Cart.jsp" class="btn">
@@ -107,8 +105,8 @@
         <h4>We do Sports</h4>
         <p>Shop with us today and save!</p>
     </div>
-    <div class="search-container">
 
+    <div class="search-container">
         <form action="../../SearchServlet" method="get">
             <input type="text" id="search-input" name="query" placeholder="Search...">
             <button id="search-button" onclick="search()">Search</button>  <!-- search products for input text -->
@@ -125,10 +123,11 @@
         <%
             Product product = new Product();
             product.getSectionProducts("Camping");
-            //product.display();
-            //product.productList.displayList();
+            product.display();
+            product.productList.displayList();
 
             for (Product productItem : product.productList.productArray) {
+                if (productItem != null) {
         %>
         <div class="flex-box">
             <form name="productListForm" method="post" action="../../AddToCartServlet">
@@ -145,8 +144,10 @@
             </form>
             <%
                 }
+            }
             %>
         </div>
+
     </div>
 
 </div>

@@ -129,6 +129,7 @@
                 //product.productList.displayList();
 
                 for (Product productItem : product.productList.productArray) {
+                    if (productItem != null) {
             %>
         <div class="flex-box">
             <form name="productListForm" method="post" action="../../AddToCartServlet">
@@ -144,6 +145,7 @@
                 <div></div>
             </form>
             <%
+                    }
                 }
             %>
         </div>

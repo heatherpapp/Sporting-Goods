@@ -129,24 +129,26 @@
                 //product.productList.displayList();
 
                 for (Product productItem : product.productList.productArray) {
+                    if (productItem != null) {
             %>
-            <div class="flex-box">
-                <form name="productListForm" method="post" action="../../AddToCartServlet">
-                    <input hidden="hidden" value="<%=productItem.getProductCode()%>" name="ProductCode">
-                    <div><img src="../<%= productItem.getImagePath() %>" width="100" height="100" alt="product image"></div>
-                    <div><%= productItem.getProductName() %></div>
-                    <div><%= productItem.getProductDescription() %></div>
-                    <div><%= productItem.getUnitPrice() %></div>
-                    <div><%= productItem.getDepartment() %></div>
-                    <div><%= productItem.getSection() %></div>
-                    <div><label>Quantity<input type="text" name="Quantity"></label></div>
-                    <div><label><input type="submit" name="addToCartBtn" value="Add to Cart"></label></div>
-                    <div></div>
-                </form>
-                <%
+        <div class="flex-box">
+            <form name="productListForm" method="post" action="../../AddToCartServlet">
+                <input hidden="hidden" value="<%=productItem.getProductCode()%>" name="ProductCode">
+                <div><img src="../<%= productItem.getImagePath() %>" width="100" height="100" alt="product image"></div>
+                <div><%= productItem.getProductName() %></div>
+                <div><%= productItem.getProductDescription() %></div>
+                <div><%= productItem.getUnitPrice() %></div>
+                <div><%= productItem.getDepartment() %></div>
+                <div><%= productItem.getSection() %></div>
+                <div><label>Quantity<input type="text" name="Quantity"></label></div>
+                <div><label><input type="submit" name="addToCartBtn" value="Add to Cart"></label></div>
+                <div></div>
+            </form>
+            <%
                     }
-                %>
-            </div>
+                }
+            %>
+        </div>
 
     </div>
 
