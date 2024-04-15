@@ -66,12 +66,7 @@
         <!-- Logged in Customer -->
         <%
             Customer c1 = (Customer) session.getAttribute("c1");
-            if (c1 != null) {
-                c1.display();
-            } else {
-                // Handle the case where c1 is null, e.g., display an error message
-                out.println("Customer information not available.");
-            }
+            c1.display();
         %>
         <!-- Customer menu button show account options in dropdown -->
         <div class="customerMenu">
