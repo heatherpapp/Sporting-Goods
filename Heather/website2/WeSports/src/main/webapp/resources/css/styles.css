@@ -150,7 +150,7 @@ p {
 
 #search-input {
     flex: 1; /* Take remaining space */
-    width: 900px;
+    width: 300px;
     padding: 8px;
     font-size: 16px;
 }
