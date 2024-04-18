@@ -3,9 +3,10 @@ Product images are located in Heather's folder & are sorted by sport & saved und
 
 TODO:
 get all servlets working!!! Deadline April 1st
-1) Customer creation
-2) Customer update
-3) Cart creation
+done 1) Customer creation
+done 2) Customer update
+done 3) Cart creation
+
 4) Order creation
 5) Search bar/product search
 
