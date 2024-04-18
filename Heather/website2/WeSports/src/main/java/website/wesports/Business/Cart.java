@@ -89,7 +89,7 @@ public class Cart {
 
             // Check if CustID record exists
             if (rs.next()) {
-                if(rs.getInt(1) != 0) Exists = true;
+                Exists = true;
                 System.out.println("Customer Email: " + cemail);
             }
         } catch (Exception e) { System.out.println("Exception: " + e); }
@@ -472,7 +472,7 @@ public class Cart {
 
         try {
             conn = DriverManager.getConnection(DBLocation);
-            String sql = "SELECT * FROM Cart WHERE CustomerEmail = ?";
+            String sql = "SELECT * FROM Carts WHERE CustomerEmail = ?";
             stmt = conn.prepareStatement(sql);
             stmt.setString(1, customerEmail);
 
@@ -513,7 +513,7 @@ public class Cart {
 
         try {
             conn = DriverManager.getConnection(DBLocation);
-            String sql = "SELECT * FROM Cart WHERE CartID = ?";
+            String sql = "SELECT * FROM Carts WHERE CartID = ?";
             stmt = conn.prepareStatement(sql);
             stmt.setLong(1, cartID);
 

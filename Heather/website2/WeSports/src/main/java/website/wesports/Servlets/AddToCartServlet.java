@@ -30,6 +30,7 @@ public class AddToCartServlet extends HttpServlet {
             HttpSession session = request.getSession();
             Customer c1 = (Customer) session.getAttribute("c1");
             Cart cart = new Cart();
+            Long cartID;
 
             // Check if customer is logged in
             if (c1 != null) { // Logged in customer
@@ -40,6 +41,10 @@ public class AddToCartServlet extends HttpServlet {
                 cart.getCustCartID(email);
                 if (!cart.Exists) { // CustEmail does NOT have a CartID
                     cart.assignNextCartID();
+                    cartID = cart.NextCartID;
+                } else {
+                    cart.getCustCartID(email);
+                    cartID = cart.CartID;
                 }
 
                 String productCode = request.getParameter("ProductCode");
@@ -47,8 +52,8 @@ public class AddToCartServlet extends HttpServlet {
 
                 if (Integer.parseInt(quantity) > 0) {
                     try {
-                        cart.insertCartDB(cart.getNextCartID(), email, productCode, Integer.parseInt(quantity));
-                        request.setAttribute("CartID", cart.getNextCartID());
+                        cart.insertCartDB(cartID, email, productCode, Integer.parseInt(quantity));
+                        request.setAttribute("CartID", cartID);
                         RequestDispatcher rd = request.getRequestDispatcher("/customer/AddToCartConfirmation.jsp");
                         rd.forward(request, response);
                     } catch (Exception e) {
