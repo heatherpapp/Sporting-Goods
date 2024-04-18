@@ -66,14 +66,17 @@ public class AddToCartServlet extends HttpServlet {
             } else { // Non-logged in customer
                 if (!cart.Exists) {  // Empty cart
                     cart.assignNextCartID();
+                    cartID = cart.NextCartID;
+                } else {
+                    cartID = cart.getCartID();
                 }
 
                 String productCode = request.getParameter("ProductCode");
                 String quantity = request.getParameter("Quantity");
                 if (Integer.parseInt(quantity) > 0) {
                     try {
-                        cart.insertCartDB(cart.getNextCartID(), "guest", productCode, Integer.parseInt(quantity));
-                        request.setAttribute("CartID", cart.getNextCartID());
+                        cart.insertCartDB(cartID, "guest", productCode, Integer.parseInt(quantity));
+                        request.setAttribute("CartID", cartID);
                         RequestDispatcher rd = request.getRequestDispatcher("/customer/AddToCartConfirmation.jsp");
                         rd.forward(request, response);
                     } catch (Exception e) {
