@@ -190,35 +190,7 @@ public class Cart {
 
 
     /************* Insert New Cart into Database: Carts *************/
-    public void insertCart(Long cartID, String cemail, String prodCode, int itemQuantity) {
-        setCartID(cartID);
-        setCustEmail(cemail);
-        setProductCode(prodCode);
-        setQuantity(itemQuantity);
-
-        try {
-            Class.forName(DBDriver);
-            Connection connection = DriverManager.getConnection(DBLocation);
-            if (cartExists(cemail, connection)) { //add to existing cart
-                updateCartDB(cemail, prodCode, itemQuantity);
-            } else { //create cart & add item --- get email on checkout
-                String sql = "INSERT INTO Carts(CartID, CustEmail, ProductCode, Quantity) Values(?,?,?,?)";
-
-                PreparedStatement pStmt = connection.prepareStatement(sql);
-                System.out.println("SQL Statement: " + sql);
-
-                pStmt.setLong(1, CartID);
-                pStmt.setString(2, CustEmail);
-                pStmt.setString(3, ProductCode);
-                pStmt.setInt(4, Quantity);
-
-                int n = pStmt.executeUpdate();
-                if (n==1) System.out.println("..... Cart INSERT Successful");
-                else System.out.println("!!!!! INSERT FAILED !!!!!");
-            }
-        } catch (Exception e) { System.out.println("Exception" + e); }
-    } // END insertCDB
-    public void insertCartDB(Long cartID, String cemail, String prodCode, int itemQuantity) {
+    public void insertCart(String cemail, String prodCode, int itemQuantity) {
         setCustEmail(cemail);
         setProductCode(prodCode);
         setQuantity(itemQuantity);
@@ -227,8 +199,11 @@ public class Cart {
         PreparedStatement pStmt = null;
 
         try {
+            assignNextCartID();
+
             Class.forName(DBDriver);
             connection = DriverManager.getConnection(DBLocation);
+
 
             if (cartExists(cemail, connection)) { // add to existing cart
                 updateCartDB(cemail, prodCode, itemQuantity);
@@ -247,6 +222,7 @@ public class Cart {
                     System.out.println("!!!!! INSERT FAILED !!!!!");
                 }
             }
+
 
             // Commit the changes
             connection.commit();
@@ -271,6 +247,56 @@ public class Cart {
             }
         }
     } // END insertCDB
+    public void insertCartDB(Long cartID, String cemail, String prodCode, int itemQuantity) {
+        setCustEmail(cemail);
+        setProductCode(prodCode);
+        setQuantity(itemQuantity);
+
+        Connection connection = null;
+        PreparedStatement pStmt = null;
+
+        try {
+            Class.forName(DBDriver);
+            connection = DriverManager.getConnection(DBLocation);
+
+            String sql = "INSERT INTO Carts(CartID, CustEmail, ProductCode, Quantity) VALUES (?, ?, ?, ?)";
+            pStmt = connection.prepareStatement(sql);
+
+            pStmt.setLong(1, cartID);
+            pStmt.setString(2, cemail);
+            pStmt.setString(3, prodCode);
+            pStmt.setInt(4, itemQuantity);
+
+            int n = pStmt.executeUpdate();
+            if (n == 1) {
+                System.out.println("..... Cart INSERT Successful");
+            } else {
+                System.out.println("!!!!! INSERT FAILED !!!!!");
+            }
+
+            // Commit the changes
+            connection.commit();
+
+        } catch (Exception e) {
+            System.out.println("Exception: " + e);
+
+            // Rollback the changes if an exception occurs
+            if (connection != null) {
+                try {
+                    connection.rollback();
+                } catch (SQLException ex) {
+                    System.out.println("Rollback Exception: " + ex);
+                }
+            }
+        } finally {
+            try {
+                if (pStmt != null) pStmt.close();
+                if (connection != null) connection.close();
+            } catch (SQLException e) {
+                System.out.println("Close Exception: " + e);
+            }
+        }
+    }
 
 
     /************* Delete Entire Cart from Database: Carts *************/
@@ -377,24 +403,44 @@ public class Cart {
     public void setMaxCartID(Long maxCartID) { MaxCartID = maxCartID; }
     public Long getMaxCartID() { return MaxCartID; }
     public Long lookupMaxCartID() {
-            Long maxID = null;
-            try {
-                Class.forName(DBDriver);
-                Connection connection = DriverManager.getConnection(DBLocation);
-                System.out.println("Database Connected");
-                Statement stmt = connection.createStatement();
+        Long maxID = null;
+        Connection connection = null;
+        Statement stmt = null;
+        ResultSet rs = null;
 
-                String getMaxCartID = "SELECT CartID FROM Carts WHERE CartID = (SELECT MAX (CartID) FROM Carts);";
+        try {
+            Class.forName(DBDriver);
+            connection = DriverManager.getConnection(DBLocation);
+            System.out.println("Database Connected");
+            stmt = connection.createStatement();
 
-                ResultSet rs = stmt.executeQuery(getMaxCartID);
-                System.out.println("SQL Query: " + getMaxCartID);
+            String getMaxCartID = "SELECT MAX(CartID) AS MaxID FROM Carts;";
 
-                // Info to retrieve
-                while (rs.next()) {
-                    maxID = rs.getLong("CartID");
+            rs = stmt.executeQuery(getMaxCartID);
+            System.out.println("SQL Query: " + getMaxCartID);
+
+            // Info to retrieve
+            if (rs.next()) {
+                maxID = rs.getLong("MaxID");
+                if (maxID == 0) {
+                    System.out.println("No CartID found in database.");
+                } else {
+                    System.out.println("Max CartID found: " + maxID);
                 }
-            } catch (Exception e) { System.out.println("Exception" + e); }
-            return maxID != null ? maxID : -1L;
+            }
+        } catch (Exception e) {
+            System.out.println("Exception" + e);
+        } finally {
+            try {
+                if (rs != null) rs.close();
+                if (stmt != null) stmt.close();
+                if (connection != null) connection.close();
+            } catch (SQLException e) {
+                System.out.println("Close Exception: " + e);
+            }
+        }
+
+        return maxID != null ? maxID : -1L;
     }
 
 
@@ -404,18 +450,17 @@ public class Cart {
     public Long getNextCartID() { return NextCartID; }
     public void assignNextCartID() {
         try {
-            Cart cart = new Cart();
-            Long maxID = cart.lookupMaxCartID();
+            Long maxID = lookupMaxCartID();
 
             if (maxID != -1L) {
-                MaxCartID = maxID;
-                NextCartID = MaxCartID + 1;
-                cart.setNextCartID(NextCartID);
+                NextCartID = maxID + 1;
+                System.out.println("Next Cart ID: " + NextCartID);
             } else {
                 System.out.println("Max Cart ID not found.");
             }
-        } catch (Exception e) { System.out.println("Exception" + e); }
-
+        } catch (Exception e) {
+            System.out.println("Exception: " + e);
+        }
     }
 
     // Retrieve cart products by customer email from the database
