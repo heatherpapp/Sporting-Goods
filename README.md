@@ -6,8 +6,12 @@ get all servlets working!!! Deadline April 1st
 done 1) Customer creation
 done 2) Customer update
 done 3) Cart creation
+done 5) Search bar/product search
+
 
 4) Order creation
-5) Search bar/product search
+5) Order lookup
+6) Order ship
+
 
 
