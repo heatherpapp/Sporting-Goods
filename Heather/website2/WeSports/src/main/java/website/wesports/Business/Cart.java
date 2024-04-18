@@ -165,29 +165,6 @@ public class Cart {
         } catch (Exception e) { System.out.println("Exception" + e); }
     } // END selectCDB
 
-    /************* Insert New Cart into Database: Carts *************/
-    public void addToCarts() {
-        /**
-         * check if logged in
-         * if (yes)
-         * {
-         *      add to cartID
-         * } else {
-         *      create cartID
-         *      add to cart
-         * }
-         */
-
-
-
-
-
-    } // END addToCarts
-
-
-
-
-
 
     /************* Insert New Cart into Database: Carts *************/
     public void insertCart(String cemail, String prodCode, int itemQuantity) {
@@ -297,12 +274,6 @@ public class Cart {
             }
         }
     }
-
-
-    /************* Delete Entire Cart from Database: Carts *************/
-    // require user confirmation before performing this action
-
-
 
     // Cart Item Methods //
 
