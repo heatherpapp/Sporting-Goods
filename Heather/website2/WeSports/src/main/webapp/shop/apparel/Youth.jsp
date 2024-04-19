@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/styles.css">
     <script src="https://kit.fontawesome.com/5b6c8cdace.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/customerProfile.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/products.css">
 </head>
 <body>
 <div class="container">

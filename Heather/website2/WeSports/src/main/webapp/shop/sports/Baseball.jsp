@@ -15,10 +15,13 @@
     <meta name="theme-color" content="#ffffff">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/styles.css">
     <script src="https://kit.fontawesome.com/5b6c8cdace.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/products.css">
 
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/customerProfile.css">
 </head>
 <body>
+<div id="preloader">
+</div>
 <div class="container">
     <nav>
         <a href="${pageContext.request.contextPath}/shop/Home.jsp">
@@ -178,5 +181,11 @@
         </a>
     </div>
 </footer>
+<script>
+    var loader = document.getElementById("preloader");
+    window.addEventListener("load", function(){
+        loader.style.display = "none";
+    });
+</script>
 <script src="${pageContext.request.contextPath}/resources/JavaScript/script.js"></script>
 </body>

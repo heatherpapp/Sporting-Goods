@@ -1,7 +1,15 @@
 /* TODO CSS for products display pages flex-box  */
+
 .flex-box {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
+    flex-flow: row wrap;
+    flex: 2 200px;
 }
 
+.product {
+    flex-flow: row wrap;
+    flex: 1 200px;
+}
+
+.flex-box div {
+    flex-flow: column wrap;
+}

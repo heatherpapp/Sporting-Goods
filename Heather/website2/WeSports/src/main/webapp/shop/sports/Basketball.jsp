@@ -16,6 +16,7 @@
    <!--  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"> -->
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/styles.css">
     <script src="https://kit.fontawesome.com/5b6c8cdace.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/products.css">
 
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/customerProfile.css">
 </head>
