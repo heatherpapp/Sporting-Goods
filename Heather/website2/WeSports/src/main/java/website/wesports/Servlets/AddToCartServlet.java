@@ -67,6 +67,7 @@ public class AddToCartServlet extends HttpServlet {
                 if (!cart.Exists) {  // Empty cart
                     cart.assignNextCartID();
                     cartID = cart.NextCartID;
+                    cart.setCartID(cartID);
                 } else {
                     cartID = cart.getCartID();
                 }
