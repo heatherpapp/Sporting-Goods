@@ -17,7 +17,49 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+    .customerTaskList {
+        color: white;
+        padding: 20px;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 70vh;
+    }
 
+    .customerTaskList h1 {
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+
+    .customerTaskList table {
+        margin-top: 20px;
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    .customerTaskList table tr {
+        border-bottom: 1px solid #fff;
+    }
+
+    .customerTaskList table td {
+        padding: 10px 0;
+        font-size: 16px;
+    }
+
+    .customerTaskList table td a {
+        color: #fff;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .customerTaskList table td a:hover {
+        color: #efce2c;
+    }
+
+</style>
 </head>
 
 <body>
@@ -83,12 +125,6 @@
             <i class="fa-solid fa-cart-shopping"></i> Cart
         </a>
 
-        <!-- other page elements not used here
-        <a href="CustomerLogin.jsp" class="login-button">Login</a>
-        <a href="../shop/Cart.html" class="btn">
-            <i class="fa-solid fa-cart-shopping"></i> Cart
-        </a>
-        -->
     </nav>
     <!-- Greeting -->
     <div class="content">
@@ -97,14 +133,6 @@
         <p>Shop with us today and save!</p>
     </div>
 
-    <!-- Search bar
-        <div class="search-container">
-            <form action="../../SearchServlet" method="get">
-                <input type="text" id="search-input" name="query" placeholder="Search...">
-                <button id="search-button" onclick="search()">Search</button>
-            </form>
-        </div>
-    -->
 
     <!-- Page Contents -->
 

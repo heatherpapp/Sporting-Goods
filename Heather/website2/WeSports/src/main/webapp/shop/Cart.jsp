@@ -117,8 +117,7 @@
     <!-- Greeting -->
     <div class="content">
         <h1>WeSports</h1>
-        <h4>We do Sports</h4>
-        <p>Shop with us today and save!</p>
+        <p>Did you find everything you were looking for?</p>
     </div>
 
     <!-- Search bar -->
