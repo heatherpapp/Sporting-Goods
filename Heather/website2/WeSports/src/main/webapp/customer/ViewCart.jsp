@@ -2,6 +2,7 @@
 <%@ page import="website.wesports.Business.Customer" %>
 <%@ page import="website.wesports.Business.Product" %>
 <%@ page import="website.wesports.Business.ProductList" %>
+<%@ page import="website.wesports.Business.Cart" %>
 <html>
 <head>
     <meta name="viewport" content="width=device-with, initial-scale=1.0">
@@ -129,6 +130,10 @@
     <div>
         <%
             request.getAttribute("CartID");
+            Cart cart = new Cart();
+            Long cartID = cart.CartID;
+
+
         %>
     </div>
 
