@@ -35,9 +35,9 @@ public class Cart {
 
     public int count = 0;
     public Product productArray[] = new Product[500];
-    public void addProducts(Product aProduct) {
-        productArray[count] = aProduct;
-        count++;
+    public void addProducts(Product product) {
+        this.products.add(product);
+        System.out.println("Product added to productList: " + product.getProductName()); // Debug
     }
 
     /************* Constructors *************/
@@ -440,31 +440,41 @@ public class Cart {
         PreparedStatement stmt = null;
         ResultSet rs = null;
 
-
         try {
+            Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
+
             conn = DriverManager.getConnection(DBLocation);
-            String sql = "SELECT * FROM Carts WHERE CustomerEmail = ?";
+            String sql = "SELECT * FROM Carts WHERE CustEmail = ?";
             stmt = conn.prepareStatement(sql);
             stmt.setString(1, customerEmail);
-
-            System.out.println("SQL Query: " + sql);
-            while (rs.next()) {
-                System.out.println("Retrieved Product Code: " + rs.getString("ProductCode"));  // Debugging
-                Product product = new Product();
-                product.selectPDB(rs.getString("ProductCode"));  // Assuming selectPDB method populates the product object
-                addProducts(product);
-            }
+            System.out.println("Executing getCartByCustomerEmail() with email: " + customerEmail);
 
             rs = stmt.executeQuery();
 
-            while (rs.next()) {
-                Product product = new Product();
-                product.selectPDB(rs.getString("ProductCode"));
-                product.setQuantity(rs.getInt("Quantity"));
-                addProducts(product);
+            if (rs != null && rs.next()) {
+                do {
+                    String productCode = rs.getString("ProductCode");
+                    int quantity = rs.getInt("Quantity");
+
+                    System.out.println("Retrieved Product: " + productCode + ", Quantity: " + quantity); // Debug
+
+                    Product product = new Product();
+                    product.selectPDB(productCode);
+                    product.setQuantity(quantity);
+
+                    addProducts(product);
+                } while (rs.next());
+            } else {
+                System.out.println("ResultSet is null or empty.");
             }
+
+            List<Product> debugProductList = getProductArray();
+            System.out.println("Product List Size in getCartByCustomerEmail: " + (debugProductList != null ? debugProductList.size() : "null")); // Debug
+
+        } catch (ClassNotFoundException e) {
+            System.out.println("JDBC Driver not found: " + e.getMessage());
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.out.println("Error in getCartByCustomerEmail(): " + e.getMessage());
         } finally {
             try {
                 if (rs != null) rs.close();
@@ -487,10 +497,13 @@ public class Cart {
             String sql = "SELECT * FROM Carts WHERE CartID = ?";
             stmt = conn.prepareStatement(sql);
             stmt.setLong(1, cartID);
+            System.out.println("Executing getCartByCartID() with cartID: " + cartID);
+
 
             System.out.println("SQL Query: " + sql);
             while (rs.next()) {
-                System.out.println("Retrieved Product Code: " + rs.getString("ProductCode"));  // Debugging
+                System.out.println("Debug Cart by CartID: " + rs.getLong("CartID") + ", " + rs.getString("CustEmail") + ", " + rs.getString("ProductCode") + ", " + rs.getInt("Quantity"));
+                //System.out.println("Retrieved Product Code: " + rs.getString("ProductCode"));  // Debugging
                 Product product = new Product();
                 product.selectPDB(rs.getString("ProductCode"));  // Assuming selectPDB method populates the product object
                 addProducts(product);
@@ -505,7 +518,8 @@ public class Cart {
                 addProducts(product);
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.out.println("Error in getCartByCartID(): " + e.getMessage());
+
         } finally {
             try {
                 if (rs != null) rs.close();
@@ -519,7 +533,7 @@ public class Cart {
 
 
     public List<Product> getProductArray() {
-        System.out.println("Product Array Size: " + products.size());
+        //System.out.println("Product Array Size: " + products.size());
         return this.products;
     }
 

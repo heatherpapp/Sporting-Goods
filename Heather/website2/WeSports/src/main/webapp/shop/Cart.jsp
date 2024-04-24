@@ -130,56 +130,59 @@
 
 
     <!-- Page Contents -->
-<div class="cartContainer">
+    <div class="cartContainer">
+        <%
+            // Retrieve the Customer object from the session
+            Customer c1 = (Customer) session.getAttribute("c1");
+            String customerEmail = null;
+            Long cartID = null;
+            cart = new Cart();
 
-    <%
-        // Retrieve the Customer object from the session
-        Customer c1 = (Customer) session.getAttribute("c1");
-        String customerEmail = null;
-        Long cartID = null;
+            // Check if customer is logged in
+            if (c1 != null && c1.Exists) {
+                customerEmail = c1.getCustEmail();
+            } else {
+                // cartID = (Long) session.getAttribute("CartID");
+                // If customer is not logged in, set userEmail to "guest" or any default value you want
+                customerEmail = "guest";
+            }
 
-        if (c1 != null && c1.Exists) {
-            customerEmail = c1.getCustEmail();
-        } else {
-            cartID = (Long) session.getAttribute("CartID");
-        }
+            //if (customerEmail != null) {
+               // cart.getCartByCustomerEmail(customerEmail);
+            //} else if (cartID != null) {
+                //cart.getCartByCartID(cartID);
+            //}
 
-        // Fetch cart based on customerEmail or cartID
-        if (customerEmail != null) {
             cart.getCartByCustomerEmail(customerEmail);
-        } else if (cartID != null) {
-            cart.getCartByCartID(cartID);
-        }
 
-        // Display cart items
-        List<Product> productList = cart.getProductArray();
+            // Display cart items
+            List<Product> productList = cart.getProductArray();
 
-        if (productList != null && !productList.isEmpty()) {
-            for (Product productItem : productList) {
-    %>
-    <div class="productRow">
-        <img src="${pageContext.request.contextPath}/resources/images/<%= productItem.getImagePath() %>" alt="<%= productItem.getProductName() %>">
-        <p>Product Code: <%= productItem.getProductCode() %></p>
-        <p>Product Name: <%= productItem.getProductName() %></p>
-        <p>Unit Quantity: <%= productItem.getQuantity() %></p>
-        <p>Unit Price: $<%= productItem.getUnitPrice() %></p>
-        <p>Unit Subtotal: $<%= productItem.getQuantity() * productItem.getUnitPrice() %></p>
+            if (productList != null && !productList.isEmpty()) {
+                for (Product productItem : productList) {
+        %>
+        <div class="productRow">
+            <img src="${pageContext.request.contextPath}/shop/<%= productItem.getImagePath() %>" width="100" height="100" alt="product image" alt="<%= productItem.getProductName() %>">
+            <p><%= productItem.getProductName() %></p>
+            <p>Unit Quantity: <%= productItem.getQuantity() %></p>
+            <p>Unit Price: $<%= productItem.getUnitPrice() %></p>
+            <p>Unit Subtotal: $<%= productItem.getQuantity() * productItem.getUnitPrice() %></p>
+        </div>
+        <%
+            }
+        } else {
+        %>
+        <div class="emptyCart">
+            <p>Your cart is empty.</p>
+        </div>
+        <%
+            }
+        %>
+        <div class="totalRow">
+            <p class="totalHeader">Order Total:</p>
+            <p>$<%= cart.getTotalPrice() %></p>
+        </div>
     </div>
-    <%
-        }
-    } else {
-    %>
-    <div class="emptyCart">
-        <p>Your cart is empty.</p>
-    </div>
-    <%
-        }
-    %>
-    <div class="totalRow">
-        <p class="totalHeader">Order Total:</p>
-        <p>$<%= cart.getTotalPrice() %></p>
-    </div>
-</div>
 
 
 </div>

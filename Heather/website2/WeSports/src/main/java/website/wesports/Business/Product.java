@@ -394,6 +394,7 @@ public class Product {
                 product = new Product();
                 product.selectPDB(prodCode);
                 productList.addProducts(product);
+                productList.addProducts(product);
                 //product.productList.displayList();
             }
             connection.close();
