@@ -132,9 +132,12 @@
             request.getAttribute("CartID");
             Cart cart = new Cart();
             Long cartID = cart.CartID;
+            cart.getCartByCartID(cartID);
 
-
+            for (Cart cartItem : cart.cartList.cartArray)
         %>
+
+        
     </div>
 
 

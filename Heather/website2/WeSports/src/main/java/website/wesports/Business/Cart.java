@@ -26,6 +26,7 @@ public class Cart {
     final String DBDriver = "net.ucanaccess.jdbc.UcanaccessDriver";
     final String DBLocation = "jdbc:ucanaccess://C:/WeSportsDB/WeSports.accdb/";
 
+    public CartList cartList = new CartList();
 
     /************* Properties *************/
     String CustEmail, ProductCode;
